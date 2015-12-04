@@ -2,18 +2,79 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="generator" content="CoffeeCup Web Editor (www.coffeecup.com)">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <title>My Profile Website</title>
-
-    <!--[if IE]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Profile</title>
+  <link href="https://www.dropbox.com/s/djemd0t3ugwhl8s/bootstrap.css?dl=0" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+  <link href="https://www.dropbox.com/s/8r94qhj2c1oa1mg/style.css?dl=0" rel="stylesheet">
+  <script type="text/javascript" src="https://www.dropbox.com/s/g36yvaj4xeyja9w/jquery.min.js?dl=0"></script>
+  <script type="text/javascript" src="https://www.dropbox.com/s/dg4whycvnv05wwv/bootstrap.js?dl=0"></script>
   </head>
   <body>
-  <h1>Welcome to my humble abode</h1>
-  <h4>This is my first attempt</h4>
-  <p>As a Noob Programmer</p>
+  <div class="container-fluid">
+    <div class="row rowHead"><!--header-->
+      <div class="col-md-6">
+        <img src="https://www.dropbox.com/s/owssrqflzgfm6k7/profilepix.jpg?dl=0" class="left-block img-responsive img-circle imageSize" alt="profilepicture">
+      </div>
+      <div class="col-md-6 text-right">
+        <h1 class="headStyle">MICHAEL CABELIN</h1>
+        <h3>Web Developer</h3>
+      </div>
+    </div>
+    <div class="row"><!--line-->
+      <div class="col-md-12">
+        <div style="width: 100%; height: 3px; background: gray; overflow: hidden; margin:10px 0px 10px 0px;">
+        </div>
+      </div>
+    </div>
+    <div class="row"><!--Center picture-->
+      <div class="col-md-12">
+        <img src="https://www.dropbox.com/s/acqmd93792gjuz4/largeCanyon.jpg?dl=0" class="img-responsive center-block centerImage" alt="grand canyon">
+      </div>
+    </div>
+    <div class="row"><!--Description-->
+      <div class="col-md-12">
+        <h3>Featured Work</h3>
+      </div>
+    </div>
+    <div class="row text-center"><!--Pictures & Apps-->
+      <div class="col-md-4">
+        <img src="https://www.dropbox.com/s/54i411nu2lpdddp/largeGuitar.jpg?dl=0" class="img-responsive text-center">
+        <h4 class="menuHover" data-toggle="modal" data-target="#myModal">MUSIC</h4>
+      </div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+        <h4 class="modal-title" id="myModalLabel">MUSIC</h4>
+      </div>
+      <div class="modal-body">
+        <img src="https://www.dropbox.com/s/54i411nu2lpdddp/largeGuitar.jpg?dl=0" class="modalImage">
+        <h4>How I Relax</h4>
+        <p>I've long been studying music since I was 12 years old after picking up a guitar. It was magical, I was self-taught and discovered the world around me because of this. It has served as my inspiration during tough times, soothing my innermost being.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+      <div class="col-md-4">
+        <img src="https://www.dropbox.com/s/gbhb6lpxvw5brgc/photography.jpg?dl=0" class="img-responsive text-center">
+        <h4 class="menuHover">PHOTOGRAPHY</h4>
+      </div>
+      <div class="col-md-4">
+        <img src="https://www.dropbox.com/s/ruwj5l93f21nqsm/programming.jpg?dl=0" class="img-responsive text-center">
+        <h4 class="menuHover">PROGRAMMING</h4>
+      </div>
+    </div>
+  </div>
   </body>
 </html>
