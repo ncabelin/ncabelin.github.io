@@ -34,11 +34,14 @@ body {
 .modalImage {
 	max-width:200px;
 }
-.menuHover:hover {
+.navLink:hover {
 	text-decoration:underline;
 	font-weight:bold;
 }
-.menuHover {
+.navLink:active {
+	color: black;
+}
+.navLink:link {
 	color: black;
 }
 h1 {
