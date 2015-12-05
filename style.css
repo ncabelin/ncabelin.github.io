@@ -1,6 +1,10 @@
 body {
-	font-family: 'Lato', sans-serif;
-	margin:50px 100px 50px 100px;
+ font-family: 'Lato', sans-serif;
+ margin: 0;
+ background-image: url("https://cloud.githubusercontent.com/assets/15892944/11609988/6ed3c44a-9b4a-11e5-9fdd-fc82b70360bc.jpg");
+ background-size: 1440px 800px;
+ background-repeat:no-repeat;
+ display: compact;
 }
 .imageSize {
 	max-width:100px;
