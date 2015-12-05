@@ -23,5 +23,6 @@ body {
 }
 .imageSize {
 	max-width:100px;
+	padding:10px;
 }
 
