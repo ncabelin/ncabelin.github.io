@@ -1,10 +1,12 @@
 body {
  font-family: 'Lato', sans-serif;
- margin: 0;
- background-image: url("https://cloud.githubusercontent.com/assets/15892944/11609988/6ed3c44a-9b4a-11e5-9fdd-fc82b70360bc.jpg");
- background-size: 1440px 800px;
- background-repeat:no-repeat;
- display: compact;
+}
+html {
+  background: url("https://cloud.githubusercontent.com/assets/15892944/11609988/6ed3c44a-9b4a-11e5-9fdd-fc82b70360bc.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 .imageSize {
 	max-width:100px;
