@@ -41,8 +41,9 @@ body {
 .navLink:active {
 	color: black;
 }
-.navLink:link {
+.navLink {
 	color: black;
+	text-decoration:underline;
 }
 h1 {
 	font-size:200%;
