@@ -1,6 +1,5 @@
 body {
  font-family: 'Lato', sans-serif;
- color: black;
 }
 #bg {
   position: fixed; 
@@ -38,6 +37,9 @@ body {
 .menuHover:hover {
 	text-decoration:underline;
 	font-weight:bold;
+}
+.menuHover {
+	color: black;
 }
 h1 {
 	font-size:200%;
