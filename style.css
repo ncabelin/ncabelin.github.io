@@ -22,6 +22,6 @@ body {
 	font-family: 'Playfair Display', serif;
 }
 .imageSize {
-	height:100px;
+	max-width:100px;
 }
 
