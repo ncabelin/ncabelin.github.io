@@ -18,33 +18,6 @@ body {
   min-width: 50%;
   min-height: 50%;
 }
-
-.imageSize {
-	max-width:100px;
-	margin:10px;
-}
-.barRuler {
-	style="width: 100%; height: 7px; background: #F87431; overflow: hidden;">
-}
-.rowHead {
-}
 .headStyle {
 	font-family: 'Playfair Display', serif;
-}
-.modalImage {
-	max-width:200px;
-}
-.navLink:hover {
-	text-decoration:underline;
-	font-weight:bold;
-}
-.navLink:active {
-	color: black;
-}
-.navLink {
-	color: black;
-	text-decoration:underline;
-}
-h1 {
-	font-size:200%;
 }
