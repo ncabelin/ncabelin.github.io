@@ -27,7 +27,16 @@ body {
 }
 /* Large desktops and laptops */
 @media (min-width: 1200px) {
-
+	.image50 {
+		width:70%;
+		height:70%;
+	}
+	.text50 {
+		text-align:left;
+	}
+	.headCenter {
+		text-align:center;
+	}
 }
 
 /* Landscape tablets and medium desktops */
