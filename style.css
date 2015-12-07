@@ -60,6 +60,11 @@ body {
 	.headCenter {
 		text-align:center;
 	}
+	.imageSize {
+		display: block;
+  		margin-left: auto;
+  		margin-right: auto;
+	}
 }
 
 /* Portrait phones and smaller */
@@ -72,6 +77,11 @@ body {
 	}
 	.headCenter {
 		text-align:center;
+	}
+	.imageSize {
+		display: block;
+  		margin-left: auto;
+  		margin-right: auto;
 	}
 }
 
