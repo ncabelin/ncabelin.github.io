@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Resume</title>
+  <link href="css/style.css" rel="stylesheet">
+  <script src="js/jQuery.js"></script>
+  <script src="js/helper.js"></script>
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
+  <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet' type='text/css'>
+  <meta name="viewport" content="width=device-width">
+</head>
+<body>
+  <div id="main">
+    <div id="header" class="center-content clear-fix">
+      <ul id="topContacts" class="flex-box"></ul>
+    </div>
+    <div style="clear: both;"></div>
+    <div id="workExperience" class="gray">
+      <h2>Work Experience <button class="btn btn-primary">+</button></h2>
+      <hr>
+    </div>
+    <div id="projects">
+      <h2>Projects</h2>
+      <hr>
+    </div>
+    <div id="education" class="gray">
+      <h2>Education</h2>
+      <hr>
+    </div>
+    <div id="mapDiv">
+      <h2>Where I've Lived and Worked</h2>
+      <hr>
+    </div>
+    <div id="lets-connect" class="dark-gray">
+      <h2 class="orange center-text">Let's Connect</h2>
+        <ul id="footerContacts" class="flex-box">
+      </ul>
+    </div>
+  </div>
+  <script src="js/resumeBuilder.js"></script>
+  <script type="text/javascript">
+  /* Internationalize Button */
+    var stringName = bio.name;
+    var inName = function() {
+      var arrayName = [];
+      var arrayName = bio.name.split(" ");
+      var lastName = arrayName.pop().toString();
+      var upperName = lastName.toUpperCase();
+      arrayName.push(upperName);
+      stringName = arrayName.join(" ");
+      return stringName;
+    }
+  /* Header */
+    $("#main").append(internationalizeButton);
+    var formattedName = HTMLheaderName.replace("%data%", stringName);
+    var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+    $("#header").append(formattedName, formattedRole);
+    var formattedBioPic = HTMLbioPic.replace("%data%", bio["picture-URL"]);
+    $("#header").append(formattedBioPic);
+
+  /* Skills */
+    if(bio.skills.length > 0) {
+      $("#header").append(HTMLskillsStart);
+      var formattedSkill;
+      for (i=0; i<bio.skills.length; i++) {
+      formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
+      $("#skills").append(formattedSkill);
+      }
+    }
+
+  /* Work Experience */
+    var formattedWorkEmployer, formattedWorkDates, formattedWorkLocation, formattedWorkDescription;
+    $("#workExperience").append(HTMLworkStart);
+    for (job in work.jobs) {
+    formattedWorkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job]["employer"]) + HTMLworkTitle.replace("%data%", work.jobs[job]["title"]);
+    $(".work-entry:last").append(formattedWorkEmployer);
+    formattedWorkDates = HTMLworkDates.replace("%data%", work.jobs[job]["dates"]);
+    $(".work-entry:last").append(formattedWorkDates);
+    formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[job]["location"]);
+    $(".work-entry:last").append(formattedWorkLocation);
+    formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[job]["description"]);
+    $(".work-entry:last").append(formattedWorkDescription);
+  }
+
+/* Show Clicks */
+  $(document).click(function(loc) {
+  var x = loc.pageX;
+  var y = loc.pageY;
+  logClicks(x,y);
+});
+
+/* Projects */
+    projects.display = function () {
+      var formattedProjectTitle, formattedProjectDates, formattedProjectDescription, formattedProjectImages;
+      for (proj in projects.project) {
+        $("#projects").append(HTMLprojectStart);
+        formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.project[proj]["title"]);
+        $(".project-entry:last").append(formattedProjectTitle);
+        formattedProjectDates = HTMLprojectDates.replace("%data%", projects.project[proj]["dates"]);
+        $(".project-entry:last").append(formattedProjectDates);
+        formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.project[proj]["description"]);
+        $(".project-entry:last").append(formattedProjectDescription);
+        for (imageX in projects.project[proj]["imageS"]) {
+          formattedProjectImages = HTMLprojectImage.replace("%data%", projects.project[proj]["imageS"][imageX]);
+          $(".project-entry:last").append(formattedProjectImages);
+        }
+      }
+    };
+projects.display();
+/* Education */
+var formattedSchoolStart, formattedSchoolName, formattedSchoolLocation, formattedSchoolDegree, formattedSchoolMajors, formattedSchoolURL;
+
+for (ed in education.schools) {
+    $("#education").append(HTMLschoolStart);
+    formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[ed]["name"]);
+    formattedSchoolName = formattedSchoolName.replace("#", education.schools[ed]["url"]);
+    formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[ed]["degree"]);
+    $(".education-entry:last").append((formattedSchoolName + formattedSchoolDegree));
+    formattedSchoolMajors = HTMLschoolMajor.replace("%data%", education.schools[ed]["majors"]);
+    $(".education-entry:last").append(formattedSchoolMajors);
+    formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[ed]["location"]);
+    $(".education-entry:last").append(formattedSchoolLocation);
+  }
+education.schools();
+    if(document.getElementsByClassName('flex-item').length === 0) {
+      document.getElementById('topContacts').style.display = 'none';
+    }
+    if(document.getElementsByTagName('h1').length === 0) {
+      document.getElementById('header').style.backgroundColor = 'black';
+    }
+    if(document.getElementsByClassName('work-entry').length === 0) {
+      document.getElementById('workExperience').style.backgroundColor = 'black';
+    }
+    if(document.getElementsByClassName('project-entry').length === 0) {
+      document.getElementById('projects').style.backgroundColor = 'black';
+    }
+    if(document.getElementsByClassName('education-entry').length === 0) {
+      document.getElementById('education').style.backgroundColor = 'black';
+    }
+    if(document.getElementsByClassName('flex-item').length === 0) {
+      document.getElementById('lets-connect').style.display = 'none';
+    }
+    if(document.getElementById('map') === null) {
+      document.getElementById('mapDiv').style.display = 'none';
+    }
+    /*
+    $(document).ready(function () {
+      $("#workExperience").click(function(){
+        $(".work-entry").hide();
+      }
+    }); */
+
+  </script>
+</body>
+</html>
