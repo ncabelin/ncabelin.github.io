@@ -17,7 +17,7 @@
     </div>
     <div style="clear: both;"></div>
     <div id="workExperience" class="gray">
-      <h2>Work Experience <button class="btn btn-primary">+</button></h2>
+      <h2>Work Experience</h2>
       <hr>
     </div>
     <div id="projects">
@@ -56,8 +56,19 @@
     var formattedName = HTMLheaderName.replace("%data%", stringName);
     var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
     $("#header").append(formattedName, formattedRole);
+    var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio["welcome-message"]);
+    $("#header").append(formattedWelcomeMessage);
     var formattedBioPic = HTMLbioPic.replace("%data%", bio["picture-URL"]);
     $("#header").append(formattedBioPic);
+    var formattedMobile, formattedEmail, formattedTwitter, formattedGithub, formattedLocation;
+    formattedMobile = HTMLmobile.replace("%data%", bio["contact-info"]["phone"]);
+    $("#topContacts").append(formattedMobile);
+    formattedEmail = HTMLemail.replace("%data%", bio["email"]);
+    $("#topContacts").append(formattedEmail);
+    formattedGithub = HTMLgithub.replace("%data%", bio.github);
+    $("#topContacts").append(formattedGithub);
+    formattedLocation = HTMLlocation.replace("%data%", bio["contact-info"]["location"]);
+    $("#topContacts").append(formattedLocation);
 
   /* Skills */
     if(bio.skills.length > 0) {
@@ -122,7 +133,7 @@ for (ed in education.schools) {
     formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[ed]["location"]);
     $(".education-entry:last").append(formattedSchoolLocation);
   }
-education.schools();
+
     if(document.getElementsByClassName('flex-item').length === 0) {
       document.getElementById('topContacts').style.display = 'none';
     }

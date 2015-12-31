@@ -5,36 +5,38 @@ var bio = {
 		"phone": "661-513-7773",
 		"location": "Palmdale, CA"
 	},
-	"picture-URL": "https://cloud.githubusercontent.com/assets/15892944/12047610/1f908b38-ae83-11e5-9d21-ef53cd376aed.jpg",
+	"email" : "ncabelin@gmail.com",
+	"github" : "ncabelin",
+	"picture-URL": "https://github.com/ncabelin/ncabelin.github.io/blob/master/JSONResume/images/me.jpg?raw=true",
 	"welcome-message": "Hi, welcome to my profile page, feel free to contact me for more info.",
-	"skills": ["HTML", "CSS", "Javascript", "JQuery", "Bootstrap", "ASP.NET", "Ruby on Rails", "PHP"]
+	"skills": ["HTML", "CSS", "Javascript", "JQuery", "Bootstrap", "Photoshop"]
 };
 
 var work = {
 	"jobs": [{
-		"employer": "Annex Healthcare Providers",
-		"title": "Licensed Vocational Nurse",
-		"location": "Encino, CA",
-		"dates": "01/2014-present",
-		"description": "Provided subacute level care for quadruplegic, epileptic, ALS & muscular dystrophy ventilator dependent patients."
+		"employer": "Potentum Studios",
+		"title": "Full Stack Web Developer, Content Provider",
+		"location": "Los Angeles, CA",
+		"dates": "12/2015-present",
+		"description": "Founder / Creator of e-learning website for nursing students"
 	}, {
-		"employer": "Heavenly Home Health",
-		"title": "Licensed Vocational Nurse",
-		"location": "Glendale, CA",
-		"dates": "08/2012 to 01/2014",
-		"description": "Provided subacute level care for quadruplegic, epileptic, ALS & muscular dystrophy ventilator dependent patients."
+		"employer": "Annex Healthcare Providers / Heavenly Home Health",
+		"title": "Home Health Licensed Vocational Nurse",
+		"location": "Encino, CA",
+		"dates": "08/2012 to present",
+		"description": "Provided nursing care for quadruplegic, epileptic, & muscular dystrophy / ventilator dependent patients."
 	}, {
 		"employer": "Memorial University Medical Center",
-		"title": "Licensed Practical Nurse",
+		"title": "Medical Office Licensed Practical Nurse",
 		"location": "Rincon, GA",
 		"dates": "03/2011 to 04/2012",
 		"description": "Provided SC & IM injection medications, immunizations, phleobotomy services, glucose checks, PT/INR checks in a medical office setting."
 	}, {
 		"employer": "Caremeridian",
-		"title": "Licensed Vocational Nurse",
+		"title": "Sub-acute Licensed Vocational Nurse",
 		"location": "Northridge, CA",
 		"dates": "08/2010 to 02/2011",
-		"description": "Provided subacute level care for quadruplegic, epileptic, ALS & muscular dystrophy ventilator dependent patients."
+		"description": "Provided subacute level care for quadruplegic, spinal-injury, head-injury, ALS & muscular dystrophy ventilator dependent patients."
 	}, {
 		"employer": "Unicom Supply",
 		"title": "Logistics Manager / Sales Representative",
@@ -81,3 +83,5 @@ var education = {
 		"url": "http://dlsu.edu.ph"
 	}]
 }
+
+$("#mapDiv").append(googleMap);
