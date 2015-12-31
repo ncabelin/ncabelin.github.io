@@ -32,6 +32,7 @@
       <h2>Where I've Lived and Worked</h2>
       <hr>
     </div>
+    <br>
     <div id="lets-connect" class="dark-gray">
       <h2 class="orange center-text">Let's Connect</h2>
         <ul id="footerContacts" class="flex-box">
@@ -40,6 +41,7 @@
   </div>
   <script src="js/resumeBuilder.js"></script>
   <script type="text/javascript">
+  /* Header */
   /* Internationalize Button */
     var stringName = bio.name;
     var inName = function() {
@@ -51,8 +53,8 @@
       stringName = arrayName.join(" ");
       return stringName;
     }
-  /* Header */
     $("#main").append(internationalizeButton);
+
     var formattedName = HTMLheaderName.replace("%data%", stringName);
     var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
     $("#header").append(formattedName, formattedRole);
@@ -121,7 +123,6 @@
 projects.display();
 /* Education */
 var formattedSchoolStart, formattedSchoolName, formattedSchoolLocation, formattedSchoolDegree, formattedSchoolMajors, formattedSchoolURL;
-
 for (ed in education.schools) {
     $("#education").append(HTMLschoolStart);
     formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[ed]["name"]);
@@ -133,7 +134,6 @@ for (ed in education.schools) {
     formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[ed]["location"]);
     $(".education-entry:last").append(formattedSchoolLocation);
   }
-
     if(document.getElementsByClassName('flex-item').length === 0) {
       document.getElementById('topContacts').style.display = 'none';
     }
