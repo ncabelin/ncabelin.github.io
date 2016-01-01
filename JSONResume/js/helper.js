@@ -1,5 +1,5 @@
-var HTMLheaderName = '<h1 id="header" class="name head">%data%</h1>';
-var HTMLheaderRole = '<p class="white-text spacing">%data%</p><hr>';
+var HTMLheaderName = '<h1 id="header" class="name head centerSmall">%data%</h1>';
+var HTMLheaderRole = '<p class="white-text spacing centerSmall">%data%</p><hr>';
 
 var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
 var HTMLmobile = '<li class="flex-item"><span class="orange-text">mobile</span><span class="white-text">%data%</span></li>';
@@ -8,6 +8,9 @@ var HTMLtwitter = '<li class="flex-item"><span class="orange-text">twitter</span
 var HTMLgithub = '<li class="flex-item"><span class="orange-text">github</span><span class="white-text">%data%</span></li>';
 var HTMLblog = '<li class="flex-item"><span class="orange-text">blog</span><span class="white-text">%data%</span></li>';
 var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li>';
+var HTMLfooterEmail = '<li class="flex-item"><a href="mailto:%data%" target="_blank" class="fa fa-envelope fa-3x"></a></li>';
+var HTMLfooterGithub = '<li class="flex-item"><a href="http://github.com/%data%" target="_blank" class="fa fa-github fa-3x"></a></li>';
+var HTMLLinkedin = '<li class="flex-item"><a href="%data%" target="_blank" class="fa fa-linkedin fa-3x"></a></li>';
 
 var HTMLbioPic = '<img src="%data%" class="biopic">';
 var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';

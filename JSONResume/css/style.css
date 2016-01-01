@@ -14,6 +14,10 @@ h6 {
   font-family: 'Lato', sans-serif;
 }
 
+.thinLine {
+  border-width: 1px;
+}
+
 .borderSpace {
   border-width:0px;
 }
@@ -192,7 +196,7 @@ ul {
   padding: 10px;
   width: 200px;
   border-radius: 50%;
-  display: none;
+  /* display: none; */
 }
 
 img {
@@ -212,19 +216,19 @@ span {
 }
 /* Media queries to handle various device widths */
 
-@media screen and (max-width: 1024px) {
+@media screen (min-width: 752px) and (max-width: 1024px) {
   #lets-connect {
     margin-top: 5%;
   }
 }
 
-@media screen and (max-width:900px) {
+@media screen and (min-width:751px) {
   .biopic {
-    width: 175px;
+    display: block;
   }
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (min-width: 381px) and (max-width: 750px) {
   #lets-connect {
     margin-top: 10%;
   }
@@ -233,6 +237,9 @@ span {
   }
   .welcome-message {
     display: none;
+  }
+  .centerSmall {
+    text-align: center;
   }
 }
 
@@ -248,9 +255,23 @@ span {
   padding-bottom: 5%;
 }
 
-@media only screen and (min-width: 750px) {
+@media only screen and (max-width: 380px) {
   #skills-h3,
   .biopic {
+    width: 50%;
     display: block;
   }
+  .centerSmall {
+    text-align: right;
+  }
+}
+
+.fa-github:hover {
+  color:#3fb0ac;
+}
+.fa-envelope:hover {
+  color:#3fb0ac;
+}
+.fa-linkedin:hover {
+  color:#3fb0ac;
 }

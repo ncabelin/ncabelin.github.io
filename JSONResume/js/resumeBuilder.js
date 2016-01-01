@@ -9,7 +9,8 @@ var bio = {
 	"github" : "ncabelin",
 	"picture-URL": "https://github.com/ncabelin/ncabelin.github.io/blob/master/JSONResume/images/me.jpg?raw=true",
 	"welcome-message": "Welcome to my profile page, feel free to contact me for more info.",
-	"skills": ["HTML", "CSS", "Javascript", "JQuery", "Bootstrap", "Photoshop"]
+	"skills": ["HTML", "CSS", "Javascript", "JQuery", "Bootstrap", "Photoshop"],
+	"linkedIn" : "https://www.linkedin.com/in/neptune-michael-cabelin-637600b0"
 };
 
 var work = {

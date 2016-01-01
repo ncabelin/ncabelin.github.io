@@ -6,6 +6,7 @@
   <script src="js/jQuery.js"></script>
   <script src="js/helper.js"></script>
   <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet' type='text/css'>
   <meta name="viewport" content="width=device-width">
@@ -14,6 +15,7 @@
   <div id="main">
     <div id="header" class="center-content clear-fix">
       <ul id="topContacts" class="flex-box"></ul>
+      <hr class="borderSpace">
     </div>
     <div style="clear: both;"></div>
     <div id="workExperience" class="gray">
@@ -61,7 +63,7 @@
 
     var formattedName = HTMLheaderName.replace("%data%", stringName);
     var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-    $("#header").append(formattedName, formattedRole);
+    $("#header").prepend(formattedName, formattedRole);
     var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio["welcome-message"]);
     $("#header").append(formattedWelcomeMessage);
     var formattedBioPic = HTMLbioPic.replace("%data%", bio["picture-URL"]);
@@ -159,6 +161,12 @@ for (ed in education.schools) {
     if(document.getElementById('map') === null) {
       document.getElementById('mapDiv').style.display = 'none';
     }
+
+    var formattedEmail, formattedGithub, formattedLinkedin;
+    formattedEmail = HTMLfooterEmail.replace("%data%", bio.email);
+    formattedGithub = HTMLfooterGithub.replace("%data%", bio.github);
+    formattedLinkedin = HTMLLinkedin.replace("%data%", bio.linkedIn);
+    $("#footerContacts").append(formattedEmail + formattedGithub + formattedLinkedin);
 
     $(document).ready(function(){
     $("#moreButton").click(function(){
