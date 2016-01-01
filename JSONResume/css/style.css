@@ -266,7 +266,11 @@ span {
     display: block;
   }
   .centerSmall {
-    text-align: right;
+    text-align: center;
+  }
+  h1 {
+    font-size: 1.5em;
+    display:inline-block;
   }
 }
 
