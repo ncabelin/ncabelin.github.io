@@ -257,7 +257,6 @@ span {
   height: 250px;
   width: 100%;
   padding-bottom: 5%;
-  margin-bottom: 20%;
 }
 
 @media only screen and (max-width: 380px) {
@@ -272,6 +271,9 @@ span {
   h1 {
     font-size: 1.5em;
     display:inline-block;
+  }
+  #mapDiv {
+    margin-bottom: 20%;
   }
 }
 
