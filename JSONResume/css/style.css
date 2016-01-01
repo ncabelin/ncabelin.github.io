@@ -204,7 +204,6 @@ img {
 }
 
 span {
-  padding: 5px;
 }
 
 #lets-connect {
@@ -279,4 +278,8 @@ span {
 }
 .fa-linkedin:hover {
   color:#3fb0ac;
+}
+
+.yellow {
+  background-color: #fae596;
 }
