@@ -21,10 +21,13 @@
       <hr>
     </div>
     <button id="moreButton" class="buttonDetails">more details</button>
-    <div id="projects">
+    <hr class="borderSpace">
+    <div id="projects" class="gray">
       <h2>Projects</h2>
       <hr>
     </div>
+    <button id="moreButtonPortfolio" class="buttonDetails">more details</button>
+    <hr class="borderSpace">
     <div id="education" class="gray">
       <h2>Education</h2>
       <hr>
@@ -159,8 +162,9 @@ for (ed in education.schools) {
 
     $(document).ready(function(){
     $("#moreButton").click(function(){
-        $(".hideFirst").toggle();
-    });
+      $(".hideFirst").toggle("slow");});
+    $("#moreButtonPortfolio").click(function(){
+      $(".hideFirstPortfolio").toggle("slow")});
 });
   </script>
 </body>

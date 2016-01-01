@@ -1,6 +1,6 @@
 var bio = {
 	"name": "Neptune Michael Cabelin",
-	"role": "Software Engineer / Full Stack Web Developer",
+	"role": "Software Engineer",
 	"contact-info": {
 		"phone": "661-513-7773",
 		"location": "Palmdale, CA"
@@ -8,7 +8,7 @@ var bio = {
 	"email" : "ncabelin@gmail.com",
 	"github" : "ncabelin",
 	"picture-URL": "https://github.com/ncabelin/ncabelin.github.io/blob/master/JSONResume/images/me.jpg?raw=true",
-	"welcome-message": "Hi, welcome to my profile page, feel free to contact me for more info.",
+	"welcome-message": "Welcome to my profile page, feel free to contact me for more info.",
 	"skills": ["HTML", "CSS", "Javascript", "JQuery", "Bootstrap", "Photoshop"]
 };
 
@@ -54,20 +54,29 @@ var work = {
 
 var projects = {
 	"project": [{
-		"title": "My Portfolio Website",
+		"title": "Interactive Resume",
 		"dates": "12/2015",
-		"description": "Portfolio to showcase ability to implement HTML5,CSS3,JQuery & Bootstrap technologies",
+		"description": "Interactive Resume featuring implementation of HTML5,CSS3,JQuery,JSON",
 		"imageS": ["https://cloud.githubusercontent.com/assets/15892944/12048463/4578b5b6-ae90-11e5-94d8-a4282c274241.jpg", "http://placehold.it/150x150"]
 	}, {
-		"title": "Responsive Website",
+		"title": "Responsive Design Portfolio",
 		"dates": "12/2015",
-		"description": "Portfolio to showcase ability to implement responsive website design",
+		"description": "Portfolio to showcase ability to implement responsive website design with responsive images",
 		"imageS": ["http://placehold.it/150x150", "http://placehold.it/150x150"]
 	}]
 }
 
 var education = {
-	"schools": [{
+	"schools": [
+		{
+			"name": "Udacity",
+			"location": "San Francisco, CA",
+			"degree": "Nanodegree",
+			"majors": "Front-end Web Developer, Full-Stack Web Developer",
+			"dates": "12/2015 to 06/2016",
+			"url": "http://www.udacity.com"
+		},
+		{
 		"name": "Casa Loma College",
 		"location": "Van Nuys, CA",
 		"degree": "Certificate",
@@ -77,7 +86,7 @@ var education = {
 	}, {
 		"name": "De La Salle University",
 		"location": "Manila, Philippines",
-		"degree": "B.A.",
+		"degree": "Bachelor degree",
 		"majors": "Economics",
 		"dates": "06/1997 to 03/2001",
 		"url": "http://dlsu.edu.ph"

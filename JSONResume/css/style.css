@@ -14,6 +14,10 @@ h6 {
   font-family: 'Lato', sans-serif;
 }
 
+.borderSpace {
+  border-width:0px;
+}
+
 .buttonDetails {
   margin : 0 5%;
   /* box-sizing:content-box; */
@@ -21,6 +25,10 @@ h6 {
 }
 
 .hideFirst {
+  display: none;
+}
+
+.hideFirstPortfolio {
   display: none;
 }
 
@@ -148,7 +156,7 @@ a {
 }
 
 .gray {
-  background-color: #f3f3f3;
+  background-color: white;
   padding-bottom: 10px;
   clear:both;
 }
@@ -204,19 +212,19 @@ span {
 }
 /* Media queries to handle various device widths */
 
-@media only screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   #lets-connect {
     margin-top: 5%;
   }
 }
 
-@media only screen and (max-width:900px) {
+@media screen and (max-width:900px) {
   .biopic {
     width: 175px;
   }
 }
 
-@media only screen and (max-width: 750px) {
+@media screen and (max-width: 750px) {
   #lets-connect {
     margin-top: 10%;
   }
