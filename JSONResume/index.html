@@ -20,6 +20,7 @@
       <h2>Work Experience</h2>
       <hr>
     </div>
+    <button id="moreButton" class="buttonDetails">more details</button>
     <div id="projects">
       <h2>Projects</h2>
       <hr>
@@ -86,7 +87,7 @@
     var formattedWorkEmployer, formattedWorkDates, formattedWorkLocation, formattedWorkDescription;
     $("#workExperience").append(HTMLworkStart);
     for (job in work.jobs) {
-    formattedWorkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job]["employer"]) + HTMLworkTitle.replace("%data%", work.jobs[job]["title"]);
+    formattedWorkEmployer = HTMLworkTitle.replace("%data%", work.jobs[job]["title"]) + HTMLworkEmployer.replace("%data%", work.jobs[job]["employer"]);
     $(".work-entry:last").append(formattedWorkEmployer);
     formattedWorkDates = HTMLworkDates.replace("%data%", work.jobs[job]["dates"]);
     $(".work-entry:last").append(formattedWorkDates);
@@ -155,13 +156,12 @@ for (ed in education.schools) {
     if(document.getElementById('map') === null) {
       document.getElementById('mapDiv').style.display = 'none';
     }
-    /*
-    $(document).ready(function () {
-      $("#workExperience").click(function(){
-        $(".work-entry").hide();
-      }
-    }); */
 
+    $(document).ready(function(){
+    $("#moreButton").click(function(){
+        $(".hideFirst").toggle();
+    });
+});
   </script>
 </body>
 </html>

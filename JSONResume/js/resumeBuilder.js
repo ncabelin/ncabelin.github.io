@@ -15,7 +15,7 @@ var bio = {
 var work = {
 	"jobs": [{
 		"employer": "Potentum Studios",
-		"title": "Full Stack Web Developer, Content Provider",
+		"title": "Full Stack Web Developer",
 		"location": "Los Angeles, CA",
 		"dates": "12/2015-present",
 		"description": "Founder / Creator of e-learning website for nursing students"
@@ -77,7 +77,7 @@ var education = {
 	}, {
 		"name": "De La Salle University",
 		"location": "Manila, Philippines",
-		"degree": "Bachelor of Arts",
+		"degree": "B.A.",
 		"majors": "Economics",
 		"dates": "06/1997 to 03/2001",
 		"url": "http://dlsu.edu.ph"

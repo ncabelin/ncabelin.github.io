@@ -14,6 +14,16 @@ h6 {
   font-family: 'Lato', sans-serif;
 }
 
+.buttonDetails {
+  margin : 0 5%;
+  /* box-sizing:content-box; */
+  background-color: white;
+}
+
+.hideFirst {
+  display: none;
+}
+
 .head {
   font-family: 'Cinzel', serif;
 }
@@ -30,6 +40,7 @@ h6 {
 .work-entry,
 .project-entry {
   padding: 0 5%;
+  background-color: white;
 }
 
 .projectImage {
@@ -91,6 +102,11 @@ h5 {
   line-height: 16px;
   float: right;
 
+}
+
+.blue-text {
+  color: #aa863a;
+  font-style: bold;
 }
 
 p {
