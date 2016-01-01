@@ -240,6 +240,11 @@ span {
   }
   .centerSmall {
     text-align: center;
+    width: 100%;
+  }
+  h1 {
+    font-size: 2em;
+    display:inline-block;
   }
 }
 
