@@ -1,3 +1,6 @@
+#newNav {
+  display:none;
+}
 p {
   font-size: 16px;
 }
@@ -133,5 +136,11 @@ nav {
     text-align: center;
   }
   .contactBar {
+  }
+  nav {
+    display:none;
+  }
+  #newNav {
+    display:inline;
   }
 }
