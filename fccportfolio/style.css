@@ -141,6 +141,6 @@ nav {
     display:none;
   }
   #newNav {
-    display:inline;
+    display:flex;
   }
 }
