@@ -292,3 +292,5 @@ span {
 .yellow {
   background-color: #fae596;
 }
+.welcome-message {
+  display: none;
