@@ -7,7 +7,7 @@ var bio = {
 	},
 	"email" : "ncabelin@gmail.com",
 	"github" : "ncabelin",
-	"picture-URL": "https://github.com/ncabelin/ncabelin.github.io/blob/master/JSONResume/images/me.jpg?raw=true",
+	"picture-URL": "https://github.com/ncabelin/ncabelin.github.io/blob/master/udresume/images/me.jpg?raw=true",
 	"welcome-message": "Welcome to my profile page, feel free to contact me for more info.",
 	"skills": ["HTML", "CSS", "Javascript", "JQuery", "Bootstrap", "Photoshop"],
 	"linkedIn" : "https://www.linkedin.com/in/neptune-michael-cabelin-637600b0"
@@ -57,13 +57,19 @@ var projects = {
 	"project": [{
 		"title": "Interactive Resume",
 		"dates": "12/2015",
-		"description": "Interactive Resume featuring implementation of HTML5,CSS3,JQuery,JSON",
-		"imageS": ["https://cloud.githubusercontent.com/assets/15892944/12048463/4578b5b6-ae90-11e5-94d8-a4282c274241.jpg", "http://placehold.it/150x150"]
+		"description": "Interactive Resume demonstrating implementation of HTML5,CSS3,JQuery,JSON",
+		"imageS": ["https://cloud.githubusercontent.com/assets/15892944/12048463/4578b5b6-ae90-11e5-94d8-a4282c274241.jpg"]
 	}, {
 		"title": "Responsive Design Portfolio",
 		"dates": "12/2015",
 		"description": "Portfolio to showcase ability to implement responsive website design with responsive images",
-		"imageS": ["http://placehold.it/150x150", "http://placehold.it/150x150"]
+		"imageS": ["http://lorempixel/200/200"]
+	}, {
+		"title": "Random Trump Quote Generator",
+		"dates": "01/2016",
+		"description": "Use of Javascript to generate random quote and prepopulate twitter button",
+		"imageS": ["https://cloud.githubusercontent.com/assets/15892944/12087417/88474f06-b287-11e5-8700-7ae03446a028.png"]
+
 	}]
 }
 
