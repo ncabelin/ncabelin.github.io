@@ -21,5 +21,6 @@ $(document).ready(function() {
     $("#randomQuotes").empty();
     var trumpQuoteFinal = trumpQuotes[Math.floor((Math.random() * (trumpQuotes.length)))];
     $("#randomQuotes").append(trumpQuoteFinal);
+    $("a#twit" ).attr( "href", "https://twitter.com/intent/tweet?text=%20"+trumpQuoteFinal );
   });
 });
