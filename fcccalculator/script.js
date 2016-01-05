@@ -118,42 +118,44 @@ $(document).ready(function() {
     displayTo();
   });
   $("#ce").click(function(){
-    secondValue = numCalc;
-    calcMethod = "none";
+    calcString = [];
+    secondValue = 0;
     numCalc = 0;
+    console.log(initialValue + " " + calcMethod + " " + secondValue + " equals " + numCalc);
+    console.log(calcString);
     displayTo();
   });
   $("#plus").click(function(){
     initialValue = numCalc;
-    numCalc = 0;
     calcMethod = "plus";
     calcString = [];
     pointCounter = 0;
     console.log(initialValue + " " + calcMethod + " " + secondValue + " equals " + numCalc);
+    displayTo();
   });
   $("#minus").click(function(){
     initialValue = numCalc;
-    numCalc = 0;
     calcMethod = "minus";
     calcString = [];
     pointCounter = 0;
     console.log(initialValue + " " + calcMethod + " " + secondValue + " equals " + numCalc);
+    displayTo();
   });
   $("#multiply").click(function(){
     initialValue = numCalc;
-    numCalc = 0;
     calcMethod = "multiply";
     calcString = [];
     pointCounter = 0;
     console.log(initialValue + " " + calcMethod + " " + secondValue + " equals " + numCalc);
+    displayTo();
   });
   $("#divide").click(function(){
     initialValue = numCalc;
-    numCalc = 0;
     calcMethod = "divide";
     calcString = [];
     pointCounter = 0;
     console.log(initialValue + " " + calcMethod + " " + secondValue + " equals " + numCalc);
+    displayTo();
   });
   $("#percent").click(function(){
     numCalc = numCalc * 0.01;
