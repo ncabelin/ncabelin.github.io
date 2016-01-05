@@ -3,12 +3,12 @@ font-family: 'Lato', sans-serif;
 font-size: 20px;
 }
 
-.btn {
-  border-radius: 0%;
+h1 {
+  text-align: center;
 }
 
 .whiteBox {
-  background-color:gray;
+  background-color:rgba(130, 128, 128, 0.6);
   border-width: 1px;
   border-color: black;
   width: 50px;
@@ -17,16 +17,16 @@ font-size: 20px;
 }
 
 .whiteBoxTwo {
-  background-color:gray;
+  background-color:rgba(130, 128, 128, 0.6);
   border-width: 1px;
   border-color: black;
-  width: 100px;
+  width: 104px !important;
   height: 50px;
   display:inline-block;
 }
 
 .orangeBox {
-  background-color:orange;
+  background-color:rgba(255, 165, 0, 0.56);
   border-width: 1px;
   border-color: black;
   width: 50px;
@@ -34,14 +34,47 @@ font-size: 20px;
   display:inline-block;
 }
 
+.row1 {
+  display:block;
+}
+
 .blackBox {
   color:white;
   background-color: black;
-  text-align: right;
-  width:200px;
+  text-align: right !important;
+  border-width: 1px;
+  border-color: black;
+  width:212px;
+  height:50px;
+  display:inline-block;
+  margin-left: 0px !important;
 }
 
-.calculator {
-  margin-left:10%;
-  margin-right:10%;
+.btn {
+  border-radius: 0%;
+  margin:3px 0px 0px 0px;
+  text-align:center;
+  font-size:16px;
 }
+
+div.calculator {
+  text-align: center;
+}
+/*
+@media only screen and (min-width: 992px) {
+.calculator {
+    max-width: 200px !important;
+}
+
+.col-md-6, .col-md-3 {
+  width:50px;
+}
+
+
+/*
+.calculator {
+max-width:200px;
+min-width:200px;
+max-height:200px;
+min-height: 200px;
+}*/
