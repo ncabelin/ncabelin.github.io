@@ -1,128 +1,168 @@
-var calculation = [];
-var calcDisplay = [];
-var pointCounter = 0;
-var calcValue = 0;
-var calcMethod = "none";
-var numCalc = 0;
-var calc;
+
+var calcString = []; //array to put digits entered
+var calcJoined = []; //joined calcString array into one string
+var numCalc = 0; //number calculated for display
+var initialValue = 0; //before
+var secondValue = 0; //after
+var calcMethod = "none"; //what action is saved
+var pointCounter = 0; //to avoid someone trying to put two points
+
+function stringToNumber () {
+  calcJoined = calcString.join("");
+  numCalc = Number(calcJoined);
+}
+
+function calculateNumCalc () {
+  if (calcMethod == "plus") {
+  secondValue = numCalc;
+  numCalc = initialValue + secondValue;
+} else if (calcMethod == "minus") {
+  secondValue = numCalc;
+  numCalc = initialValue - secondValue;
+} else if (calcMethod == "divide") {
+  secondValue = numCalc;
+  numCalc = initialValue / secondValue;
+} else if (calcMethod == "multiply") {
+  secondValue = numCalc;
+  numCalc = initialValue * secondValue;
+} else if (calcMethod == "none") {
+
+}
+ console.log(initialValue + " " + calcMethod + " " + secondValue + " equals " + numCalc);
+};
+
 function displayTo() {
-  calcDisplay = calculation;
-  calC = calcDisplay.join("");
-  numCalc = Number(calC);
   $("#answer").empty();
   $("#answer").append(numCalc);
 };
+
 $(document).ready(function() {
   $("#ac").click(function(){
-    calculation = [];
-    pointCounter = 0;
-    calcValue = 0;
-    calcMethod = "none";
+    calcString = []; //array to put digits entered
+    calcJoined = []; //joined calcString array into one string
+    numCalc = 0; //number calculated for display
+    initialValue = 0; //before
+    secondValue = 0; //after
+    calcMethod = "none"; //what action is saved
+    pointCounter = 0; //to avoid someone trying to put two points
+    stringToNumber();
     displayTo();
   });
   $("#zero").click(function(){
-    calculation.push("0");
+    calcString.push("0");
+    stringToNumber();
     displayTo();
+    calculateNumCalc();
   });
   $("#one").click(function(){
-    calculation.push("1");
+    calcString.push("1");
+    stringToNumber();
     displayTo();
+    calculateNumCalc();
   });
   $("#two").click(function(){
-    calculation.push("2");
+    calcString.push("2");
+    stringToNumber();
     displayTo();
+    calculateNumCalc();
   });
   $("#three").click(function(){
-    calculation.push("3");
+    calcString.push("3");
+    stringToNumber();
     displayTo();
+    calculateNumCalc();
   });
   $("#four").click(function(){
-    calculation.push("4");
+    calcString.push("4");
+    stringToNumber();
     displayTo();
+    calculateNumCalc();
   });
   $("#five").click(function(){
-    calculation.push("5");
+    calcString.push("5");
+    stringToNumber();
     displayTo();
+    calculateNumCalc();
   });
   $("#six").click(function(){
-    calculation.push("6");
+    calcString.push("6");
+    stringToNumber();
     displayTo();
+    calculateNumCalc();
   });
   $("#seven").click(function(){
-    calculation.push("7");
+    calcString.push("7");
+    stringToNumber();
     displayTo();
+    calculateNumCalc();
   });
   $("#eight").click(function(){
-    calculation.push("8");
+    calcString.push("8");
+    stringToNumber();
     displayTo();
+    calculateNumCalc();
   });
   $("#nine").click(function(){
-    calculation.push("9");
+    calcString.push("9");
+    stringToNumber();
     displayTo();
+    calculateNumCalc();
   });
   $("#point").click(function(){
-    calculation.push(".");
+    calcString.push(".");
     pointCounter++;
     if (pointCounter > 1) {
-      calculation.pop();
+      calcString.pop();
     }
+    stringToNumber();
     displayTo();
   });
   $("#ce").click(function(){
-    calcValue = numCalc;
+    secondValue = numCalc;
     calcMethod = "none";
     numCalc = 0;
-    $("#answer").empty();
-    $("#answer").append(numCalc);
+    displayTo();
   });
   $("#plus").click(function(){
-    calcValue = numCalc;
+    initialValue = numCalc;
     numCalc = 0;
     calcMethod = "plus";
-    calculation = [];
+    calcString = [];
     pointCounter = 0;
+    console.log(initialValue + " " + calcMethod + " " + secondValue + " equals " + numCalc);
   });
   $("#minus").click(function(){
-    calcValue = numCalc;
+    initialValue = numCalc;
     numCalc = 0;
     calcMethod = "minus";
-    calculation = [];
+    calcString = [];
     pointCounter = 0;
+    console.log(initialValue + " " + calcMethod + " " + secondValue + " equals " + numCalc);
   });
   $("#multiply").click(function(){
-    calcValue = numCalc;
+    initialValue = numCalc;
     numCalc = 0;
     calcMethod = "multiply";
-    calculation = [];
+    calcString = [];
     pointCounter = 0;
+    console.log(initialValue + " " + calcMethod + " " + secondValue + " equals " + numCalc);
   });
   $("#divide").click(function(){
-    calcValue = numCalc;
+    initialValue = numCalc;
     numCalc = 0;
     calcMethod = "divide";
-    calculation = [];
+    calcString = [];
     pointCounter = 0;
+    console.log(initialValue + " " + calcMethod + " " + secondValue + " equals " + numCalc);
   });
   $("#percent").click(function(){
     numCalc = numCalc * 0.01;
-    $("#answer").empty();
-    $("#answer").append(numCalc);
-    calculation = [];
+    displayTo();
+    calcString = [];
+    secondValue = 0;
     pointCounter = 0;
   });
   $("#equals").click(function(){
-    if (calcMethod == "plus") {
-    numCalc = numCalc + calcValue;
-  } else if (calcMethod == "minus") {
-    numCalc = calcValue - numCalc;
-  } else if (calcMethod == "divide") {
-    numCalc = calcValue / numCalc;
-  } else if (calcMethod == "multiply") {
-    numCalc = calcValue * numCalc;
-  }
-    calculation = [];
-    pointCounter = 0;
-    $("#answer").empty();
-    $("#answer").append(numCalc);
+    displayTo();
   });
 });
