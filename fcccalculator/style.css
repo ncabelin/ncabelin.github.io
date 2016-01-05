@@ -1,0 +1,47 @@
+body {
+font-family: 'Lato', sans-serif;
+font-size: 20px;
+}
+
+.btn {
+  border-radius: 0%;
+}
+
+.whiteBox {
+  background-color:gray;
+  border-width: 1px;
+  border-color: black;
+  width: 50px;
+  height: 50px;
+  display:inline-block;
+}
+
+.whiteBoxTwo {
+  background-color:gray;
+  border-width: 1px;
+  border-color: black;
+  width: 100px;
+  height: 50px;
+  display:inline-block;
+}
+
+.orangeBox {
+  background-color:orange;
+  border-width: 1px;
+  border-color: black;
+  width: 50px;
+  height: 50px;
+  display:inline-block;
+}
+
+.blackBox {
+  color:white;
+  background-color: black;
+  text-align: right;
+  width:200px;
+}
+
+.calculator {
+  margin-left:10%;
+  margin-right:10%;
+}
