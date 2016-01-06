@@ -78,3 +78,13 @@ div.calculator {
   padding-left:350px;
   padding-right:350px;
 }
+
+@media screen and (max-width:990px) {
+  .container {
+  padding-left:40px;
+  padding-right:40px;
+  }
+  .headerTitle1, .headerTitle2 {
+  display:block;
+  }
+}
