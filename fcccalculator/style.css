@@ -80,12 +80,15 @@ div.calculator {
   padding-right:350px;
 }
 
-@media screen and (max-width:990px) {
+@media screen and (max-width:587px) {
   .container {
   padding-left:0px;
   padding-right:0px;
   }
   .headerTitle1, .headerTitle2 {
   display:block;
+  }
+  .noShow {
+  display:none;
   }
 }
