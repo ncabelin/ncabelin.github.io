@@ -1,31 +1,45 @@
 body {
- font-family: 'Lato', sans-serif;
+ font-family: 'Open Sans', sans-serif;
+ font-size: 16px;
 }
-#bg {
-  position: fixed; 
-  top: -50%; 
-  left: -50%; 
-  width: 200%; 
-  height: 200%;
+
+.about {
+  background-color: #98dafc;
+  padding:10px 10px 10px 10px;
 }
-#bg img {
-  position: absolute; 
-  top: 0; 
-  left: 0; 
-  right: 0; 
-  bottom: 0; 
-  margin: auto; 
-  min-width: 50%;
-  min-height: 50%;
+
+.nav {
+  background-color: #daad86;
 }
-.headStyle {
-	font-family: 'Playfair Display', serif;
+
+.logo {
+  color:#173e43;
 }
-.imageSize {
-	max-width:100px;
-	padding:10px;
+
+.intro-header {
+    text-align: center;
+    background: url('https://cloud.githubusercontent.com/assets/15892944/11610940/0a35679a-9b69-11e5-9d6b-1f93f7315956.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 400px;
+    padding-top:30px;
 }
-/* Large desktops and laptops */
+
+.text-logo {
+  font-family: 'Lato', sans-serif;
+  text-align: left;
+  padding-left:50px;
+}
+
+.text-logo2 {
+  font-family: 'Lato', sans-serif;
+  text-align: right;
+  padding-right:50px;
+}
+
+.main {
+  backround-color:#98dafc;
+}
+
 @media (min-width: 1200px) {
 	.image50 {
 		width:70%;
@@ -39,50 +53,42 @@ body {
 	}
 }
 
-/* Landscape tablets and medium desktops */
+/*Landscape tablets and medium desktops*/
 @media (min-width: 992px) and (max-width: 1199px) {
 
 }
 
-/* Portrait tablets and small desktops */
+/*Portrait tablets and small desktops*/
 @media (min-width: 768px) and (max-width: 991px) {
 
 }
 
-/* Landscape phones and portrait tablets */
+/*Landscape phones and portrait tablets*/
 @media (max-width: 767px) {
-	.image50 {
-		width:50%;
-		height:50%;
-	}
-	.text50 {
-	}
-	.headCenter {
+	.text-logo {
+    padding-left:0px;
 		text-align:center;
 	}
-	.imageSize {
-		display: block;
-  		margin-left: auto;
-  		margin-right: auto;
-	}
+  .text-logo2 {
+    font-size: 20px;
+    padding-right:0px;
+  }
+  #aboutMe {
+    text-align: center;
+  }
 }
 
-/* Portrait phones and smaller */
+/*Portrait phones and smaller */
 @media (max-width: 480px) {
-	.image50 {
-		width:50%;
-		height:50%;
-	}
-	.text50 {
-	}
-	.headCenter {
+	.text-logo {
+    padding-left:0px;
 		text-align:center;
 	}
-	.imageSize {
-		display: block;
-  		margin-left: auto;
-  		margin-right: auto;
-	}
+  .text-logo2 {
+    font-size: 20px;
+    padding-right:0px;
+  }
+  #aboutMe {
+    text-align: center;
+  }
 }
-
-
