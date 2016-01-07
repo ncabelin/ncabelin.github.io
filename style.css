@@ -4,12 +4,25 @@ body {
 }
 
 .about {
-  background-color: #98dafc;
+  color:white;
+  background-color: #173e43;
   padding:10px 10px 10px 10px;
+  text-align: center;
 }
 
 .nav {
-  background-color: #daad86;
+  background-color: #417EB5;
+  text-align: center;
+}
+
+.navOptions a {
+  color:#dddfd4;
+  padding-left:10px;
+  padding-right10px;
+}
+
+.navOptions a:hover {
+  color:#fae596;
 }
 
 .logo {
@@ -28,6 +41,11 @@ body {
   font-family: 'Lato', sans-serif;
   text-align: left;
   padding-left:50px;
+}
+
+h1 {
+  transition-timing-function: ease-in;
+  transition: width 1s;
 }
 
 .text-logo2 {
@@ -73,7 +91,7 @@ body {
     font-size: 20px;
     padding-right:0px;
   }
-  #aboutMe {
+  #home {
     text-align: center;
   }
 }
@@ -88,7 +106,7 @@ body {
     font-size: 20px;
     padding-right:0px;
   }
-  #aboutMe {
+  #home {
     text-align: center;
   }
 }

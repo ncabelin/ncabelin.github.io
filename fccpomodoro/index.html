@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pomodoro Clock</title>
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+  <p>A script on this page starts this clock:</p>
+
+  <p id="demo">25</p>
+  <button onclick="setTimeout()">Start time</button>
+  <button onclick="clearInterval(timer)">Stop time</button>
+
+  <script>
+      var timer = setInterval(myTimer, 1000)
+      var initialValue = 25;
+      function myTimer() {
+        initialValue -= 1;
+        document.getElementById("demo").innerHTML = initialValue;
+      };
+  </script>
+</body>
+</html>
