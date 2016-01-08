@@ -147,6 +147,12 @@ button {
 
 /*Portrait phones and smaller */
 @media (max-width: 480px) {
+  .intro-header {
+      text-align: center;
+      background: url('https://cloud.githubusercontent.com/assets/15892944/11610940/0a35679a-9b69-11e5-9d6b-1f93f7315956.jpg') no-repeat center center fixed;
+      background-size: contain;
+      padding-top:30px;
+  }
 	.text-logo {
     padding-left:0px;
 		text-align:center;
