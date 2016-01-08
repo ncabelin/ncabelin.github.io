@@ -1,11 +1,13 @@
 body {
  font-family: 'Open Sans', sans-serif;
  font-size: 16px;
+ background-color: #4E3327;
+ color:#dddfd4;
 }
 
 .about {
   color:white;
-  background-color: #173e43;
+  background-color: #205234;
   padding:10px 10px 10px 10px;
   text-align: center;
 }
@@ -15,14 +17,31 @@ body {
   text-align: center;
 }
 
+.navOptions {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
 .navOptions a {
   color:#dddfd4;
   padding-left:10px;
-  padding-right10px;
+  padding-right:10px;
+  padding-top:10px;
+  padding-bottom:10px;
 }
 
 .navOptions a:hover {
   color:#fae596;
+}
+
+.mobilePic {
+  width: 470px;
+  height: 300px;
+  z-index:-1;
+}
+
+.mobileHeaderView {
+  display:none;
 }
 
 .logo {
@@ -41,11 +60,13 @@ body {
   font-family: 'Lato', sans-serif;
   text-align: left;
   padding-left:50px;
+  color:black;
 }
 
-h1 {
+h1, h4 {
   transition-timing-function: ease-in;
   transition: width 1s;
+  color: black !important;
 }
 
 .text-logo2 {
@@ -56,6 +77,18 @@ h1 {
 
 .main {
   backround-color:#98dafc;
+}
+
+.blueBackground {
+  backround-color:#98dafc !important;
+}
+
+.contactMe {
+  background-color: #205234;
+}
+
+.projects div {
+  padding:50px;
 }
 
 @media (min-width: 1200px) {
@@ -108,5 +141,21 @@ h1 {
   }
   #home {
     text-align: center;
+  }
+  .intro-header {
+      display:none;
+  }
+  .heading2 {
+    text-align: center;
+    font-size: 30px;
+  }
+  .mobileHeaderView {
+    display:inline-block;
+    background-color: #417EB5;
+    padding-top: 20px;
+    text-align: center;
+  }
+  .mobilePic {
+    z-index:-1;
   }
 }

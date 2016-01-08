@@ -12,47 +12,60 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container-fluid">
-    <div class="row" id="home"><!--Center picture-->
+  <div class="container-fluid"><!-- Mobile phone viewport header -->
+    <div class="row mobileHeaderView">
+      <h2>{ <strong><span class="logo logoMobile">N M C</span></strong> }<h2>
+      <h5>Neptune Michael Cabelin</h5>
+      <img src="https://cloud.githubusercontent.com/assets/15892944/11610940/0a35679a-9b69-11e5-9d6b-1f93f7315956.jpg" class="mobilePic">
+    </div>
+    <div class="row" id="home"><!-- Navigation bar -->
       <div class="col-md-12 navOptions nav navbar-fixed-top">
         <a href="#home">Home</a>
         <a href="#projects">Projects</a>
         <a href="#about">About</a>
-        <a href="#about">Contact</a>
+        <a href="#contact">Contact</a>
       </div>
     </div>
-    <div class="row intro-header"><!--header-->
+    <div class="row intro-header"><!-- Initial Header -->
       <div class="col-md-6 text-logo">
         <h1>{ <strong><span class="logo">N M C</span></strong> }<h1>
       </div>
       <div class="col-md-6 text-logo2">
-        <h2 class="text-center">Neptune Michael Cabelin</h1>
+        <h1 class="text-center">Neptune Michael Cabelin</h1>
         <h4 class="text-center">Web Developer</h4>
       </div>
     </div>
-    <div class="row about"><!--line-->
+    <div class="row about"><!--Welcome message-->
       <p>I'm a full-stack web developer, musician and photographer.</p>
       <p>Together these skills shape up a unique multimedia design capability.</p>
       <p>Contact me for the ultimate web experience.</p>
     </div>
-    <div class="row"><!--Description-->
-      <div class="col-md-12">
-        <h3>Featured Work</h3>
+    <div id="projects">
+    <div class="row"><!--Projects-->
+      <div class="col-md-12 heading2">
+        <h3 class="blueBackground">Featured Work</h3>
       </div>
     </div>
-    <div class="row text-center" id="projects"><!--Pictures & Apps-->
+    <div class="row text-center projects"><!--Pictures & Apps-->
       <div class="col-md-4">
-        <a href="#"><img src="https://cloud.githubusercontent.com/assets/15892944/11610906/7321714c-9b67-11e5-81b4-488f3769ad96.gif" class="img-responsive image50 center-block"></a>
-        <h4>MUSIC</h4>
+        <a href="http://ncabelin.github.io/fcccalculator"><img src="https://cloud.githubusercontent.com/assets/15892944/12183059/4726f514-b541-11e5-9e4a-cbdf871f0200.png" class="img-responsive image50 center-block"></a>
+        <p>JAVASCRIPT CALCULATOR</p>
+        <p>Demonstrates javascript & jquery, algorithm knowledge</p>
       </div>
       <div class="col-md-4">
-        <a href="#"><img src="https://cloud.githubusercontent.com/assets/15892944/11625647/5ea54038-9c91-11e5-9ccd-1723bed5f5c3.gif" class="img-responsive image50 center-block"></a>
-        <h4>PHOTOGRAPHY</h4>
+        <a href="http://ncabelin.github.io/fccrandomquote"><img src="https://cloud.githubusercontent.com/assets/15892944/12183148/e5fc0c7e-b541-11e5-9de9-6239fdc7a6c3.png" class="img-responsive image50 center-block"></a>
+        <p>RANDOM QUOTES GENERATOR</p>
+        <p>Demonstrates twitter button integration, javascript, jquery</p>
       </div>
       <div class="col-md-4">
-        <a href="#"><img src="https://cloud.githubusercontent.com/assets/15892944/11625646/5ea48792-9c91-11e5-9c97-25a75e311dd0.gif" class="img-responsive image50 center-block"></a>
-        <h4>PROGRAMMING</h4>
+        <a href="#"><img src="https://cloud.githubusercontent.com/assets/15892944/12183603/a7fa4280-b544-11e5-8330-5a7946354f18.png" class="img-responsive image50 center-block"></a>
+        <p>STUDIO PORTFOLIO</p>
       </div>
+    </div>
+    </div>
+    <div class="row contactMe" id="contact">
+      <button class=""><a href="mailto:ncabelin@gmail.com">Mail</a></button>
+      <p>Copyright © N.M.Cabelin</p>
     </div>
   </div>
 </body>
