@@ -29,7 +29,10 @@ button {
   color:white;
   font-size:18px;
   border-radius:25%;
-  padding:20px;
+  padding:5px;
+  margin:5px;
+  height:60px;
+  width:60px;
 }
 
 button:hover {
@@ -38,4 +41,11 @@ button:hover {
 
 #timeNow, #status {
   font-size:30px;
+}
+
+#plusSession, #minusSession, #plusBreak, #minusBreak, {
+  font-size:30px;
+  text-align: center;
+  vertical-align: middle;
+  display:inline-block;
 }

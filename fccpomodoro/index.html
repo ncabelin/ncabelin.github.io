@@ -6,12 +6,13 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 </head>
 <body>
   <h1>Pomodoro Timer</h1>
 <p>Session time:<span id="sessionLength"></span></p>
 <p>Break length :<span id="breakLength"></span></p>
-<button id="plusBreak"> + </button>
+<button id="plusBreak">+</button>
 <button id="minusBreak"> - </button>
 <p id="status">SESSION</p>
 <p id="timeNow"></p>
@@ -19,7 +20,7 @@
 <button id="minusSession"> - </button>
 <button onclick="startTimeButton()">Start</button>
 <button onclick="stopTimeButton()">Stop</button>
-<button id="clearTime">Clear time</button>
+<button id="clearTime">Clear</button>
 <script>
 var myVar, timeMinutes, timeSeconds, breakTime, sessionBreak, sessionTime, pushedOnce;
   var initialTime = 1500;
