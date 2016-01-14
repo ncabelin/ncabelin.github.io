@@ -1,3 +1,41 @@
 html {
   font-family: 'Lato', sans-serif;
+  color: white !important;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Lobster', cursive;
+  color:#C2C88D;
+  font-size:60px;
+}
+
+p {
+  font-size: 20px;
+}
+
+body {
+  background:
+linear-gradient(
+  rgba(0, 0, 0, 0.65),
+  rgba(0, 0, 0, 0.65)
+ ),    url("https://cloud.githubusercontent.com/assets/15892944/12220725/a96e0342-b731-11e5-8143-97449de8aa5c.jpg")
+  no-repeat;
+  background-size: cover;
+}
+
+button {
+  background-color:#F94C2D;
+  color:white;
+  font-size:18px;
+  border-radius:25%;
+  padding:20px;
+}
+
+button:hover {
+  background-color:#D00A04;
+}
+
+#timeNow, #status {
+  font-size:30px;
 }
