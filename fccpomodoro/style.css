@@ -49,3 +49,15 @@ button:hover {
   vertical-align: middle;
   display:inline-block;
 }
+
+@media screen and (max-width:480px) {
+  #clearTime {
+    display:none;
+  }
+  h1 {
+    margin:0px;
+  }
+  p {
+    margin:5px;
+  }
+}
