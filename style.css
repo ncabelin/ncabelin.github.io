@@ -1,7 +1,7 @@
 body {
  font-family: 'Lato', sans-serif;
  font-size: 16px;
- color:white;
+ color:black;
  margin:0px;
  padding:0px;
 }
@@ -15,8 +15,8 @@ body {
 }
 
 .about {
-  color:white;
-  background-color: #272D21;
+  color:white !important;
+  background-color: #5A674B;
   padding:10px 10px 10px 10px;
   text-align: center;
 }
@@ -111,13 +111,22 @@ button {
 .site-wrap {
   background:
   linear-gradient(
-  rgba(0, 0, 0, 0.45),
-  rgba(0, 0, 0, 0.45)
+  rgba(255, 255, 255, 0.1),
+  rgba(255, 255, 255, 0.1)
  ),
        url("https://cloud.githubusercontent.com/assets/15892944/12182893/fe49b1a2-b53f-11e5-88e9-4df1f0c918ad.jpg") no-repeat fixed;
   background-size: cover;
   margin:0px;
   width:100%;
+}
+
+.title {
+  background-color: white;
+}
+
+#featured {
+  font-size:40px;
+  color:white;
 }
 
 /*Landscape tablets and medium desktops*/
@@ -150,7 +159,7 @@ button {
   .intro-header {
       text-align: center;
       background: url('https://cloud.githubusercontent.com/assets/15892944/11610940/0a35679a-9b69-11e5-9d6b-1f93f7315956.jpg') no-repeat center center fixed;
-      background-size: cover;
+      background-size:auto;
       height: 250px;
       padding-top:30px;
   }
@@ -169,4 +178,17 @@ button {
     text-align: center;
     font-size: 30px;
   }
+  .nav {
+    position:relative;
+    transform: translate (0, 0);
+  }
+  body {
+    display:flex;
+    flex-flow:row nowrap;
+  }
+  main {
+    width:auto;
+    flex-grow:1;
+  }
+
 }
