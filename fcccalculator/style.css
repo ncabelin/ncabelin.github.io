@@ -54,6 +54,7 @@ h1 {
   height:50px;
   display:inline-block;
   margin-left: 0px !important;
+  font-size:30px;
 }
 
 .btn {
@@ -88,6 +89,41 @@ div.calculator {
 .container {
   padding-left:350px;
   padding-right:350px;
+}
+
+ul {
+  text-align: center !important;
+}
+
+li {
+  display:inline;
+  list-style:none;
+  margin-right:10px;
+  color:black;
+  background-color:#dddfd4;
+  padding:5px;
+  border-width:1px;
+  border-color:black;
+  border:1px;
+  border-style: solid;
+}
+
+a {
+    text-decoration:none;
+    color:black;
+    text-align: center;
+}
+
+li :hover {
+  color: blue;
+}
+
+li: active {
+  color: #dddfd4;
+}
+
+.copyRight {
+  text-align: center;
 }
 
 @media screen and (max-width:587px) {
