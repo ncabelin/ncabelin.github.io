@@ -1,11 +1,14 @@
+var calcString, calcJoined, numCalc, initialValue, secondValue, calcMethod, pointCounter;
 
-var calcString = []; //array to put digits entered
-var calcJoined = []; //joined calcString array into one string
-var numCalc = 0; //number calculated for display
-var initialValue = 0; //before
-var secondValue = 0; //after
-var calcMethod = "none"; //what action is saved
-var pointCounter = 0; //to avoid someone trying to put two points
+function startScratch () {
+calcString = []; //array to put digits entered
+calcJoined = []; //joined calcString array into one string
+numCalc = 0; //number calculated for display
+initialValue = 0; //before
+secondValue = 0; //after
+calcMethod = "none"; //what action is saved
+pointCounter = 0; //to avoid someone trying to put two points
+}
 
 function stringToNumber () {
   calcJoined = calcString.join("");
@@ -29,22 +32,23 @@ function calculateNumCalc () {
 
 }
  console.log(initialValue + " " + calcMethod + " " + secondValue + " equals " + numCalc);
+ if (numCalc === Infinity) {
+   numCalc = 0;
+ }
 };
 
 function displayTo() {
-  $("#answer").empty();
-  $("#answer").append(numCalc);
+    var x = numCalc;
+    var parts = x.toString().split(".");
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    var stringCalc = parts.join(".");
+  $("#answer").html(stringCalc);
 };
 
 $(document).ready(function() {
+  startScratch();
   $("#ac").click(function(){
-    calcString = []; //array to put digits entered
-    calcJoined = []; //joined calcString array into one string
-    numCalc = 0; //number calculated for display
-    initialValue = 0; //before
-    secondValue = 0; //after
-    calcMethod = "none"; //what action is saved
-    pointCounter = 0; //to avoid someone trying to put two points
+    startScratch();
     stringToNumber();
     displayTo();
   });

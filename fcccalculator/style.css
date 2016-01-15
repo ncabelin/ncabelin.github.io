@@ -63,6 +63,16 @@ h1 {
   font-size:16px;
 }
 
+.btn:hover {
+  background-color:black;
+  color:white;
+}
+
+.btn:active {
+  background-color:#fae596;
+  color:black;
+}
+
 div.calculator {
   border-color: black;
   border-width: 1px;
