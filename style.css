@@ -158,10 +158,25 @@ button {
 @media (max-width: 480px) {
   .intro-header {
       text-align: center;
-      background: url('https://cloud.githubusercontent.com/assets/15892944/11610940/0a35679a-9b69-11e5-9d6b-1f93f7315956.jpg') no-repeat center center fixed;
+      background:
+      linear-gradient(
+      rgba(109, 171, 219, 0.9),
+      rgba(109, 171, 219, 0.9)
+     ),url('') no-repeat center center fixed;
       background-size:cover;
       height: 100%;
       padding-top:30px;
+  }
+  .site-wrap {
+    background:
+    linear-gradient(
+    rgba(109, 171, 219, 0.5),
+    rgba(109, 171, 219, 0.5)
+   ),
+         url("https://cloud.githubusercontent.com/assets/15892944/12182893/fe49b1a2-b53f-11e5-88e9-4df1f0c918ad.jpg") no-repeat fixed;
+    background-size: cover;
+    margin:0px;
+    width:100%;
   }
 	.text-logo {
     padding-left:0px;
