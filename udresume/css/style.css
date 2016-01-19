@@ -122,12 +122,13 @@ h5 {
 }
 
 p {
-  font-size: 16px;
+  font-size: 18px;
   color: #333;
   line-height: 21px;
 }
 
 a {
+  font-size: 20px;
   color: #073240;
   text-decoration: none;
   margin-top: 10px;

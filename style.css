@@ -16,9 +16,10 @@ body {
 
 .about {
   color:white !important;
-  background-color: #5A674B;
+  background-color: #262F1C;
   padding:10px 10px 10px 10px;
   text-align: center;
+  font-size:18px;
 }
 
 .mobileHeaderView {
@@ -85,10 +86,12 @@ h1, h4 {
 button:hover {
   background-color:#272D21;
   color:white;
+
 }
 
 button {
   color: black;
+  font-size: 18px;
 }
 
 .contactMe button a:hover {
@@ -110,11 +113,7 @@ button {
 
 .site-wrap {
   background:
-  linear-gradient(
-  rgba(255, 255, 255, 0.1),
-  rgba(255, 255, 255, 0.1)
- ),
-       url("https://cloud.githubusercontent.com/assets/15892944/12182893/fe49b1a2-b53f-11e5-88e9-4df1f0c918ad.jpg") no-repeat fixed;
+       url("https://cloud.githubusercontent.com/assets/15892944/12414556/13560bae-be4b-11e5-8ec6-98089a9aba95.jpg") no-repeat fixed;
   background-size: cover;
   margin:0px;
   width:100%;
@@ -126,7 +125,7 @@ button {
 
 #featured {
   font-size:40px;
-  color:white;
+  color:black;
 }
 
 /*Landscape tablets and medium desktops*/
@@ -167,17 +166,7 @@ button {
       height: 100%;
       padding-top:30px;
   }
-  .site-wrap {
-    background:
-    linear-gradient(
-    rgba(109, 171, 219, 0.5),
-    rgba(109, 171, 219, 0.5)
-   ),
-         url("https://cloud.githubusercontent.com/assets/15892944/12182893/fe49b1a2-b53f-11e5-88e9-4df1f0c918ad.jpg") no-repeat fixed;
-    background-size: cover;
-    margin:0px;
-    width:100%;
-  }
+  
 	.text-logo {
     padding-left:0px;
 		text-align:center;
