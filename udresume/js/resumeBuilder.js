@@ -2,14 +2,13 @@ var bio = {
 	"name": "Neptune Michael Cabelin",
 	"role": "Software Engineer",
 	"contact-info": {
-		"phone": "661-513-7773",
-		"location": "Palmdale, CA"
+		"location": "Los Angeles, CA"
 	},
-	"email" : "ncabelin@gmail.com",
+	"email" : "ncabelin@yahoo.com",
 	"github" : "ncabelin",
 	"picture-URL": "https://github.com/ncabelin/ncabelin.github.io/blob/master/udresume/images/me.jpg?raw=true",
 	"welcome-message": "Welcome to my profile page, feel free to contact me for more info.",
-	"skills": ["HTML", "CSS", "Javascript", "JQuery", "Bootstrap", "Photoshop"],
+	"skills": ["HTML", "CSS", "Javascript", "jQuery", "Bootstrap", "Photoshop", "Python", "PHP", "MEAN Stack", "ASP.NET"],
 	"linkedIn" : "https://www.linkedin.com/in/neptune-michael-cabelin-637600b0"
 };
 
