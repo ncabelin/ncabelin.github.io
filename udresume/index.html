@@ -69,8 +69,6 @@
     var formattedBioPic = HTMLbioPic.replace("%data%", bio["picture-URL"]);
     $("#header").append(formattedBioPic);
     var formattedMobile, formattedEmail, formattedTwitter, formattedGithub, formattedLocation;
-    formattedMobile = HTMLmobile.replace("%data%", bio["contact-info"]["phone"]);
-    $("#topContacts").append(formattedMobile);
     formattedEmail = HTMLemail.replace("%data%", bio["email"]);
     $("#topContacts").append(formattedEmail);
     formattedGithub = HTMLgithub.replace("%data%", bio.github);

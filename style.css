@@ -105,6 +105,14 @@ button {
 #contact {
   display:none;
 }
+.btn-default {
+  background-color:#CDE8F3 !important;
+}
+
+.btn-default:hover {
+  background-color: #598CAD !important;
+  color:white !important;
+}
 
 @media (min-width: 1200px) {
 	.image50 {

@@ -25,20 +25,21 @@
       </div>
     </div>
     <div class="row about"><!--Welcome message-->
-      <p>I am a software developer passionate about coding and creating audio / visual experiences</p>
+      <p>I am passionate about coding and creating the ultimate audio-visual experience.</p>
+      <p>Let me find you solutions through my skills. <i class="fa fa-smile-o"></i></p>
       <div class="btn-group btn-group-justified" role="group" aria-label="...">
   <div class="btn-group" role="group">
-    <a href="mailto:ncabelin@gmail.com"><button type="button" class="btn btn-default">PORTFOLIO</button></a>
+    <a href="#projects"><button type="button" class="btn btn-default" id="portfolioButton">myProjects</button></a>
   </div>
   <div class="btn-group" role="group">
-    <a href="https://twitter.com/nileback21"><button type="button" class="btn btn-default">RESUME</button></a>
+    <a href="http://ncabelin.github.io/udresume" target="_blank"><button type="button" class="btn btn-default">myResume</button></a>
   </div>
   <div class="btn-group" role="group">
-    <a href="https://www.linkedin.com/in/neptune-michael-cabelin-637600b0"><button type="button" class="btn btn-default">CONTACT</button></a>
+    <a href="#contact"><button type="button" class="btn btn-default" id="contactButton">contactMe</button></a>
   </div>
 </div>
     </div>
-    <div id="projects">
+    <div id="projects" class="hideFirst">
     <div class="row text-center projects"><!--Pictures & Apps-->
       <div class="col-md-4">
         <a href="http://ncabelin.github.io/fcccalculator"><img src="https://cloud.githubusercontent.com/assets/15892944/12183059/4726f514-b541-11e5-9e4a-cbdf871f0200.png" class="img-responsive center-block"></a>
@@ -68,7 +69,7 @@
       </div>
     </div>
     </div>
-    <div class="row contactMe" id="contact">
+    <div class="row contactMe hideFirstContacts" id="contact">
       <div class="btn-group btn-group-justified" role="group" aria-label="...">
   <div class="btn-group" role="group">
     <a href="mailto:ncabelin@gmail.com"><button type="button" class="btn btn-default fa fa-envelope"> E-mail</button></a>
@@ -86,5 +87,19 @@
     </div>
   </main>
   </div>
+<script>
+$(document).ready(function () {
+  $('#portfolios').click( function () {
+    $('#projects div').css('display', 'block');
+  });
+
+});
+$(document).ready(function(){
+$("#portfolioButton").click(function(){
+  $(".hideFirst").toggle("slow");});
+$("#contactButton").click(function(){
+  $(".hideFirstContacts").toggle("slow")});
+});
+</script>
 </body>
 </html>
