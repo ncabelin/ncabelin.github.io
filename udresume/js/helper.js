@@ -1,5 +1,5 @@
 var HTMLheaderName = '<h1 class="spacing head flex-item">%data%</h1>';
-var HTMLheaderRole = '<p class="white-text">%data%</p><hr>';
+var HTMLheaderRole = '<p class="white-text centerSmall">%data%</p><hr>';
 
 var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
 var HTMLmobile = '<li class="flex-item"><span class="orange-text">mobile : </span><span class="white-text">%data%</span></li>';
