@@ -12,6 +12,7 @@ h6 {
   padding:0;
   margin:0;
   font-family: 'Lato', sans-serif;
+
 }
 
 .thinLine {
@@ -23,9 +24,9 @@ h6 {
 }
 
 .buttonDetails {
-  margin : 0 5%;
-  /* box-sizing:content-box; */
+  margin : 10px;;
   background-color: white;
+  text-align: center !important;
 }
 
 .hideFirst {
@@ -41,7 +42,7 @@ h6 {
 }
 
 .spacing {
-  text-align:right;
+  text-align:left;
 }
 
 .clear-fix {
@@ -53,6 +54,7 @@ h6 {
 .project-entry {
   padding: 0 5%;
   background-color: white;
+  text-align: center;
 }
 
 .projectImage {
@@ -62,7 +64,7 @@ h6 {
 h1 {
   font-size: 40px;
   font-weight: bold;
-  color: #fae596;
+  color: #F9E497;
   line-height: 48px;
   display: inline;
 }
@@ -70,10 +72,11 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: black;
+  color: #E3D492;
   line-height: 29px;
   padding: 10px;
-  background-color: #3fb0ac;
+  background-color: #205F94;
+  text-align: center;
 }
 
 h3 {
@@ -104,7 +107,6 @@ h5 {
   font-size: 14px;
   color: #999;
   line-height: 16px;
-  float: left;
 }
 
 .location-text {
@@ -112,7 +114,6 @@ h5 {
   font-size: 14px;
   color: #999;
   line-height: 16px;
-  float: right;
 
 }
 
@@ -124,7 +125,7 @@ h5 {
 p {
   font-size: 18px;
   color: #333;
-  line-height: 21px;
+  /* line-height: 21px; */
 }
 
 a {
@@ -172,7 +173,14 @@ a {
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #173e43;
+  background-color: #262F1C;
+  background :
+  linear-gradient(
+  rgba(0, 0, 0, 0.2),
+  rgba(0, 0, 0, 0.2)
+  ),
+  url('https://cloud.githubusercontent.com/assets/15892944/12414556/13560bae-be4b-11e5-8ec6-98089a9aba95.jpg') no-repeat center center fixed;
+  background-size: cover;
 }
 
 .flex-box {
@@ -193,7 +201,7 @@ ul {
 }
 
 .biopic {
-  float: right;
+  float: left;
   padding: 10px;
   width: 200px;
   border-radius: 50%;
@@ -291,7 +299,7 @@ span {
 }
 
 .yellow {
-  background-color: #fae596;
+  background-color: #205F94;
 }
 .welcome-message {
   display: none;

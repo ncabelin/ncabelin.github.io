@@ -6,7 +6,7 @@ var bio = {
 	},
 	"email" : "ncabelin@yahoo.com",
 	"github" : "ncabelin",
-	"picture-URL": "https://github.com/ncabelin/ncabelin.github.io/blob/master/udresume/images/me.jpg?raw=true",
+	"picture-URL": "https://cloud.githubusercontent.com/assets/15892944/12449678/c6f3dec8-bf33-11e5-903f-f21e2258b5d6.JPG",
 	"welcome-message": "Welcome to my profile page, feel free to contact me for more info.",
 	"skills": ["HTML", "CSS", "Javascript", "jQuery", "Bootstrap", "Photoshop", "Python", "PHP", "MEAN Stack", "ASP.NET"],
 	"linkedIn" : "https://www.linkedin.com/in/neptune-michael-cabelin-637600b0"

@@ -23,7 +23,7 @@ var HTMLworkEmployer = '<p class="hideFirst blue-text"> %data%</p></a>';
 var HTMLworkTitle = '<a href="#"><span>%data%</span>';
 var HTMLworkDates = '<div class="date-text hideFirst">%data%</div>';
 var HTMLworkLocation = '<div class="location-text hideFirst">%data%</div>';
-var HTMLworkDescription = '<p class="hideFirst"><br>%data%</p>';
+var HTMLworkDescription = '<p class="hideFirst">%data%<br><br></p>';
 
 var HTMLprojectStart = '<div class="project-entry"></div>';
 var HTMLprojectTitle = '<a href="#">%data%</a>';
