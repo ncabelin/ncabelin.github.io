@@ -104,6 +104,8 @@ button {
 
 #contact {
   display:none;
+  width:80%;
+  float:right;
 }
 .btn-default {
   background-color:#CDE8F3 !important;
