@@ -179,8 +179,8 @@ a {
   background-color: #262F1C;
   background :
   linear-gradient(
-  rgba(0, 0, 0, 0.2),
-  rgba(0, 0, 0, 0.2)
+  rgba(0, 0, 0, 0.3),
+  rgba(0, 0, 0, 0.3)
   ),
   url('https://cloud.githubusercontent.com/assets/15892944/12414556/13560bae-be4b-11e5-8ec6-98089a9aba95.jpg') no-repeat center center fixed;
   background-size: cover;
@@ -288,6 +288,9 @@ span {
   }
   #mapDiv {
     margin-bottom: 20%;
+  }
+  .welcome-message {
+    display: none;
   }
 }
 
