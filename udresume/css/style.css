@@ -179,10 +179,10 @@ a {
   background-color: #262F1C;
   background :
   linear-gradient(
-  rgba(0, 0, 0, 0.3),
-  rgba(0, 0, 0, 0.3)
+  rgba(0, 0, 0, 0.2),
+  rgba(0, 0, 0, 0.2)
   ),
-  url('https://cloud.githubusercontent.com/assets/15892944/12414556/13560bae-be4b-11e5-8ec6-98089a9aba95.jpg') no-repeat center center fixed;
+  url('https://cloud.githubusercontent.com/assets/15892944/12491071/d02888e0-c02d-11e5-876c-31bb52a11686.jpg') no-repeat center center fixed;
   background-size: cover;
 }
 

@@ -46,7 +46,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#005423', end
 
 h3 {
   font-family: 'Lato', sans-serif;
-  color:black;
+  color:#F9E497;
+  font-weight:100;
 }
 
 .text-logo {
