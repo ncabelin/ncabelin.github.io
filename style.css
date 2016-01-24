@@ -23,6 +23,10 @@ a {
   text-shadow: 2px 2px gray;
 }
 
+a:hover {
+  text-shadow:none;
+}
+
 hr {
   padding:0px;
   margin:0px;
@@ -115,7 +119,13 @@ button {
 }
 
 #projects {
-  display:none;
+    display:none;
+}
+
+div.hideFirst {
+  background:
+       url("https://cloud.githubusercontent.com/assets/15892944/12491071/d02888e0-c02d-11e5-876c-31bb52a11686.jpg") no-repeat center center fixed;
+  background-size: cover;
 }
 
 #contact {
@@ -151,7 +161,12 @@ button {
 }
 
 .title {
-  background-color: white;
+  margin-top:10px;
+  text-shadow: 1px 1px gray;
+}
+
+img {
+  border-radius: 5%;
 }
 
 #featured {
@@ -161,4 +176,47 @@ button {
 
 #footer {
   height:300px;
+}
+
+/*Portrait phones and smaller */
+@media (max-width: 480px) {
+  .intro-header {
+      text-align: center;
+      height: 100%;
+      padding-top:30px;
+  }
+
+  li {
+    display:block;
+    margin-bottom:10px;
+  }
+
+	.text-logo {
+    padding-left:0px;
+		text-align:center;
+	}
+  .text-logo2 {
+    font-size: 20px;
+    padding-right:0px;
+  }
+  #home {
+    text-align: center;
+  }
+  .heading2 {
+    text-align: center;
+    font-size: 30px;
+  }
+  .nav {
+    position:relative;
+    transform: translate (0, 0);
+  }
+  body {
+    display:flex;
+    flex-flow:row nowrap;
+  }
+  main {
+    width:auto;
+    flex-grow:1;
+  }
+
 }
