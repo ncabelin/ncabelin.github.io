@@ -181,7 +181,6 @@ img {
 /*Portrait phones and smaller */
 @media (max-width: 480px) {
   .intro-header {
-      padding-top:10px;
       text-align: center;
       height: 80%;
       padding-top:10px;
