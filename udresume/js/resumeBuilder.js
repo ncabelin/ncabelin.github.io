@@ -8,7 +8,7 @@ var bio = {
 	"github" : "ncabelin",
 	"picture-URL": "https://cloud.githubusercontent.com/assets/15892944/12449678/c6f3dec8-bf33-11e5-903f-f21e2258b5d6.JPG",
 	"welcome-message": "I'm a web developer passionate about coding with a background in economics and nursing.",
-	"skills": ["HTML5/CSS3", "Javascript", "jQuery", "Bootstrap", "Photoshop", "MEAN stack", "Ruby on Rails", "PHP"],
+	"skills": ["HTML5/CSS3", "Javascript", "jQuery", "Bootstrap", "Photoshop", "MEAN stack", "Web Design"],
 	"linkedIn" : "https://www.linkedin.com/in/neptune-michael-cabelin-637600b0"
 };
 
