@@ -19,7 +19,7 @@ var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills
 var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
 
 var HTMLworkStart = '<div class="work-entry"></div>';
-var HTMLworkEmployer = '<p class="hideFirst blue-text"> %data%</p></a>';
+var HTMLworkEmployer = '<p class="blue-text"> %data%</p></a>';
 var HTMLworkTitle = '<a href="#"><span>%data%</span>';
 var HTMLworkDates = '<div class="date-text hideFirst">%data%</div>';
 var HTMLworkLocation = '<div class="location-text hideFirst">%data%</div>';

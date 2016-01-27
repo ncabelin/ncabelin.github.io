@@ -4,9 +4,13 @@
   margin:0px;
 }
 
+.navBar {
+  text-align: center;
+}
+
 body {
  font-family: 'Open Sans':300, sans-serif;
- font-size: 18px;
+ font-size: 14px;
  color:black;
  margin:0px;
  padding:0px;
@@ -18,9 +22,8 @@ li {
 }
 
 a {
-  font-size:16px;
+  font-size:14px;
   color:white;
-  text-shadow: 2px 2px gray;
 }
 
 a:hover {
@@ -45,7 +48,7 @@ li {
        url("https://cloud.githubusercontent.com/assets/15892944/12491071/d02888e0-c02d-11e5-876c-31bb52a11686.jpg") no-repeat center center fixed;
   background-size: cover;
   text-align: center;
-  font-size:16px;
+  font-size:14px;
   letter-spacing: 1px;
   width:100%;
 }
@@ -68,8 +71,7 @@ h3 {
 
 .text-logo {
   font-family: 'Lato', sans-serif;
-  text-align: left;
-  padding-left: 100px;
+  text-align: center;
   color:black;
 }
 
@@ -82,7 +84,6 @@ h1, h4 {
 .text-logo2 {
   font-family: 'Lato', sans-serif;
   text-align: right;
-  padding-right:50px;
 }
 
 .contactMe {
@@ -162,7 +163,6 @@ div.hideFirst {
 
 .title {
   margin-top:10px;
-  text-shadow: 1px 1px gray;
 }
 
 img {

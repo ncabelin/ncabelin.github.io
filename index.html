@@ -27,13 +27,13 @@
       <hr>
       <hr>
         <p>&nbsp;</p>
-        <p>Hi there, I'm a web developer who is passionate about what I do.</p>
-        <p>I love building responsive, modern websites and creating the best solutions for my clients.</p>
-        <p>
-        <li><a href="#projects" id="portfolioButton">View my Projects</a></li>
-        <li><a href="http://ncabelin.github.io/udresume" target="_blank">View my Resume</a></li>
-        <li><a id="contactButton">Get in Touch!</a></li>
-        </p>
+        <p>Hi there, I'm your modern day web developer.</p>
+        <p>I create elegant, efficient and beautiful solutions everyday for fun.</p>
+        <div class="navBar">
+          <li><a href="#projects" id="portfolioButton">VIEW MY PROJECTS</a></li>
+          <li><a href="http://ncabelin.github.io/udresume" target="_blank">VIEW MY RESUME</a></li>
+          <li><a href="#" id="contactButton">CONTACT ME</a></li>
+        </div>
         <p>&nbsp;</p>
       <hr>
     </div>
@@ -87,17 +87,16 @@
     </div>
   </div>
 <script>
-$(document).ready(function () {
-  $('#portfolios').click( function () {
-    $('#projects div').css('display', 'block');
-  });
-
-});
+$(".text-logo2").fadeOut(10);
+$(".text-logo2").fadeIn(1500);
+$(".text-logo").fadeOut(10);
+$(".text-logo").fadeIn(2000);
+$(".navBar").animate({marginRight:"10px"}, 2000);
 $(document).ready(function(){
-$("#portfolioButton").click(function(){
-  $(".hideFirst").toggle("slow");});
-$("#contactButton").click(function(){
-  $(".hideFirstContacts").toggle("slow")});
+  $("#portfolioButton").click(function(){
+    $(".hideFirst").toggle("slow");});
+  $("#contactButton").click(function(){
+      $(".hideFirstContacts").toggle("slow")});
 });
 </script>
 </body>
