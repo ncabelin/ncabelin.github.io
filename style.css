@@ -193,10 +193,10 @@ img {
 /*Portrait phones and smaller */
 @media (max-width: 480px) {
   h1 {
-    font-size:18px;
+    font-size:20px;
   }
   h4 {
-    font-size:16px;
+    display:none;
   }
   .intro-header {
       text-align: center;
