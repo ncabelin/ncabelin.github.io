@@ -114,7 +114,7 @@ h1, h4 {
 }
 
 button:hover {
-  background-color:#272D21;
+  background-color:#3F513A;
   color:white;
   border-width:0px;
 }
@@ -146,7 +146,7 @@ div.hideFirst {
 }
 
 .btn-default:hover {
-  background-color: #598CAD !important;
+  background-color: #3F513A !important;
   color:white !important;
 }
 
@@ -192,6 +192,12 @@ img {
 
 /*Portrait phones and smaller */
 @media (max-width: 480px) {
+  h1 {
+    font-size:18px;
+  }
+  h4 {
+    font-size:16px;
+  }
   .intro-header {
       text-align: center;
       height: 80%;
