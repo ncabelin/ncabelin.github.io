@@ -13,6 +13,10 @@
   margin-left:100px;
 }
 
+.mainIntro {
+  padding:10px 10px 10px 10px;
+}
+
 body {
  font-family: 'Open Sans':300, sans-serif;
  font-size: 14px;
