@@ -15,20 +15,20 @@
 <body>
   <div class="container-fluid site-wrap">
     <div class="row intro-header"><!-- Initial Header -->
-      <div class="col-md-6 text-logo">
-        <h1>{ <strong><span class="logo">N M C</span></strong> }<h1>
+      <div class="col-md-6">
+        <img src="https://cloud.githubusercontent.com/assets/15892944/12614095/a46bb482-c4b2-11e5-91ea-d0d37e9db076.png" id="logoHat" class="img-responsive center-block" />
       </div>
       <div class="col-md-6 text-logo2">
         <h1 class="text-center">Neptune Michael Cabelin</h1>
-        <h4 class="text-center">Web Developer, Musician, Photographer</h4>
+        <h4 class="text-center">Software Engineer</h4>
       </div>
     </div>
     <div class="about row"><!--Welcome message-->
       <hr>
       <hr>
         <p>&nbsp;</p>
-        <p>Hi there, I'm your modern day web developer.</p>
-        <p>I create elegant, efficient and beautiful solutions everyday for fun.</p>
+        <p>Hi there, I'm your modern day software engineer.</p>
+        <p>I create elegant, efficient and beautiful solutions everyday and I love the challenge.</p>
         <div class="navBar">
           <li><a href="#projects" id="portfolioButton">VIEW MY PROJECTS</a></li>
           <li><a href="http://ncabelin.github.io/udresume" target="_blank">VIEW MY RESUME</a></li>
@@ -89,8 +89,8 @@
 <script>
 $(".text-logo2").fadeOut(10);
 $(".text-logo2").fadeIn(1500);
-$(".text-logo").fadeOut(10);
-$(".text-logo").fadeIn(2000);
+$("#logoHat").fadeOut(10);
+$("#logoHat").fadeIn(2000);
 $(".navBar").animate({marginRight:"10px"}, 2000);
 $(document).ready(function(){
   $("#portfolioButton").click(function(){

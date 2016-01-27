@@ -8,6 +8,11 @@
   text-align: center;
 }
 
+#logoHat {
+  width:100px;
+  margin-left:100px;
+}
+
 body {
  font-family: 'Open Sans':300, sans-serif;
  font-size: 14px;
@@ -142,6 +147,9 @@ div.hideFirst {
 }
 
 @media (min-width: 1200px) {
+  #logoHat {
+    margin:auto;
+	 }
 	.image50 {
 		width:70%;
 		height:70%;
@@ -191,9 +199,8 @@ img {
     margin-bottom:10px;
   }
 
-	.text-logo {
-    padding-left:0px;
-		text-align:center;
+	#logoHat {
+    margin-left:auto;
 	}
   .text-logo2 {
     font-size: 20px;
