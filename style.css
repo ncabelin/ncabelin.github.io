@@ -4,6 +4,10 @@
   margin:0px;
 }
 
+.mainIntro {
+  display:none;
+}
+
 .navBar {
   text-align: center;
 }
@@ -48,6 +52,10 @@ li {
   margin-right:20px;
 }
 
+a:hover {
+  text-decoration: none !important;
+}
+
 .about { /* center image & about area */
   background:
   linear-gradient(
@@ -70,6 +78,18 @@ li {
     text-align: center;
     height: 400px;
     padding-top:30px;
+}
+
+.icon {
+  border-radius:10%;
+}
+
+.icon:hover {
+  box-shadow: 2px 2px 6px 6px black;
+}
+
+.icon:active {
+  box-shadow: 2px 2px 2px 2px gray;
 }
 
 h3 {
@@ -150,7 +170,13 @@ div.hideFirst {
   color:white !important;
 }
 
-@media (min-width: 1200px) {
+@media (max-width: 992px) {
+  #logoHat {
+    margin:auto;
+  }
+}
+
+@media (max-width: 1200px) {
   #logoHat {
     margin:auto;
 	 }
@@ -175,10 +201,6 @@ div.hideFirst {
 
 .title {
   margin-top:10px;
-}
-
-img {
-  border-radius: 5%;
 }
 
 #featured {
