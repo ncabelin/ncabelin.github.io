@@ -12,6 +12,7 @@ font-size: 16px;
 background: url(https://cloud.githubusercontent.com/assets/15892944/12701082/b67ac13e-c7b1-11e5-931d-1c21b1b9cdac.jpg) no-repeat ;
 background-size: cover;
 background-position: center;
+height:100%;
 }
 
 .container {
