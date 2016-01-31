@@ -1,61 +1,79 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <title>freeCodeCamp Calculator Project</title>
+  <title>Javascript Calculator</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
   <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <script src="script.js"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="row0">
-    <p class="noShow">&nbsp;</p>
-    <h1>{ <strong>M</strong> y&nbsp;&nbsp;&nbsp;&nbsp;<span class="headerTitle1"><strong>J</strong> a v a s c r i p t&nbsp;&nbsp;&nbsp;&nbsp;</span class="headerTitle2"><span><strong>C</strong> a l c u l a t o r }</span></h1>
-    <p class="noShow">&nbsp;</p>
+  <div class="row">
+    <div class="container-fluid">
+      <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><strong>{ myJavascript Calculator }</strong></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="http://ncabelin.github.io">Home</a></li>
+            <li><a href="http://ncabelin.github.io/udresume">About</a></li>
+            <li><a href="mailto:ncabelin@gmail.com">Contact</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
   </div>
-<div class="container">
-<div class="calculator">
-  <div class="row1">
+</div>
+  <div class="calculator container">
+  <div class="row">
     <button class="blackBox btn" id="answer">0</button>
   </div>
-  <div class="row1">
+  <div class="row">
     <button class="whiteBox btn" id="ac">AC</button>
     <button class="whiteBox btn" id="ce">CE</button>
     <button class="whiteBox btn" id="percent">%</button>
     <button class="orangeBox btn" id="divide">&#xf7;</button>
   </div>
-  <div class="row1">
+  <div class="row">
     <button class="whiteBox btn" id="seven">7</button>
     <button class="whiteBox btn" id="eight">8</button>
     <button class="whiteBox btn" id="nine">9</button>
     <button class="orangeBox btn" id="multiply">x</button>
   </div>
-  <div class="row1">
+  <div class="row">
     <button class="whiteBox btn" id="four">4</button>
     <button class="whiteBox btn" id="five">5</button>
     <button class="whiteBox btn" id="six">6</button>
     <button class="orangeBox btn" id="minus">-</button>
   </div>
-  <div class="row1">
+  <div class="row">
     <button class="whiteBox btn" id="one">1</button>
     <button class="whiteBox btn" id="two">2</button>
     <button class="whiteBox btn" id="three">3</button>
     <button class="orangeBox btn" id="plus">+</button>
   </div>
-  <div class="row1">
+  <div class="row">
     <button class="whiteBoxTwo btn" id="zero">0</button>
     <button class="whiteBox btn" id="point">.</button>
     <button class="orangeBox btn" id="equals">=</button>
   </div>
-  </div>
-  <p></p>
-  <p class="copyRight">Copyright &copy; N.M.Cabelin </p>
-  <ul>
-    <li><a href="http://ncabelin.github.io">Home</a></li>
-    <li><a href="http://ncabelin.github.io/udresume">About</a></li>
-    <li><a href="mailto:ncabelin@gmail.com">Contact</a></li>
-  </ul>
 </div>
+  <p></p>
+  <p class="copyRight">Copyright &copy; 2015 N.M.Cabelin </p>
 </body>
 </html>

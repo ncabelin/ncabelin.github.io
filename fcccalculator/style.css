@@ -1,7 +1,20 @@
+html {
+  height:100%;
+  border-radius:0%;
+}
+
 body {
 font-family: 'Lato', sans-serif;
-font-size: 20px;
+font-size: 16px;
 background-color: #fae596;
+background: url(https://cloud.githubusercontent.com/assets/15892944/12701082/b67ac13e-c7b1-11e5-931d-1c21b1b9cdac.jpg) no-repeat ;
+background-size: cover;
+background-position: center;
+}
+
+.container {
+padding-left:0px;
+padding-right:0px;
 }
 
 row0 {
@@ -9,8 +22,9 @@ background-color: #fae596;
 }
 
 h1 {
-  text-align: center;
+  text-align: left;
   font-size: 35px;
+  letter-spacing: 6px;
 }
 
 .whiteBox {
@@ -32,7 +46,7 @@ h1 {
 }
 
 .orangeBox {
-  background-color:rgba(255, 165, 0, 0.56);
+  background-color:#D6C9B9;
   border-width: 1px;
   border-color: black;
   width: 50px;
@@ -54,7 +68,7 @@ h1 {
   height:50px;
   display:inline-block;
   margin-left: 0px !important;
-  font-size:30px;
+  font-size:50px;
 }
 
 .btn {
@@ -74,48 +88,32 @@ h1 {
   color:black;
 }
 
-div.calculator {
+.calculator {
   border-color: black;
   border-width: 1px;
   padding-top: 25px;
   padding-bottom:25px;
-  padding-right: 25px;
-  padding-left: 25px;
+  padding-right: 10px;
+  padding-left: 10px;
   text-align: center;
-  background-color:#dddfd4;
+  background-color:#CBB38F;
   border-style:solid;
+  /*margin-left:auto;
+  margin-right:auto;*/
+  max-width:250px !important;
+  border-radius: 10%;
 }
 
-.container {
-  padding-left:350px;
-  padding-right:350px;
+.row {
+  display:block;
 }
 
 ul {
   text-align: center !important;
 }
-
-li {
-  display:inline;
-  list-style:none;
-  margin-right:10px;
-  color:black;
-  background-color:#dddfd4;
-  padding:5px;
-  border-width:1px;
-  border-color:black;
-  border:1px;
-  border-style: solid;
-}
-
-a {
-    text-decoration:none;
-    color:black;
-    text-align: center;
-}
-
-li :hover {
-  color: blue;
+.navbar-default .navbar-nav>li>a:hover {
+  color: white;
+  background-color: #71513C;
 }
 
 li: active {
@@ -131,13 +129,11 @@ li: active {
   padding-left:0px;
   padding-right:0px;
   }
-  .headerTitle1, .headerTitle2 {
-  display:block;
-  }
-  .noShow {
-  display:none;
-  }
   h1 {
   font-size:20px;
   }
+}
+
+.btn {
+  display:inline;
 }
