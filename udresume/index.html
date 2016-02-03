@@ -5,6 +5,8 @@
   <script src="js/jQuery.js"></script>
   <script src="js/helper.js"></script>
   <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
@@ -21,28 +23,24 @@
     <div style="clear: both;"></div>
     <div id="workExperience" class="gray">
       <h2>Work Experience</h2>
-      <hr>
     </div>
     <div class="buttonDetails">
-    <button id="moreButton">click for details</button>
+    <button id="moreButton">Click for Details</button>
     <p></p>
     </div>
     <hr class="borderSpace">
     <div id="projects" class="gray">
       <h2>Projects</h2>
-      <hr>
     </div>
     <div class="buttonDetails">
-    <button id="moreButtonPortfolio">click for details</button>
+    <button id="moreButtonPortfolio">Click for Details</button>
     </div>
     <hr class="borderSpace">
     <div id="education" class="gray">
       <h2>Education</h2>
-      <hr>
     </div>
     <div id="mapDiv">
       <h2>Where I've Lived and Worked</h2>
-      <hr>
     </div>
     <br>
     <div id="lets-connect" class="dark-gray">
@@ -171,8 +169,9 @@ for (ed in education.schools) {
     formattedGithub = HTMLfooterGithub.replace("%data%", bio.github);
     formattedLinkedin = HTMLLinkedin.replace("%data%", bio.linkedIn);
     $("#footerContacts").append(formattedEmail + formattedGithub + formattedLinkedin);
-
+    var clickedA = false;
     $(document).ready(function(){
+
     $("#moreButton").click(function(){
       $(".hideFirst").toggle("slow");});
     $("#moreButtonPortfolio").click(function(){

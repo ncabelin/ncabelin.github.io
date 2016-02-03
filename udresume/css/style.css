@@ -23,8 +23,20 @@ h6 {
   border-width:0px;
 }
 
+button {
+  width:150px;
+  height:30px;
+  border-radius:10px;
+  color: #FFFFFF;
+  background-color: #548EBF;
+}
+
+button:hover {
+  color:#E3D492;
+  background-color:#205F94;
+}
+
 .buttonDetails {
-  margin : 10px;;
   background-color: white;
   text-align: center !important;
 }
@@ -54,7 +66,7 @@ h6 {
 .education-entry,
 .work-entry,
 .project-entry {
-  padding: 0 5%;
+  padding:0;
   background-color: white;
   text-align: center;
 }
@@ -135,8 +147,8 @@ a {
   font-size: 20px;
   color: #073240;
   text-decoration: none;
-  margin-top: 10px;
   display: block;
+  padding-top:10px;
 }
 
 .welcome-message {
