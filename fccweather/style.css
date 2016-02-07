@@ -51,20 +51,18 @@ a:hover {
 	border-width: 0 0 3px;
 }
 
-li a:hover {
-    color: white;
-		border-color:#4E99D6;
-		border-style: solid;
-		border-width: 0 0 3px;
-	}
-
-.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand, #navCollapse {
-	color:white;
+#title {
+ 	color:white;
 }
 
-.navbar-default .navbar-toggle .icon-bar {
-    background-color: #FBF5F5;
-	}
+.navbar-default .navbar-toggle:hover {
+		color:black;
+    background-color: #ddd;
+}
+
+span.fa.fa-bars {
+	color:white;
+}
 
 .content {
 	margin:0 auto;
