@@ -59,6 +59,7 @@ h2 {
     margin:10px;
     padding:20px;
     height:150px;
+    width:400px;
 }
 
 hr {
@@ -103,4 +104,13 @@ featurette {
 
 .center-block: {
     margin:0 auto;    
+}
+
+@media screen and (max-width:550px) {
+    .logoUnicom {
+    margin:10px;
+    padding:20px;
+    height:100px;
+    width:250px;
+}
 }
