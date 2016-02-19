@@ -28,7 +28,8 @@
       <hr>
       <div class="mainIntro">
         <p>Hi there, I'm your modern day software engineer.</p>
-        <p>I create elegant, efficient and beautiful solutions everyday and I love the challenge.</p>
+        <p>I can provide you solutions with my different hats</p>
+        <p>I do front-end, back-end development &amp; audio/visual design</p>
         <div class="navBar">
           <li><a href="#projects" id="portfolioButton">VIEW MY PROJECTS</a></li>
           <li><a href="http://ncabelin.github.io/udresume" target="_blank">VIEW MY RESUME</a></li>
@@ -74,10 +75,10 @@
         <a href="http://ncabelin.github.io/udresume"><img src="https://cloud.githubusercontent.com/assets/15892944/12352874/9b1cd316-bb3e-11e5-968a-5c74a25d7ed4.png" class="img-responsive center-block icon"></a>
         <p class="title">INTERACTIVE RESUME</p>
       </div>
-      <div class="col-md-4">
-        <a href="http://ncabelin.github.io"><img src="https://cloud.githubusercontent.com/assets/15892944/12352971/506c47ba-bb3f-11e5-887f-4dc0876ccaef.png" class="img-responsive center-block icon"></a>
-        <p class="title">PERSONAL PORTFOLIO</p>
-      </div>
+        <div class="col-md-4">
+          <a href="http://ncabelin.github.io/fccweather"><img src="https://cloud.githubusercontent.com/assets/15892944/12875965/8f15dc56-cdaa-11e5-9b6e-28aa85f8a88b.png" class="img-responsive center-block icon"></a>
+          <p class="title">WEATHER CHECKER</p>
+        </div>
     </div>
     </div>
     <hr>
@@ -87,21 +88,21 @@
     </div>
   </div>
 <script>
-$(".text-logo2").fadeOut(10);
-$(".text-logo2").fadeIn(1500);
-$("#logoHat").fadeOut(10);
-$("#logoHat").fadeIn(2000);
-$(".mainIntro").fadeOut(10);
-$(".mainIntro").fadeIn(3000);
-$("li").animate({marginLeft:"20px",marginRight:"20px"},6000);
-$(".navBar").fadeOut(10);
-$(".navBar").fadeIn(4000);
-$(document).ready(function(){
-  $("#portfolioButton").click(function(){
-    $(".hideFirst").toggle("slow");});
-  $("#contactButton").click(function(){
-      $(".hideFirstContacts").toggle("slow")});
-});
+  $(".text-logo2").fadeOut(10);
+  $(".text-logo2").fadeIn(1500);
+  $("#logoHat").fadeOut(10);
+  $("#logoHat").fadeIn(2000);
+  $(".mainIntro").fadeOut(10);
+  $(".mainIntro").fadeIn(3000);
+  $("li").animate({marginLeft:"20px",marginRight:"20px"},6000);
+  $(".navBar").fadeOut(10);
+  $(".navBar").fadeIn(4000);
+  $(document).ready(function(){
+    $("#portfolioButton").click(function(){
+      $(".hideFirst").toggle("slow");});
+    $("#contactButton").click(function(){
+        $(".hideFirstContacts").toggle("slow")});
+  });
 </script>
 </body>
 </html>

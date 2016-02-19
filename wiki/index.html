@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Wikipedia Viewer</title>
+    <meta charset="UTF-8">
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container text-center">
+    <h1>Wikipedia Viewer</h1>
+    <form>
+      <div class="form-group">
+        <input name="title" placeholder="Search text" type="text" id="searchWord">
+        <input type="button" id="search" value="Search" class="btn btn-default" />
+        <p>or</p>
+      </div>
+      <p>Click for </p>
+      <button class="btn btn-default"><a href="http://en.wikipedia.org/wiki/Special:Random" target="_blank">Random Article</a></button>
+    </form>
+</div><!-- end container -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script>
+$(document).ready(function() {
+  $("#a").click(function() {
+      var s = document.getElementById("searchWord").value;
+      $.ajax({
+        // request type ( GET or POST )
+	       type: "GET",
+
+        // the URL to which the request is sent
+	       url: 'http://www.wikipedia.org/',
+
+        // data to be sent to the server
+	       data: { action:'query', format:'json', lgname:'foo', lgpassword:'foobar' },
+
+        // The type of data that you're expecting back from the server
+	       dataType: 'json',
+
+        // Function to be called if the request succeeds
+	       success: function( jsondata ){
+		         alert( jsondata.result );
+	           }
+    });
+  });
+  $("#b").click(function() {
+
+  });
+});
+</script>
+</body>
+</html>

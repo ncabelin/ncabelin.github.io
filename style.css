@@ -80,18 +80,6 @@ a:hover {
     padding-top:30px;
 }
 
-.icon {
-  border-radius:10%;
-}
-
-.icon:hover {
-  box-shadow: 2px 2px 6px 6px black;
-}
-
-.icon:active {
-  box-shadow: 2px 2px 2px 2px gray;
-}
-
 h3 {
   font-family: 'Lato', sans-serif;
   color:#F9E497;
@@ -201,6 +189,7 @@ div.hideFirst {
 
 .title {
   margin-top:10px;
+  font-size:1.3em;
 }
 
 #featured {

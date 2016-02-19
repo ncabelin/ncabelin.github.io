@@ -29,6 +29,7 @@ body {
 	url('https://cloud.githubusercontent.com/assets/15892944/12073470/504453bc-b0d7-11e5-95e6-75e67a3650b9.jpg'),
 	no-repeat center center fixed;
 	background-size: cover;
+	height: 100%;
 }
 
 a:hover {
@@ -53,6 +54,7 @@ a:hover {
 
 #title {
  	color:white;
+	vertical-align: middle;
 }
 
 .navbar-default .navbar-toggle:hover {
@@ -64,6 +66,11 @@ span.fa.fa-bars {
 	color:white;
 }
 
+.cover {
+	display:table;
+	width:100%;
+}
+
 .content {
 	margin:0 auto;
 	background-color: rgba(255,255,255,0.5);
@@ -71,8 +78,6 @@ span.fa.fa-bars {
 	max-width: 300px;
 	height: 300px;
 	border-radius:300px;
-	position:relative;
-	vertical-align: middle;
 }
 
 p {
@@ -89,6 +94,10 @@ p {
 button:hover {
 	background-color: black;
 	color:white;
+}
+
+.enterCity {
+	margin:20px auto;
 }
 
 @media screen and (max-width:500px) {
