@@ -71,8 +71,8 @@ hr {
     height: 1px;
     background: #333693;
     background-image: linear-gradient(to right, #ccc, #333693, #ccc);
-    margin-top: 5px;
-    margin-bottom:5px;
+    margin-top: 10px;
+    margin-bottom:10px;
 }
 
 .navUnicom {
