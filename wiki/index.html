@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Wikipedia Viewer</title>
@@ -13,7 +13,7 @@
     <form>
       <div class="form-group">
         <input name="title" placeholder="Search text" type="text" id="searchWord">
-        <input type="button" id="search" value="Search" class="btn btn-default" />
+        <input type="button" id="search" value="Go" class="btn btn-default" />
         <p>or</p>
       </div>
       <p>Click for </p>
@@ -24,29 +24,26 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 <script>
 $(document).ready(function() {
-  $("#a").click(function() {
+  $("#search").click(function() {
       var s = document.getElementById("searchWord").value;
+      console.log(s);
       $.ajax({
         // request type ( GET or POST )
-	       type: "GET",
+	      method: "GET",
 
         // the URL to which the request is sent
-	       url: 'http://www.wikipedia.org/',
+	      url: 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles='+s,
 
-        // data to be sent to the server
-	       data: { action:'query', format:'json', lgname:'foo', lgpassword:'foobar' },
-
+        headers: { 'Api-User-Agent': 'ncabelin@yahoo.com',
+                    'Access-Control-Allow-Origin':'http://127.0.0.1:52573'},
         // The type of data that you're expecting back from the server
-	       dataType: 'json',
+	      dataType: 'json',
 
         // Function to be called if the request succeeds
-	       success: function( jsondata ){
-		         alert( jsondata.result );
-	           }
+	      success: function( jsondata ){
+		       alert( jsondata );
+	         }
     });
-  });
-  $("#b").click(function() {
-
   });
 });
 </script>
