@@ -3,6 +3,9 @@
 <head>
     <title>Simon Game</title>
     <meta charset="UTF-8">
+		<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+		<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -13,6 +16,14 @@
 <audio id="audio3" src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3"></audio>
 <audio id="audio4" src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3"></audio>
 <style>
+	body {
+		font-family: 'Lato', sans-serif;
+		font-size: 16px;
+	}
+	h1 {
+		font-family: 'Lobster', cursive;
+		font-size:50px;
+	}
 	.cells {
 		margin:0px;
 		padding:0px;
@@ -22,6 +33,8 @@
 	
 	.btn2 {
 		padding:5px;
+		height:40px;
+		width:100px;
 	}
 	
 	#greenB {
@@ -90,31 +103,66 @@
 	input {
 		font-size:20px;
 	}
+	panel2 {
+		margin-right: 20px;
+	}
+	hr {
+    height: 30px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+	}
+	hr:before { /* Not really supposed to work, but does */
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
+	}
 </style>
 <body>
 	
   <h1 class="text-center">Simon Game</h1>
 	<hr>
 	<div class="container">
-		<table>
-		<tr>
-			<td class="cells btn" value=1 id="greenB"></td>
-			<td class="cells btn" value=2 id="redB"></td>
-		</tr>
-		<tr>
-			<td class="cells btn" value=3 id="yellowB"></td>
-			<td class="cells btn" value=4 id="blueB"></td>
-		</tr>
-		</table>
-		<hr>
-		<div class="container buttonGroup">
-			<input id="counter" type="number" value=0></input>
-			<button class="btn btn-primary btn2" id="start">Start</button>
-			<button class="btn btn-danger btn2" id="restart">Restart</button>
-			<button class="btn btn-success btn2" id="strict">Strict mode</button>
+		<div class="row">
+			<div class="col-md-6">
+				<table>
+				<tr>
+					<td class="cells btn" value=1 id="greenB"></td>
+					<td class="cells btn" value=2 id="redB"></td>
+				</tr>
+				<tr>
+					<td class="cells btn" value=3 id="yellowB"></td>
+					<td class="cells btn" value=4 id="blueB"></td>
+				</tr>
+				</table>
+			</div>
+			<div class="col-md-6">
+				<div class="container panel2">
+					<button class="btn btn-primary btn2" id="start">Start</button>
+					<button class="btn btn-danger btn2" id="restart">Restart</button>
+					<button class="btn btn-default btn2" id="rewind">Rewind</button>
+					<button class="btn btn-success btn2" id="strict">Strict mode</button>
+					<h4>How to Play :</h4>
+					<ol class="container">
+						<li>The objective is to repeat the computer's generated patterns</li>
+						<li>The patterns will increase with each success</li>
+						<li>Press start to begin</li>
+						<li>Press rewind to hear the pattern again</li>
+						<li>Press restart to reset the game</li>
+						<li>You win when you get to 20 patterns. Good Luck !</li>
+					</ol>
+					<input id="counter" type="number" value=0></input>
+					<h4 id="wrong"></h4>			
+				</div>
+			</div>
 		</div>
 	</div>
-	<h4 class="text-center" id="wrong"></h4>
 	<hr>
 	
 <!-- jquery -->
@@ -255,6 +303,12 @@ $(document).ready(function() {
 		}
 		strict = false;
 	});
+	
+	$("#rewind").click(function() {
+		check = false;
+		moveArr();
+		check = true;
+	})
 
 });
 </script>
