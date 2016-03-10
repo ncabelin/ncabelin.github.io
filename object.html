@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Object practice</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+  <h1>Object practice</h1>
+
+
+<script>
+	
+// constructor of a class
+function Guitarist(name, skills) {
+	this.name = name;
+	this.skills = skills;
+	
+	this.info = function() {
+		return "My name is " + this.name + ", I can do " + this.skills;
+	}
+}
+	
+function writer(message) {
+	document.write(message);
+}
+
+// new object slashGNR
+var slashGNR = new Guitarist("Slash McDuff", "lead guitar solos");
+	
+document.write(slashGNR.info() + "<br />");
+	
+Guitarist.prototype.chords = "ABCDEFG";
+Guitarist.prototype.solo = function() {
+	return this.name + " is a guitar God!";
+}
+
+document.write(slashGNR.solo() + "<br />");
+
+for(var prop in slashGNR) {
+	console.log(prop + slashGNR[prop]);
+}
+
+</script>
+</body>
+</html>

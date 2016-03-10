@@ -1,22 +1,23 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Wikipedia Viewer</title>
+    <title>Twitch.tv freeCodeCamp</title>
     <meta charset="UTF-8">
 
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <!-- jquery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- bootstrap js -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </head>
 <body>
-  <h1>Wikipedia Viewer</h1>
-  <form action="http://wikipedia.org" method="get">
-    <input name="say" value="hi">
-    <button>View random Wikipedia articles</button>
-  </form>
-  <p>Search Wikipedia</p>
+  <h1>Twitch.tv freeCodeCamp</h1>
+
+<!-- jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<script>
+	$.getJSON('https://api.twitch.tv/kraken/streams/freecodecamp?callback=?', function(data) {
+  	console.log(data);
+	});
+	</script>
 </body>
 </html>

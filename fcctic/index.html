@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Tic Tac Toe Game</title>
+    <meta charset="UTF-8">
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<style>
+			table {
+				width:300px;
+			}
+			td {
+				width:100px;
+				height:100px;
+				text-align: center;
+				font-size:40px;
+			}
+			.bottom {
+				border-bottom: solid black 1px;
+			}
+			.top {
+				border-top: solid black 1px;
+			}
+			.right {
+				border-right: solid black 1px;
+			}
+			.left {
+				border-left: solid black 1px;
+			}
+			.centered {
+				display:block;
+				margin-left:auto;
+				margin-right:auto;
+			}
+			.btn {
+				text-align: center;
+			}
+			.win {
+				color: orange;
+			}
+		</style>
+</head>
+<body>
+  <h1 class="text-center">Tic Tac Toe</h1>
+	<div class="container-fluid">
+	<hr>
+	<table class="centered">
+		<tr>
+			<td value = 1 class="bottom right" id="one" occ=false></td>
+			<td value = 2 class="bottom" id="two" occ=false></td>
+			<td value = 3 class="bottom left" id="three" occ=false></td>
+		</tr>
+		<tr>
+			<td value = 4 class="bottom right" id="four" occ=false></td>
+			<td value = 5 class="bottom" id="five" occ=false></td>
+			<td value = 6 class="bottom left" id="six" occ=false></td>
+		</tr>
+		<tr>
+			<td value = 7 class="right" id="seven" occ=false></td>
+			<td value = 8 id="eight" occ=false></td>
+			<td value = 9 class="left" id="nine" occ=false></td>
+		</tr>
+		</div>
+	</table>
+	<hr>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-4 col-xs-4"><button class="btn btn-danger centered" id="reset" onclick="reset()">Reset Game</button></div>
+			<div class="col-md-4 col-xs-4">
+				<button class="btn btn-success centered" id="xPlay">Play as X</button>
+			</div>
+			<div class="col-md-4 col-xs-4"><button class="btn btn-primary centered" id="oPlay">Play as O</button></div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 btn-group center-block text-center" role="group">
+				<p id="status"></p>
+			</div>
+		</div>
+	</div>
+	
+	 <!-- jquery -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+   <!-- bootstrap js -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script>
+		var ids = {
+			1 : $("#one"),
+			2 : $("#two"),
+			3 : $("#three"),
+			4 : $("#four"),
+			5 : $("#five"),
+			6 : $("#six"),
+			7 : $("#seven"),
+			8 : $("#eight"),
+			9 : $("#nine"),
+		}
+		
+		var winning = [ [1,2,3], [4,5,6], [7,8,9], [1,4,7], [2,5,8], [3,6,9], [1,5,9], [3,5,7] ];
+		// a,b a,c b,c
+		var smartKey = [
+			{ arr : "12",
+				ans : 3
+			},
+			{ arr : "13",
+				ans : 2
+			},
+			{ arr : "23",
+				ans : 1
+			},
+			{ arr : "45",
+				ans : 6
+			},
+			{ arr : "56",
+				ans : 4
+			},
+			{ arr : "46",
+				ans : 5
+			},
+			{ arr : "78",
+				ans : 9
+			},
+			{ arr : "89",
+				ans : 7
+			},
+			{ arr : "79",
+				ans : 8
+			},
+			{ arr : "14",
+				ans : 7
+			},
+			{ arr : "47",
+				ans : 1
+			},
+			{ arr : "17",
+				ans : 4
+			},
+			{ arr : "25",
+				ans : 8
+			},
+			{ arr : "28",
+				ans : 5
+			},
+			{ arr : "58",
+				ans : 2
+			},
+			{ arr : "36",
+				ans : 9
+			},
+			{ arr : "39",
+				ans : 6
+			},
+			{ arr : "69",
+				ans : 3
+			},
+			{ arr : "15",
+				ans : 9
+			},
+			{ arr : "19",
+				ans : 5
+			},
+			{ arr : "59",
+				ans : 1
+			},
+			{ arr : "35",
+				ans : 7
+			},
+			{ arr : "37",
+				ans : 5
+			},
+			{ arr : "57",
+				ans : 3
+			}
+		]
+		var move = 0;
+		var won = false;
+		var player1 = { name : "X", moves : [] };
+		var player2 = { name : "O", moves : [] };
+		var doneArr = [];
+		
+		function recordMoves(val, person) {
+			move++;	
+			person.moves.push(Number(val));
+		}
+		
+		function reset() {
+			for (var a = 1; a < 10; a++) {
+				ids[a].attr("occ", false); // set all occs false
+				ids[a].empty(); // empty cells
+			}
+			player1.moves = [];
+			player2.moves = [];
+			checked = 0;
+			sorted = [];
+			move = 0;
+			xTurn = true;
+			won = false;
+			$("#status").empty();
+		}
+		
+		function checkPattern(selectedPlayer) {
+			var checked = 0; // counter for matching winning numbers, must equal 3 to win
+			// var sorted = moveArray.sort();
+			var correct = [];
+			for (var i = 0; i < winning.length; i++) {
+				for (var j = 0; j < winning[i].length; j++) {
+					selectedPlayer.moves.forEach(function(d) {
+						if (d === winning[i][j]) {
+							checked++;
+							if (checked === 3) {
+								$("#status").html("<h3>Player " + selectedPlayer.name + " has WON</h3>");
+								won = true;
+								correct = selectedPlayer.moves.sort();
+								for (var f = 0; f < 3; f++) {
+									ids[winning[i][f]].html("<span class='win'>" + selectedPlayer.name + "</span>");
+								}
+								return won = true;
+							};
+						}
+					});
+				}
+				checked = 0;
+			}
+		}
+		
+		function boxCounter() {
+			doneArr = [];
+			var boxCount = 0;
+			for (var i = 1; i < 10; i++) {
+				var boxCheck = ids[i].attr("occ"); // get occ value
+				if (boxCheck == "false") {
+					doneArr.push(i); // collect the available box
+					boxCount++;
+				}
+			}
+			return boxCount;
+		}
+		
+		function smartMove(arrString, player) {
+			for (var l = 0; l < smartKey.length; l++) {
+			if (arrString === smartKey[l]["arr"]) {
+				cMove = smartKey[l]["ans"];
+				recordMoves(cMove, player);
+				ids[cMove].html(player.name);
+				ids[cMove].attr("occ", true);
+				console.log(cMove);
+				}	
+			}
+		}
+		
+		function playComputer(player, enemy) {
+			// iterate over boxes, count how many are available
+			var boxCount = boxCounter();
+			// random placement if more than 6 empty boxes (3 moves done)
+			if (boxCount > 6) {
+				var rand = doneArr[Math.floor(Math.random() * doneArr.length)]; // get random place
+				if (rand) {
+					recordMoves(rand, player);
+					ids[rand].html(player.name);
+					ids[rand].attr("occ", true);
+				}	
+			} else {
+				var cMove = 0; // 5 maximum positions by player = 12,23,34,45
+				var arrCount = enemy.moves.length;
+				var sortedEnemyArr;
+				if (arrCount == 2) {
+					sortedEnemyArr = enemy.moves.sort().join("");
+					smartMove(sortedEnemyArr, player);
+					return;
+				} else if (arrCount == 3) {
+					var threeArr = [];
+					threeArr.push(enemy.moves[0]);
+					threeArr.push(enemy.moves[2]);
+					sortedEnemyArr = threeArr.sort().join("");
+					smartMove(sortedEnemyArr, player);
+					return;
+				} else if (arrCount == 4) {
+					var fourArr = [];
+					fourArr.push(enemy.moves[2]);
+					fourArr.push(enemy.moves[3]);
+					sortedEnemyArr = fourArr.sort().join("");
+					smartMove(sortedEnemyArr, player);
+				} else {
+					var boxCount2 = boxCounter();
+					var rand = doneArr[Math.floor(Math.random() * doneArr.length)]; // get random place
+					if (rand) {
+						recordMoves(rand, player);
+						ids[rand].html(player.name);
+						ids[rand].attr("occ", true);
+					}	
+				}
+				/*
+				{
+					var doneArr = [];
+					var boxCount = 0;
+					for (var i = 1; i < 10; i++) {
+						var boxCheck = ids[i].attr("occ"); // get occ value
+						if (boxCheck == "false") {
+							doneArr.push(i); // collect the available box
+							boxCount++;
+						}
+					}
+					var rand = doneArr[Math.floor(Math.random() * doneArr.length)]; // get random place
+					if (rand) {
+						recordMoves(rand, player);
+						ids[rand].html(player.name);
+						ids[rand].attr("occ", true);
+						return;
+						}
+					// random placement if more than 6 empty boxes (3 moves done)
+				}
+				*/
+									// loop through key
+				}
+			}
+		
+		$(document).ready(function() {
+			
+			var xTurn = true;
+			
+			$("#oPlay").click(function() {
+				reset();
+				playComputer(player1, player2);
+				checkPattern(player1);
+				xTurn = false;
+			});
+			
+			$("#xPlay").click(function() {
+				reset();
+			});
+			
+			$("td").click(function() {
+				if (won == true || move === 9) { // reset if player won
+					reset();
+				};
+				var s = $("#status");
+				s.empty(); // empty status bar
+				var checkOcc = $(this).attr("occ"); // check if box has already been clicked
+				if (checkOcc == "true" && won == false) {
+					s.html("<h3>Box already taken ! Select another box</h3>");
+					return;
+				} else {
+					var x = $(this).attr("value");
+					var y = ids[x];
+					$(this).attr("occ", true);
+					if (xTurn) {
+						y.html(player1.name);
+						recordMoves(x, player1);
+						checkPattern(player1);
+						if (!won) {
+							playComputer(player2, player1);
+							checkPattern(player2);	
+						}
+					} else {
+						y.html(player2.name);
+						recordMoves(x, player2);
+						checkPattern(player2);
+						if (!won) {
+							playComputer(player1, player2);
+							checkPattern(player1);	
+						}					
+					}
+					if (move === 9 && won === false) {		
+						s.html("<h3>DRAW !</h3>");
+						return;
+					}
+				}
+				
+			});
+
+		});
+		
+	</script>
+</body>
+</html>
