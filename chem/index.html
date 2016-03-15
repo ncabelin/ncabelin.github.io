@@ -38,6 +38,9 @@
   #nex {
     display: none;
   }
+  #bak {
+    display: none;
+  }
   </style>
 </head>
 <body>
@@ -75,19 +78,19 @@
               <input type="text" class="form-control" id="answer" placeholder="Answer">
               <hr>
               <button class="btn btn-danger" id="check">Check</button>
+              <button class="btn btn-default" id="bak">Back</button>
               <button class="btn btn-default" id="nex">Next</button>
               <hr>
-              <p>Score : <span id="score">0</span></p>
+              <p>Score : <span id="score">0</span> / <span id="total"></span></p>
           </div>
         </div>
       </div>
     </div>
     <div class="row submit">
-        <button class="btn btn-success" id="back">Back</button>
-        <button class="btn btn-primary" id="next">Next</button>
+        <button class="btn btn-success" id="back">Previous Lesson</button>
+        <button class="btn btn-primary" id="next">Next Lesson</button>
       </div>
   </div>
-<script src="data.js"></script>
 <script>
 $(document).ready(function() {
   var lessC = $("#lessonContent");
@@ -99,20 +102,62 @@ $(document).ready(function() {
   var a = $("#answer");
   var c = $("#check");
   var r = $("#result");
+  var total = $("#total");
   var scoreI = $("#score");
   var nex = $("#nex");
+  var bak = $("#bak");
   var score = 0;
   var l = 0;
   var qItem = 0;
+  var tableSet = false;
+  var q1,q2,q3,q4,q5;
 
   function showLesson(lesson, item) {
     lessH.html(lesson.head);
     lessC.html(lesson.content);
     i.html(lesson.instruction);
     q.html(lesson.quiz[item].q);
+    total.html(lesson.quiz.length);
+    console.log(lesson.quiz[item].table);
+    if (lesson.quiz[item].table) {
+      console.log("hi");
+      a.replaceWith(lesson.quiz[item].d);
+    }
+  }
+
+  function reset() {
+    score = 0;
+    qItem = 0;
+    a.empty();
+    r.empty();
+    scoreI.html(0);
+    bak.css("display", "none");
+    document.querySelector("#answer").value = "";
   }
 
   c.click(function() {
+      if (lessArray[l].quiz[qItem].table) {
+        var tableAns = [];
+        for (var i = 0; i < lessArray[l].quiz[qItem].a.length; i++) {
+          var answerTd = $("#q" + (i + 1)).val();
+          tableAns.push(answerTd);
+        }
+        console.log(tableAns);
+        for (var i = 0; i < lessArray[l].quiz[qItem].a.length; i++) {
+          if (tableAns[i] != lessArray[l].quiz[qItem].a[i]) {
+            console.log(false);
+            r.css("color", "red");
+            r.html("Wrong, try again");
+            return;
+          }
+          r.css("color", "green");
+          r.html("Correct !");
+          nex.css("display", "inline");
+          score++;
+          scoreI.html(score);
+        }
+        return;
+      }
       var qA = lessArray[l].quiz[qItem].a;
       var sA = document.querySelector("#answer").value;
       if (qA == sA) {
@@ -134,18 +179,29 @@ $(document).ready(function() {
     q.html(lessArray[l].quiz[qItem].q);
     r.empty();
     nex.css("display", "none");
+    bak.css("display", "inline");
+  });
+
+  bak.click(function() {
+    qItem--;
+    score--;
+    i.html(lessArray[l].instruction);
+    q.html(lessArray[l].quiz[qItem].q);
+    r.empty();
   });
 
   next.click(function() {
     if (l < lessArray.length) {
       l++;
-    showLesson(lessArray[l], 0);
+      reset();
+      showLesson(lessArray[l], 0);
       };
   });
 
   back.click(function() {
     if (l != 0) {
     l--;
+    reset();
     showLesson(lessArray[l], 0);  
     } 
   });
@@ -154,5 +210,6 @@ $(document).ready(function() {
 });
 
 </script>
+<script src="data.js"></script>
 </body>
 </html>

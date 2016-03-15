@@ -1,6 +1,10 @@
 html {
+  height: 100%;
+}
+
+body {
   font-family: 'Lato', sans-serif;
-  color: white !important;
+  color: white;
   text-align: center;
 }
 
@@ -28,11 +32,8 @@ button {
   background-color:#F94C2D;
   color:white;
   font-size:18px;
-  border-radius:25%;
-  padding:5px;
-  margin:5px;
-  height:60px;
-  width:60px;
+  border-radius:100%;
+  padding:20px;
 }
 
 button:hover {
@@ -41,25 +42,4 @@ button:hover {
 
 #timeNow, #status {
   font-size:30px;
-}
-
-#plusSession, #minusSession, #plusBreak, #minusBreak, {
-  font-size:30px;
-  text-align: center;
-  vertical-align: middle;
-  display:inline-block;
-}
-
-@media screen and (max-width:480px) {
-  #clearTime {
-    display:none;
-  }
-  h1 {
-    margin:0px;
-    font-size:40px;
-  }
-  p {
-    margin:5px;
-    font-size:14px;
-  }
 }
