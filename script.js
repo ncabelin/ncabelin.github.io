@@ -52,5 +52,5 @@ var projects = [{
 var p = $("#projects");
 projects.forEach(function (project) {
   p.append('<div class="col-md-6 col-lg-4 text-center"><a href="' + project.url + '"><img src="' + project.image + '" class="projStyle"><h4 class="projTitle">'
-    +project.title+'</h4></a><p>'+project.description+'</p><p class="tech">' + project.tech + '</p><p><a class="tech" href="' + project.github + '">view code in Github</a></p></div>');
+    +project.title+'</h4></a><p class="desc">'+project.description+'</p><p class="tech">' + project.tech + '</p><p><a class="tech" href="' + project.github + '">view code in Github</a></p></div>');
 });

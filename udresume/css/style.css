@@ -276,7 +276,7 @@ span {
 #map {
   display: block;
   height: 100%;
-  margin: 0 10%;
+  margin: 20px 10%;
 }
 
 #mapDiv {
