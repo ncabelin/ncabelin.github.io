@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: white;
   text-align: center;
 }
@@ -23,7 +23,7 @@ body {
 linear-gradient(
   rgba(0, 0, 0, 0.65),
   rgba(0, 0, 0, 0.65)
- ),    url("https://cloud.githubusercontent.com/assets/15892944/12220725/a96e0342-b731-11e5-8143-97449de8aa5c.jpg")
+ ),    url("https://cloud.githubusercontent.com/assets/15892944/13728073/244ff29c-e8c8-11e5-8645-4e787a5830b8.jpg")
   no-repeat;
   background-size: cover;
 }
@@ -38,8 +38,27 @@ button {
 
 button:hover {
   background-color:#D00A04;
+  color:white;
+}
+
+button:focus { 
+    outline:0 !important;
+  }
+
+#plusBreak, #plusSession, #minusBreak, #minusSession {
+  font-size: 50px;
 }
 
 #timeNow, #status {
   font-size:30px;
+}
+
+.btn {
+  border-radius:100%;
+  width: 100px;
+  height: 100px;
+}
+
+.btn:hover {
+  color: white;
 }

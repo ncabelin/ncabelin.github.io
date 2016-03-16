@@ -3,17 +3,53 @@
 <head>
     <title>Wikipedia Viewer</title>
     <meta charset="UTF-8">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Amatic+SC:700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+
 		<style>
+        .container-fluid {
+          padding: 0px;
+          margin: 0px;
+          border: 0px;
+        }
 				.positioned {
 						text-align: left;
 				}
+        body {
+          font-family: 'Slabo 27px', serif;
+          background-color: #60A075;
+
+        }
+        h1 {
+          font-family: 'Amatic SC', cursive;
+          font-size: 40px;
+          margin-top: 0px;
+          margin-bottom: 0px;
+        }
+
+        #header {
+          /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#006e2e+0,60a075+41 */
+background: #006e2e; /* Old browsers */
+background: -moz-linear-gradient(top,  #006e2e 0%, #60a075 41%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #006e2e 0%,#60a075 41%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #006e2e 0%,#60a075 41%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006e2e', endColorstr='#60a075',GradientType=0 ); /* IE6-9 */
+        padding: 20px;
+        }
+
+        #results {
+          margin: 40px;
+        }
+
 		</style>
 </head>
 <body>
-  <div class="container text-center">
+  <div class="container-fluid text-center">
+  <div id="header">
     <h1>Wikipedia Viewer</h1>
     <form>
       <div class="form-group">
@@ -23,6 +59,7 @@
       <p>Click for
 					<button class="btn btn-default"><a href="http://en.wikipedia.org/wiki/Special:Random" target="_blank">Random Article</a></button></p>
     </form>
+  </div>
 		<hr>
     <div id="results"></div>
 </div><!-- end container -->

@@ -1,4 +1,5 @@
 var myVar, timeMinutes, timeSeconds, breakTime, sessionBreak, sessionTime, pushedOnce;
+  var audio2 = document.getElementById("civil");
   var initialTime = 1500;
   pushedOnce = false;
   breakTime = 300;
@@ -35,6 +36,8 @@ var myVar, timeMinutes, timeSeconds, breakTime, sessionBreak, sessionTime, pushe
   }
   function startTimeButton() {
     if (pushedOnce == false) {
+    var audio = document.getElementById("bell");
+    audio.play();
     myVar = setInterval(beginTime, 1000);
     pushedOnce = true;
     }
@@ -43,6 +46,7 @@ var myVar, timeMinutes, timeSeconds, breakTime, sessionBreak, sessionTime, pushe
     if (initialTime == 0) {
       if (sessionBreak == false) {
       $("#status").html("BREAK SESSION !");
+      audio2.play();
       initialTime = breakTime;
       sessionBreak = true;
       return initialTime;

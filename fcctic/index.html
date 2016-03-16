@@ -3,10 +3,25 @@
 <head>
     <title>Tic Tac Toe Game</title>
     <meta charset="UTF-8">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Chewy' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+
 		<style>
+			body {
+				background-color: #0E1442;
+				font-family: 'Open Sans', sans-serif;
+			}
+
+			h1 {
+				font-family: 'Chewy', cursive;
+				font-size: 48px;
+				padding-left: 20px;
+			}
+
 			table {
 				width:300px;
 			}
@@ -15,18 +30,19 @@
 				height:100px;
 				text-align: center;
 				font-size:40px;
+				color: white;
 			}
 			.bottom {
-				border-bottom: solid black 1px;
+				border-bottom: solid white 1px;
 			}
 			.top {
-				border-top: solid black 1px;
+				border-top: solid white 1px;
 			}
 			.right {
-				border-right: solid black 1px;
+				border-right: solid white 1px;
 			}
 			.left {
-				border-left: solid black 1px;
+				border-left: solid white 1px;
 			}
 			.centered {
 				display:block;
@@ -35,16 +51,76 @@
 			}
 			.btn {
 				text-align: center;
+				color:black;
 			}
 			.win {
 				color: orange;
 			}
+			#footer {
+				margin-top: 40px;
+			}
+			.nav {
+				margin:20px;
+			}
+			.navbar-toggle {
+				margin: 30px;
+			}
+			.navbar-toggle: hover {
+				background-color:#0E1442;
+			}
+			.icon-bar {
+				color:black;
+			}
+			.btn {
+				display:inline;
+			}
+			#footer {
+				margin-left:auto;
+				margin-right:auto;
+				list-style: none;
+				text-align: center;
+			}
+			#footer li {
+				display: inline;
+			}
+			#status {
+				color: orange;
+			}
+
+			@media screen and (max-width:700px) {
+				h1 {
+					text-align: center;
+				}
+			}
 		</style>
 </head>
 <body>
-  <h1 class="text-center">Tic Tac Toe</h1>
+  <div class="row">
+      <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <h1><strong>Tic Tac Toe</strong></h1>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="http://ncabelin.github.io" class="text-center">Home</a></li>
+            <li><a href="http://ncabelin.github.io/udresume" class="text-center">About</a></li>
+            <li><a href="mailto:ncabelin@gmail.com" class="text-center">Contact</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+  </div>
 	<div class="container-fluid">
-	<hr>
 	<table class="centered">
 		<tr>
 			<td value = 1 class="bottom right" id="one" occ=false></td>
@@ -63,21 +139,16 @@
 		</tr>
 		</div>
 	</table>
-	<hr>
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-4 col-xs-4"><button class="btn btn-danger centered" id="reset" onclick="reset()">Reset Game</button></div>
-			<div class="col-md-4 col-xs-4">
-				<button class="btn btn-success centered" id="xPlay">Play as X</button>
-			</div>
-			<div class="col-md-4 col-xs-4"><button class="btn btn-primary centered" id="oPlay">Play as O</button></div>
-		</div>
+		<ul id="footer">
+			<li><button class="btn btn-danger centered" id="reset" onclick="reset()">Reset Game</button>
+			<li><button class="btn btn-success centered" id="xPlay">Play as X</button>
+			<li><button class="btn btn-primary centered" id="oPlay">Play as O</button>
+		</ul>
 		<div class="row">
 			<div class="col-md-12 btn-group center-block text-center" role="group">
 				<p id="status"></p>
 			</div>
 		</div>
-	</div>
 	
 	 <!-- jquery -->
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -262,6 +333,7 @@
 			} else {
 				var cMove = 0; // 5 maximum positions by player = 12,23,34,45
 				var arrCount = enemy.moves.length;
+				console.log(enemy.moves);
 				var sortedEnemyArr;
 				if (arrCount == 2) {
 					sortedEnemyArr = enemy.moves.sort().join("");

@@ -2,26 +2,38 @@
 <html>
 <head>
   <title>Pomodoro Clock</title>
+  <meta charset="utf-8">
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
   <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="style.css">
+  <audio src="http://potentum.com/audio/Power.mp3" id="bell"></audio>
+  <audio src="http://potentum.com/audio/civil.mp3" id="civil"></audio>
 </head>
 <body>
-  <h1>Pomodoro Timer</h1>
-  <p>Session time:<span id="sessionLength"></span></p>
-  <p>Break length :<span id="breakLength"></span></p>
-  <button id="plusBreak"> + </button>
-  <button id="minusBreak"> - </button>
+<div class="container">
+  <div class="row">
+    <h1>Pomodoro Timer</h1>
+  </div>
+  <div class="row">
+    <p>Session time:<span id="sessionLength"></span></p>
+    <p>Break length :<span id="breakLength"></span></p>
+  </div>
+  <button class="btn" id="plusBreak"> + </button>
+  <button class="btn" id="minusBreak"> - </button>
   <p id="status">SESSION</p>
   <p id="timeNow"></p>
   <button class="btn" id="plusSession"> + </button>
-  <button id="minusSession"> - </button>
-  <button onclick="startTimeButton()">Start</button>
-  <button onclick="stopTimeButton()">Stop</button>
-  <button id="clearTime">Clear time</button>
+  <button class="btn" id="minusSession"> - </button>
+  <button class="btn" onclick="startTimeButton()">Start</button>
+  <button class="btn" onclick="stopTimeButton()">Stop</button>
+  <button class="btn" id="clearTime">Clear</button>
+</div>
+<script>
+</script>
 <script src="app.js"></script>
 </body>
 </html>
