@@ -143,6 +143,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d1c20', end
 .tech {
   font-size: 10px;
   font-style: italic;
+  color: #EFEFA5;
+}
+
+.tech:hover {
+  color:white;
+}
+
+.underline {
+  text-decoration: underline;
 }
 
 @media screen and (max-width:990px) {

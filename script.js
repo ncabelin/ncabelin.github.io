@@ -21,7 +21,7 @@ var projects = [{
 	"github": ""
 }, {
 	"title": "Key Swiper Arcade Game",
-	"description": "Arcade game made in HTML5 canvas. Get the key past the bugs, fishes, etc. to score.",
+	"description": "Arcade game made in HTML5 canvas. Go past the bugs, fishes, etc. and grab the key to score.",
 	"tech": "HTML5 canvas, Javascript",
 	"url": "http://ncabelin.github.io/udfrog",
 	"image": "https://cloud.githubusercontent.com/assets/15892944/13766034/a810cddc-ea1b-11e5-8cd7-46f34402ce36.png",
@@ -52,5 +52,5 @@ var projects = [{
 var p = $("#projects");
 projects.forEach(function (project) {
   p.append('<div class="col-md-6 col-lg-4 text-center"><a href="' + project.url + '"><img src="' + project.image + '" class="projStyle"><h4 class="projTitle">'
-    +project.title+'</h4></a><p class="desc">'+project.description+'</p><p class="tech">' + project.tech + '</p><p><a class="tech" href="' + project.github + '">view code in Github</a></p></div>');
+    +project.title+'</h4></a><p class="desc">'+project.description+'</p><p class="tech">' + project.tech + '</p><p><a class="tech underline" href="' + project.github + '">View Code in Github</a></p></div>');
 });
