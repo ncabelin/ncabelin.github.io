@@ -1,13 +1,13 @@
 var projects = [{
 	"title": "Weather Checker",
-	"description": "Checks for user's current gps coordinates and gets OpenWeather API data on current conditions.",
+	"description": "Gets OpenWeather API data using gps coordinates.",
 	"tech": "HTML5,CSS3,Javascript,jQuery,Bootstrap",
 	"url": "http://ncabelin.github.io/fccweather",
 	"image": "https://cloud.githubusercontent.com/assets/15892944/12875965/8f15dc56-cdaa-11e5-9b6e-28aa85f8a88b.png",
 	"github": ""
 }, {
 	"title": "Javascript Calculator",
-	"description": "Javascript-based calculator using grid-based Bootstrap buttons, styled by CSS3",
+	"description": "Calculator using grid-based Bootstrap buttons, styled by CSS3",
 	"tech": "HTML5,CSS3,Javascript,jQuery,Bootstrap",
 	"url": "http://ncabelin.github.io/fcccalculator",
 	"image": "https://cloud.githubusercontent.com/assets/15892944/12915287/15ef4b2e-cedf-11e5-9b8c-c0682cdb7c7f.png",
@@ -21,7 +21,7 @@ var projects = [{
 	"github": ""
 }, {
 	"title": "Key Swiper Arcade Game",
-	"description": "Arcade game made in HTML5 canvas. Go past the bugs, fishes, etc. and grab the key to score.",
+	"description": "Game made w/ HTML5 canvas. Go past the bugs and fishes, grab the key to score.",
 	"tech": "HTML5 canvas, Javascript",
 	"url": "http://ncabelin.github.io/udfrog",
 	"image": "https://cloud.githubusercontent.com/assets/15892944/13766034/a810cddc-ea1b-11e5-8cd7-46f34402ce36.png",
@@ -42,10 +42,10 @@ var projects = [{
 	"github": ""
 }, {
 	"title": "Wikipedia Viewer",
-	"description": "Uses Wikimedia API to query topics, shows 20 results, can also generate random wiki topic",
+	"description": "Uses Wikimedia API to query topics, shows 20 results.",
 	"tech": "jQuery, Wikipedia API",
 	"url": "http://ncabelin.github.io/fccwiki",
-	"image": "https://cloud.githubusercontent.com/assets/15892944/13766399/c384e348-ea1e-11e5-8fbe-35221c537ea9.png",
+	"image": "https://cloud.githubusercontent.com/assets/15892944/13807781/260f4dee-eb20-11e5-98ed-721010c92da5.png",
 	"github": ""
 }];
 
