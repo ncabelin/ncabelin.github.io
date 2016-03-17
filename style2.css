@@ -154,6 +154,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d1c20', end
   text-decoration: underline;
 }
 
+.row {
+  padding-right: 0px;
+  margin-right: 0px;
+}
+
 @media screen and (max-width:990px) {
   .developerName, .imageLogo {
     text-align: center;
