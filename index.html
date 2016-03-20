@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- disabled zoom in mobile browser -->
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-  <title>Neptune's Portfolio</title>
+  <title>NMC Portfolio</title>
     <!-- Google Fonts -->
   <link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Averia+Sans+Libre' rel='stylesheet' type='text/css'>
@@ -17,55 +17,62 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
   <link rel="stylesheet" href="style2.css">
+  <style>
+    .work {
+      display:none;
+    }
+    #about {
+      height: 600px;
+    }
+  </style>
 </head>
 <body>
-  <div>
-      <header class="row">
-        <div class="col-md-6 imageLogo">
-          <img src="https://cloud.githubusercontent.com/assets/15892944/12614095/a46bb482-c4b2-11e5-91ea-d0d37e9db076.png" alt="engineerhat" id="hat">
-        </div><!--end logo-->
-        <div class="developerName col-md-6">
-          <h1 id="brand" class="heading"><strong>Neptune Michael Cabelin</strong></h1>
-          <h4 class="heading" id="title">Software Developer</h4>
-        </div><!--end description-->
-      </header><!--end row 1-->
-        <section class="row">
-          <div id="about">
-            <p class="par">Hi there, I am a software developer who is passionate about building creative and efficient solutions.</p>
-            <p class="par">I used to be in the field of nursing and economics, but now I've discovered my true calling.</p> 
-            <p class="par">I have been building mobile and web applications with the end-goal of enhancing the everyday experience.</p>
-            <button class="btn bT"><a href="#projects" class="bT">View my Projects</a></button>
-            <button class="btn bT"><a href="http://ncabelin.github.io/udresume" class="bT">View my Resume</a></button>
-            <button class="btn bT"><a href="#contacts" class="bT">Let's get in Touch !</a></button>
-          </div>
-        </section>
-    <div class="work row">
-      <section>
-        <h3 class="headings">Featured Projects</h3>
-      </section>
-      <section>
-        <div id="projects" class="row">
-        </div>
-      </section>
-      <hr>
-    </div><!--end container-->
-    <footer id="contactMe">
-        <div class="row">
-          <h3 class="headings" id="cont">Contact Me</h3>
-          <div id="contacts">
-          <ul>
-            <li><a href="mailto:ncabelin@yahoo.com" class="contact"><i class="fa fa-envelope fa-3x"></i> ncabelin@yahoo.com</a></li>
-            <li><a href="https://www.linkedin.com/in/neptune-michael-cabelin-637600b0" class="contact"><i class="fa fa-linkedin fa-3x"></i> LinkedIn</a></li>
-            <li><a href="http://www.github.com/ncabelin" class="contact"><i class="fa fa-github fa-3x"></i> Github</a></li>
-          </ul>
-          </div>
-        </div><!-- end row Contacts-->
-    </footer>
-  </div><!--end container-fluid-->
+  <header class="row">
+    <div class="col-md-6 imageLogo">
+      <img src="https://cloud.githubusercontent.com/assets/15892944/12614095/a46bb482-c4b2-11e5-91ea-d0d37e9db076.png" alt="engineerhat" id="hat">
+    </div><!--end logo-->
+    <div class="developerName col-md-6">
+      <h1 id="brand" class="heading"><strong>Neptune Michael Cabelin</strong></h1>
+      <h4 class="heading" id="title">Software Developer</h4>
+    </div><!--end description-->
+  </header><!--end row 1-->
+  <section class="row" id="about">
+    <p class="par">Hi there, I'm a software developer who is passionate about building creative and efficient solutions.</p>
+    <p class="par">I used to be in the field of nursing and economics, but I discovered my true calling in building software.</p> 
+    <p class="par">I currently do web and mobile design and development. Click below for more info.</p>
+    <button class="btn bT" id="view"><a href="#projects">View my Projects</a></button>
+    <button class="btn bT"><a href="http://ncabelin.github.io/udresume" class="bT">View my Resume</a></button>
+    <button class="btn bT"><a href="#contacts" class="bT">Let's get in Touch !</a></button>
+  </section>
+  <div class="work row">
+    <section>
+      <h3 class="headings">Featured Projects</h3>
+    </section>
+    <section>
+      <div id="projects" class="row">
+      </div>
+    </section>
+    <hr>
+  </div><!--end container-->
+  <footer class="row">
+    <h3 class="headings text-center" id="cont">Contact Me</h3>
+    <div id="contacts">
+      <ul>
+        <li><a href="mailto:ncabelin@yahoo.com" class="contact"><i class="fa fa-envelope fa-3x"></i> ncabelin@yahoo.com</a></li>
+        <li><a href="https://www.linkedin.com/in/neptune-michael-cabelin-637600b0" class="contact"><i class="fa fa-linkedin fa-3x"></i> LinkedIn</a></li>
+        <li><a href="http://www.github.com/ncabelin" class="contact"><i class="fa fa-github fa-3x"></i> Github</a></li>
+      </ul>
+    </div>
+  </footer>
 </body>
 <script src="script.js"></script>
 <script>
+  var closed = true;
   $(".par").fadeOut(10);
-  $(".par").fadeIn(3000);
+  $(".par").fadeIn(2000);
+  $("#view").click(function () {
+      $("#about").animate({ height : "100%" }, 1000);
+      $(".work").toggle("slow");
+  });
 </script>
 </html>

@@ -14,14 +14,14 @@ var projects = [{
 	"github": "https://github.com/ncabelin/ncabelin.github.io/tree/master/fcccalculator"
 }, {
 	"title": "Pomodoro Timer",
-	"description": "Productivity timer with preset 25 minutes duration &amp; 5 minute break-time",
+	"description": "Productivity timer, determine session time and breaks",
 	"tech": "HTML5, Object-oriented Javascript, jQuery",
 	"url": "http://ncabelin.github.io/fccpomodoro",
 	"image": "https://cloud.githubusercontent.com/assets/15892944/13793675/4bf6aa54-eab5-11e5-836c-8a8f0ba1516f.png",
 	"github": ""
 }, {
 	"title": "Key Swiper Arcade Game",
-	"description": "Game made w/ HTML5 canvas. Go past the bugs and fishes, grab the key to score.",
+	"description": "Go past the bugs and fishes, swipe the key to score.",
 	"tech": "HTML5 canvas, Javascript",
 	"url": "http://ncabelin.github.io/udfrog",
 	"image": "https://cloud.githubusercontent.com/assets/15892944/13766034/a810cddc-ea1b-11e5-8cd7-46f34402ce36.png",
