@@ -1,0 +1,56 @@
+body, html {
+  margin: 0px;
+}
+
+body {
+  background: url('https://cloud.githubusercontent.com/assets/15892944/13905296/2fa8ade4-ee79-11e5-90f7-c2d4f6fb9c21.jpg') fixed no-repeat center center;
+  background-size: cover;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  font-weight: 300;
+}
+
+.centered {
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+h3 {
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+h4 {
+  display: inline;
+}
+
+li {
+  list-style: none;
+}
+
+.sideImage {
+  width: 30%;
+}
+
+#logo {
+  width: 60px;
+  display: inline;
+  margin: 40px 20px 0px 20px;
+}
+
+#title {
+  font-size: 64px;
+  color: #021A52;
+}
+
+.aboutUs {
+  font-size: 17px;
+}
+
+.image {
+  position: relative;
+  width: 100%;
+}

@@ -52,7 +52,7 @@ var lesson5 = {
 
 lesson5.instruction = "Write two conversion factors for the equality:";
 lesson5.quiz = [
-  { q : "1 L = 1000 mL", a: [1000,1,1,1000], d : "<table><div class='container'><tr><td><input type='text' id='q1' class='blank underlined'>mL</td><td>&nbsp;&nbsp; and &nbsp;&nbsp;</td><td><input type='text' id='q3' class='blank underlined'>L</td></tr><tr></tr><tr><td><input type='text' id='q2' class='blank'>L</td><td></td><td><input type='text' id='q4' class='blank'>mL</td></tr></div></table>",
+  { q : "1 L = 1000 mL", a: [1000,1,1,1000], d : "<table id='tableQ'><div class='container'><tr><td><input type='text' id='q1' class='blank underlined'>mL</td><td>&nbsp;&nbsp; and &nbsp;&nbsp;</td><td><input type='text' id='q3' class='blank underlined'>L</td></tr><tr></tr><tr><td><input type='text' id='q2' class='blank'>L</td><td></td><td><input type='text' id='q4' class='blank'>mL</td></tr></div></table>",
     table : true }
   ];
 
@@ -63,7 +63,7 @@ var lesson6 = {
 
 lesson6.instruction = "Solve the problem using the steps listed in this slide and give the answer.";
 lesson6.quiz = [
-  { q : "A computer chip has a width of 0.75 in. What is the distance in millimeters(mm)?" , a : "19 mm" }
+  { q : "A computer chip has a width of 0.75 in. What is the distance in millimeters(mm)?" , a : 19 }
   ];
 
 var lesson7 = {
@@ -73,7 +73,7 @@ var lesson7 = {
 
 lesson7.instruction = "Solve the problem:";
 lesson7.quiz = [
-  { q : "The element tungsten used in light bulb filaments has a density of 19.3 g/cm3. What is the volume in, in cubic centimeters(cm3), of 250 g of tungsten?", a : "13 cm3" }
+  { q : "The element tungsten used in light bulb filaments has a density of 19.3 g/cm3. What is the volume in, in cubic centimeters(cm3), of 250 g of tungsten?", a : 13 }
   ];
 
 var lessArray = [lesson1, lesson2, lesson3, lesson4, lesson5, lesson6, lesson7];

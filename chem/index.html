@@ -5,15 +5,23 @@
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
   <style>
   .box {
     border: solid 1px black;
     padding-top: 10px;
   }
 
+  h1 {
+    font-family: 'Pacifico', cursive;
+  }
+
   body {
     font-size:14px;
+    font-family: 'Open Sans', sans-serif;
   }
 
   .submit {
@@ -38,7 +46,16 @@
   #nex {
     display: none;
   }
+
   #bak {
+    display: none;
+  }
+
+  #question {
+    font-weight: 400;
+  }
+
+  #tableAns {
     display: none;
   }
   </style>
@@ -76,6 +93,7 @@
           <div>
               <label for="formGroupExampleInput" id="question"></label>
               <input type="text" class="form-control" id="answer" placeholder="Answer">
+              <span id="tableAns"></span>
               <hr>
               <button class="btn btn-danger" id="check">Check</button>
               <button class="btn btn-default" id="bak">Back</button>
@@ -100,6 +118,7 @@ $(document).ready(function() {
   var i = $("#instruction");
   var q = $("#question");
   var a = $("#answer");
+  var tableAns = $('#tableAns');
   var c = $("#check");
   var r = $("#result");
   var total = $("#total");
@@ -118,21 +137,33 @@ $(document).ready(function() {
     i.html(lesson.instruction);
     q.html(lesson.quiz[item].q);
     total.html(lesson.quiz.length);
-    console.log(lesson.quiz[item].table);
+    console.log(lesson.quiz);
     if (lesson.quiz[item].table) {
-      console.log("hi");
-      a.replaceWith(lesson.quiz[item].d);
+      tableSet = true;
+      console.log(a);
+      a.css('display', 'none');
+      tableAns.html(lesson.quiz[item].d);
+      tableAns.css('display', 'inline');
+      total.html(lessArray[l].quiz[qItem].a.length);
+    } else {
+      a.css('display', 'inline');
+      tableAns.css('display', 'none');
     }
+    console.log(tableSet);
   }
 
   function reset() {
     score = 0;
     qItem = 0;
+    if (tableSet) {
+      tableSet = false;
+    }
     a.empty();
     r.empty();
     scoreI.html(0);
     bak.css("display", "none");
-    document.querySelector("#answer").value = "";
+
+    document.querySelector("#answer").value = " ";
   }
 
   c.click(function() {
@@ -142,17 +173,17 @@ $(document).ready(function() {
           var answerTd = $("#q" + (i + 1)).val();
           tableAns.push(answerTd);
         }
-        console.log(tableAns);
         for (var i = 0; i < lessArray[l].quiz[qItem].a.length; i++) {
           if (tableAns[i] != lessArray[l].quiz[qItem].a[i]) {
-            console.log(false);
             r.css("color", "red");
             r.html("Wrong, try again");
             return;
           }
           r.css("color", "green");
           r.html("Correct !");
-          nex.css("display", "inline");
+          if (i = (lessArray[l].quiz[qItem].a.length - 1)) {
+            nex.css("display", "inline");
+          }
           score++;
           scoreI.html(score);
         }
@@ -191,16 +222,18 @@ $(document).ready(function() {
   });
 
   next.click(function() {
-    if (l < lessArray.length) {
+    if (l < (lessArray.length - 1)) {
       l++;
+      console.log(l);
       reset();
       showLesson(lessArray[l], 0);
-      };
+    };
   });
 
   back.click(function() {
     if (l != 0) {
     l--;
+    console.log(l);
     reset();
     showLesson(lessArray[l], 0);  
     } 
