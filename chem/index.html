@@ -1,66 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
+
   <title>Chemistry Reviewer</title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
+  <link href='style.css' rel='stylesheet' type='text/css'>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-  <style>
-  .box {
-    border: solid 1px black;
-    padding-top: 10px;
-  }
-
-  h1 {
-    font-family: 'Pacifico', cursive;
-  }
-
-  body {
-    font-size:14px;
-    font-family: 'Open Sans', sans-serif;
-  }
-
-  .submit {
-    text-align:right;
-    margin:10px;
-    border:none;
-  }
-
-  a {
-    color: black;
-    font-size: 16px;
-    border: solid 1px black;
-    border-bottom: none;
-    margin-left: 0px;
-    margin-right: 0px;
-  }
-
-  #result {
-    color: green;
-  }
-
-  #nex {
-    display: none;
-  }
-
-  #bak {
-    display: none;
-  }
-
-  #question {
-    font-weight: 400;
-  }
-
-  #tableAns {
-    display: none;
-  }
-  </style>
 </head>
 <body>
+
   <h1 class="text-center">Chemistry Reviewer</h1>
   <div class="container">
     <div class="row">
@@ -109,140 +63,7 @@
         <button class="btn btn-primary" id="next">Next Lesson</button>
       </div>
   </div>
-<script>
-$(document).ready(function() {
-  var lessC = $("#lessonContent");
-  var lessH = $("#lessonHeading");
-  var next = $("#next");
-  var back = $("#back");
-  var i = $("#instruction");
-  var q = $("#question");
-  var a = $("#answer");
-  var tableAns = $('#tableAns');
-  var c = $("#check");
-  var r = $("#result");
-  var total = $("#total");
-  var scoreI = $("#score");
-  var nex = $("#nex");
-  var bak = $("#bak");
-  var score = 0;
-  var l = 0;
-  var qItem = 0;
-  var tableSet = false;
-  var q1,q2,q3,q4,q5;
-
-  function showLesson(lesson, item) {
-    lessH.html(lesson.head);
-    lessC.html(lesson.content);
-    i.html(lesson.instruction);
-    q.html(lesson.quiz[item].q);
-    total.html(lesson.quiz.length);
-    console.log(lesson.quiz);
-    if (lesson.quiz[item].table) {
-      tableSet = true;
-      console.log(a);
-      a.css('display', 'none');
-      tableAns.html(lesson.quiz[item].d);
-      tableAns.css('display', 'inline');
-      total.html(lessArray[l].quiz[qItem].a.length);
-    } else {
-      a.css('display', 'inline');
-      tableAns.css('display', 'none');
-    }
-    console.log(tableSet);
-  }
-
-  function reset() {
-    score = 0;
-    qItem = 0;
-    if (tableSet) {
-      tableSet = false;
-    }
-    a.empty();
-    r.empty();
-    scoreI.html(0);
-    bak.css("display", "none");
-
-    document.querySelector("#answer").value = " ";
-  }
-
-  c.click(function() {
-      if (lessArray[l].quiz[qItem].table) {
-        var tableAns = [];
-        for (var i = 0; i < lessArray[l].quiz[qItem].a.length; i++) {
-          var answerTd = $("#q" + (i + 1)).val();
-          tableAns.push(answerTd);
-        }
-        for (var i = 0; i < lessArray[l].quiz[qItem].a.length; i++) {
-          if (tableAns[i] != lessArray[l].quiz[qItem].a[i]) {
-            r.css("color", "red");
-            r.html("Wrong, try again");
-            return;
-          }
-          r.css("color", "green");
-          r.html("Correct !");
-          if (i = (lessArray[l].quiz[qItem].a.length - 1)) {
-            nex.css("display", "inline");
-          }
-          score++;
-          scoreI.html(score);
-        }
-        return;
-      }
-      var qA = lessArray[l].quiz[qItem].a;
-      var sA = document.querySelector("#answer").value;
-      if (qA == sA) {
-        r.css("color", "green");
-        r.html("Correct !");
-        nex.css("display", "inline");
-        score++;
-        scoreI.html(score);
-      } else {
-        r.css("color", "red");
-        r.html("Wrong, try again");
-      }
-  });
-
-  nex.click(function() {
-    document.querySelector("#answer").value = "";
-    qItem++;
-    i.html(lessArray[l].instruction);
-    q.html(lessArray[l].quiz[qItem].q);
-    r.empty();
-    nex.css("display", "none");
-    bak.css("display", "inline");
-  });
-
-  bak.click(function() {
-    qItem--;
-    score--;
-    i.html(lessArray[l].instruction);
-    q.html(lessArray[l].quiz[qItem].q);
-    r.empty();
-  });
-
-  next.click(function() {
-    if (l < (lessArray.length - 1)) {
-      l++;
-      console.log(l);
-      reset();
-      showLesson(lessArray[l], 0);
-    };
-  });
-
-  back.click(function() {
-    if (l != 0) {
-    l--;
-    console.log(l);
-    reset();
-    showLesson(lessArray[l], 0);  
-    } 
-  });
-
-  showLesson(lessArray[l], 0);
-});
-
-</script>
+<script src='script.js'></script>
 <script src="data.js"></script>
 </body>
 </html>

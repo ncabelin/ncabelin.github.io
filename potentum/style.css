@@ -15,7 +15,7 @@ body {
 }
 
 h1 {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Pacifico', cursive;
 }
 
 h3 {
@@ -27,10 +27,6 @@ h4 {
   display: inline;
 }
 
-li {
-  list-style: none;
-}
-
 .sideImage {
   width: 30%;
 }
@@ -38,12 +34,21 @@ li {
 #logo {
   width: 60px;
   display: inline;
-  margin: 40px 20px 0px 20px;
+  margin: 80px 20px 0px 20px;
+}
+
+#logo2 {
+  height: 20px;
 }
 
 #title {
-  font-size: 64px;
+  font-size: 20px;
+  letter-spacing: 2px;
   color: #021A52;
+}
+
+#heading {
+  height: 700px;
 }
 
 .aboutUs {

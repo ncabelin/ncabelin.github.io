@@ -9,44 +9,186 @@
     <!-- bootstrap css -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-    <!-- jquery and jquery js -->
+    <!-- html5 shiv, jquery and jquery js -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="html5shiv.js" type="text/javascript"></script>
+    <script src="html5shiv-printshiv.js" type="text/javascript"></script>
 
     <!-- font -->
-    <link href='https://fonts.googleapis.com/css?family=Ubuntu:700' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="style.css">
     <style>
       .container-fluid {
         padding-left: 0px;
         padding-right: 0px;
       }
+
+      h3 {
+        font-weight: 300;
+      }
+
       .navbar {
         border-radius: 0px;
+        background-color: white;
+      }
+
+      #tech {
+        background: url('https://cloud.githubusercontent.com/assets/15892944/13978778/eb3e4ef6-f090-11e5-982c-ae199fe2d945.jpg') no-repeat fixed center center;
+        background-size: cover;
+        height: 100%;
+        color: black;
+        font-size: 20px;
+        padding: 60px 40px 60px 20px;
+      }
+
+      #aboutUs {
+        background: url('https://cloud.githubusercontent.com/assets/15892944/13976694/9749ee74-f07f-11e5-9829-a03cd8fc6caf.jpg') no-repeat center;
+        background-size: cover;
+        height: 100%;
+        padding: 60px 40px 60px 20px;
+        font-size: 18px;
+      }
+
+      #aboutUs li {
+        margin: 10px;
+      }
+
+      #contact {
+        background: url('https://cloud.githubusercontent.com/assets/15892944/13979963/03e1ad06-f099-11e5-8645-08d3739aca43.jpg') no-repeat center;
+        background-size: cover;
+        height: 600px;
+        font-size: 20px;
+        width: 100%;
+        padding: 30px;
+      }
+
+      #contact ul { list-style: none; }
+
+      #contact ul li a {
+        color: white;
+      }
+
+      .section {
+        padding-top:60px;
+      }
+      .well {
+        background-color: rgba(0,0,0,0.3);
+        border-style: none;
+        padding-left:30px;
+        width:60%;
+      }
+      .well2 {
+        background-color: rgba(255,255,255,0.3);
+        border-style: none;
+        margin-top: 20px;
+      }
+
+      .nav li {
+        padding-top: 1px;
+      }
+
+      .nav li a {
+        font-weight: 400;
+        border: 2px solid white;
+      }
+
+      .nav li a:hover {
+        border: 2px solid #021A52;
+        background-color: #021A52 !important;
+        color: white !important;
+      }
+
+      .white {
+        color: white;
+      }
+
+      .contacts {
+        width: 100%;
+      }
+
+      .bold {
+        font-weight: 400;
       }
     </style>
 </head>
 <body>
 <div class="container-fluid">
   <div class="row-fluid">
-    <div class="col-md-12 text-center">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#" id="title"><strong>{&nbsp; Potentum Studios &nbsp;}</strong></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Home</a></li>
+            <li><a href="#aboutUs">About</a></li>
+            <li><a href="#tech">Technology</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    
+  </div>
+  <div class="row-fluid">
+    <div class="col-md-12 text-center" id="heading">
       <img src="https://cloud.githubusercontent.com/assets/15892944/13909281/fca6a29e-eecc-11e5-90bf-ca9e77847dd3.png" id="logo">
       <h1>Potentum Studios</h1>
       <h3>Web Design &amp; Development</h3>
     </div>
   </div>
   <div class="row-fluid about">
-    <div class="col-md-6 image">
-      <img src="https://cloud.githubusercontent.com/assets/15892944/13910115/663ecf4e-eeda-11e5-9e41-4d1d68456d06.jpg" class="sideImage">
-      <h4>We design company logos and business cards.<br />
-      We set up hosting, domain name registration and company e-mail setup.
-      </h4>
+    <div class="col-md-12" id="aboutUs">
+      <h1>About Us :</h1>
+      <ul class="well well-large">
+        <li>We are a Los Angeles based web development team who can provide you the right web solutions.</li>
+        <li>We build static and dynamic responsive websites.</li>
+        <li>We can design your company logos and business cards.</li>
+        <li>As well as set up hosting, domain name registration and company e-mail based on your website address.</li>
+        <li>We are a <strong>full-service</strong> web and mobile OS development team.</li>
+      </ul>
     </div>
-    <div class="col-md-6 aboutUs text-right">
-      <ul>
-        <li>We are a Los Angeles based web developer team who can provide you your web solutions.</li>
-        <li>Build custom static or dynamic websites with us.</li>
+  </div>
+  <div class="row-fluid">
+    <div class="col-md-12" id="tech">
+      <h1 class="white">Technology we use</h1>
+      <ul class="well well2">
+        <li>We utilize the latest technology to suit your needs. e.g.
+          <ul>
+            <li>HTML5 / CSS3</li>
+            <li>Wordpress</li>
+            <li>Angular.js</li>
+            <li>MongoDB</li>
+            <li>Node.js &amp; Express.js</li>
+            <li>Python</li>
+            <li>Adobe Photoshop</li>
+          </ul>
+        </li>
+        <li>We can build software that can adapt to older browser versions</li>
+      </ul>
+    </div>
+  </div>
+    <div class="row-fluid">
+    <div class="col-md-12" id="contact">
+      <h1 class="text-right">Contact Us : </h1>
+      <ul class="text-right contacts">
+        <li><span class="bold">Address</span> : 39453 11th St. W. Palmdale, CA 93551</li>
+        <li>Phone : <a href="tel:+13232076632">(323) 207-6632</a></li>
+        <li>Email : <a href="mailto:ncabelin@potentum.com">ncabelin@potentum.com</a></li>
+        <br>
+        <li><i>Call or email us to discuss pricing and needs.<br>We offer competitive packages.</i></li>
       </ul>
     </div>
   </div>
