@@ -164,8 +164,7 @@ h3 {
   }
   #heading {
     height: 300px;
-    background: url('https://cloud.githubusercontent.com/assets/15892944/13905296/2fa8ade4-ee79-11e5-90f7-c2d4f6fb9c21.jpg') fixed no-repeat center center;
-    background-size: cover;
+    background-color: #255671;
   }
   h2 {
     font-size: 25px;
