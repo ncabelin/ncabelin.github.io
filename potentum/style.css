@@ -14,7 +14,7 @@ body {
   text-align: center;
 }
 
-h1 {
+h1, h2 {
   font-family: 'Pacifico', cursive;
 }
 
@@ -159,12 +159,16 @@ h3 {
 
 @media screen and (max-width:550px) {
   #tech, #aboutUs, #contact {
+    padding-top: 20px;
     height: 500px;
   }
   #heading {
-    height: 500px;
+    height: 300px;
     background: url('https://cloud.githubusercontent.com/assets/15892944/13905296/2fa8ade4-ee79-11e5-90f7-c2d4f6fb9c21.jpg') fixed no-repeat center center;
     background-size: cover;
+  }
+  h2 {
+    font-size: 25px;
   }
   .well {
     width:100%;
@@ -172,6 +176,9 @@ h3 {
   }
   .contacts {
     font-size: 14px;
+  }
+  .nav li {
+    text-align: center;
   }
 }
 
