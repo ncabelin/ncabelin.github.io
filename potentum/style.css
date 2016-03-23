@@ -158,8 +158,13 @@ h3 {
 }
 
 @media screen and (max-width:550px) {
-  #tech, #aboutUs, #contact, #heading {
-    height:500px;
+  #tech, #aboutUs, #contact {
+    height: 500px;
+  }
+  #heading {
+    height: 500px;
+    background: url('https://cloud.githubusercontent.com/assets/15892944/13905296/2fa8ade4-ee79-11e5-90f7-c2d4f6fb9c21.jpg') fixed no-repeat center center;
+    background-size: cover;
   }
   .well {
     width:100%;
