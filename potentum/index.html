@@ -39,10 +39,10 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Home</a></li>
-            <li><a href="#aboutUs">About</a></li>
-            <li><a href="#tech">Technology</a></li>
-            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#heading" id="home">Home</a></li>
+            <li><a href="#aboutUs" id="about">About</a></li>
+            <li><a href="#tech" id="technology">Technology</a></li>
+            <li><a href="#contact" id="cont">Contact Us</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
@@ -101,5 +101,35 @@
     </div>
   </div>
 </div>
+<script>
+$(document).ready(function() {
+
+  $('#home').click(function(){
+    $('body').animate({
+      scrollTop: $("#heading").offset().top
+      }, 500);
+  });
+
+  $('#about').click(function(){
+    $('body').animate({
+      scrollTop: $("#aboutUs").offset().top
+    }, 500);
+  });
+
+  $('#technology').click(function(){
+    $('body').animate({
+      scrollTop: $("#tech").offset().top
+    }, 500);
+  });
+
+  $('#cont').click(function(){
+    $('body').animate({
+      scrollTop: $("#contact").offset().top
+    }, 500);
+  });
+
+});
+
+</script>
 </body>
 </html>
