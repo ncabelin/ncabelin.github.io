@@ -1,4 +1,11 @@
 var projects = [{
+	"title": "Potentum Studios",
+	"description": "My Web design &amp; development landing page",
+	"tech": "HTML5,CSS3,Javascript,jQuery,Bootstrap",
+	"url": "http://www.potentum.com",
+	"image": "https://cloud.githubusercontent.com/assets/15892944/14021986/f57073d0-f19a-11e5-9546-d3077c7d5063.jpg",
+	"github": "https://github.com/ncabelin/ncabelin.github.io/tree/master/potentum"
+}, {
 	"title": "Weather Checker",
 	"description": "Gets OpenWeather API data using gps coordinates.",
 	"tech": "HTML5,CSS3,Javascript,jQuery,Bootstrap",

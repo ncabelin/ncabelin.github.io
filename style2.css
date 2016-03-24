@@ -20,7 +20,11 @@ h3 {
 }
 
 #about { /* center image & about area */
-  background: url("https://cloud.githubusercontent.com/assets/15892944/13803396/83259278-eb01-11e5-91e1-a3b12cf65b55.jpg") fixed no-repeat center center;
+  background: linear-gradient(
+  rgba(0, 0, 0, 0.3),
+  rgba(0, 0, 0, 0.3)
+  ),
+  url("https://cloud.githubusercontent.com/assets/15892944/13803396/83259278-eb01-11e5-91e1-a3b12cf65b55.jpg") fixed no-repeat center center;
   background-size: cover;
   text-align: center;
   font-size: 18px;
