@@ -71,10 +71,6 @@ a, a:hover {
   margin: 10px;
 }
 
-.contact {
-
-}
-
 #cont {
   margin-left:20px;
 }
@@ -156,33 +152,48 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d1c20', end
 }
 
 @media screen and (max-width:990px) {
+
   .developerName, .imageLogo {
     text-align: center;
   }
+
   .developerName {
     padding: 0px;
   }
+
   #hat {
     margin: 0 auto;
     padding: 20px;
     width: 200px;
   }
+
   .headings {
     text-align: center;
   }
-  .projStyle {
-    width:340px;
-    height:340px;
-  }
+
   #title {
     padding-bottom:30px;
   }
 }
 
 @media screen and (max-width:540px) {
-  .projStyle {
-    width: 100px;
-    height: 100px;
+
+  #contacts ul li { 
+    display: block; 
+    margin: 10px;
   }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h4 {
+    font-size: 20px;
+  }
+
+  #hat {
+    width: 100px;
+  }
+
 }
 
