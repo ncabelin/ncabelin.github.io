@@ -22,7 +22,7 @@ var projects = [{
 }, {
 	"title": "Key Swiper Arcade Game",
 	"description": "Go past the bugs and fishes, swipe the key to score.",
-	"tech": "HTML5 canvas, Javascript",
+	"tech": "HTML5 canvas,Javascript object-oriented programming",
 	"url": "http://ncabelin.github.io/udfrog",
 	"image": "https://cloud.githubusercontent.com/assets/15892944/14010787/9bf4c85a-f155-11e5-9593-e709e5bede13.jpg",
 	"github": "https://github.com/ncabelin/ncabelin.github.io/tree/master/udfrog"

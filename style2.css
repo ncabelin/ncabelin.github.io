@@ -204,6 +204,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d1c20', end
 
   #about {
     padding-top: 20px;
+    background: unset;
+    background-color: #383228;
+    height: 100%;
   }
 }
 
