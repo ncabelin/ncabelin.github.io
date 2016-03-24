@@ -151,6 +151,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d1c20', end
   margin-right: 0px;
 }
 
+#profilepic {
+  border-radius:100%;
+  width:100px;
+}
+
 @media screen and (max-width:990px) {
 
   .developerName, .imageLogo {
@@ -187,13 +192,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d1c20', end
     font-size: 24px;
   }
 
-  h4 {
+  #title {
     font-size: 20px;
+    padding-bottom: 5px;
   }
 
   #hat {
     width: 100px;
+    padding-bottom: 0px;
   }
 
+  #about {
+    padding-top: 20px;
+  }
 }
 

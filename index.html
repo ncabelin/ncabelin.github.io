@@ -45,7 +45,7 @@
     <p class="par">I currently do web and mobile design and development. Click below for more info.</p>
     <button class="btn bT" id="view"><a href="#projects">View my Projects</a></button>
     <button class="btn bT"><a href="http://ncabelin.github.io/udresume" class="bT">View my Resume</a></button>
-    <button class="btn bT"><a href="#contacts" class="bT">Let's get in Touch !</a></button>
+    <button class="btn bT"><a href="#contacts" class="bT" id="contactB">Let's get in Touch !</a></button>
   </section>
   <div class="work row">
     <section>
@@ -60,6 +60,7 @@
   <footer class="row">
     <h3 class="headings text-center" id="cont">Contact Me</h3>
     <div id="contacts">
+      <img src="https://cloud.githubusercontent.com/assets/15892944/14011248/532596d6-f15a-11e5-8f43-eb9a013a3fcb.jpg" class="center-block" id="profilepic">
       <ul>
         <li><a href="mailto:ncabelin@yahoo.com" class="contact"><i class="fa fa-envelope fa-3x"></i> ncabelin@yahoo.com</a></li>
         <li><a href="https://www.linkedin.com/in/neptune-michael-cabelin-637600b0" class="contact"><i class="fa fa-linkedin fa-3x"></i> LinkedIn</a></li>
@@ -76,6 +77,10 @@
   $("#view").click(function () {
       $("#about").animate({ height : "100%" }, 1000);
       $(".work").toggle("slow");
+  });
+
+  $("#contactB").click(function() {
+    $("html, body").animate({ scrollTop:$("#cont").offset().top }, 500);
   });
 </script>
 </html>
