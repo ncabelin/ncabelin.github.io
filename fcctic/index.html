@@ -420,7 +420,7 @@
 						recordMoves(x, player1);
 						checkPattern(player1);
 						if (!won) {
-							playComputer(player2, player1);
+							setTimeout(function() { playComputer(player2, player1); }, 1000);
 							checkPattern(player2);	
 						}
 					} else {
@@ -428,7 +428,7 @@
 						recordMoves(x, player2);
 						checkPattern(player2);
 						if (!won) {
-							playComputer(player1, player2);
+							setTimeout(function() { playComputer(player1, player2); }, 1000);
 							checkPattern(player1);	
 						}					
 					}

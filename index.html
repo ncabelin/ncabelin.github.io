@@ -15,19 +15,9 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- bootStrap -->
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="style2.css">
-  <style>
-    .work {
-      display:none;
-    }
-    #about {
-      height: 600px;
-    }
-    .row {
-      margin-left:0px;
-    }
-  </style>
 </head>
 <body>
   <header class="row">
@@ -39,17 +29,20 @@
       <h4 class="heading" id="title">Software Developer</h4>
     </div><!--end description-->
   </header><!--end row 1-->
-  <section class="row" id="about">
-    <p class="par">Hi there, I'm a software developer who is passionate about building creative and efficient solutions.</p>
-    <p class="par">I used to be in the field of nursing and economics, but I discovered my true calling in building software.</p> 
-    <p class="par">I currently do web / mobile design and development. Click below for more info.</p>
-    <button class="btn bT" id="view"><a href="#projects">View my Projects</a></button>
-    <button class="btn bT"><a href="http://ncabelin.github.io/udresume" class="bT">View my Resume</a></button>
-    <button class="btn bT"><a href="#contacts" class="bT" id="contactB">Let's get in Touch !</a></button>
+  <section class="row par" id="about">
+    <p>Hi there, I'm a software developer who is nuts about building creative and efficient solutions.</p>
+    <p>I used to be in the field of nursing and economics, but I discovered my true calling and passion in building software.</p>
+    <p>I currently do web design and development with an emphasis on mobile-responsive solutions.</p><br>
+    <p>Click view projects for my latest building spree.</p>
+    <p>Click view resume to see the software technologies that I use.</p>
+    <p>Click contact me to get in touch.</p><br>
+    <a href="#projects"><button class="btn bT" id="view">View Projects</button></a>
+    <button class="btn bT" onclick="window.open('http://ncabelin.github.io/udresume')">View Resume</a></button>
+    <a href="#contacts" class="bT" id="contactB"><button class="btn bT">Contact Me</button></a>
   </section>
   <div class="work row">
     <section>
-      <h3 class="headings">Featured Projects</h3>
+      <h3 class="headings" id="projs">Featured Projects</h3><p class="info">{ Click for more info }</p>
     </section>
     <section>
       <div id="projects" class="row">
@@ -70,17 +63,4 @@
   </footer>
 </body>
 <script src="script.js"></script>
-<script>
-  var closed = true;
-  $(".par").fadeOut(10);
-  $(".par").fadeIn(2000);
-  $("#view").click(function () {
-      $("#about").animate({ height : "100%" }, 1000);
-      $(".work").toggle("slow");
-  });
-
-  $("#contactB").click(function() {
-    $("html, body").animate({ scrollTop:$("#cont").offset().top }, 500);
-  });
-</script>
 </html>

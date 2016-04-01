@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Tic Tac Toe Game</title>
+    <meta charset="UTF-8">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Chewy' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+
+    <style>
+      body {
+        background-color: #0E1442;
+        font-family: 'Open Sans', sans-serif;
+      }
+
+      h1 {
+        font-family: 'Chewy', cursive;
+        font-size: 48px;
+        padding-left: 20px;
+      }
+
+      table {
+        width:300px;
+      }
+      td {
+        width:100px;
+        height:100px;
+        text-align: center;
+        font-size:40px;
+        color: white;
+      }
+      .bottom {
+        border-bottom: solid white 1px;
+      }
+      .top {
+        border-top: solid white 1px;
+      }
+      .right {
+        border-right: solid white 1px;
+      }
+      .left {
+        border-left: solid white 1px;
+      }
+      .centered {
+        display:block;
+        margin-left:auto;
+        margin-right:auto;
+      }
+      .btn {
+        text-align: center;
+        color:black;
+      }
+      .win {
+        color: orange;
+      }
+      #footer {
+        margin-top: 40px;
+      }
+      .nav {
+        margin:20px;
+      }
+      .navbar-toggle {
+        margin: 30px;
+      }
+      .navbar-toggle: hover {
+        background-color:#0E1442;
+      }
+      .icon-bar {
+        color:black;
+      }
+      .btn {
+        display:inline;
+      }
+      #footer {
+        margin-left:auto;
+        margin-right:auto;
+        list-style: none;
+        text-align: center;
+      }
+      #footer li {
+        display: inline;
+      }
+      #status {
+        color: orange;
+      }
+
+      @media screen and (max-width:700px) {
+        h1 {
+          text-align: center;
+        }
+      }
+    </style>
+</head>
+<body>
+  <div class="row">
+      <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <h1><strong>Tic Tac Toe</strong></h1>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="http://ncabelin.github.io" class="text-center">Home</a></li>
+            <li><a href="http://ncabelin.github.io/udresume" class="text-center">About</a></li>
+            <li><a href="mailto:ncabelin@gmail.com" class="text-center">Contact</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+  </div>
+  <div class="container-fluid">
+  <table class="centered">
+    <tr>
+      <td value = 1 class="bottom right" id="one"></td>
+      <td value = 2 class="bottom" id="two"></td>
+      <td value = 3 class="bottom left" id="three"></td>
+    </tr>
+    <tr>
+      <td value = 4 class="bottom right" id="four"></td>
+      <td value = 5 class="bottom" id="five"></td>
+      <td value = 6 class="bottom left" id="six"></td>
+    </tr>
+    <tr>
+      <td value = 7 class="right" id="seven"></td>
+      <td value = 8 id="eight"></td>
+      <td value = 9 class="left" id="nine"></td>
+    </tr>
+    </div>
+  </table>
+    <ul id="footer">
+      <li><button class="btn btn-danger centered" id="reset">Reset Game</button>
+      <li><button class="btn btn-success centered" id="xPlay">Play as X</button>
+      <li><button class="btn btn-primary centered" id="oPlay">Play as O</button>
+    </ul>
+    <div class="row">
+      <div class="col-md-12 btn-group center-block text-center" role="group">
+        <p id="status"></p>
+      </div>
+    </div>
+  
+   <!-- jquery -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+   <!-- bootstrap js -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script>
+
+$(document).ready(function() {
+  var ids = {
+    1 : $("#one"),
+    2 : $("#two"),
+    3 : $("#three"),
+    4 : $("#four"),
+    5 : $("#five"),
+    6 : $("#six"),
+    7 : $("#seven"),
+    8 : $("#eight"),
+    9 : $("#nine"),
+    }
+
+  var resetB = $("#reset");
+  var xPlayB = $("#xPlay");
+  var oPlayB = $("#oPlay");
+  var won = false;
+  var move = 0;
+  var occArr = [];
+  var cMove;
+
+  var winning = [ [1,2,3], [4,5,6], [7,8,9], [1,4,7], [2,5,8], [3,6,9], [1,5,9], [3,5,7] ];
+// a,b a,c b,c
+
+  function reset() {
+    console.log("reset whole game");
+    move = 0;
+    human.moves = [];
+    computer.moves = [];
+    for (var i = 1; i < 10; i++) {
+      ids[i].empty();
+    }
+    won = false;
+  };
+
+  function Player(symbol, state) {
+    this.symbol = symbol;
+    this.state = state;
+    this.moves = [];
+  }
+
+  var human = new Player("X", "human");
+
+  var computer = new Player("O", "computer");
+
+  xPlayB.click(function() {
+    human.symbol = "X";
+    computer.symbol = "O";
+  });
+
+  oPlayB.click(function() {
+    human.symbol = "O";
+    computer.symbol = "X";
+  });
+
+  resetB.click(function() {
+    reset();
+  });
+
+  Player.prototype.moveTo = function(position) { // record no.of move, push to moves array, print symbol
+    var pos = Number(position);
+    this.moves.push(Number(pos));
+    ids[position].html(this.symbol);
+    occArr.push(pos);
+    console.log(occArr);
+  }
+
+  Player.prototype.checkMove = function() {
+    var symb = this.symbol;
+    for (var i = 0; i < winning.length; i++) { // cycle through each winning array
+      var rightMove = 0;
+      var winningArr = [];
+      this.moves.forEach(function(xY) {
+        var h = winning[i].indexOf(xY);
+        if (h !== -1) {
+          rightMove++;
+          winningArr.push(xY);
+          if(rightMove == 3) {
+            console.log(winningArr + " wins");
+            if (symb !== "N") {
+              for (var j = 0; j < winningArr.length; j++) {
+                ids[winningArr[j]].html("<span class='win'>" + symb + "</span>");
+              }
+              won = true;
+              return "n";
+            }
+          }
+          return winningArr;
+        }
+      });
+    }
+  }
+
+  function emptyCells() {
+    var emptyArr = [];
+    for (var a = 1; a < 10; a++) { // generate empty cells Array
+      var b = occArr.indexOf(a);
+      if (b == -1) {
+        emptyArr.push(a);
+      }
+    }
+    return emptyArr;
+  }
+
+  Player.prototype.smartMove = function() { // computer generated move, if occArr = 1, random only, 3 above smart AI
+    var emptied = emptyCells();
+
+    if (occArr.length == 1) { // random move only
+      var rand = emptied[Math.floor(Math.random() * emptied.length)];
+      console.log(rand);
+      cMove = rand;
+    } else if (occArr.length == 3) {
+      for (var i = 0; i < winning.length; i++) { // cycle through each winning array
+        var rightMove = 0;
+        var winningArr = [];
+        human.moves.forEach(function(xY) {
+          var h = winning[i].indexOf(xY);
+          if (h !== -1) {
+            rightMove++;
+            winningArr.push(xY);
+            if(rightMove == 2) {
+              var sortedWinningArr = winningArr.sort();
+              console.log(sortedWinningArr + " is sorted winning combo");
+              for (var k = 0; k < winning.length; k++) {
+                var first = winning[k].indexOf(sortedWinningArr[0]);
+                var second = winning[k].indexOf(sortedWinningArr[1]);
+                console.log(first + " is first");
+                console.log(second + " is second");
+                if (first !== -1 && second !== -1) {
+                  if (first == 0 && second == 1) {
+                    cMove = winning[k][2];
+                  } else if (first == 1 && second == 2) {
+                    cMove = winning[k][0];
+                  } else {
+                    cMove = winning[k][1];
+                  }
+                }
+              }
+            } // rightMove = 2
+          }
+        });
+      }
+    } else if (occArr.length >= 5) {
+      var rand = emptied[Math.floor(Math.random() * emptied.length)];
+      // console.log(rand);
+      cMove = rand;
+    }
+  }
+
+  $("td").click(function() {
+
+    if (won == true || occArr.length === 9) { // reset if player won
+      reset();
+    } else {
+      var x = $(this).attr("value"); // x is position of move
+      var y = ids[x]; // y is the jQuery location of td cell clicked
+      var z = occArr.indexOf(x);
+      console.log(z);
+      if (z !== -1) { // prevents player from move if cell is occupied already
+        console.log("taken");
+        return;
+      }
+
+      human.moveTo(x);
+      console.log(human.moves);
+      console.log(occArr + " is occupied array.");
+      human.checkMove();
+      if (won == false) {
+        computer.smartMove();
+        console.log(cMove + " is the computer move");
+        setTimeout(function() { computer.moveTo(cMove); }, 500);
+        computer.checkMove();
+      }
+  
+    }
+    if (move === 9 && won === false) {    
+      console.log("draw");
+    }
+
+  }); 
+
+
+});
+    
+</script>
+</body>
+</html>

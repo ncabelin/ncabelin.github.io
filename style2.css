@@ -44,8 +44,8 @@ hr {
   background: black;
 }
 
-a, a:hover {
-  color: black;
+button {
+  transition: all 0.3s ease 0s;
 }
 
 .bT {
@@ -55,8 +55,13 @@ a, a:hover {
   margin-bottom: 10px;
 }
 
-.btn: hover {
-  background-color: #333832;; 
+.bT:hover {
+  background-color: #1D1C20;
+  color: white;
+}
+
+.bT:focus {
+  outline: 0;
 }
 
 .headings {
@@ -73,6 +78,15 @@ a, a:hover {
 #contacts ul li { 
   display: inline; 
   margin: 10px;
+  font-weight: 400;
+}
+
+#contacts ul li a {
+  color: black;
+}
+
+#contacts ul li a:hover {
+  color: #1F462E;
 }
 
 #cont {
@@ -102,14 +116,7 @@ background-color: #369;
 }
 
 .work {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1d1c20+0,1d1c20+58,8a8379+100 */
-background: rgb(29,28,32); /* Old browsers */
-background: -moz-linear-gradient(top,  rgba(29,28,32,1) 0%, rgba(29,28,32,1) 58%, rgba(138,131,121,1) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top,  rgba(29,28,32,1) 0%,rgba(29,28,32,1) 58%,rgba(138,131,121,1) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom,  rgba(29,28,32,1) 0%,rgba(29,28,32,1) 58%,rgba(138,131,121,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d1c20', endColorstr='#8a8379',GradientType=0 ); /* IE6-9 */
-
-  /* background-color: #1D1C20; */
+  background-color: #1D1C20;
   color: white;
 }
 
@@ -160,6 +167,61 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d1c20', end
   width:100px;
 }
 
+.work {
+  display:none;
+}
+#about {
+  height: 600px;
+}
+.row {
+  margin-left:0px;
+}
+.modal-dialog {
+  color: black;
+  font-size: 16px;
+}
+.buttonC {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #1D1C20;
+  border: 0px;
+  font-size: 16px;
+}
+
+.buttonC:visited {
+ background-color: #1D1C20; 
+}
+
+.buttonC:hover {
+  background-color: #1D1C20;
+  color: #C5BF8C;
+}
+
+.buttonC:focus {
+  outline: 0;
+}
+
+.buttonC:active {
+  background-color: #1D1C20;
+}
+
+.mod-img {
+  width:150px;
+  float:left;
+  margin:0px 10px 10px 10px;
+}
+
+.info {
+  margin-left: 40px;
+  color: #C5BF8C;
+  font-size: 10px;
+}
+
+.yellowed {
+  color: #AA8161;
+  text-align: right;
+}
+
 @media screen and (max-width:990px) {
 
   .developerName, .imageLogo {
@@ -176,7 +238,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d1c20', end
     width: 200px;
   }
 
-  .headings {
+  .headings, .info {
     text-align: center;
   }
 
@@ -211,6 +273,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d1c20', end
     background: unset;
     background-color: #383228;
     height: 100%;
+  }
+
+  .info {
+    display:none;
   }
 }
 

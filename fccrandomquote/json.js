@@ -16,11 +16,21 @@ var trumpQuotes = ["Even a race to Obama, [Hillary Clinton] was gonna beat Obama
 "My fingers are long and beautiful, as, it has been well been documented, are various other parts of my body.",
 "Sorry losers and haters, but my I.Q. is one of the highest -and you all know it! Please don't feel so stupid or insecure,it's not your fault.",
 "The beauty of me is that I'm very rich."];
+
+
 $(document).ready(function() {
+
+  var q;
+
   $("#gen").click(function(){
     $("#randomQuotes").empty();
     var trumpQuoteFinal = trumpQuotes[Math.floor((Math.random() * (trumpQuotes.length)))];
     $("#randomQuotes").append(trumpQuoteFinal);
-    $("a#twit" ).attr( "href", "https://twitter.com/intent/tweet?text=%20"+trumpQuoteFinal );
+    q = "https://twitter.com/intent/tweet?text=%20"+trumpQuoteFinal;
+  });
+
+  $("#twit").click(function(){
+    console.log(q);
+    window.open(q);
   });
 });
