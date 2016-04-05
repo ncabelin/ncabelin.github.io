@@ -22,7 +22,7 @@
 
     <!-- knockoutJS -->
     <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.3.0.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsocS08rMFxEFByrwYl7jIwxbH3EWXTLM&libraries=places"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzz48_POTho_1LTKj3c5l4JzKXdXVRBKo&libraries=places"></script>-->
     <style>
     body, html, .container-fluid {
         height: 100%;
@@ -69,7 +69,7 @@
       background-color: none;
       z-index: 100;
       position: absolute;
-      top: 120px;
+      top: 140px;
       margin-left: 20px;
     }
 
@@ -87,6 +87,16 @@
         margin-right: 80px;
       }
 
+      #pano {
+        z-index: 6;
+        position: absolute;
+        top: 270px;
+        left: 25%;
+        background: none;
+        width: 350px;
+        height: 350px;
+      }
+
     footer {
       z-index: 100;
       position: fixed;
@@ -98,6 +108,14 @@
     input { 
       margin-bottom: 5px;
       border-radius: 10px;
+    }
+
+    td #toggleButton: hover {
+      background: none;
+    }
+
+    td #toggleButton: focus {
+      outline: none;
     }
 
     td, input {
@@ -181,6 +199,8 @@
         <div class="col-md-6">
             <section id="floating-panel">
             </section>
+            <section id="pano">
+            </section>
         </div>
     </div>
     <datalist id="placeList"></datalist>
@@ -190,7 +210,7 @@
         <input type="text" data-bind="value: placeVal" list="placeList" placeholder="Search"><button data-bind="click: inputSearch"><i class="fa fa-search"></i></button><button data-bind="click: zoomOut">Zoom out</button>
         <table>
           <thead>
-            <tr><a href=""><td class="text-center"><button>More</button><button class="fa fa-times" id="x"></button></td></a></tr>
+            <tr><a href=""><td class="text-center" id="toggleButton"><button class="fa fa-times" data-bind="click: toggleView"></button></td></a></tr>
           </thead>
           <tbody data-bind="foreach: places" class="collapsible">
             <tr>
@@ -213,32 +233,15 @@ function Placed(name, url, img) { // constructor for ko observable list
   
 }
 
-var expand = false;
-
-$("#x").click(function() {
-  $(".collapsible").toggle("slow", function() {
-    console.log("whu")
-    if (expand) {
-      $("#x").attr("class", "fa fa-times")
-      expand = false;
-    } else {
-      $("#x").attr("class", "fa fa-plus")
-      expand = true;
-    }
-  })
-})
-
 function appViewModel() {
   var self = this;
-  var visibleTable = true;
   self.placeVal = ko.observable(); // input value
 
   self.places = ko.observableArray([]); // places array
 
   var arrLOC = [];
-  var attractionsVal = 9;
   var attractions = [
-  { loc: "Universal Studios Hollywood", url: "http://www.universalstudioshollywood.com/", img: "images/universal.png" },
+  { loc: "Universal CityWalk", url: "http://www.universalstudioshollywood.com/", img: "images/universal.png" },
   { loc: "Disneyland Park", url: "http://www.disneyland.disney.go.com", img: "images/disney.png" },
   { loc: "Griffith Observatory", url: "http://wwww.griffithobservatory.com", img: "images/griffith.png" },
   { loc: "Hollywood Walk of Fame", url: "http://www.walkoffame.com", img: "images/walk.png" },
@@ -247,31 +250,38 @@ function appViewModel() {
   { loc: "Los Angeles County Museum of Art", url: "http://www.lacma.org", img: "images/lacma.png"},
   { loc: "Cathedral of Our Lady of the Angels", url: "http://www.olacathedral.org", img: "images/cath.png"},
   { loc: "Descanso Gardens", url: "https://www.descansogardens.org", img: "images/desc.png"},
-  { loc: "Six Flags", url: "https://www.sixflags.com/magicmountain", img: "images/six.png"},
-  { loc: "Madame Tussauds Hollywood", url: "https://www2.madametussauds.com/hollywood/en/", img: "images/madame.png"}
+  { loc: "Six Flags", url: "https://www.sixflags.com/magicmountain", img: "images/six.png"}
   ];
 
-  attractions.forEach(function(data) {
+  attractions.forEach(function(data) { // generate datalist for input field
     var loc = data.loc;
     $("datalist").append("<option value='" + data.loc + "'>")
   })
 
-  self.moreMarkers = function() {
-    attractionsVal++
-    self.places.push(new Placed(attractions[attractionsVal].loc, attractions[attractionsVal].url, attractions[attractionsVal].img)); // transfer to self.places ko observable
-    arrLOC.push(attractions[attractionsVal].loc)
-    self.addMark(self.places.name(), self.places.url());
-  }
-
-  function placeDestinations() {
-    for (var i = 0; i = attractionsVal; i++ ) {
+  function placeDestinations() { // generate ko.observable array of places
+    for (var i = 0; i < attractions.length ; i++ ) {
       self.places.push(new Placed(attractions[i].loc, attractions[i].url, attractions[i].img)); // transfer to self.places ko observable
       arrLOC.push(attractions[i].loc)
-    };
-    attractionsVal += 10   
+    };   
   }
 
-  function getWiki(name) {
+  var expand = false; 
+  self.toggleView = function() { // toggle button for displaying or hiding places list table
+    $(".collapsible").toggle("slow", function() {
+      if (expand) {
+        $("#x").attr("class", "fa fa-times")
+        expand = false;
+      } else {
+        $("#x").attr("class", "fa fa-plus")
+        expand = true;
+      }
+    })
+  }
+
+  function getWiki(name) { // gets Wikipedia entry, disneyland hardcoded due to empty summary returned
+    if (name == "Disneyland Park") {
+      var addText = "<br>Disneyland Park, originally Disneyland, is the first of two theme parks built at the Disneyland Resort in Anaheim, California, opened on July 17, 1955. It is the only theme park designed and built under the direct supervision of Walt Disney."
+    }
     var u = "https://en.wikipedia.org/w/api.php?action=opensearch&search=" + name + "&limit=1&namespace=0&format=jsonfm";
     $.ajax({
       url: u,
@@ -283,36 +293,20 @@ function appViewModel() {
   }).success(function(data) {
     var content = data[2][0];
     if (content) {
-      $("#floating-panel").html(content + "<br><a href='" + data[3][0] + "'>read more in wikipedia...</a>")
+      $("#floating-panel").html(content + "<br><a href='" + data[3][0] + "'>read more...</a>")
     } else {
-      $("#floating-panel").html(name + "<br><a href='" + data[3][0] + "'>read more in wikipedia...</a>")
+      $("#floating-panel").html(name + addText + "<br><a href='" + data[3][0] + "'>read more..</a>")
     }
   });
   }
 
-  function getWeather() {
+  function getWeather() { // Gets current weather in Los Angeles in fahrenheit from Openweather API
     $.get("http://api.openweathermap.org/data/2.5/weather?q=Los Angeles,CA&appid=f6528aa612e42b74b4f7bcf00cd1b0b1").success(function(data){
       var temp = (1.8 * (data["main"]["temp"] - 273)) + 32; // convert Kelvin to Fahrenheit
       var fTemp = Math.round(temp);
       $('#weather').html('Currently : ' + fTemp + '&deg; F')
     })
   }
-
-  function getYelp() {
-    var u = "https://api.yelp.com/v2/search/?term=universal studios hollywood&location=Los Angeles, CA";
-    $.ajax({
-      url: u,
-      type: 'GET',
-      dataType: 'jsonp',
-      data: {
-          format:"json"
-      },
-  }).success(function(data) {
-    console.log(data)
-  });
-  }
-
-  //getYelp()
 
   getWeather();
 
@@ -326,7 +320,7 @@ function appViewModel() {
   var infowindow;
   var losAngeles = new google.maps.LatLng(34.052,-118.243);
 
-  function initialize() { // initialize Map first
+  function initialize() { // initialize google Map first
     map = new google.maps.Map(document.getElementById('map'), {
         center: losAngeles,
         zoom: 10
@@ -335,11 +329,11 @@ function appViewModel() {
 
   initialize();
 
-  self.zoomOut = function() {
+  self.zoomOut = function() { // for the zoom button
     map.setZoom(10)
   }
 
-  self.addMark = function(what, url) {
+  self.addMark = function(what, url) { // adds Marker to map
     var request = {
       location: losAngeles,
       radius: '1000',
@@ -360,8 +354,7 @@ function appViewModel() {
             addMarker(results[i]);
           } else {
             timeD += 3000
-            setTimeout(function() {
-              console.log(results[i]) 
+            setTimeout(function() { 
               addMarker(results[i])
             }, timeD )
           }
@@ -372,8 +365,6 @@ function appViewModel() {
 
     function addMarker(placeData) {
       var index = (arrLOC.indexOf(placeData.name))
-      //console.log(placeData)
-      //console.log(index)
       var url = attractions[index].url;
       var imageURL = attractions[index].img
       var contentArea = "<img src='" + imageURL  + "' class='infoImg'><br><a href='" + url + "' target='_blank'><strong>" + placeData.name + "</strong></a><br>" + placeData.formatted_address;
@@ -416,7 +407,6 @@ function appViewModel() {
 
     self.viewIt = function(name) { 
       getWiki(name);
-      console.log(markersPlaces)
       var ind = markersPlaces.indexOf(name);
       map.setCenter(markers[ind].getPosition());
       map.setZoom(15);
@@ -428,10 +418,18 @@ function appViewModel() {
         x.setAnimation(null)
       })
       markers[ind].setAnimation(google.maps.Animation.BOUNCE)
+      var panorama = new google.maps.StreetViewPanorama(
+            document.getElementById('pano'), {
+              position: markers[ind].getPosition(),
+              pov: {
+                heading: 34,
+                pitch: 10
+              }
+            });
+        map.setStreetView(panorama);
     }
 
     self.viewMarker = function() { // table td click calls this function
-      console.log(this.name())
       self.viewIt(this.name())
     }
 
@@ -440,7 +438,7 @@ function appViewModel() {
     }
   }
 
-  placeDestinations(); // add all items in attractions array to self.places
+  placeDestinations(); // add all items in attractions array to self.places ko.observable(array)
   self.places().forEach(function(data) { // place markers in map for each places
     self.addMark(data.name(), data.url());
   }) 

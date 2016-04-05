@@ -1,21 +1,21 @@
 var bio = {
 	"name": "Neptune Michael Cabelin",
-	"role": "Software Engineer",
+	"role": "Software Developer",
 	"contact-info": {
 		"location": "Los Angeles, CA"
 	},
-	"email" : "ncabelin@yahoo.com",
+	"email" : "ncabelin@potentum.com",
 	"github" : "ncabelin",
 	"picture-URL": "https://cloud.githubusercontent.com/assets/15892944/12449678/c6f3dec8-bf33-11e5-903f-f21e2258b5d6.JPG",
-	"welcome-message": "I'm a web developer based in Los Angeles, with a background in economics and nursing.",
-	"skills": ["HTML5/CSS3", "Javascript", "jQuery", "Bootstrap", "Photoshop", "MEAN stack", "Web Design", "Wordpress", "PHP"],
+	"welcome-message": "I'm a software developer based in Los Angeles, currently focusing on front-end web design and development.",
+	"skills": ["Web design / development", "Mobile software", "Adobe Photoshop", "Audio production", "Photography" ],
 	"linkedIn" : "https://www.linkedin.com/in/neptune-michael-cabelin-637600b0"
 };
 
 var work = {
 	"jobs": [{
 		"employer": "Potentum Studios",
-		"title": "Full Stack Web Developer",
+		"title": "Web Designer and Developer",
 		"location": "Los Angeles, CA",
 		"dates": "12/2015-present",
 		"description": "Founder / Creator of e-learning website for nursing students"
@@ -54,20 +54,30 @@ var work = {
 
 var projects = {
 	"project": [{
+		"title": "Javascript Calculator",
+		"dates": "12/2015",
+		"description": "Calculator app using Javascript and jQuery, with CSS and bootstrap styling",
+		"imageS": ["https://cloud.githubusercontent.com/assets/15892944/14010789/9bf7a7d2-f155-11e5-8cce-83ac90cb22a9.jpg"]
+	}, {
+		"title": "Weather Checker",
+		"dates": "12/2015",
+		"description": "Web app that uses geolocation and OpenWeather API to generate current weather temperature",
+		"imageS": ["https://cloud.githubusercontent.com/assets/15892944/14010790/9c019594-f155-11e5-8b49-b131f704d625.jpg"]
+	}, {
 		"title": "Interactive Resume",
 		"dates": "12/2015",
 		"description": "Interactive Resume demonstrating implementation of HTML5,CSS3,JQuery,JSON",
-		"imageS": ["https://cloud.githubusercontent.com/assets/15892944/12048463/4578b5b6-ae90-11e5-94d8-a4282c274241.jpg"]
+		"imageS": ["https://cloud.githubusercontent.com/assets/15892944/14273178/7608e95c-fabd-11e5-8e54-81ffb296b6b9.jpg"]
 	}, {
 		"title": "Responsive Design Portfolio",
 		"dates": "12/2015",
 		"description": "Portfolio to showcase ability to implement responsive website design with responsive images",
-		"imageS": ["http://lorempixel/200/200"]
+		"imageS": ["https://cloud.githubusercontent.com/assets/15892944/14272851/3303ab1c-fabb-11e5-9618-40bc38fbe8e1.jpg"]
 	}, {
 		"title": "Random Trump Quote Generator",
 		"dates": "01/2016",
-		"description": "Use of Javascript to generate random quote and prepopulate twitter button",
-		"imageS": ["https://cloud.githubusercontent.com/assets/15892944/12087417/88474f06-b287-11e5-8700-7ae03446a028.png"]
+		"description": "Use of Javascript to generate random stupid Trump quotes and prepopulate twitter button",
+		"imageS": ["https://cloud.githubusercontent.com/assets/15892944/14272967/debaf028-fabb-11e5-8c5b-54494a078045.jpg"]
 
 	}]
 }
@@ -78,9 +88,17 @@ var education = {
 			"name": "Udacity",
 			"location": "San Francisco, CA",
 			"degree": "Nanodegree",
-			"majors": "Front-end Web Developer, Full-Stack Web Developer",
+			"majors": "Front-end Web Developer",
 			"dates": "12/2015 to 06/2016",
 			"url": "http://www.udacity.com"
+		},
+		{
+			"name": "Free Code Camp",
+			"location": "San Francisco, CA",
+			"degree": "Certificate",
+			"majors": "Front-end Web Developer",
+			"dates": "12/2015 to 06/2016",
+			"url": "http://www.freecodecamp.com"
 		},
 		{
 		"name": "Casa Loma College",
