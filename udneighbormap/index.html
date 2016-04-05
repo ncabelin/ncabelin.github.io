@@ -9,7 +9,8 @@
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 
     <!-- google Fonts -->
-
+    <link href='https://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
  
     <!-- bootstrap and font-awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -21,90 +22,432 @@
 
     <!-- knockoutJS -->
     <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.3.0.js"></script>
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsocS08rMFxEFByrwYl7jIwxbH3EWXTLM&libraries=places"></script>
     <style>
-    body, html {
+    body, html, .container-fluid {
         height: 100%;
         margin: 0px;
         padding: 0px;
+        font-family: 'Open Sans', sans-serif;
     }
-    header, nav ul {
-        padding: 20px;
+    header {
+        padding: 0px 20px 0px 20px;
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        z-index: 5;
+        background-color: rgba(255,255,255,0.7);
+        border-radius: 10px;
+    }
+
+    h1 {
+      font-family: 'Dancing Script', cursive;
     }
     #map {
-        height: 500px;
+        height: 100%;
         width: 100%;
         background-color: gray;
-        z-index: -1;
+        position: absolute;
+        overflow: hidden;
+        transform: translateZ(0px);
+        z-index: 0;
     }
     nav ul { list-style: none; text-align: center; }
     nav ul li { display: inline; }
     nav ul li a { text-decoration: none; }
+
+    button {
+      border-radius: 5px;
+      margin-left: 5px;
+    }
+
+    #weather {
+      font-size: 20px;
+    }
+
+    #after {
+      background-color: none;
+      z-index: 100;
+      position: absolute;
+      top: 120px;
+      margin-left: 20px;
+    }
+
+    #floating-panel {
+        position: absolute;
+        top: 10px;
+        left: 25%;
+        z-index: 5;
+        background-color: rgba(255,255,255,0.7);
+        padding: 5px;
+        border: 1px solid #999;
+        font-family: 'Roboto','sans-serif';
+        line-height: 30px;
+        padding-left: 10px;
+        margin-right: 80px;
+      }
+
+    footer {
+      z-index: 100;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: none;
+    }
+
+    input { 
+      margin-bottom: 5px;
+      border-radius: 10px;
+    }
+
+    td, input {
+      background-color: white;
+      border: 1px solid black;
+      padding: 5px;
+      max-width: 300px;
+      text-align: center;
+    }
+
+    td:hover, .places:hover {
+      background-color: black;
+      color: white;
+      text-decoration: none;
+    }
+
+    thead tr td {
+      background: none;
+      border: none;
+      color: black;
+    }
+
+    tr td a {
+      background-color: white;
+      color:black;
+      border: none;
+    }
+
+    tr td a: visited {
+      background-color: white;
+      color:black;
+      border: none;
+    }
+
+    tr td a: hover {
+      background-color: black !important;
+      color:white !important;
+      border: none;
+    }
+
+    tr td a: focus {
+      outline: none;
+    }
+
+    tr td a: active {
+      background-color: white;
+      color:black;
+      border: none;
+    }
+
+    #googleIcon {
+      height:14px;
+    }
+
+    .infoImg {
+      width: 200px;
+    }
+
+    #wikiInfo {
+      background-color: rgba(255,255,255,0.7);
+      z-index: 2;
+      position: fixed;
+      top: 80px;
+      right: 10px;
+    }
+
+    button {
+      color: black;
+    }
+
     </style>
 </head>
 <body>
-<div class="container-fluid" id="map">
+<div class="container-fluid">
     <div class="row">
         <div class="col-md-6">
             <header>
-                <h1>My Top 10 L.A. Places to Visit Map</h1>
+                <h1>Los Angeles Attractions Map</h1><p id="weather"></p>
             </header>
         </div>
         <div class="col-md-6">
-            <nav>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+            <section id="floating-panel">
+            </section>
         </div>
     </div>
-    <article>
-    </article>
-<footer>
-    <p>Copyright &copy; Potentum Studios. All rights reserved.</p>
-</footer>
+    <datalist id="placeList"></datalist>
+    <div id="map">
+    </div>
+    <div id="after">
+        <input type="text" data-bind="value: placeVal" list="placeList" placeholder="Search"><button data-bind="click: inputSearch"><i class="fa fa-search"></i></button><button data-bind="click: zoomOut">Zoom out</button>
+        <table>
+          <thead>
+            <tr><a href=""><td class="text-center"><button>More</button><button class="fa fa-times" id="x"></button></td></a></tr>
+          </thead>
+          <tbody data-bind="foreach: places" class="collapsible">
+            <tr>
+              <td data-bind="click: $root.viewMarker, text: name"></td>
+            </tr>
+          </tbody>
+        </table>
+      <footer>
+        <img src="powered_by_google_on_white_hdpi.png" id="googleIcon">
+      </footer>
+    </div>
 </div>
 <script>
-// Application shows map, listview and search, when user clicks on map marker -> info shows up with Wikipedia description and URL 
-// Flickr, Wikipedia, additional APIs
 
-// Universal Studios Hollywood = 34.1381168,-118.3555723
-// Disneyland = 33.8120918,-117.9211682
-// Griffith Observatory = 34.118941,-118.302501
-// Hollywood Walk of Fame = 34.101285,-118.3443718
-// Getty Museum = 34.0780358,-118.4762894
-// Santa Monica Pier = 34.0097472,-118.4990669
-// Los Angeles County Museum of Art = 34.0639323,-118.3614233
-// Huntington Library = 34.1290452,-118.1167182
-// Cathedral of Our Lady of the Angels = 34.0577215,-118.2449948
-
-function appViewModel() {
-
-  var places = [ 
-      { name: "Universal Studios Hollywood", url: "http://www.universalstudioshollywood.com/" },
-      { name: "Disneyland", url: "https://disneyland.disney.go.com/" },
-      { name: "Griffith Observatory", url: "https://"}
-  ];
-
-  function initMap() {
-  // Create a map object and specify the DOM element for display.
-    var map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: 34.052, lng: -118.243},
-      scrollwheel: false,
-      zoom: 10
-    });
-  }
-
-  // create markers
-  initMap();
+function Placed(name, url, img) { // constructor for ko observable list
+  var self = this;
+  self.name = ko.observable(name);
+  self.url = ko.observable(url);
+  self.img = ko.observable(img);
+  
 }
 
-ko.applyBindings(new appViewModel());
+var expand = false;
 
+$("#x").click(function() {
+  $(".collapsible").toggle("slow", function() {
+    console.log("whu")
+    if (expand) {
+      $("#x").attr("class", "fa fa-times")
+      expand = false;
+    } else {
+      $("#x").attr("class", "fa fa-plus")
+      expand = true;
+    }
+  })
+})
+
+function appViewModel() {
+  var self = this;
+  var visibleTable = true;
+  self.placeVal = ko.observable(); // input value
+
+  self.places = ko.observableArray([]); // places array
+
+  var arrLOC = [];
+  var attractionsVal = 9;
+  var attractions = [
+  { loc: "Universal Studios Hollywood", url: "http://www.universalstudioshollywood.com/", img: "images/universal.png" },
+  { loc: "Disneyland Park", url: "http://www.disneyland.disney.go.com", img: "images/disney.png" },
+  { loc: "Griffith Observatory", url: "http://wwww.griffithobservatory.com", img: "images/griffith.png" },
+  { loc: "Hollywood Walk of Fame", url: "http://www.walkoffame.com", img: "images/walk.png" },
+  { loc: "The Huntington Library, Art Collections, and Botanical Gardens", url: "http://www.huntington.org", img: "images/hunt.png" },
+  { loc: "Santa Monica Pier", url: "http://www.santamonicapier.org", img: "images/pier.png" },
+  { loc: "Los Angeles County Museum of Art", url: "http://www.lacma.org", img: "images/lacma.png"},
+  { loc: "Cathedral of Our Lady of the Angels", url: "http://www.olacathedral.org", img: "images/cath.png"},
+  { loc: "Descanso Gardens", url: "https://www.descansogardens.org", img: "images/desc.png"},
+  { loc: "Six Flags", url: "https://www.sixflags.com/magicmountain", img: "images/six.png"},
+  { loc: "Madame Tussauds Hollywood", url: "https://www2.madametussauds.com/hollywood/en/", img: "images/madame.png"}
+  ];
+
+  attractions.forEach(function(data) {
+    var loc = data.loc;
+    $("datalist").append("<option value='" + data.loc + "'>")
+  })
+
+  self.moreMarkers = function() {
+    attractionsVal++
+    self.places.push(new Placed(attractions[attractionsVal].loc, attractions[attractionsVal].url, attractions[attractionsVal].img)); // transfer to self.places ko observable
+    arrLOC.push(attractions[attractionsVal].loc)
+    self.addMark(self.places.name(), self.places.url());
+  }
+
+  function placeDestinations() {
+    for (var i = 0; i = attractionsVal; i++ ) {
+      self.places.push(new Placed(attractions[i].loc, attractions[i].url, attractions[i].img)); // transfer to self.places ko observable
+      arrLOC.push(attractions[i].loc)
+    };
+    attractionsVal += 10   
+  }
+
+  function getWiki(name) {
+    var u = "https://en.wikipedia.org/w/api.php?action=opensearch&search=" + name + "&limit=1&namespace=0&format=jsonfm";
+    $.ajax({
+      url: u,
+      type: 'GET',
+      dataType: 'jsonp',
+      data: {
+          format:"json"
+      },
+  }).success(function(data) {
+    var content = data[2][0];
+    if (content) {
+      $("#floating-panel").html(content + "<br><a href='" + data[3][0] + "'>read more in wikipedia...</a>")
+    } else {
+      $("#floating-panel").html(name + "<br><a href='" + data[3][0] + "'>read more in wikipedia...</a>")
+    }
+  });
+  }
+
+  function getWeather() {
+    $.get("http://api.openweathermap.org/data/2.5/weather?q=Los Angeles,CA&appid=f6528aa612e42b74b4f7bcf00cd1b0b1").success(function(data){
+      var temp = (1.8 * (data["main"]["temp"] - 273)) + 32; // convert Kelvin to Fahrenheit
+      var fTemp = Math.round(temp);
+      $('#weather').html('Currently : ' + fTemp + '&deg; F')
+    })
+  }
+
+  function getYelp() {
+    var u = "https://api.yelp.com/v2/search/?term=universal studios hollywood&location=Los Angeles, CA";
+    $.ajax({
+      url: u,
+      type: 'GET',
+      dataType: 'jsonp',
+      data: {
+          format:"json"
+      },
+  }).success(function(data) {
+    console.log(data)
+  });
+  }
+
+  //getYelp()
+
+  getWeather();
+
+  var infowindowArr = [];
+  var markers = [];
+  var markersLoc = [];
+  var markersPlaces = [];
+  var placeDataArr = [];
+  var map;
+  var service;
+  var infowindow;
+  var losAngeles = new google.maps.LatLng(34.052,-118.243);
+
+  function initialize() { // initialize Map first
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: losAngeles,
+        zoom: 10
+      });
+  }
+
+  initialize();
+
+  self.zoomOut = function() {
+    map.setZoom(10)
+  }
+
+  self.addMark = function(what, url) {
+    var request = {
+      location: losAngeles,
+      radius: '1000',
+      query: what
+    };
+
+    service = new google.maps.places.PlacesService(map);
+    service.textSearch(request, callback);
+  
+
+    function callback(results, status) {
+      var timeD = 0;
+      if (status == google.maps.places.PlacesServiceStatus.OK) {
+        for (var i = 0; i < results.length; i++) {
+          var place = results[i];
+          if (i < 10) {
+            placeDataArr.push(place);
+            addMarker(results[i]);
+          } else {
+            timeD += 3000
+            setTimeout(function() {
+              console.log(results[i]) 
+              addMarker(results[i])
+            }, timeD )
+          }
+        }
+      }
+    }
+
+
+    function addMarker(placeData) {
+      var index = (arrLOC.indexOf(placeData.name))
+      //console.log(placeData)
+      //console.log(index)
+      var url = attractions[index].url;
+      var imageURL = attractions[index].img
+      var contentArea = "<img src='" + imageURL  + "' class='infoImg'><br><a href='" + url + "' target='_blank'><strong>" + placeData.name + "</strong></a><br>" + placeData.formatted_address;
+      var infowindow = new google.maps.InfoWindow({
+        content: contentArea,
+        maxWidth: 200
+      });
+      var marker = new google.maps.Marker({
+      map: map,
+      animation: google.maps.Animation.DROP,
+      position: placeData.geometry.location
+
+      });
+
+      markers.push(marker)
+      markersPlaces.push(placeData.name)
+      markersLoc.push(placeData.geometry.location)
+      infowindowArr.push(infowindow)
+
+      marker.addListener('click', function() { // close other infowindows, then open infowindow, and animate marker
+        $('#floating-panel').empty()
+        closeInfoWindow = function() {
+          infowindowArr.forEach(function(x) {
+           x.close()
+          })
+        };
+        closeInfoWindow();
+        google.maps.event.addListener(map, 'click', closeInfoWindow);
+        infowindow.open(map, marker);
+        if (marker.getAnimation() !== null) {
+          marker.setAnimation(null);
+        } else {
+          markers.forEach(function(x, y) {
+            x.setAnimation(null)
+          })
+          marker.setAnimation(google.maps.Animation.BOUNCE);
+        }
+      });
+    }
+
+    self.viewIt = function(name) { 
+      getWiki(name);
+      console.log(markersPlaces)
+      var ind = markersPlaces.indexOf(name);
+      map.setCenter(markers[ind].getPosition());
+      map.setZoom(15);
+      infowindowArr.forEach(function(x) {
+        x.close()
+      })
+      infowindowArr[ind].open(map, markers[ind])
+      markers.forEach(function(x) {
+        x.setAnimation(null)
+      })
+      markers[ind].setAnimation(google.maps.Animation.BOUNCE)
+    }
+
+    self.viewMarker = function() { // table td click calls this function
+      console.log(this.name())
+      self.viewIt(this.name())
+    }
+
+    self.inputSearch = function() { // use value of input to search and view marker and wiki info
+      self.viewIt(this.placeVal())
+    }
+  }
+
+  placeDestinations(); // add all items in attractions array to self.places
+  self.places().forEach(function(data) { // place markers in map for each places
+    self.addMark(data.name(), data.url());
+  }) 
+}
+
+ko.applyBindings(new appViewModel()) // start app
 
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsocS08rMFxEFByrwYl7jIwxbH3EWXTLM"></script>
 </body>
 </html>

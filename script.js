@@ -3,7 +3,7 @@ $(document).ready(function() {
 	var projects = [{
 		title: "Potentum Studios",
 		id: "potent",
-		description: "My web design &amp; development company website. We can design logos, set up web hosting, domain name registration, provide custom in-house art and sound assets for your web ventures. We can also provide Wordpress management and set-up.<br><br>I used HTML5 / CSS3, Javascript, jQuery and Twitter Bootstrap for this site.<br>",
+		description: "My web design &amp; development company website. We design logos, set up web hosting and domain name registration. We can also provide custom in-house art and sound assets for your web ventures. We also provide Wordpress management and set-up.<br><br>I used HTML5 / CSS3, Javascript, jQuery and Twitter Bootstrap for this site.<br>",
 		url: "http://www.potentum.com",
 		image: "https://cloud.githubusercontent.com/assets/15892944/14021986/f57073d0-f19a-11e5-9546-d3077c7d5063.jpg",
 		github: "https://github.com/ncabelin/ncabelin.github.io/tree/master/potentum"
@@ -24,7 +24,7 @@ $(document).ready(function() {
 	}, {
 		title: "Pomodoro Timer",
 		id: "pom",
-		description: "Productivity timer app with sounds, determine session time and breaks with the Pomodoro technique of time management. Preset with 25 minute session and 5 minute break. I used HTML5 / CSS3, Javascript &amp; jQuery.",
+		description: "Productivity timer app with sounds. Determine session time and breaks with the Pomodoro technique of time management. Preset with 25 minute session and 5 minute break. I used HTML5 / CSS3, Javascript &amp; jQuery.",
 		url: "http://ncabelin.github.io/fccpomodoro",
 		image: "https://cloud.githubusercontent.com/assets/15892944/14010788/9bf67d12-f155-11e5-85ee-5505c3f8ce57.jpg",
 		github: "https://github.com/ncabelin/ncabelin.github.io/tree/master/fccpomodoro"

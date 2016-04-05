@@ -89,6 +89,9 @@ function ReservationsViewModel() {
         new SeatReservation("Steve", self.availableMeals[0]),
         new SeatReservation("Bert", self.availableMeals[0])
     ]);
+
+    console.log(self.seats())
+
     self.addSeat = function() {
         var currentName = self.person();
         self.seats.push(new SeatReservation(currentName, self.availableMeals[0]));
