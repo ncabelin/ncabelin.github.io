@@ -9,7 +9,7 @@ $(document).ready(function() {
 		github: "https://github.com/ncabelin/ncabelin.github.io/tree/master/potentum"
 	}, {
 		title: "LA Attractions Map",
-		id: "potent",
+		id: "lamp",
 		description: "Neighborhood map of the Greater Los Angeles area and the top museums, theme parks, and other attractions. Uses knockout.js framework, jQuery, Openweather API to get current LA weather, Google maps, places and streetview API, and wikipedia API to query info about the places. Only works with large viewport due to map interactions and info size.<br>",
 		url: "http://ncabelin.github.io/udneighbormap",
 		image: "https://cloud.githubusercontent.com/assets/15892944/14290947/f52ad8fa-fb15-11e5-84ad-1fa527adc8af.jpg",
