@@ -70,8 +70,7 @@ $(function() {
   pauseTime.css("display","none")
 
   startTime.click(function() {
-    console.log(sliderSessionSet + " is session")
-    console.log(sliderBreakSet + " is break")
+    bell.play()
     startTime.css("display","none")
     pauseTime.css("display","inline")
     pause = false;
@@ -83,17 +82,12 @@ $(function() {
         sliderSessionSet = sliderSession.slider("value");
         sliderBreakSet = sliderBreak.slider("value");
         initialTime = sliderSessionSet * 60;
-        console.log(sliderSessionSet + " is session")
-        console.log(sliderBreakSet + " is break")
       } else {
         sessT.css("opacity", 0.1)
         sliderBreakSet = sliderBreak.slider("value");
         sliderSessionSet = sliderSession.slider("value");
         initialTime = sliderBreakSet * 60;
-        console.log(sliderSessionSet + " is session")
-        console.log(sliderBreakSet + " is break")
       }
-      bell.play()
       myVar = setInterval(beginTime, 1000);
       start = true;
     }
@@ -106,16 +100,12 @@ $(function() {
       if (!session) {
         breakT.css("opacity", 0.1)
         sessT.css("opacity", 1)
-        console.log(sliderSessionSet + " is session")
-        console.log(sliderBreakSet + " is break")
         initialTime = sliderSessionSet * 60
         session = true;
       } else {
       // if session is true (sessiontime), turn break opaque, play break
         breakT.css("opacity", 1)
         sessT.css("opacity", 0.1)
-        console.log(sliderSessionSet + " is session")
-        console.log(sliderBreakSet + " is break")
         initialTime = sliderBreakSet * 60
         session = false;
       }
