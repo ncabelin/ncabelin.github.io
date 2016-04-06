@@ -88,3 +88,17 @@ button:focus {
     #startTime, #pauseTime, #clearTime {
       margin-bottom: 20px;
     }
+
+@media screen and (max-width:540px) {
+  input {
+    font-size: 12px;
+    width: 40px;
+  }
+
+
+
+
+}
+
+
+
