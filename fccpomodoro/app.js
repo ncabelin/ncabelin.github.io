@@ -1,3 +1,7 @@
+
+
+
+
 var myVar, timeMinutes, timeSeconds, breakTime, sessionBreak, sessionTime, pushedOnce;
   var audio2 = document.getElementById("civil");
   var initialTime = 1500;
