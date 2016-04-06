@@ -62,3 +62,29 @@ button:focus {
 .btn:hover {
   color: white;
 }
+
+.sliders {
+      margin-top: 30px;
+      margin-bottom: 20px;
+      width: 50%;
+    }
+
+    input {
+      width: 80px;
+      background-color: black;
+      color: white;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    #panel {
+      width: 200px;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: rgba(0,0,0,0.2);
+      border-radius: 10px;
+    }
+
+    #startTime, #pauseTime, #clearTime {
+      margin-bottom: 20px;
+    }
