@@ -33,7 +33,7 @@ $(document).ready(function() {
 		id: "pom",
 		description: "Productivity timer app with sounds. Determine session time and breaks with the Pomodoro technique of time management. Preset with 25 minute session and 5 minute break. I used HTML5 / CSS3, Javascript &amp; jQuery.",
 		url: "http://ncabelin.github.io/fccpomodoro",
-		image: "https://cloud.githubusercontent.com/assets/15892944/14010788/9bf67d12-f155-11e5-85ee-5505c3f8ce57.jpg",
+		image: "https://cloud.githubusercontent.com/assets/15892944/14312600/c7a70958-fba1-11e5-8cf7-321fb743bf70.jpg",
 		github: "https://github.com/ncabelin/ncabelin.github.io/tree/master/fccpomodoro"
 	}, {
 		title: "Key Swiper Arcade Game",
