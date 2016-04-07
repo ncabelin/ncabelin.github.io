@@ -1,24 +1,72 @@
 var allEnemies = [];
 var enemyNum = 4;
 var score = 0;
-var lives = 3;
+var lives = 5;
 var keyFound = true;
 
 var scoreCard = $("#scores");
 var livesCard = $("#lives");
 
+$(".modal-body").html("<h4>Hi, Thanks for playing.<br> Get the keys, past the bug, fishes and the horned girl.<br> Reach 10 keys to win. You have 5 lives. Goodluck</h4>")
+$("#myModal").modal('show')
+
+$(".startGame").click(function() {
+    startRender = true;
+    $("#pauseGame").css("display", "inline")
+    $("#restartModal").css("display", "inline")
+    $(".startGame").css("display", "none")
+})
+
+$("#pauseGame").click(function() {
+    startRender = false;
+    $("#pauseGame").css("display", "none")
+    $(".startGame").css("display", "inline")
+})
+
+$(".restartGame").click(function() {
+  startRender = false;
+  resetGame()
+  $("#myModal").modal('show')
+})
+
+function resetGame() {
+  allEnemies = [];
+  score = 0;
+  lives = 5;
+  player.start = false;
+  startRender = true;
+  makeEnemies()
+  scoreCard.html(score)
+  livesCard.html(lives)
+}
+
+// updates scorecard and life balance, stops game if 10 score is reached or 0 lives
 function cardChange() {
   scoreCard.html(score);
   livesCard.html(lives);
+  if (score == 10) {
+    startRender = false;
+    $(".modal-title").html("YOU WIN !")
+    $(".modal-body").html("<h4>Congratulations ! You WON !</h4>")
+    $("#myModal").modal('show')
+  }
+  if (lives == 0) {
+    startRender = false;
+    $(".modal-title").html("YOU LOST !")
+    $(".modal-body").html("<h4>Sorry, You LOST !</h4>")
+    score = 0;
+    lives = 5;
+    $("#myModal").modal('show')
+  }
 }
 
-// generate random number between min to max
+// generates random number between min to max
 function randomize(min, max) {
   var x = Math.floor((Math.random() * (max - min + 1) + min ));
   return x;
 };
 
-// generate random row
+// generates random row
 function rowRand() {
   switch(randomize (1,3)) {
     case 1:
@@ -32,6 +80,7 @@ function rowRand() {
   }
 }
 
+// places random key location, one key is one score
 function keyLoc() {
   switch(randomize (1,5)) {
     case 1:
@@ -53,21 +102,22 @@ function keyLoc() {
 
 var Key = function() {
   this.sprite = 'images/Key.png';
-  this.y = -11;
+  this.y = -11; // specifies only one row for key to appear in
 }
 
 Key.prototype.update = function() {
   if (keyFound) {
-    this.x = keyLoc();
+    this.x = keyLoc(); // if key is found generate another key in a random x column location
     keyFound = false;
   }
 }
 
+// draw key
 Key.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-var key = new Key;
+var key = new Key; // only one key
 
 
 // build Enemy class
@@ -83,15 +133,15 @@ Enemy.prototype.update = function(dt) {
     if (this.start == false) {
       this.x = 0;
       if (this.bug) {
-        this.y = 321;
+        this.y = 321; // places bugs in only one row (bottom)
       } else if (this.horn) {
-        this.y = -11;
+        this.y = -11; // places horned girl in only one row (top)
       } else {
-        this.y = rowRand(); //63 145 230
+        this.y = rowRand(); // fishes get placed in random rows (center rows)
       }
       this.start = true;
     } else if (this.x < 505) {
-      this.x += this.speed * dt;
+      this.x += this.speed * dt; // sets speed
     } else {
       this.start = false;
     }
@@ -102,17 +152,6 @@ Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-var bug = new Enemy;
-bug.sprite = 'images/enemy-bug.png';
-bug.bug = true;
-allEnemies.push(bug);
-
-var horn = new Enemy;
-horn.sprite = 'images/char-horn-girl.png';
-horn.horn = true;
-horn.speed = 50;
-allEnemies.push(horn);
-
 // build Player Class
 var Player = function() {
     this.sprite = 'images/char-boy.png';
@@ -120,7 +159,8 @@ var Player = function() {
 };
 
 Player.prototype.update = function() {
-    if (this.start == false) {
+    if (!this.start) {
+      // player always starts in the same location
       this.x = 202;
       this.y = 404;
       this.start = true;
@@ -129,6 +169,8 @@ Player.prototype.update = function() {
     // check enemy collision
     for (var i = 0; i < allEnemies.length; i++ ) {
       var collide = false;
+
+      // check if enemy is within 40 pixels of player
       var enemyXa = allEnemies[i].x - 40;
       var enemyXb = allEnemies[i].x + 40;
       if (this.x < enemyXb && this.x > enemyXa) {
@@ -138,7 +180,7 @@ Player.prototype.update = function() {
       if (this.y == allEnemies[i].y && collide == true) {
         this.start = false;
         lives--;
-        cardChange();
+        cardChange(); // update scorecard minus one life
       }
     }
 
@@ -151,10 +193,12 @@ Player.prototype.update = function() {
     }
 };
 
+// draws player
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
+// handles keyboard inputs
 Player.prototype.handleInput = function(a) {
     if (a == 'left') {
       if (this.x > 0) {
@@ -173,19 +217,7 @@ Player.prototype.handleInput = function(a) {
         this.y += 83;
       }
     }
-    console.log(this.x + " x, " + this.y + " y")
 };
-
-
-// instantiate 3 enemies
-for (var i = 1; i <= enemyNum; i++) {
-  y = toString("enemy" + i);
-  var y = new Enemy();
-  allEnemies.push(y);
-}
-
-// instantiate player
-var player = new Player();
 
 // listen to keys
 document.addEventListener('keyup', function(e) {
@@ -198,3 +230,31 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+
+function makeEnemies() {
+  // instantiate 3 fish enemies
+  for (var i = 1; i <= enemyNum; i++) {
+    y = toString("enemy" + i);
+    var y = new Enemy();
+    allEnemies.push(y);
+  }
+
+  // instantiate 1 bug enemy 
+  var bug = new Enemy;
+  bug.sprite = 'images/enemy-bug.png';
+  bug.bug = true;
+  allEnemies.push(bug);
+
+  // instantiate 1 horned girl enemy
+  var horn = new Enemy;
+  horn.sprite = 'images/char-horn-girl.png';
+  horn.horn = true;
+  horn.speed = 50;
+  allEnemies.push(horn);
+
+}
+
+makeEnemies()
+
+// instantiate player
+var player = new Player();
