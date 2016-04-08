@@ -13,7 +13,7 @@ function showModal(title, msg) {
   $("#myModal").modal('show')
 }
 
-showModal("Welcome", "Hi, Thanks for playing.<br> Get the keys, past the bug, fishes and the horned girl.<br> Reach 10 keys to win. You have 5 lives. Goodluck" )
+showModal("Welcome", "<img src='images/Heart.png'><br>Hi, Thanks for playing.<br><br> The goal is to get the keys past the bug, fishes and the horned girl.<br><br> Reach 10 keys to win.<br>Use the arrow keys to move around. <br>You have 5 lives. Goodluck" )
 
 $(".startGame").click(function() {
     startRender = true;
@@ -30,7 +30,7 @@ $("#pauseGame").click(function() {
 
 $(".restartGame").click(function() {
   startRender = false;
-  showModal("RESET ?", "Do you want to restart?")
+  showModal("RESET ?", "<img src='images/char-cat-girl.png'> Do you want to restart?")
   resetGame()
   $("#pauseGame").css("display", "inline")
   $(".startGame").css("display", "none")
@@ -54,11 +54,11 @@ function cardChange() {
   livesCard.html(lives);
   if (score == 10) {
     startRender = false;
-    showModal("YOU WIN !", "Congratulations, You WIN !")
+    showModal("YOU WIN !", "<img src='images/Star.png'>Congratulations, You WIN !")
   }
   if (lives == 0) {
     //startRender = false;
-    showModal("YOU LOSE !", "Sorry, You LOSE !")
+    showModal("YOU LOSE !", "<img src='images/char-princess-girl.png'>Sorry, You LOST !")
   }
 }
 
