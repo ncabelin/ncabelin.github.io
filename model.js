@@ -38,7 +38,7 @@
 		id: "keyswipe",
 		description: "Arcade game in the vein of Frogger. Get past the bugs and fishes, swipe the key to score.<br><br>I used HTML5 canvas to draw the graphics and Javascript object-oriented programming to design the code.",
 		url: "http://ncabelin.github.io/udfrog",
-		image: "https://cloud.githubusercontent.com/assets/15892944/14010787/9bf4c85a-f155-11e5-9593-e709e5bede13.jpg",
+		image: "https://cloud.githubusercontent.com/assets/15892944/14368462/af146c1e-fcd2-11e5-95df-b545e9242f88.jpg",
 		github: "https://github.com/ncabelin/ncabelin.github.io/tree/master/udfrog"
 	}, {
 		title: "Simon Game",

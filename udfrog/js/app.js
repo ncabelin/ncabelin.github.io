@@ -7,8 +7,13 @@ var keyFound = true;
 var scoreCard = $("#scores");
 var livesCard = $("#lives");
 
-$(".modal-body").html("<h4>Hi, Thanks for playing.<br> Get the keys, past the bug, fishes and the horned girl.<br> Reach 10 keys to win. You have 5 lives. Goodluck</h4>")
-$("#myModal").modal('show')
+function showModal(title, msg) {
+  $(".modal-title").html("<h2>" + title + "</h2>")
+  $(".modal-body").html("<h4>" + msg + "</h4>")
+  $("#myModal").modal('show')
+}
+
+showModal("Welcome", "Hi, Thanks for playing.<br> Get the keys, past the bug, fishes and the horned girl.<br> Reach 10 keys to win. You have 5 lives. Goodluck" )
 
 $(".startGame").click(function() {
     startRender = true;
@@ -25,8 +30,11 @@ $("#pauseGame").click(function() {
 
 $(".restartGame").click(function() {
   startRender = false;
+  showModal("RESET ?", "Do you want to restart?")
   resetGame()
-  $("#myModal").modal('show')
+  $("#pauseGame").css("display", "inline")
+  $(".startGame").css("display", "none")
+  $("#modalStart").css("display", "none")
 })
 
 function resetGame() {
@@ -46,17 +54,11 @@ function cardChange() {
   livesCard.html(lives);
   if (score == 10) {
     startRender = false;
-    $(".modal-title").html("YOU WIN !")
-    $(".modal-body").html("<h4>Congratulations ! You WON !</h4>")
-    $("#myModal").modal('show')
+    showModal("YOU WIN !", "Congratulations, You WIN !")
   }
   if (lives == 0) {
-    startRender = false;
-    $(".modal-title").html("YOU LOST !")
-    $(".modal-body").html("<h4>Sorry, You LOST !</h4>")
-    score = 0;
-    lives = 5;
-    $("#myModal").modal('show')
+    //startRender = false;
+    showModal("YOU LOSE !", "Sorry, You LOSE !")
   }
 }
 
