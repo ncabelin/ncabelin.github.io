@@ -85,6 +85,14 @@
       }
       #status {
         color: orange;
+        font-size: 18px;
+      }
+      form {
+        color: white;
+      }
+      input {
+        width: 40px;
+        color: black;
       }
 
       @media screen and (max-width:700px) {
@@ -146,6 +154,12 @@
     </ul>
     <div class="row">
       <div class="col-md-12 btn-group center-block text-center" role="group">
+        <form>
+          <label for="human">Human</label>
+          <input readonly id="human" value=0>
+          <label for="comp">Computer</label>
+          <input readonly id="comp" value=0>
+        </form>
         <p id="status"></p>
       </div>
     </div>
@@ -172,29 +186,34 @@ $(document).ready(function() {
   var resetB = $("#reset");
   var xPlayB = $("#xPlay");
   var oPlayB = $("#oPlay");
+  var status = $("#status");
+  var humanScore = $("#human");
+  var compScore = $("#comp");
   var won = false;
   var move = 0;
   var occArr = [];
   var cMove;
 
   var winning = [ [1,2,3], [4,5,6], [7,8,9], [1,4,7], [2,5,8], [3,6,9], [1,5,9], [3,5,7] ];
-// a,b a,c b,c
 
   function reset() {
-    console.log("reset whole game");
     move = 0;
     human.moves = [];
     computer.moves = [];
+    occArr = [];
+    cMove = 0;
+    // empty out each cell
     for (var i = 1; i < 10; i++) {
       ids[i].empty();
     }
     won = false;
   };
 
-  function Player(symbol, state) {
+  function Player(symbol, state, score) {
     this.symbol = symbol;
     this.state = state;
     this.moves = [];
+    this.score = 0;
   }
 
   var human = new Player("X", "human");
@@ -215,41 +234,53 @@ $(document).ready(function() {
     reset();
   });
 
-  Player.prototype.moveTo = function(position) { // record no.of move, push to moves array, print symbol
+  Player.prototype.moveTo = function(position) {
     var pos = Number(position);
-    this.moves.push(Number(pos));
-    ids[position].html(this.symbol);
-    occArr.push(pos);
-    console.log(occArr);
+    this.moves.push(pos); // push to own moves array
+    ids[position].html(this.symbol); // print symbol in corresponding cell
+    occArr.push(pos); // mark cell occupied
   }
 
   Player.prototype.checkMove = function() {
+    won = false;
     var symb = this.symbol;
+    var self = this;
     for (var i = 0; i < winning.length; i++) { // cycle through each winning array
       var rightMove = 0;
       var winningArr = [];
-      this.moves.forEach(function(xY) {
-        var h = winning[i].indexOf(xY);
-        if (h !== -1) {
+      var winningIndex = [];
+
+      this.moves.forEach(function(move) {
+        var check = winning[i].indexOf(move);
+        if (check !== -1) {
           rightMove++;
-          winningArr.push(xY);
-          if(rightMove == 3) {
-            console.log(winningArr + " wins");
-            if (symb !== "N") {
-              for (var j = 0; j < winningArr.length; j++) {
-                ids[winningArr[j]].html("<span class='win'>" + symb + "</span>");
-              }
-              won = true;
-              return "n";
+          winningArr.push(move);
+          winningIndex.push(check);
+
+          // if 3 numbers match winning array combo
+          if (rightMove == 3) { 
+            for (var j = 0; j < winningArr.length; j++) {
+              ids[winningArr[j]].html("<span class='win'>" + symb + "</span>");
             }
+            status.html("Player " + symb + " WINS !")
+            self.score++;
+            if (self.state = "human") {
+              humanScore.html(self.score);
+            } else {
+              compScore.html(self.score);
+            }
+            won = true;
+            return;
           }
-          return winningArr;
         }
       });
+      if (occArr.length == 9 && won == false) {
+        status.html("DRAW ! No one won"); 
+      }
     }
   }
 
-  function emptyCells() {
+  function findEmptyCells() {
     var emptyArr = [];
     for (var a = 1; a < 10; a++) { // generate empty cells Array
       var b = occArr.indexOf(a);
@@ -260,81 +291,85 @@ $(document).ready(function() {
     return emptyArr;
   }
 
-  Player.prototype.smartMove = function() { // computer generated move, if occArr = 1, random only, 3 above smart AI
-    var emptied = emptyCells();
+  function randomMove() {
+    var emptied = findEmptyCells();
+    var rand = emptied[Math.floor(Math.random() * emptied.length)]; 
+    return rand;   
+  }
 
-    if (occArr.length == 1) { // random move only
-      var rand = emptied[Math.floor(Math.random() * emptied.length)];
-      console.log(rand);
-      cMove = rand;
-    } else if (occArr.length == 3) {
-      for (var i = 0; i < winning.length; i++) { // cycle through each winning array
+  Player.prototype.smartMove = function() { // computer generated move, if occArr = 1, random only, 3 and above do smart AI
+    cMove = randomMove();
+    if (occArr.length > 1) {
+      // iterate through each winning array combination
+      winning.forEach(function(winData) {
         var rightMove = 0;
         var winningArr = [];
-        human.moves.forEach(function(xY) {
-          var h = winning[i].indexOf(xY);
-          if (h !== -1) {
+        var winningIndex = [];
+
+        // compare current human moves array to current winning array combo 
+        human.moves.forEach(function(move) {
+          var check = winData.indexOf(move);
+          if (check !== -1) {
             rightMove++;
-            winningArr.push(xY);
-            if(rightMove == 2) {
-              var sortedWinningArr = winningArr.sort();
-              console.log(sortedWinningArr + " is sorted winning combo");
-              for (var k = 0; k < winning.length; k++) {
-                var first = winning[k].indexOf(sortedWinningArr[0]);
-                var second = winning[k].indexOf(sortedWinningArr[1]);
-                console.log(first + " is first");
-                console.log(second + " is second");
-                if (first !== -1 && second !== -1) {
-                  if (first == 0 && second == 1) {
-                    cMove = winning[k][2];
-                  } else if (first == 1 && second == 2) {
-                    cMove = winning[k][0];
-                  } else {
-                    cMove = winning[k][1];
-                  }
-                }
+            winningArr.push(move);
+            winningIndex.push(check);
+
+            // if 2 numbers match winning array combo
+            if (rightMove == 2) {
+              // find out the other number and check if it exists in occArr already.
+              var missingMove;
+              var a = winningIndex.indexOf(0);
+              var b = winningIndex.indexOf(1);
+              var c = winningIndex.indexOf(2);
+              if (a == -1) {
+                missingMove = winData[0];
+              } else if (b == -1) {
+                missingMove = winData[1];
+              } else if (c == -1) {
+                missingMove = winData[2];
               }
-            } // rightMove = 2
+
+              // if move exists, return. if not then it is the cMove (correct move)
+              var check2 = occArr.indexOf(missingMove);
+              if (check2 == -1) {
+                cMove = missingMove;
+              }
+            }
           }
         });
-      }
-    } else if (occArr.length >= 5) {
-      var rand = emptied[Math.floor(Math.random() * emptied.length)];
-      // console.log(rand);
-      cMove = rand;
+      });  
     }
   }
 
   $("td").click(function() {
 
-    if (won == true || occArr.length === 9) { // reset if player won
+    status.empty();
+    if (won == true || occArr.length === 9) { // reset if a player won already
       reset();
     } else {
       var x = $(this).attr("value"); // x is position of move
-      var y = ids[x]; // y is the jQuery location of td cell clicked
+      var y = ids[x]; // y is the jQuery DOM location of td cell clicked
+
+      // prevents player from move if cell is occupied already
       var z = occArr.indexOf(x);
-      console.log(z);
-      if (z !== -1) { // prevents player from move if cell is occupied already
-        console.log("taken");
+      if (z !== -1) {
+        status.html("That cell is taken, choose another one");
         return;
       }
 
       human.moveTo(x);
-      console.log(human.moves);
-      console.log(occArr + " is occupied array.");
       human.checkMove();
-      if (won == false) {
-        computer.smartMove();
-        console.log(cMove + " is the computer move");
-        setTimeout(function() { computer.moveTo(cMove); }, 500);
-        computer.checkMove();
-      }
-  
-    }
-    if (move === 9 && won === false) {    
-      console.log("draw");
-    }
 
+      if (won == false && occArr.length < 9) {
+        computer.smartMove(); // generate cMove (AI move)
+        console.log(cMove + " is the computer's move");
+        setTimeout(function() { 
+          computer.moveTo(cMove);
+          computer.checkMove(); 
+        }, 500); // provide delay to simulate human thinking delay of half a second
+
+      }
+    }
   }); 
 
 

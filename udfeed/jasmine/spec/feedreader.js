@@ -115,15 +115,10 @@ $(function() {
         }, 1000);
 
         it('content changes upon loading new feed', function(done) {
-            console.log(first)
-            console.log(second)
             expect(first).not.toEqual(second);
             done();
         });
 
-        afterAll(function(done) {
-            loadFeed(0, done);
-        }, 3000);
     });
 
 

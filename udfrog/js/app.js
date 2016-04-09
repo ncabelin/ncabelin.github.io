@@ -13,7 +13,7 @@ function showModal(title, msg) {
   $("#myModal").modal('show')
 }
 
-showModal("Welcome", "<img src='images/Heart.png'><br>Hi, Thanks for playing.<br><br> The goal is to get the keys past the bug, fishes and the horned girl.<br><br> Reach 10 keys to win.<br>Use the arrow keys to move around. <br>You have 5 lives. Goodluck" )
+showModal("Welcome", "<img src='images/Heart.png'><br>Hi, Thanks for playing.<br><br> The goal is to get the keys past the bug, fishes and the horned girl.<br><br> Reach <strong>10 keys</strong> to win.<br>Use the <strong>arrow keys</strong> to move around. <br>You have <strong>5 lives.</strong> Goodluck" )
 
 $(".startGame").click(function() {
     startRender = true;

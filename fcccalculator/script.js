@@ -9,7 +9,7 @@ $(function() {
     numCalc = 0; //number calculated for display
     initialValue = 0; //before
     secondValue = 0; //after
-    calcMethod = "none"; //what action is saved
+    calcMethod = ""; //what last calculation method is saved
     pointCounter = 0; //to avoid someone trying to put two points
   }
 
@@ -23,17 +23,15 @@ $(function() {
   // perform calculation
   function calculateNumCalc () {
     if (calcMethod == "+") {
-      secondValue = numCalc;
-      numCalc = initialValue + secondValue;
+      numCalc += initialValue;
     } else if (calcMethod == "-") {
       secondValue = numCalc;
-      numCalc = initialValue - secondValue;
+      numCalc = initialValue - numCalc;
     } else if (calcMethod == "/") {
       secondValue = numCalc;
       numCalc = initialValue / secondValue;
     } else if (calcMethod == "x") {
-      secondValue = numCalc;
-      numCalc = initialValue * secondValue;
+      numCalc *= initialValue;
     }
 
     if (numCalc === Infinity) {
