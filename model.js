@@ -50,7 +50,7 @@
 	}, {
 		title: "Tic Tac Toe",
 		id: "tictac",
-		description: "Play Tic Tac Toe against the computer. Optimized to never be beaten, I designed the AI to at most get a draw.<br><br>I used jQuery, and vanilla Javascript for the AI, along with Bootstrap styling.",
+		description: "Play Tic Tac Toe against the computer. I designed the AI to be smart enough, but there is one pattern that can make it possible for the human player to win, perfect AI in progress.<br><br>I used jQuery, and vanilla Javascript for the AI, along with Bootstrap styling.",
 		url: "http://ncabelin.github.io/fcctic",
 		image: "https://cloud.githubusercontent.com/assets/15892944/14010785/9bf2c58c-f155-11e5-8993-f55acf4c2eff.jpg",
 		github: "https://github.com/ncabelin/ncabelin.github.io/tree/master/fcctic"

@@ -209,6 +209,11 @@ $(document).ready(function() {
       ids[i].empty();
     }
     won = false;
+    if (computer.symbol == "X") {
+      computer.smartMove();
+      computer.moveTo(cMove);
+      computer.checkMove();    
+    }
   };
 
   function Player(symbol, state) {
@@ -224,11 +229,13 @@ $(document).ready(function() {
   xPlayB.click(function() {
     human.symbol = "X";
     computer.symbol = "O";
+    reset();
   });
 
   oPlayB.click(function() {
     human.symbol = "O";
     computer.symbol = "X";
+    reset();
   });
 
   resetB.click(function() {
@@ -303,7 +310,7 @@ $(document).ready(function() {
   Player.prototype.smartMove = function() { // computer generated move, if occArr = 1, random if human didn't do center cell, 3 and above do smart AI
     var foundAnswer = false;
     var check1 = occArr.indexOf(5);
-    if (check1 == -1 && occArr.length == 1) {
+    if (check1 == -1 && occArr.length <= 1) {
       return cMove = 5;
     }
     cMove = randomMove();
