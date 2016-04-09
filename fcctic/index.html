@@ -240,6 +240,7 @@ $(document).ready(function() {
     this.moves.push(pos); // push to own moves array
     ids[position].html(this.symbol); // print symbol in corresponding cell
     occArr.push(pos); // mark cell occupied
+    console.log(pos + " is the " + this.state + " move");
   }
 
   Player.prototype.checkMove = function() {
@@ -263,8 +264,7 @@ $(document).ready(function() {
             for (var j = 0; j < winningArr.length; j++) {
               ids[winningArr[j]].html("<span class='win'>" + symb + "</span>");
             }
-            status.html("Player " + symb + " WINS !")
-            console.log(self.state)
+            status.html("Player " + symb + " WINS ! ");
             if (self.state == "human") {
               hScore++;
               humanScore.attr("value", hScore);
@@ -300,7 +300,12 @@ $(document).ready(function() {
     return rand;   
   }
 
-  Player.prototype.smartMove = function() { // computer generated move, if occArr = 1, random only, 3 and above do smart AI
+  Player.prototype.smartMove = function() { // computer generated move, if occArr = 1, random if human didn't do center cell, 3 and above do smart AI
+    var foundAnswer = false;
+    var check1 = occArr.indexOf(5);
+    if (check1 == -1 && occArr.length == 1) {
+      return cMove = 5;
+    }
     cMove = randomMove();
     if (occArr.length > 1) {
       winning.forEach(function(winData) {
@@ -318,6 +323,7 @@ $(document).ready(function() {
 
             if (rightMove == 2) {
              // find out the other number and check if it exists in occArr already.
+
               var missingMove;
               var a = winningIndex.indexOf(0);
               var b = winningIndex.indexOf(1);
@@ -329,9 +335,12 @@ $(document).ready(function() {
               } else if (c == -1) {
                 missingMove = winData[2];
               }
+
                // if move exists, return. if not then it is the cMove (correct move)
               var check2 = occArr.indexOf(missingMove);
               if (check2 == -1) {
+                console.log(winningArr + " is the winning array with 2 cells and so " + missingMove + " is the right answer");
+                foundAnswer = true;
                 cMove = missingMove;
                 return;
               }
@@ -340,15 +349,13 @@ $(document).ready(function() {
         });
       });
 
-      rightMove = 0;
-      winningArr = [];
-      winningIndex = [];
+      if (foundAnswer) { return };
 
       // iterate through each winning array combination
       winning.forEach(function(winData) {
-        var rightMove = 0;
-        var winningArr = [];
-        var winningIndex = [];
+        rightMove = 0;
+        winningArr = [];
+        winningIndex = [];
 
         // compare current human moves array to current winning array combo 
         human.moves.forEach(function(move) {
@@ -376,6 +383,7 @@ $(document).ready(function() {
               // if move exists, return. if not then it is the cMove (correct move)
               var check2 = occArr.indexOf(missingMove);
               if (check2 == -1) {
+                console.log(winningArr + " is the winning array with 2 cells and so " + missingMove + " is the right counter");
                 cMove = missingMove;
                 return;
               }
@@ -392,22 +400,22 @@ $(document).ready(function() {
     if (won == true || occArr.length === 9) { // reset if a player won already
       reset();
     } else {
-      var x = $(this).attr("value"); // x is position of move
-      var y = ids[x]; // y is the jQuery DOM location of td cell clicked
+      var moved = Number($(this).attr("value")); // x is position of move
+      var y = ids[moved]; // y is the jQuery DOM location of td cell clicked
 
       // prevents player from move if cell is occupied already
-      var z = occArr.indexOf(x);
-      if (z !== -1) {
+
+      var zed = occArr.indexOf(moved);
+      if (zed !== -1) {
         status.html("That cell is taken, choose another one");
         return;
       }
 
-      human.moveTo(x);
+      human.moveTo(moved);
       human.checkMove();
 
       if (won == false && occArr.length < 9) {
         computer.smartMove(); // generate cMove (AI move)
-        console.log(cMove + " is the computer's move");
         setTimeout(function() { 
           computer.moveTo(cMove);
           computer.checkMove(); 
