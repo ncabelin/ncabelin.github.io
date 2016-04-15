@@ -19,13 +19,14 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
-  <link rel="stylesheet" href="style2.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+<div class="container-fluid">
   <header class="row">
     <div class="col-md-6 imageLogo">
-      <img src="https://cloud.githubusercontent.com/assets/15892944/12614095/a46bb482-c4b2-11e5-91ea-d0d37e9db076.png" alt="engineerhat" id="hat">
+      <img src="https://cloud.githubusercontent.com/assets/15892944/12614095/a46bb482-c4b2-11e5-91ea-d0d37e9db076.png" alt="engineer hat" id="hat">
     </div><!--end logo-->
     <div class="developerName col-md-6">
       <h1 id="brand" class="heading"><strong>Neptune Michael Cabelin</strong></h1>
@@ -36,32 +37,38 @@
     <p>Hi there, I'm a software developer who is passionate about building creative and efficient solutions.</p>
     <p>I used to be in the field of nursing and economics, but I discovered my true calling in building software.</p>
     <p>I currently do web design and development with an emphasis on mobile-responsive solutions.</p><br>
-    <a href="#projects"><button class="btn bT" id="view">View Projects</button></a>
-    <button class="btn bT" onclick="window.open('http://ncabelin.github.io/udresume')">View Resume</a></button>
-    <a href="#contacts" class="bT" id="contactB"><button class="btn bT">Contact Me</button></a>
+    <button class="btn bT" id="view">View Projects</button>
+    <button class="btn bT" onclick="window.open('http://ncabelin.github.io/udresume')">View Resume</button>
+    <button class="btn bT" id="contactB">Contact Me</button>
   </section>
   <div class="work row">
-    <section>
-      <h3 class="headings" id="projs">Featured Projects</h3><p class="info">{ Click for more info }</p>
+    <section id="projectHeader">
+      <h3 class="sectionHead" id="projs">Featured Projects</h3><p class="info">{ Click for more info }</p>
     </section>
-    <section>
-      <div id="projects" class="row">
-      </div>
+    <section id="projects" class="row">
     </section>
     <hr>
   </div><!--end container-->
-  <footer class="row">
-    <h3 class="headings text-center" id="cont">Contact Me</h3>
-    <div id="contacts">
-      <img src="https://cloud.githubusercontent.com/assets/15892944/14011248/532596d6-f15a-11e5-8f43-eb9a013a3fcb.jpg" class="center-block" id="profilepic">
+  <footer>
+    <div class="row">
+      <h3 class="sectionHead text-center col-md-12" id="cont">Contact Me</h3>
+    </div>
+    <div class="col-md-12">
+      <img src="https://cloud.githubusercontent.com/assets/15892944/14011248/532596d6-f15a-11e5-8f43-eb9a013a3fcb.jpg" class="center-block" id="profilepic" alt="profile picture">
+    </div>
+    <div class="row" id="contacts">
       <ul>
         <li><a href="mailto:ncabelin@potentum.com" class="contact"><i class="fa fa-envelope fa-3x"></i> Email</a></li>
         <li><a href="https://www.linkedin.com/in/neptune-michael-cabelin-637600b0" class="contact"><i class="fa fa-linkedin fa-3x"></i> LinkedIn</a></li>
         <li><a href="http://www.github.com/ncabelin" class="contact"><i class="fa fa-github fa-3x"></i> Github</a></li>
       </ul>
     </div>
+    <div class="row">
+      <div class="text-center col-md-12"><button id="scrollToTop" class="btn bT">Back to Top</button></div>
+    </div>
   </footer>
+</div>
 </body>
-<script src="model.js"></script>
-<script src="controller.js"></script>
+<script src="js/model.js"></script>
+<script src="js/controller.js"></script>
 </html>
