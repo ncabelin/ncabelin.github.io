@@ -22,9 +22,8 @@
     <script src="js/jquery-ui.min.js"></script>
     <link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css">
 
-    <!-- knockoutJS and google maps -->
+    <!-- knockoutJS -->
     <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.3.0.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzz48_POTho_1LTKj3c5l4JzKXdXVRBKo&libraries=places" async></script>
 
     <link href="css/style.css" rel="stylesheet">
 </head>
@@ -59,7 +58,8 @@
 
       </footer>
     </div>
-</div>
-<script src="js/app.js"></script>
+  </div>
+  <script src="js/app.js"></script>
+  <script async src="https://maps.googleapis.com/maps/api/js?callback=googleSuccess&key=AIzaSyCzz48_POTho_1LTKj3c5l4JzKXdXVRBKo&libraries=places" onerror="googleError()"></script>
 </body>
 </html>
