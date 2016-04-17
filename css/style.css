@@ -26,7 +26,7 @@ h3 {
 h3 {
   font-size: 28px;
   margin-top: 0;
-  padding: 20px 10px 20px 10px;
+  padding: 20px 10px;
 }
 
 #about { /* center image & about area */
@@ -59,14 +59,14 @@ button {
 }
 
 .bT {
-  background-color: #9F907B;
+  background-color: #9f907b;
   border-color: #333832;
   color: black;
   margin-bottom: 10px;
 }
 
 .bT:hover {
-  background-color: #1D1C20;
+  background-color: #1d1c20;
   color: white;
 }
 

@@ -89,7 +89,7 @@ h2 {
   font-size: 24px;
   color: #E3D492;
   line-height: 29px;
-  padding: 10px;
+  padding: 5px;
   background-color: #205F94;
   text-align: center;
 }
@@ -109,7 +109,6 @@ h4 {
 }
 
 h2,
-h3,
 h4,
 h5 {
   padding:10px 5%;
@@ -306,7 +305,7 @@ span {
   }
 }
 
-.fa-linkedin:hover, .fa-envelope:hover, .fa-github:hover {
+.fa-linkedin:hover, .fa-envelope:hover, .fa-github:hover, .fa-phone:hover {
   color:#205F94;
 }
 

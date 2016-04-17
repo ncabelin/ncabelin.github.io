@@ -1,6 +1,7 @@
-frontend-nanodegree-arcade-game
-===============================
+* Frogger-clone arcade game
+This game is a clone of Frogger with some added functionalities. Use the arrow keys to move your hero and try to get the key. 
+Avoid the enemies ( a bug, 4 fishes, horned girl ) and reach 10 keys to win the game. You start with 5 lives.
 
-Students should use this [rubric](https://www.udacity.com/course/viewer/#!/c-nd001/l-2696458597/m-2687128535) for self-checking their submission.
+The game uses Object-oriented principles in Javascript with some jQuery and is rendered in HTML5 canvas. The 4 fishes' initial location and speed are set randomly, but the bug and horned girl enemies maintain same speed and initial location. Future added functionality will include levels of varying speed and randomized bug and girl speeds. Possible buttons for movement will be added.
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+

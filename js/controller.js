@@ -15,23 +15,23 @@ $(document).ready(function() {
     p.append(content);
   });
 
-  // intro fade in of paragraph
+  /* intro fade in of paragraph */
   $(".par").fadeOut(10);
   $(".par").fadeIn(2000);
 
-  // shows projects, scroll to projects animation
+  /* shows projects, scroll to projects animation */
   $("#view").click(function () {
     $("#about").animate({ height : "100%" }, 1000);
     $(".work").toggle("slow");
     $("html, body").animate({ scrollTop:$("#projs").offset().top }, 500);
   });
 
-  // scroll to contacts animation
+  /* scroll to contacts animation */
   $("#contactB").click(function() {
     $("html, body").animate({ scrollTop:$("#cont").offset().top }, 500);
   });
 
-    // scroll to top animation
+  /* scroll to top animation */
   $("#scrollToTop").click(function() {
     $("html, body").animate({ scrollTop:$("#hat").offset().top }, 500);
   });
