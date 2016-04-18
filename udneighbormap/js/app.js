@@ -209,7 +209,6 @@ function googleSuccess() {
         infowindowArr.push(infowindow);
 
         marker.addListener('click', function() { // close other infowindows, then open infowindow, and animate marker
-          self.showListCool(true);
           closeInfoWindow = function() {
             infowindowArr.forEach(function(x) {
              x.close();
