@@ -1,5 +1,7 @@
+/* function callback on successful load of google Maps */
 function googleSuccess() {
-  function Placed(name, url, img) { // constructor for ko observable list
+  /* constructor for ko observable list */
+  function Placed(name, url, img) {
     var self = this;
     self.name = ko.observable(name);
     self.url = ko.observable(url);
@@ -10,9 +12,12 @@ function googleSuccess() {
   function appViewModel() {
     var self = this;
     self.losAngelesWeather = ko.observable();
+    self.messageBox = ko.observable();
+    self.placeTitle = ko.observable();
+    self.placeWiki = ko.observable();
     self.placeVal = ko.observable(); // input value
-
     self.places = ko.observableArray([]); // places array
+    self.showInfo = ko.observable();
 
     var arrLOC = []; // array for autocomplete input field
     var attractions = [ // initial array of objects
@@ -33,16 +38,18 @@ function googleSuccess() {
     { loc: "Madame Tussauds Hollywood", url: "https://www2.madametussauds.com/hollywood/en", img: "images/madame.png" }
     ];
 
-    function placeDestinations() { // generate ko.observable array of places
+    /* generates initial ko.observable array places */
+    function placeDestinations() {
       for (var i = 0; i < attractions.length ; i++ ) {
-        self.places.push(new Placed(attractions[i].loc, attractions[i].url, attractions[i].img)); // transfer to self.places ko observable
+        self.places.push(new Placed(attractions[i].loc, attractions[i].url, attractions[i].img));
         arrLOC.push(attractions[i].loc);
       }  
     }
 
-    $("#placeList").autocomplete({ // jQuery UI autocomplete
-      source: arrLOC
-    });
+    /* filters displayed table list */
+    function filterDestinations() {
+
+    }
 
     var expand = false; 
     self.toggleView = function() { // toggle button for displaying or hiding places list table
@@ -57,7 +64,8 @@ function googleSuccess() {
       });
     };
 
-    function getWiki(name) { // gets Wikipedia entry, hardcoded empty summary returns
+    /* gets Wikipedia entry */
+    function getWiki(name) {
       var addText = "";
       if (name == "Disneyland Park") {
         addText = "<br>" + attractions[1].content;
@@ -76,32 +84,27 @@ function googleSuccess() {
         data: {
             format:"json"
         },
-    }).success(function(data) {
-      var content = data[2][0];
-      if (content === true || addText === "") {
-        $("#floating-panel").html(content + "<br><a href='" + data[3][0] + "'>read more in wikipedia...</a>");
-      } else {
-        $("#floating-panel").html(name + addText + "<br><a href='" + data[3][0] + "'>read more in wikipedia..</a>");
-      }
-    });
-    }
-
-    /*
-    self.queryResults = ko.observable();
-    ko.computed(function() {
-      // Whenever "pageIndex", "sortColumn", or "sortDirection" change, this function will re-run and issue
-      // an Ajax request. When the Ajax request completes, assign the resulting value to "queryResults"
-      $.ajax("http://api.openweathermap.org/data/2.5/weather?q=Los Angeles,CA&appid=f6528aa612e42b74b4f7bcf00cd1b0b1", {
-          success: self.queryResults
+      }).done(function(data) {
+        var content = data[2][0];
+        self.placeTitle(name);
+          if (content === true || addText === "") {
+          self.placeWiki(content);
+          } else {
+            self.placeWiki(addText);
+          }
+      }).fail(function() {
+        self.placeTitle(name);
+        self.placeWiki("Error: No wikipedia summary found");
       });
-    }, self);
-    */
+    }
 
     function getWeather() { // Gets current weather in Los Angeles in fahrenheit from Openweather API
       $.get("http://api.openweathermap.org/data/2.5/weather?q=Los Angeles,CA&appid=f6528aa612e42b74b4f7bcf00cd1b0b1").done(function(data){
         var temp = (1.8 * (data.main.temp - 273)) + 32; // convert Kelvin to Fahrenheit
         var fTemp = Math.round(temp);
         self.losAngelesWeather(fTemp);
+      }).fail(function() {
+        self.losAngelesWeather("'Error: failed to get temperature'");
       });
     }
 
@@ -129,6 +132,8 @@ function googleSuccess() {
     window.addEventListener('resize', function(e) {
       //Make sure the map bounds get updated on page resize
       map.fitBounds(mapBounds);
+      map.setZoom(10);
+      map.setCenter(losAngeles);
     });
 
     initialize();
@@ -253,5 +258,5 @@ function googleSuccess() {
 }
 
 function googleError() {
-  console.log("Error loading Map !");
+  appViewModel.messageBox("Error loading Map !");
 }

@@ -69,13 +69,9 @@ button {
     width: 400px;
 }
 
-#pano {
-    z-index: 6;
-    position: absolute;
-    background: none;
-    width: 350px;
-    height: 350px;
-    right: 10px;
+.street {
+  width: 350px;
+  height: 350px;
 }
 
 footer {
@@ -153,4 +149,10 @@ tr td a: active {
 
 button {
   color: black;
+}
+
+@media screen and (max-width:540px) {
+  h1 {
+    font-size: 18px;
+  }
 }
