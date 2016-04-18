@@ -16,34 +16,22 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
-    <!-- jquery, jquery UI and bootstrap js -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css">
-
-    <!-- knockoutJS -->
-    <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.3.0.js"></script>
-
     <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-12">
-            <header>
-                <h1>Los Angeles Attractions Map</h1><p id="weather"></p>
-            </header>
-        </div>
-        <section id="floating-panel">
-        </section>
-        <section id="pano">
-        </section>
-    </div>
-    <div id="map">
-    </div>
-    <div id="after">
-        <input type="text" id="placeList" placeholder="Search"><button data-bind="click: inputSearch"><i class="fa fa-search"></i></button><button data-bind="click: zoomOut">Zoom out</button>
+  <div class="container-fluid">
+    <header>
+      <div class="row">
+          <div class="col-md-6">
+            <h1>Los Angeles Attractions Map</h1><p class="weatherInfo" id="weather">Currently : <span data-bind="text: losAngelesWeather"></span>&deg; F.<span class="openAttr"> powered by <a href="http://openweathermap.org">OpenWeather</a></span></p>
+          </div>
+          <div class="col-md-6">
+            <input type="text" id="placeList" placeholder="Search"><button data-bind="click: inputSearch"><i class="fa fa-search"></i></button><button data-bind="click: zoomOut">Zoom out</button>
+          </div>
+      </div>
+    </header>
+    <nav>
+      <div id="after">
         <table>
           <thead>
             <tr><a href=""><td class="text-center" id="toggleButton"><button class="fa fa-times" data-bind="click: toggleView"></button></td></a></tr>
@@ -54,12 +42,26 @@
             </tr>
           </tbody>
         </table>
-      <footer>
-
-      </footer>
-    </div>
+      </div>
+    </nav>
+    <section>
+      <div class="mapArea" id="map">
+      </div>
+    </section>
+    <footer>
+    </footer>
   </div>
+    <!-- jquery, jquery UI and bootstrap js -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+
+  <!-- knockoutJS -->
+  <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.3.0.js"></script>
+
   <script src="js/app.js"></script>
+  <!-- googleMaps -->
   <script async src="https://maps.googleapis.com/maps/api/js?callback=googleSuccess&key=AIzaSyCzz48_POTho_1LTKj3c5l4JzKXdXVRBKo&libraries=places" onerror="googleError()"></script>
 </body>
 </html>

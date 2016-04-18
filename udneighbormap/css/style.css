@@ -1,157 +1,156 @@
-body, html, .container-fluid {
+body,
+html,
+.container-fluid {
         height: 100%;
         margin: 0px;
         padding: 0px;
         font-family: 'Open Sans', sans-serif;
-    }
-    header {
-        padding: 0px 20px 0px 20px;
-        position: absolute;
-        top: 10px;
-        left: 20px;
-        z-index: 5;
-        background-color: rgba(255,255,255,0.7);
-        border-radius: 10px;
-    }
+  }
 
-    h1 {
-      font-family: 'Dancing Script', cursive;
-    }
-    #map {
-        height: 100%;
-        width: 100%;
-        background-color: gray;
-        position: absolute;
-        overflow: hidden;
-        transform: translateZ(0px);
-        z-index: 0;
-    }
-    nav ul { list-style: none; text-align: center; }
-    nav ul li { display: inline; }
-    nav ul li a { text-decoration: none; }
+header {
+    padding: 0px 20px 0px 20px;
+    top: 10px;
+    left: 20px;
+    z-index: 5;
+    background-color: rgba(255,255,255,0.7);
+    border-radius: 10px;
+}
 
-    button {
-      border-radius: 5px;
-      margin-left: 5px;
-    }
+h1 {
+  font-family: 'Dancing Script', cursive;
+}
 
-    #weather {
-      font-size: 20px;
-    }
+.mapArea {
+    height: 100%;
+    width: 100%;
+    background-color: gray;
+    position: absolute;
+    overflow: hidden;
+    transform: translateZ(0px);
+    z-index: 0;
+}
 
-    .openAttr {
-      font-size: 10px;
-    }
+nav ul { list-style: none; text-align: center; }
+nav ul li { display: inline; }
+nav ul li a { text-decoration: none; }
 
-    #after {
-      background-color: none;
-      z-index: 100;
-      position: absolute;
-      top: 140px;
-      margin-left: 20px;
-    }
+button {
+  border-radius: 5px;
+  margin-left: 5px;
+}
 
-    #floating-panel {
-        position: absolute;
-        bottom: 10px;
-        right: 10px;
-        z-index: 5;
-        background-color: rgba(255,255,255,0.7);
-        padding: 5px;
-        border: 1px solid #999;
-        font-family: 'Roboto','sans-serif';
-        line-height: 30px;
-        padding-left: 10px;
-        margin-right: 80px;
-        width: 400px;
-      }
+.weatherInfo {
+  font-size: 20px;
+}
 
-      #pano {
-        z-index: 6;
-        position: absolute;
-        background: none;
-        width: 350px;
-        height: 350px;
-        right: 10px;
-      }
+.openAttr {
+  font-size: 10px;
+}
 
-    footer {
-      z-index: 100;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background-color: none;
-    }
+#after {
+  z-index: 100;
+  position: absolute;
+  top: 140px;
+  margin-left: 20px;
+}
 
-    input { 
-      margin-bottom: 5px;
-      border-radius: 10px;
-    }
+#floating-panel {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 5;
+    background-color: rgba(255,255,255,0.7);
+    padding: 5px;
+    border: 1px solid #999;
+    font-family: 'Roboto','sans-serif';
+    line-height: 30px;
+    padding-left: 10px;
+    margin-right: 80px;
+    width: 400px;
+}
 
-    td #toggleButton: hover {
-      background: none;
-    }
+#pano {
+    z-index: 6;
+    position: absolute;
+    background: none;
+    width: 350px;
+    height: 350px;
+    right: 10px;
+}
 
-    td #toggleButton: focus {
-      outline: none;
-    }
+footer {
+  z-index: 100;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: none;
+}
 
-    td, input {
-      background-color: white;
-      border: 1px solid black;
-      padding: 5px;
-      max-width: 300px;
-      text-align: center;
-    }
+input { 
+  margin-bottom: 5px;
+  border-radius: 10px;
+}
 
-    td:hover, .places:hover {
-      background-color: black;
-      color: white;
-      text-decoration: none;
-    }
+td #toggleButton: hover {
+  background: none;
+}
 
-    thead tr td {
-      background: none;
-      border: none;
-      color: black;
-    }
+td #toggleButton: focus {
+  outline: none;
+}
 
-    tr td a {
-      background-color: white;
-      color:black;
-      border: none;
-    }
+td, input {
+  background-color: white;
+  border: 1px solid black;
+  padding: 5px;
+  max-width: 300px;
+  text-align: center;
+}
 
-    tr td a: visited {
-      background-color: white;
-      color:black;
-      border: none;
-    }
+td:hover, .places:hover {
+  background-color: black;
+  color: white;
+  text-decoration: none;
+}
 
-    tr td a: hover {
-      background-color: black !important;
-      color:white !important;
-      border: none;
-    }
+thead tr td {
+  background: none;
+  border: none;
+  color: black;
+}
 
-    tr td a: focus {
-      outline: none;
-    }
+tr td a {
+  background-color: white;
+  color:black;
+  border: none;
+}
 
-    tr td a: active {
-      background-color: white;
-      color:black;
-      border: none;
-    }
+tr td a: visited {
+  background-color: white;
+  color:black;
+  border: none;
+}
 
-    #googleIcon {
-      height:14px;
-    }
+tr td a: hover {
+  background-color: black !important;
+  color:white !important;
+  border: none;
+}
 
-    .infoImg {
-      width: 200px;
-    }
+tr td a: focus {
+  outline: none;
+}
 
-    button {
-      color: black;
-    }
+tr td a: active {
+  background-color: white;
+  color:black;
+  border: none;
+}
+
+.infoImg {
+  width: 200px;
+}
+
+button {
+  color: black;
+}

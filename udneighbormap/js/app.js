@@ -9,6 +9,7 @@ function googleSuccess() {
 
   function appViewModel() {
     var self = this;
+    self.losAngelesWeather = ko.observable();
     self.placeVal = ko.observable(); // input value
 
     self.places = ko.observableArray([]); // places array
@@ -85,12 +86,22 @@ function googleSuccess() {
     });
     }
 
+    /*
+    self.queryResults = ko.observable();
+    ko.computed(function() {
+      // Whenever "pageIndex", "sortColumn", or "sortDirection" change, this function will re-run and issue
+      // an Ajax request. When the Ajax request completes, assign the resulting value to "queryResults"
+      $.ajax("http://api.openweathermap.org/data/2.5/weather?q=Los Angeles,CA&appid=f6528aa612e42b74b4f7bcf00cd1b0b1", {
+          success: self.queryResults
+      });
+    }, self);
+    */
+
     function getWeather() { // Gets current weather in Los Angeles in fahrenheit from Openweather API
-      $.get("http://api.openweathermap.org/data/2.5/weather?q=Los Angeles,CA&appid=f6528aa612e42b74b4f7bcf00cd1b0b1").success(function(data){
+      $.get("http://api.openweathermap.org/data/2.5/weather?q=Los Angeles,CA&appid=f6528aa612e42b74b4f7bcf00cd1b0b1").done(function(data){
         var temp = (1.8 * (data.main.temp - 273)) + 32; // convert Kelvin to Fahrenheit
         var fTemp = Math.round(temp);
-        $('#weather').html('Currently : ' + fTemp + 
-          '&deg; F.<span class="openAttr"> powered by <a href="http://openweathermap.org">OpenWeather</a></span>');
+        self.losAngelesWeather(fTemp);
       });
     }
 
@@ -242,5 +253,5 @@ function googleSuccess() {
 }
 
 function googleError() {
-  document.write("<h2>Error loading Map</h2>");
+  console.log("Error loading Map !");
 }
