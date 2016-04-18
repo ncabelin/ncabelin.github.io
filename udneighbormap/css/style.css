@@ -70,8 +70,7 @@ button {
 }
 
 .street {
-  width: 350px;
-  height: 350px;
+  z-index: 10;
 }
 
 footer {
@@ -154,5 +153,8 @@ button {
 @media screen and (max-width:540px) {
   h1 {
     font-size: 18px;
+  }
+  .street {
+    width: 100%;
   }
 }

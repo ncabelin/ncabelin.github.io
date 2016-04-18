@@ -18,6 +18,9 @@ function googleSuccess() {
     self.placeVal = ko.observable(); // input value
     self.places = ko.observableArray([]); // places array
     self.showInfo = ko.observable();
+    self.showTable = ko.observable(true);
+    self.searchWord = ko.observable();
+    self.showButton = ko.observable(false);
 
     var arrLOC = []; // array for autocomplete input field
     var attractions = [ // initial array of objects
@@ -68,13 +71,13 @@ function googleSuccess() {
     function getWiki(name) {
       var addText = "";
       if (name == "Disneyland Park") {
-        addText = "<br>" + attractions[1].content;
+        addText = attractions[1].content;
       } else if (name == "The Getty") {
-        addText = "<br>" + attractions[11].content;
+        addText = attractions[11].content;
       } else if (name == "The Getty Villa") {
-        addText = "<br>" + attractions[10].content;
+        addText = attractions[10].content;
       } else if (name == "The Huntington Library, Art Collections, and Botanical Gardens") {
-        addText = "<br>" + attractions[4].content;
+        addText = attractions[4].content;
       }
       var u = "https://en.wikipedia.org/w/api.php?action=opensearch&search=" + name + "&limit=1&namespace=0&format=jsonfm";
       $.ajax({
@@ -227,18 +230,18 @@ function googleSuccess() {
                   pitch: 10
                 }
               });
-          map.setStreetView(panorama);
+        map.setStreetView(panorama);
       };
 
       self.viewMarker = function() { // table td click calls this function
         self.viewIt(this.name());
+        self.showTable(false);
       };
 
       self.inputSearch = function() { // use value of input to search and view marker and wiki info
-        var inp = $('#placeList').val();
-        self.viewIt(inp);
+
       };
-    };
+    }; // end self.mark
 
     placeDestinations(); // add all items in attractions array to self.places ko.observable(array)
     var timeD = 0;
@@ -246,7 +249,7 @@ function googleSuccess() {
       if (index < 10) {  // gets around google maps API limit of 10 queries per second
         self.addMark(data.name(), data.url());
       } else {
-        timeD += 1001;
+        timeD += 500;
         setTimeout(function() { 
           self.addMark(data.name(), data.url());
         }, timeD );
