@@ -11,6 +11,7 @@ function googleSuccess() {
 
   function appViewModel() {
     var self = this;
+    var panorama;
     self.losAngelesWeather = ko.observable();
     self.messageBox = ko.observable();
     self.placeTitle = ko.observable();
@@ -18,9 +19,21 @@ function googleSuccess() {
     self.placeVal = ko.observable(); // input value
     self.places = ko.observableArray([]); // places array
     self.showInfo = ko.observable();
-    self.showTable = ko.observable(true);
+    self.visibleTable = ko.observable(true);
+    self.hideTable = function() { 
+      self.showListButton(true); 
+      self.hideListButton(false);
+      self.visibleTable(false);
+    };
+    self.showTable = function() {
+      self.showListButton(false); 
+      self.hideListButton(true);
+      self.visibleTable(true);      
+    }
     self.searchWord = ko.observable();
     self.showButton = ko.observable(false);
+    self.showListButton = ko.observable(false);
+    self.hideListButton = ko.observable(true);
 
     var arrLOC = []; // array for autocomplete input field
     var attractions = [ // initial array of objects
@@ -40,6 +53,10 @@ function googleSuccess() {
     content: "The Getty Center, in Los Angeles, California, is a campus of the Getty Museum and other programs of the Getty Trust. The $1.3 billion Center opened to the public on December 16, 1997[2] and is well known for its architecture, gardens, and views overlooking Los Angeles." },
     { loc: "Madame Tussauds Hollywood", url: "https://www2.madametussauds.com/hollywood/en", img: "images/madame.png" }
     ];
+
+    function showInfo() {
+      map.setStreetView(panorama);
+    }
 
     /* generates initial ko.observable array places */
     function placeDestinations() {
@@ -143,6 +160,7 @@ function googleSuccess() {
 
     self.zoomOut = function() { // for the zoom button
       map.setZoom(10);
+      map.setCenter(losAngeles);
     };
 
     self.addMark = function(what, url) { // adds Marker to map
@@ -171,7 +189,9 @@ function googleSuccess() {
         var index = (arrLOC.indexOf(placeData.name));
         var url = attractions[index].url;
         var imageURL = attractions[index].img;
-        var contentArea = "<img src='" + imageURL  + "' class='infoImg'><br><a href='" + url + "' target='_blank'><strong>" + placeData.name + "</strong></a><br>" + placeData.formatted_address;
+        var contentArea = "<img src='" + imageURL  + "' class='infoImg'><br><strong>" + 
+        placeData.name + "</strong></a><br>" + placeData.formatted_address +
+          "<br><a href='" + url + "' target='_blank'>visit website</a>";
         var infowindow = new google.maps.InfoWindow({
           content: contentArea,
           maxWidth: 200
@@ -189,7 +209,7 @@ function googleSuccess() {
         infowindowArr.push(infowindow);
 
         marker.addListener('click', function() { // close other infowindows, then open infowindow, and animate marker
-          $('#floating-panel').empty();
+          self.showListCool(true);
           closeInfoWindow = function() {
             infowindowArr.forEach(function(x) {
              x.close();
@@ -222,7 +242,7 @@ function googleSuccess() {
           x.setAnimation(null);
         });
         markers[ind].setAnimation(google.maps.Animation.BOUNCE);
-        var panorama = new google.maps.StreetViewPanorama(
+        panorama = new google.maps.StreetViewPanorama(
               document.getElementById('pano'), {
                 position: markers[ind].getPosition(),
                 pov: {
@@ -234,8 +254,8 @@ function googleSuccess() {
       };
 
       self.viewMarker = function() { // table td click calls this function
-        self.viewIt(this.name());
-        self.showTable(false);
+        self.viewIt(this.name()); 
+        self.showButton(true);    
       };
 
       self.inputSearch = function() { // use value of input to search and view marker and wiki info

@@ -26,8 +26,10 @@
             <h1>Los Angeles Attractions Map</h1><p class="weatherInfo" id="weather">Currently : <span data-bind="text: losAngelesWeather"></span>&deg; F.<span class="openAttr"> powered by <a href="http://openweathermap.org">OpenWeather</a></span></p>
             <span data-bind="text: messageBox"></span>
           </div>
-          <div class="col-md-6">
-            <input type="text" id="placeList" placeholder="Search" data-bind="textInput: searchWord"><button data-bind="click: zoomOut">Zoom out</button>
+          <div class="col-md-6 navi">
+            <input type="text" id="placeList" placeholder="Search" data-bind="textInput: searchWord"><button class="btn btn-danger" data-bind="click: showTable, visible: showListButton">Show List</button>
+            <button class="btn btn-danger" data-bind="click: hideTable, visible: hideListButton">Hide List</button>
+            <button class="btn btn-success" data-bind="click: $root.zoomOut">Zoom Out</button>
             <!-- Trigger the modal with a button -->
             <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" data-bind="click: showInfo, visible: showButton">Show Info</button>
             <!-- Modal -->
@@ -55,10 +57,8 @@
     </header>
     <nav>
       <div id="after">
-        <table data-bind="visible: showTable">
-          <thead>
-            <tr><a href=""><td class="text-center" id="toggleButton"><button class="fa fa-times" data-bind="click: toggleView"></button></td></a></tr>
-          </thead>
+        <table data-bind="visible: visibleTable">
+          <thead></thead>
           <tbody data-bind="foreach: places" class="collapsible">
             <tr>
               <td data-bind="click: $root.viewMarker, text: name"></td>

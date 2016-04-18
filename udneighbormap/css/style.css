@@ -20,6 +20,10 @@ h1 {
   font-family: 'Dancing Script', cursive;
 }
 
+.navi {
+  padding-top: 10px;
+}
+
 .mapArea {
     height: 100%;
     width: 100%;
@@ -52,25 +56,6 @@ button {
   position: absolute;
   top: 140px;
   margin-left: 20px;
-}
-
-#floating-panel {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    z-index: 5;
-    background-color: rgba(255,255,255,0.7);
-    padding: 5px;
-    border: 1px solid #999;
-    font-family: 'Roboto','sans-serif';
-    line-height: 30px;
-    padding-left: 10px;
-    margin-right: 80px;
-    width: 400px;
-}
-
-.street {
-  z-index: 10;
 }
 
 footer {
