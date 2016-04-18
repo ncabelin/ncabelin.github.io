@@ -254,7 +254,8 @@ function googleSuccess() {
 
       self.viewMarker = function() { // table td click calls this function
         self.viewIt(this.name()); 
-        self.showButton(true);    
+        self.showButton(true);
+        self.visibleTable(false);   
       };
 
       self.inputSearch = function() { // use value of input to search and view marker and wiki info
