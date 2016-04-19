@@ -44,17 +44,21 @@ button {
 }
 
 .weatherInfo {
-  font-size: 20px;
+  font-size: 14px;
 }
 
 .openAttr {
   font-size: 10px;
 }
 
-#after {
+.googleAttr {
+  width: 100px;
+}
+
+.after {
   z-index: 100;
   position: absolute;
-  top: 140px;
+  top: 170px;
   margin-left: 20px;
 }
 
@@ -69,14 +73,6 @@ footer {
 input { 
   margin-bottom: 5px;
   border-radius: 10px;
-}
-
-td #toggleButton: hover {
-  background: none;
-}
-
-td #toggleButton: focus {
-  outline: none;
 }
 
 td, input {
@@ -131,13 +127,18 @@ tr td a: active {
   width: 200px;
 }
 
-button {
+.btn {
   color: black;
+  margin-bottom: 5px;
+}
+
+.btn-success {
+  border-radius: 100%;
 }
 
 @media screen and (max-width:540px) {
   h1 {
-    font-size: 18px;
+    font-size: 20px;
   }
   .street {
     width: 100%;

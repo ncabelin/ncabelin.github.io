@@ -22,16 +22,13 @@
   <div class="container-fluid">
     <header>
       <div class="row">
-          <div class="col-md-6">
-            <h1>Los Angeles Attractions Map</h1><p class="weatherInfo" id="weather">Currently : <span data-bind="text: losAngelesWeather"></span>&deg; F.<span class="openAttr"> powered by <a href="http://openweathermap.org">OpenWeather</a></span></p>
+          <div class="col-md-12 text-center center-block">
+            <h1>Los Angeles Attractions Map</h1>
+            <img src="images/google.png" class="googleAttr">
+            <p class="weatherInfo" id="weather">Currently : <span data-bind="text: losAngelesWeather"></span>&deg; F.<span class="openAttr"> powered by <a href="http://openweathermap.org">OpenWeather</a></span></p>
             <span data-bind="text: messageBox"></span>
           </div>
-          <div class="col-md-6 navi">
-            <input type="text" id="placeList" placeholder="Search" data-bind="textInput: searchWord"><button class="btn btn-danger" data-bind="click: showTable, visible: showListButton">Show List</button>
-            <button class="btn btn-danger" data-bind="click: hideTable, visible: hideListButton">Hide List</button>
-            <button class="btn btn-success" data-bind="click: $root.zoomOut">Zoom Out</button>
-            <!-- Trigger the modal with a button -->
-            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" data-bind="click: showInfo, visible: showButton">Show Info</button>
+          <div class="navi">
             <!-- Modal -->
             <div id="myModal" class="modal fade" role="dialog">
               <div class="modal-dialog">
@@ -40,11 +37,12 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title" data-bind="text: placeTitle"></h4>
+                    <strong><h4 class="modal-title" data-bind="text: placeTitle"></h4></strong>
+                    <p class="openAttr">results by wikipedia</p>
                   </div>
                   <div class="modal-body">
                     <p data-bind="text: placeWiki"></p>
-                    <div class="street" id="pano"></div>
+                    <p><a data-bind="attr: { href: placeWikiUrl }">read more in wikipedia...</a></p>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -56,7 +54,16 @@
       </div>
     </header>
     <nav>
-      <div id="after">
+      <div class="after">
+        <form data-bind="submit: filterList">
+          <input data-bind='value: searchWord, valueUpdate: "afterkeydown"' placeholder="Filter list">
+          <button type="submit" class="btn btn-success"><i class="fa fa-search"></i></button>
+        </form>
+        <button class="btn btn-danger" data-bind="click: showTable, visible: showListButton">Show List</button>
+        <button class="btn btn-danger" data-bind="click: hideTable, visible: hideListButton">Hide List</button>
+        <button class="btn btn-danger" data-bind="click: zoomOut">Zoom</button>
+          <!-- Trigger the modal with a button -->
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" data-bind="visible: showButton">Wiki</button>
         <table data-bind="visible: visibleTable">
           <thead></thead>
           <tbody data-bind="foreach: places" class="collapsible">
