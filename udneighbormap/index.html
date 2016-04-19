@@ -55,7 +55,7 @@
     </header>
     <nav>
       <div class="after">
-        <form data-bind="submit: filterList">
+        <form data-bind="submit: filterList, visible: visibleTable">
           <input data-bind='value: searchWord, valueUpdate: "afterkeydown"' placeholder="Filter list">
           <button type="submit" class="btn btn-success"><i class="fa fa-search"></i></button>
         </form>
