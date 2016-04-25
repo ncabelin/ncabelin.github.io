@@ -1,3 +1,5 @@
+'use strict';
+
 /* function callback on successful load of google Maps */
 function googleSuccess() {
   /* constructor for ko observable list */
@@ -12,6 +14,7 @@ function googleSuccess() {
 
   function appViewModel() {
     var self = this;
+    self.titleMsg = ko.observable('Los Angeles Attractions')
     self.losAngelesWeather = ko.observable(); // weather in fahrenheit
     self.messageBox = ko.observable(); // error message
     self.placeTitle = ko.observable(); // modal title
@@ -20,7 +23,6 @@ function googleSuccess() {
     self.places = ko.observableArray([]); // places array
     self.visibleTable = ko.observable(true);
     self.placeWikiUrl = ko.observable();
-    self.placeToAdd = ko.observable("");
 
     self.hideTable = function() { 
       self.showListButton(true); 
@@ -29,6 +31,7 @@ function googleSuccess() {
     };
     
     self.showTable = function() {
+      self.showButton(false);
       self.showListButton(false); 
       self.hideListButton(true);
       self.visibleTable(true);      
@@ -39,53 +42,52 @@ function googleSuccess() {
     self.showListButton = ko.observable(false);
     self.hideListButton = ko.observable(true);
 
-    var arrLOC = []; // array for autocomplete input field
     var attractions = [ // initial array of objects
-    { loc: "Universal CityWalk", 
-      url: "http://www.universalstudioshollywood.com/",
-      img: "images/universal.png",
+    { loc: 'Universal CityWalk', 
+      url: 'http://www.universalstudioshollywood.com/',
+      img: 'images/universal.png',
       lat: 34.1364911,
       long: -118.3553787
     },
-    { loc: "Griffith Observatory",
-      url: "http://wwww.griffithobservatory.com",
-      img: "images/griffith.png",
+    { loc: 'Griffith Observatory',
+      url: 'http://wwww.griffithobservatory.com',
+      img: 'images/griffith.png',
       lat: 34.1184341,
       long: -118.3025875
     },
-    { loc: "Hollywood Walk of Fame",
-      url: "http://www.walkoffame.com",
-      img: "images/walk.png",
+    { loc: 'Hollywood Walk of Fame',
+      url: 'http://www.walkoffame.com',
+      img: 'images/walk.png',
       lat: 34.101285,
       long: -118.3443718
     },
-    { loc: "Santa Monica Pier",
-      url: "http://www.santamonicapier.org",
-      img: "images/pier.png",
+    { loc: 'Santa Monica Pier',
+      url: 'http://www.santamonicapier.org',
+      img: 'images/pier.png',
       lat: 34.0092419,
       long: -118.4997977
     },
-    { loc: "Los Angeles County Museum of Art",
-      url: "http://www.lacma.org",
-      img: "images/lacma.png",
+    { loc: 'Los Angeles County Museum of Art',
+      url: 'http://www.lacma.org',
+      img: 'images/lacma.png',
       lat: 34.0639323,
       long: -118.3614233
     },
-    { loc: "Cathedral of Our Lady of the Angels",
-      url: "http://www.olacathedral.org",
-      img: "images/cath.png",
+    { loc: 'Cathedral of Our Lady of the Angels',
+      url: 'http://www.olacathedral.org',
+      img: 'images/cath.png',
       lat: 34.0577215,
       long: -118.2471888
     },
-    { loc: "Descanso Gardens",
-      url: "https://www.descansogardens.org",
-      img: "images/desc.png",
+    { loc: 'Descanso Gardens',
+      url: 'https://www.descansogardens.org',
+      img: 'images/desc.png',
       lat: 34.2012661,
       long: -118.2119937
     },
-    { loc: "Madame Tussauds Hollywood",
-      url: "https://www2.madametussauds.com/hollywood/en",
-      img: "images/madame.png",
+    { loc: 'Madame Tussauds Hollywood',
+      url: 'https://www2.madametussauds.com/hollywood/en',
+      img: 'images/madame.png',
       lat: 34.101712,
       long: -118.343729
     }];
@@ -99,7 +101,7 @@ function googleSuccess() {
 
     /* filters displayed table list */
     self.filterList = function() {
-      var searchReg = new RegExp(self.searchWord(), "i");
+      var searchReg = new RegExp(self.searchWord(), 'i');
       self.places().length = 0;
       attractions.forEach(function(data) {
         var str = data.loc.toLowerCase();
@@ -114,15 +116,21 @@ function googleSuccess() {
       self.updateMarkers();
     };
 
+    /* error handling for jsonp request for wikipedia */
+    var wikiRequestTimeout = setTimeout(function() {
+      self.placeTitle('Error');
+      self.placeWiki('JSONP Error: No wikipedia summary found');
+    }, 8000);
+
     /* gets Wikipedia entry */
     function getWiki(name) {
-      var u = "https://en.wikipedia.org/w/api.php?action=opensearch&search=" + name + "&limit=1&namespace=0&format=jsonfm";
+      var u = 'https://en.wikipedia.org/w/api.php?action=opensearch&search=' + name + '&limit=1&namespace=0&format=jsonfm';
       $.ajax({
         url: u,
         type: 'GET',
         dataType: 'jsonp',
         data: {
-            format:"json"
+            format: 'json'
         },
       }).done(function(data) {
         var content = data[2][0];
@@ -130,19 +138,20 @@ function googleSuccess() {
         self.placeTitle(name);
         self.placeWiki(content);
         self.placeWikiUrl(link);
+        clearTimeout(wikiRequestTimeout);
       }).fail(function() {
-        self.placeTitle(name);
-        self.placeWiki("Error: No wikipedia summary found");
+        self.placeTitle('Error');
+        self.placeWiki('Error: No wikipedia summary found');        
       });
     }
 
     function getWeather() { // Gets current weather in Los Angeles in fahrenheit from Openweather API
-      $.get("http://api.openweathermap.org/data/2.5/weather?q=Los Angeles,CA&appid=f6528aa612e42b74b4f7bcf00cd1b0b1").done(function(data){
+      $.get('http://api.openweathermap.org/data/2.5/weather?q=Los Angeles,CA&appid=f6528aa612e42b74b4f7bcf00cd1b0b1').done(function(data){
         var temp = (1.8 * (data.main.temp - 273)) + 32; // convert Kelvin to Fahrenheit
         var fTemp = Math.round(temp);
         self.losAngelesWeather(fTemp);
       }).fail(function() {
-        self.losAngelesWeather("'Error: failed to get temperature'");
+        self.losAngelesWeather('Error: failed to get temperature');
       });
     }
 
@@ -196,10 +205,8 @@ function googleSuccess() {
     
 
       function callback(results, status) {
-        var timeD = 0;
         if (status == google.maps.places.PlacesServiceStatus.OK) {
           for (var i = 0; i < results.length; i++) {
-            var place = results[i];
             addMarker(results[i]);
           }
         }
@@ -207,16 +214,17 @@ function googleSuccess() {
       
 
       function addMarker(results) {
-        var openMsg = "";
-        if (name !== "Santa Monica Pier") {
+        var openMsg = '';
+        if (name !== 'Santa Monica Pier') {
           if (results.opening_hours.open_now) {
-            openMsg = "( OPEN right now )";
+            openMsg = 'OPEN right now';
           } else {
-            openMsg = "( CLOSED right now )";
+            openMsg = 'CLOSED right now';
           }
         }
-        var contentArea = "<img src='" + img  + "' class='infoImg'><br><strong>" + 
-        name + "</strong></a><br>" + results.formatted_address + "<br><em>" + openMsg + "</em><br><a href='" + url + "' target='_blank'>visit website</a><br>";
+        var contentArea = '<img src="' + img  + '" class="infoImg"><br><strong>' + 
+          name + '</strong></a><br>' + results.formatted_address + '<br><em>' + openMsg + '</em><br><a href="' + url +
+          '" target="_blank">visit website</a><br>';
         var infowindow = new google.maps.InfoWindow({
           content: contentArea,
           maxWidth: 200
@@ -234,8 +242,8 @@ function googleSuccess() {
 
         marker.addListener('click', function() {
           /* Closes all infowindows first */
-          closeInfoWindow = function() {
-            showButton = false;
+          var closeInfoWindow = function() {
+            self.showButton(false);
             infowindowArr.forEach(function(x) {
              x.close();
             });
@@ -253,6 +261,7 @@ function googleSuccess() {
             });
             marker.setAnimation(google.maps.Animation.BOUNCE);
           }
+          self.showButton(false);
         });
       } // end addMarker
 
@@ -307,5 +316,9 @@ function googleSuccess() {
 }
 
 function googleError() {
-  appViewModel.messageBox("Error loading Map !");
+  function errorViewModel() {
+    this.titleMsg = ko.observable('Sorry, Error loading Map !');
+  }
+
+  ko.applyBindings(new errorViewModel());
 }

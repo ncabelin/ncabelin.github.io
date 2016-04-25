@@ -23,10 +23,9 @@
     <header>
       <div class="row">
           <div class="col-md-12 text-center center-block">
-            <h1>Los Angeles Attractions Map</h1>
+            <h1 data-bind="text: titleMsg"></h1>
             <img src="images/google.png" class="googleAttr">
-            <p class="weatherInfo" id="weather">Currently : <span data-bind="text: losAngelesWeather"></span>&deg; F.<span class="openAttr"> powered by <a href="http://openweathermap.org">OpenWeather</a></span></p>
-            <span data-bind="text: messageBox"></span>
+            <p class="weatherInfo" id="weather">Currently : <span data-bind="text: losAngelesWeather"></span>&deg; F in Los Angeles.<span class="openAttr"> data by <a href="http://openweathermap.org">OpenWeather</a></span></p>
           </div>
           <div class="navi">
             <!-- Modal -->
@@ -81,11 +80,9 @@
     <footer>
     </footer>
   </div>
-    <!-- jquery, jquery UI and bootstrap js -->
+    <!-- jquery, and bootstrap js -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-  <script src="js/jquery-ui.min.js"></script>
-  <link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css">
 
   <!-- knockoutJS -->
   <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.3.0.js"></script>

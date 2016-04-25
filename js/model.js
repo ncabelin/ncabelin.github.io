@@ -8,9 +8,9 @@
 	}, {
 		title: "LA Attractions Map",
 		id: "losAngelesAttractions",
-		description: "Neighborhood map of the Greater Los Angeles area and the top museums, theme parks, and other attractions.<br> Uses knockout.js framework, jQuery, Openweather API to get current LA weather, Google maps, places and streetview API, and wikipedia API to query info about the places. Currently only works with large viewports due to map interactions and info size.<br>",
+		description: "Neighborhood map of the Greater Los Angeles area and the top museums, theme parks, and other attractions.<br> Uses knockout.js framework, jQuery, Openweather API to get current LA weather, Google maps, places and wikipedia API to query info about the places.<br>",
 		url: "http://ncabelin.github.io/udneighbormap",
-		image: "https://cloud.githubusercontent.com/assets/15892944/14290947/f52ad8fa-fb15-11e5-84ad-1fa527adc8af.jpg",
+		image: "https://cloud.githubusercontent.com/assets/15892944/14626721/eeb4e30c-05a2-11e6-9fdf-5c216439bc9f.jpg",
 		github: "https://github.com/ncabelin/ncabelin.github.io/tree/master/udneighbormap"
 	}, {
 		title: "Weather Checker",
