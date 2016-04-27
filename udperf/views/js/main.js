@@ -486,20 +486,28 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 // Moves the sliding background pizzas based on scroll position
 /* CHANGE MADE :
  * 1. Made requestAnimationFrame on moveP
- * 2. Used transform translateX instead of */
+ * 2. document.body.scrollTop put out of loop
+ * 3. used getElementsByClassName instead of querySelectorAll
+ * 4. precalculated phases to an array of 5 phases
+*/
 var finished = true;
 
 function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
-  var scrollPosition = window.scrollY;
 
   function moveP() {
     var items = document.getElementsByClassName('mover');
-    var j;
+    var phases = [];
+    var scrollT = document.body.scrollTop;
+    for (var l = 0; l < 5; l++) {
+      var phase = Math.sin((scrollT / 1250) + (l % 5));
+      phases.push(phase);
+    }
+
     for (var i = 0; i < items.length; i++) {
-      var phase = Math.sin((scrollPosition / 3000) + (i % 5));
-      items[i].style.transform = 'translateX(' + (items[i].basicLeft + 10)* phase + 'px)';
+      var pIndex = i % 5;
+      items[i].style.left = items[i].basicLeft + 100 * phases[pIndex] + 'px';
     }
     finished = true;
   }
@@ -530,18 +538,24 @@ window.addEventListener('scroll', updatePositions);
 // Generates the sliding pizzas when the page loads.
 // 1. Gets screen height then adds more pizzas (30 more) if height is bigger
 document.addEventListener('DOMContentLoaded', function() {
-  var cols = 4;
+  var cols = 8;
   var s = 256;
-  var sHeight = window.innerHeight;
-  var pizzaBackground = 30;
-  if (sHeight > 400) {
-    pizzaBackground = 60;
-  }
+
+  var size = {
+    width: window.innerWidth || document.body.clientWidth,
+    height: window.innerHeight || document.body.clientHeight
+  };
+  // determine number of columns and rows for pizza creation on the screen
+  var col = Math.floor(size.width / 200);
+  var rows = Math.floor(size.height / 200);
+  // determine the number of pizzas to be created
+  var numOfPizzasToPaint = rows * col;
+
   var movingP = document.getElementById("movingPizzas1");
-  for (var i = 0; i < pizzaBackground; i++) {
+  for (var i = 0; i < numOfPizzasToPaint; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
-    elem.src = "images/pizza.png";
+    elem.src = 'images/pizza.png';
     elem.basicLeft = (i % cols) * s;
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
     movingP.appendChild(elem);
