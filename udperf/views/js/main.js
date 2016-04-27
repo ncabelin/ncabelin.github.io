@@ -532,14 +532,13 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 4;
   var s = 256;
-  var sHeight = window.screen.height;
-  var pizzaBack = 30;
-  console.log(sHeight);
+  var sHeight = window.innerHeight;
+  var pizzaBackground = 30;
   if (sHeight > 600) {
-    pizzaBack = 60;
+    pizzaBackground = 60;
   }
   var movingP = document.getElementById("movingPizzas1");
-  for (var i = 0; i < 30; i++) {
+  for (var i = 0; i < pizzaBackground; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
