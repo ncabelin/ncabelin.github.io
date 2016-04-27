@@ -18,7 +18,6 @@ cameron *at* udacity *dot* com
 
 // As you may have realized, this website randomly generates pizzas.
 // Here are arrays of all possible pizza ingredients.
-var started = false;
 var pizzaIngredients = {};
 pizzaIngredients.meats = [
   "Pepperoni",
@@ -422,7 +421,7 @@ var resizePizzas = function(size) {
 
   changeSliderLabel(size);
 
-  var randomPizzas = document.querySelectorAll(".randomPizzaContainer");
+  var randomPizzas = document.getElementsByClassName("randomPizzaContainer");
 
   // Iterates through pizza elements on the page and changes their widths
   function changePizzaSizes(size) {
@@ -457,8 +456,9 @@ var resizePizzas = function(size) {
 window.performance.mark("mark_start_generating"); // collect timing data
 
 // This for-loop actually creates and appends all of the pizzas when the page loads
+// 1. Transferred pizzasDiv out of for loop
+var pizzasDiv = document.getElementById("randomPizzas");
 for (var i = 2; i < 100; i++) {
-  var pizzasDiv = document.getElementById("randomPizzas");
   pizzasDiv.appendChild(pizzaElementGenerator(i));
 }
 
@@ -487,24 +487,32 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 /* CHANGE MADE :
  * 1. Made requestAnimationFrame on moveP
  * 2. Used transform translateX instead of */
+var finished = true;
+
 function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
+  var scrollPosition = window.scrollY;
 
   function moveP() {
-    var items = document.querySelectorAll('.mover');
+    var items = document.getElementsByClassName('mover');
+    var j;
     for (var i = 0; i < items.length; i++) {
-      var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
-      items[i].style.transform = 'translateX(' + (items[i].basicLeft + 100) * phase + 'px)';
+      var phase = Math.sin((scrollPosition / 3000) + (i % 5));
+      items[i].style.transform = 'translateX(' + (items[i].basicLeft + 10) * phase + 'px)';
     }
+    finished = true;
   }
 
-  if (started) {
-    window.requestAnimationFrame(moveP);
-  } else {
-    moveP();
-    started = true;
+  // animates only if last animation was finished already
+  function findOut() {
+    if (finished) {
+        window.requestAnimationFrame(moveP);
+    }
+    finished = false;
   }
+
+  findOut();
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
   // Super easy to create custom metrics.
@@ -520,16 +528,24 @@ function updatePositions() {
 window.addEventListener('scroll', updatePositions);
 
 // Generates the sliding pizzas when the page loads.
+// 1. Gets screen height then adds more pizzas (30 more) if height is bigger
 document.addEventListener('DOMContentLoaded', function() {
-  var cols = 8;
+  var cols = 4;
   var s = 256;
-  for (var i = 0; i < 20; i++) {
+  var sHeight = window.screen.height;
+  var pizzaBack = 30;
+  console.log(sHeight);
+  if (sHeight > 600) {
+    pizzaBack = 60;
+  }
+  var movingP = document.getElementById("movingPizzas1");
+  for (var i = 0; i < 30; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
     elem.basicLeft = (i % cols) * s;
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
-    document.querySelector("#movingPizzas1").appendChild(elem);
+    movingP.appendChild(elem);
   }
   updatePositions();
 });
