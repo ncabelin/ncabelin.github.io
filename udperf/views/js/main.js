@@ -1,10 +1,6 @@
 /*
-Welcome to the 60fps project! Your goal is to make Cam's Pizzeria website run
+Welcome to the 60fps project! The is to make Cam's Pizzeria website run
 jank-free at 60 frames per second.
-
-There are two major issues in this code that lead to sub-60fps performance. Can
-you spot and fix both?
-
 
 Built into the code, you'll find a few instances of the User Timing API
 (window.performance), which will be console.log()ing frame rate data into the
@@ -14,6 +10,9 @@ http://www.html5rocks.com/en/tutorials/webperformance/usertiming/
 Creator:
 Cameron Pittman, Udacity Course Developer
 cameron *at* udacity *dot* com
+
+Manipulator:
+Neptune Cabelin, Udacity Student
 */
 
 // As you may have realized, this website randomly generates pizzas.
@@ -548,8 +547,9 @@ document.addEventListener('DOMContentLoaded', function() {
   // determine number of columns and rows for pizza creation on the screen
   var col = Math.floor(size.width / 200);
   var rows = Math.floor(size.height / 200);
-  // determine the number of pizzas to be created
-  var numOfPizzasToPaint = rows * col;
+  console.log('columns: ' + col + ' rows: ' + rows);
+  // determine the number of pizzas to be created, adds 6 to fill up width
+  var numOfPizzasToPaint = ( rows * col ) + 6;
 
   var movingP = document.getElementById("movingPizzas1");
   for (var i = 0; i < numOfPizzasToPaint; i++) {
