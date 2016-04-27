@@ -499,7 +499,7 @@ function updatePositions() {
     var j;
     for (var i = 0; i < items.length; i++) {
       var phase = Math.sin((scrollPosition / 3000) + (i % 5));
-      items[i].style.transform = 'translateX(' + (items[i].basicLeft + 10) * phase + 'px)';
+      items[i].style.transform = 'translateX(' + (items[i].basicLeft + 10)* phase + 'px)';
     }
     finished = true;
   }
@@ -534,7 +534,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var s = 256;
   var sHeight = window.innerHeight;
   var pizzaBackground = 30;
-  if (sHeight > 600) {
+  if (sHeight > 400) {
     pizzaBackground = 60;
   }
   var movingP = document.getElementById("movingPizzas1");

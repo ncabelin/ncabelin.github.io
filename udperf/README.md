@@ -22,3 +22,4 @@ Scroll down while recording Timeline on Chrome Devtools.
 4. Reduced background pizzas number to 30 or 60 depending on screen height instead of 200.
 5. Used translateX instead to reduce steps to only compositing.
 6. Took pizzasDiv out of for loop since it is doesn't need to be repeated (id only).
+7. Replaced querySelectorAll with getElementsByClassName for speed.
