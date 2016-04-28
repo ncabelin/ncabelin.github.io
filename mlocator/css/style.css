@@ -198,7 +198,7 @@ tr td a:active {
     width: 100% !important;
   }
 
-  .mapArea {
+  .mapArea, #zoom {
     display:none;
   }
 

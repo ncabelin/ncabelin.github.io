@@ -75,14 +75,14 @@
     </header>
     <section class="row tablePos">
       <div class="col-md-12">
-        <button type="submit" class="btn btn-default" data-bind="click: addGeo">Find 5 closest facilities</button><span class="loading"> <img src="images/loading.gif" class="loadGif">Loading...</span>
+        <button type="submit" class="btn btn-warning" data-bind="click: addGeo">Find 5 closest facilities</button><span class="loading"> <img src="images/loading.gif" class="loadGif">Loading...</span>
         <form data-bind="submit: filterList, visible: visibleTable">
           <input data-bind='value: searchWord, valueUpdate: "afterkeydown"' placeholder="Filter list">
           <button type="submit" class="btn btn-success"><i class="fa fa-search"></i></button>
         </form>
-        <button class="btn btn-danger" data-bind="click: showTable, visible: showListButton">Show List</button>
-        <button class="btn btn-danger" data-bind="click: hideTable, visible: hideListButton">Hide List</button>
-        <button class="btn btn-danger" data-bind="click: zoomOut">Zoom</button>
+        <button class="btn btn-warning" data-bind="click: showTable, visible: showListButton">Show List</button>
+        <button class="btn btn-warning" data-bind="click: hideTable, visible: hideListButton">Hide List</button>
+        <button class="btn btn-warning" data-bind="click: zoomOut" id="zoom">Zoom</button>
           <!-- Trigger the modal with a button -->
         <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" data-bind="visible: showButton" id="info">Info</button>
         <table data-bind="visible: visibleTable" id="table">

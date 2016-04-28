@@ -192,7 +192,6 @@ function googleSuccess() {
 
       /* clicking place name on the table list cell invokes this function */
       self.viewMarker = function() {
-        var screenWidth = window.innerWidth || document.body.clientWidth;
         if (screenWidth < 600) {
           self.placeTitle(this.name());
           $('#modBody').html(this.info() + '<br><br>' + this.address() + '<br><br><a href="tel:' + this.tel() + '">Call ' + this.tel() + '</a>');
