@@ -188,7 +188,7 @@ tr td a:active {
   .tablePos {
     z-index: 100;
     position: absolute;
-    top: 120px;
+    top: 70px;
     left: 5px;
     margin-left: 5px;
     width: 100%;
@@ -198,7 +198,7 @@ tr td a:active {
     width: 100% !important;
   }
 
-  .mapArea, #zoom {
+  .mapArea, #zoom, .footnote {
     display:none;
   }
 
