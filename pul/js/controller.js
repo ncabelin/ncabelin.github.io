@@ -1,10 +1,10 @@
 var app = {
-  // results of GPS calculation
+  // results array of GPS calculation, used to generate new table with distance
   results: [],
   // coordinates
   latCheck: 0,
   lngCheck: 0,
-  //length: locations.length,
+  lengthLoc: locations.length,
   table: $('#tableSource'),
   loading: function() {
       $('#loading').toggle();
@@ -176,7 +176,7 @@ var app = {
 
   calcResults: function(data2) {
     console.log('calculating results');
-    for (var i = 0; i < 33; i++) {
+    for (var i = 0; i < app.lengthLoc; i++) {
       var dist = Math.floor(app.checkDistance(app.latCheck, app.lngCheck, data2[i].lat, data2[i].long)) + ' miles';
       app.results.push({
         distance: dist,
@@ -185,7 +185,7 @@ var app = {
         tel: data2[i].tel,
         info: data2[i].info
       });
-      if (i == 32) {
+      if (i == app.lengthLoc - 1) {
         app.addTableDiv(app.table, 'distance', 'Distance');
         app.createTable();
         $('#val').trigger('click');

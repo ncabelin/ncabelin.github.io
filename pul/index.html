@@ -27,8 +27,23 @@
         font-family: "Open Sans", sans-serif;
       }
 
-      #title {
+      .navbar-fixed-top {
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#87e0fd+0,53cbf1+40,56bedd+100 */
+        background: rgb(135,224,253); /* Old browsers */
+        background: -moz-radial-gradient(center, ellipse cover,  rgba(135,224,253,0.8) 0%, rgba(83,203,241,0.8) 40%, rgba(86,190,221,0.8) 100%); /* FF3.6-15 */
+        background: -webkit-radial-gradient(center, ellipse cover,  rgba(135,224,253,0.8) 0%,rgba(83,203,241,0.8) 40%,rgba(86,190,221,0.8) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: radial-gradient(ellipse at center,  rgba(135,224,253,0.8) 0%,rgba(83,203,241,0.8) 40%,rgba(86,190,221,0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', endColorstr='#56bedd',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+      }
+
+      .navbar-default .navbar-nav>li>a,
+      .footnote {
+          color: black;
+      }
+
+      #title, .modal-title {
         font-family: 'Playfair Display', serif;
+        font-size: 20px;
       }
 
       table {
@@ -62,6 +77,11 @@
 
       #listAll, #contacts, #help {
         text-align: center;
+      }
+
+      #inputAddress {
+        width: 100px;
+        border-radius: 10%;
       }
 
       .btn {
@@ -111,10 +131,10 @@
                 </div><!-- /.navbar-collapse -->
               </div><!-- /.container-fluid -->
               <section class="selections col-md-12">
-                  <button id="checkGPS" class="btn btn-primary"><i class="fa fa-crosshairs"></i></button>
                   <p id="loading"><img src="images/loading.gif" />Loading...</p>
-                  <input id="inputAddress" type="number" pattern="\d*" placeholder="Locate by Zipcode"/>
+                  <input id="inputAddress" type="number" pattern="\d*" placeholder=" zipcode"/>
                   <button id="checkAddress" class="btn btn-success"><i class="fa fa-search"></i></button>
+                  <button id="checkGPS" class="btn btn-primary"><i class="fa fa-crosshairs"></i></button>
                   <span class="message"></span>
               </section>
             </nav>

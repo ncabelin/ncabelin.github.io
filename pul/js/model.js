@@ -234,10 +234,10 @@ var locations = [
   'lat': 34.1569807,
   'long': -118.6379289
 },{
-  'name': 'LA County Dept. of Mental Health<br>Olive View Community Mental Health Urgent Care Ctr.',
+  'name': 'Olive View Community Mental Health Urgent Care',
   'address': '14659 Olive View Dr. Sylmar, CA 91342',
   'tel': '(818)485-0888',
-  'info': 'hours of operation : M-F 8am - 10pm, Sat & Sun 9am - 5:30pm',
+  'info': 'LA County Dept. of Mental Health<br>hours of operation : M-F 8am - 10pm, Sat & Sun 9am - 5:30pm',
   'note': '',
   'lat': 34.1569807,
   'long': -118.6379289
