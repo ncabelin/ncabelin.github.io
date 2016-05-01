@@ -31,11 +31,6 @@
         font-family: 'Playfair Display', serif;
       }
 
-      .head {
-        background-color: black;
-        color: white;
-      }
-
       table {
         margin-left:auto;
         margin-right:auto;
@@ -48,7 +43,7 @@
       }
 
       td {
-        border: 1px solid grey;
+        border: 1px solid #E2DFDF;
         padding: 3px;
       }
 
@@ -73,7 +68,7 @@
         margin-bottom: 10px;
       }
 
-      .btn-success {
+      .btn-success, #checkGPS {
         border-radius: 100%;
       }
 
@@ -116,7 +111,7 @@
                 </div><!-- /.navbar-collapse -->
               </div><!-- /.container-fluid -->
               <section class="selections col-md-12">
-                  <button id="checkGPS" class="btn btn-primary">Nearby</button>
+                  <button id="checkGPS" class="btn btn-primary"><i class="fa fa-crosshairs"></i></button>
                   <p id="loading"><img src="images/loading.gif" />Loading...</p>
                   <input id="inputAddress" type="number" placeholder="Locate by Zipcode"/>
                   <button id="checkAddress" class="btn btn-success"><i class="fa fa-search"></i></button>
