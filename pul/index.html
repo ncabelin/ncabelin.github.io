@@ -8,6 +8,10 @@
     <meta charset="UTF-8">
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 
+    <!-- google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+
     <!-- bootstrap css -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -19,6 +23,14 @@
     <!-- knockoutJS -->
     <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.3.0.js"></script>
     <style>
+      body {
+        font-family: "Open Sans", sans-serif;
+      }
+
+      #title {
+        font-family: 'Playfair Display', serif;
+      }
+
       .head {
         background-color: black;
         color: white;
@@ -64,6 +76,16 @@
       .btn-success {
         border-radius: 100%;
       }
+
+      footer {
+        margin-top: 10px;
+      }
+
+      @media screen and (max-width:540) {
+        #tableSource {
+          margin-top: 150px;
+        }
+      }
     </style>
 </head>
 <body>
@@ -81,7 +103,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                   </button>
-                  <a class="navbar-brand" href="#" id="title">pUL : <span class="footnote">Psych Unit Locator</span></a>
+                  <a class="navbar-brand" href="#" id="title"><span class="footnote">Psych Unit Locator</span></a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -94,7 +116,7 @@
                 </div><!-- /.navbar-collapse -->
               </div><!-- /.container-fluid -->
               <section class="selections col-md-12">
-                  <button id="checkGPS" class="btn btn-primary">Locate by GPS</button>
+                  <button id="checkGPS" class="btn btn-primary">Nearby</button>
                   <p id="loading"><img src="images/loading.gif" />Loading...</p>
                   <input id="inputAddress" type="number" placeholder="Locate by Zipcode"/>
                   <button id="checkAddress" class="btn btn-success"><i class="fa fa-search"></i></button>
@@ -132,7 +154,7 @@
     <section id="tableSource">
     </section>
   </div>
-  <footer class="row">
+  <footer class="text-center">
       <p>Copyright &copy; Potentum Studios. All rights reserved.</p>
   </footer>
 </div>

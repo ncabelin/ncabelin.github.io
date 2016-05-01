@@ -29,7 +29,7 @@ var app = {
 
     help.click(function() {
       $('.modal-title').html('Instructions');
-      var content = '<ol><li>To check nearest psych unit locations, click <strong>Locate by GPS button</strong></li>' +
+      var content = '<ol><li>To check nearest psych unit locations, click <strong>Nearby button</strong></li>' +
         '<li>To check psych unit nearest to a zipcode, type zipcode in the input field <br>and click <i class="fa fa-search"></i></li>' +
         '<li>Click menu button List to display all data without finding out distance</li>' +
         '<li>To filter table put searchword in the input box labeled Filter List</li>' +
@@ -90,7 +90,7 @@ var app = {
     // set-up first table with name,info and address by default
     locations.forEach(function(data) {
       $('.list').append('<tr><td class="name">' + data.name + '</td><td class="info">' + data.info +
-        '</td><td>' + data.address + '</td></tr>');
+        '</td>');
     });
 
     // list.js parameters set-up
