@@ -24,6 +24,7 @@ var app = {
     listAllBtn.click(function() {
       app.table.empty();
       app.listAll();
+      app.modalSet($('.name'));
     });
 
     help.click(function() {
@@ -54,7 +55,7 @@ var app = {
         app.table.empty();
         app.results = [];
         app.checkAddress(locations, name);
-        app.modalSet();
+        app.modalSet($('.name'));
       } else {
         app.message('Invalid zipcode, please check again');
         setTimeout(function() { app.message(''); }, 5000);
