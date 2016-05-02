@@ -18,6 +18,10 @@ var app = {
     var contacts = $('#contacts');
     var help = $('#help');
     var home = $('#home');
+    var about = $('#about');
+    var modalTitle = $('.modal-title');
+    var modalBody = $('.modal-body');
+    var openModal = function() { $('#myModal').modal(); };
     var options, userList;
 
     listAllBtn.click(function() {
@@ -28,6 +32,7 @@ var app = {
     });
 
     home.click(function() {
+      $('#loading').css('display', 'none');
       app.table.empty();
       $('.formSearch').css('display', 'none');
       checkLocbtn.css('display', 'inline');
@@ -36,15 +41,29 @@ var app = {
       }, 200);
     });
 
+    contacts.click(function() {
+      modalTitle.html(contactsData[0].name);
+      var content = contactsData[0].info;
+      modalBody.html(content);
+      openModal();
+    });
+
     help.click(function() {
-      $('.modal-title').html('Instructions');
-      var content = '<ol><li>To check nearest psych unit locations, click <button class="btn btn-primary">Geolocation</button></li>' +
-        '<li>To check psych unit nearest to a zipcode, click <button class="btn btn-primary">Zipcode</button>, then type zipcode in the input field and click <button class="btn btn-success"><i class="fa fa-search"></i></button></li>' +
-        '<li>Click menu button List to display all data without finding out distance</li>' +
+      modalTitle.html('Instructions');
+      var content = '<ol><li>To check nearest psych unit locations, click <button class="btn btn-primary">By geolocation</button></li>' +
+        '<li>To check psych unit nearest to a zipcode, click <button class="btn btn-primary">By zipcode</button>, then type zipcode in the input field <input placeholder="zipcode"> and click <button class="btn btn-success"><i class="fa fa-search"></i></button></li>' +
+        '<li>Click <button class="btn btn-success">Show All</button> to display all data without finding out distances</li>' +
         '<li>To search table put your searchword in the input box <input placeholder="search table" /></li>' +
         '<li>Click psych unit name to access more info (e.g. telephone numbers)</li></ol>';
-      $('.modal-body').html(content);
-      $('#myModal').modal();
+      modalBody.html(content);
+      openModal();
+    });
+
+    about.click(function() {
+      modalTitle.html('About');
+      var content = '<h5><strong>Psych Unit Locator is a tool for calculating distances between L.A. County mental health facilities and a given location. It also provides ease of search information on a tabular display.<br><br>It uses zipcode from the user input or geolocation coordinates from the user device. This web app uses the Google maps Places API for querying geographic coordinates for the zipcode.</strong></h5><br><br><i>This web application software by Potentum Studios is for informational purposes only.<br><br>Upon use of the web application software "L.A. County Psych Unit Locator", user agrees that information presented may change without further notice and will not hold the software developer accountable for any discrepancies.<br>Please update the software developer upon any changes in the information submitted.</i><br><br>Contact us at <a href="tel:3232076632">(323)207-6632.</a> or go to <a href="http://www.potentum.com">www.potentum.com</a>';
+      modalBody.html(content);
+      openModal();
     });
 
     // check user's geographic coordinates to find miles away.

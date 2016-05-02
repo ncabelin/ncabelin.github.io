@@ -243,3 +243,10 @@ var locations = [
   'long': -118.6379289
 }
 ];
+
+var contactsData = [
+  {
+    'name': 'DHS Medical Alert Center',
+    'info': '( Indigent Clients ): MAC # <a href="tel:18669414401">1(866)941-4401</a> to request destination assignment for client and contact ACCESS at <a href="tel:8008547771">1(800)854-7771</a> to request an ambulance.'
+  }
+];
