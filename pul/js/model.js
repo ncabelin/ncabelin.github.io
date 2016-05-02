@@ -126,7 +126,7 @@ var locations = [
   'lat': 34.0492542,
   'long': -118.219434
 },{
-  'name': 'Mission Community Hospital-Panorama Campus',
+  'name': 'Mission Community Hospital<br>Panorama Campus',
   'address': '14850 Roscoe Blvd. Panorama City, CA 91402',
   'tel': '(800)608-4624',
   'info': 'Fee for Service Medi-cal',
@@ -140,7 +140,7 @@ var locations = [
   'lat': 34.4214827,
   'long': -118.5654093
 },{
-  'name': 'Henry Mayo Newhall Behavioral Health Services',
+  'name': 'Henry Mayo Behavioral Health Svcs',
   'address': '25727 McBean Parkway Valencia, CA 91355',
   'tel': '(661)253-8954',
   'info': 'Fee for Service Medi-cal & Medi-care',
@@ -226,7 +226,7 @@ var locations = [
   'lat': 34.1007416,
   'long': -118.1080642
 },{
-  'name': 'Samuel Goldwyn Jr. Center for Behavioral Health',
+  'name': 'Samuel Goldwyn Jr. Center<br>for Behavioral Health',
   'address': '23388 Mulholland Dr. Woodland Hills, CA 91364',
   'tel': '(818)876-4140',
   'info': '12 beds',
@@ -234,7 +234,7 @@ var locations = [
   'lat': 34.1569807,
   'long': -118.6379289
 },{
-  'name': 'Olive View Community Mental Health Urgent Care',
+  'name': 'Olive View Community Mental Health<br>Urgent Care',
   'address': '14659 Olive View Dr. Sylmar, CA 91342',
   'tel': '(818)485-0888',
   'info': 'LA County Dept. of Mental Health<br>hours of operation : M-F 8am - 10pm, Sat & Sun 9am - 5:30pm',

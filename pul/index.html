@@ -30,10 +30,11 @@
       .navbar-fixed-top {
         /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#87e0fd+0,53cbf1+40,56bedd+100 */
         background: rgb(135,224,253); /* Old browsers */
-        background: -moz-radial-gradient(center, ellipse cover,  rgba(135,224,253,0.8) 0%, rgba(83,203,241,0.8) 40%, rgba(86,190,221,0.8) 100%); /* FF3.6-15 */
-        background: -webkit-radial-gradient(center, ellipse cover,  rgba(135,224,253,0.8) 0%,rgba(83,203,241,0.8) 40%,rgba(86,190,221,0.8) 100%); /* Chrome10-25,Safari5.1-6 */
-        background: radial-gradient(ellipse at center,  rgba(135,224,253,0.8) 0%,rgba(83,203,241,0.8) 40%,rgba(86,190,221,0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        background: -moz-radial-gradient(center, ellipse cover,  rgba(135,224,253,1) 0%, rgba(83,203,241,1) 40%, rgba(86,190,221,1) 100%); /* FF3.6-15 */
+        background: -webkit-radial-gradient(center, ellipse cover,  rgba(135,224,253,1) 0%,rgba(83,203,241,1) 40%,rgba(86,190,221,1) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: radial-gradient(ellipse at center,  rgba(135,224,253,1) 0%,rgba(83,203,241,1) 40%,rgba(86,190,221,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', endColorstr='#56bedd',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+        height: 100%;
       }
 
       .navbar-default .navbar-nav>li>a,
@@ -57,9 +58,16 @@
         cursor: pointer;
       }
 
+      table, .navbar-fixed-top, button {
+        -webkit-box-shadow: 6px 7px 13px -4px rgba(184,184,184,1);
+        -moz-box-shadow: 6px 7px 13px -4px rgba(184,184,184,1);
+        box-shadow: 6px 7px 13px -4px rgba(184,184,184,1);
+      }
+
       td {
-        border: 1px solid #E2DFDF;
+        border: 1px solid #286090;
         padding: 3px;
+
       }
 
       td.name:hover {
@@ -71,34 +79,38 @@
         margin-top: 100px;
       }
 
-      #loading {
+      #loading, .formSearch {
         display: none;
       }
 
-      #listAll, #contacts, #help {
+      .navOptions {
         text-align: center;
       }
 
       #inputAddress {
         width: 100px;
-        border-radius: 10%;
       }
 
       .btn {
         margin-bottom: 10px;
       }
 
-      .btn-success, #checkGPS {
-        border-radius: 100%;
-      }
-
       footer {
         margin-top: 10px;
       }
 
-      @media screen and (max-width:540) {
+      .loading {
+        height: 30px;
+        display: inline;
+      }
+
+      @media screen and (max-width:540px) {
         #tableSource {
-          margin-top: 150px;
+          margin-top: 200px;
+        }
+
+        #title {
+          font-size:16px;
         }
       }
     </style>
@@ -118,23 +130,28 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                   </button>
-                  <a class="navbar-brand" href="#" id="title"><span class="footnote">Psych Unit Locator</span></a>
+                  <a class="navbar-brand" href="#" id="title"><span class="footnote">L.A. County Psych Unit Locator</span></a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   <ul class="nav navbar-nav navbar-right">
-                    <li><a id="listAll">List</a></li>
-                    <li><a id="contacts">Contacts</a></li>
-                    <li><a id="help">Help</a></li>
+                    <li><a id="home" class="navOptions">Home</a></li>
+                    <li><a id="forms" class="navOptions">Forms</a></li>
+                    <li><a id="contacts" class="navOptions">Contacts</a></li>
+                    <li><a id="help" class="navOptions"><i class="fa fa-question-circle"></i></a></li>
+                    <li><a id="about" class="navOptions">About</a></li>
                   </ul>
                 </div><!-- /.navbar-collapse -->
               </div><!-- /.container-fluid -->
-              <section class="selections col-md-12">
-                  <p id="loading"><img src="images/loading.gif" />Loading...</p>
-                  <input id="inputAddress" type="number" pattern="\d*" placeholder=" zipcode"/>
-                  <button id="checkAddress" class="btn btn-success"><i class="fa fa-search"></i></button>
-                  <button id="checkGPS" class="btn btn-primary"><i class="fa fa-crosshairs"></i></button>
+              <section class="selections col-md-12 text-center">
+                  <span class="formSearch">Search by : </span>
+                  <input id="inputAddress" type="number" pattern="\d*" placeholder=" zipcode" class="formSearch"/>
+                  <button id="checkAddress" class="btn btn-success formSearch"><i class="fa fa-search"></i></button>
+                  <button id="checkLocation" class="btn btn-primary">By zipcode</button>
+                  <button id="checkGPS" class="btn btn-primary">By geolocator</button>
+                  <span id="loading"><img src="images/loading.gif" class="loading" />Loading...</span>
+                  <button id="listAll" class="btn btn-success">Show all</button>
                   <span class="message"></span>
               </section>
             </nav>
@@ -170,7 +187,7 @@
     </section>
   </div>
   <footer class="text-center">
-      <p>Copyright &copy; Potentum Studios. All rights reserved.</p>
+      <p><strong>Copyright &copy; Potentum Studios. All rights reserved.</strong></p>
   </footer>
 </div>
 <script src="js/model.js"></script>

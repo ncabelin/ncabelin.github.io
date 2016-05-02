@@ -11,28 +11,37 @@ var app = {
   },
   startApp: function() {
     var checkGPSbtn = $('#checkGPS');
+    var checkLocbtn = $('#checkLocation');
     var checkAddbtn = $('#checkAddress');
     var inputAdd = $('#inputAddress');
     var listAllBtn = $('#listAll');
     var contacts = $('#contacts');
     var help = $('#help');
+    var home = $('#home');
     var options, userList;
 
-    this.listAll();
-    this.modalSet($('td.name'));
-
     listAllBtn.click(function() {
+      app.animateHeader();
       app.table.empty();
       app.listAll();
       app.modalSet($('.name'));
     });
 
+    home.click(function() {
+      app.table.empty();
+      $('.formSearch').css('display', 'none');
+      checkLocbtn.css('display', 'inline');
+      $('.navbar-fixed-top').animate({
+        height: '100%'
+      }, 200);
+    });
+
     help.click(function() {
       $('.modal-title').html('Instructions');
-      var content = '<ol><li>To check nearest psych unit locations, click <strong><i class="fa fa-crosshairs"></i> button</strong></li>' +
-        '<li>To check psych unit nearest to a zipcode, type zipcode in the input field <br>and click <i class="fa fa-search"></i></li>' +
+      var content = '<ol><li>To check nearest psych unit locations, click <button class="btn btn-primary">Geolocation</button></li>' +
+        '<li>To check psych unit nearest to a zipcode, click <button class="btn btn-primary">Zipcode</button>, then type zipcode in the input field and click <button class="btn btn-success"><i class="fa fa-search"></i></button></li>' +
         '<li>Click menu button List to display all data without finding out distance</li>' +
-        '<li>To filter table put searchword in the input box labeled Filter List</li>' +
+        '<li>To search table put your searchword in the input box <input placeholder="search table" /></li>' +
         '<li>Click psych unit name to access more info (e.g. telephone numbers)</li></ol>';
       $('.modal-body').html(content);
       $('#myModal').modal();
@@ -40,9 +49,17 @@ var app = {
 
     // check user's geographic coordinates to find miles away.
     checkGPSbtn.click(function() {
+      $('.formSearch').css('display', 'none');
+      checkLocbtn.css('display', 'inline');
+      app.animateHeader();
       app.loading();
       app.results = [];
       app.checkGPS();
+    });
+
+    checkLocbtn.click(function() {
+      $('#inputAddress, #checkAddress').css('display', 'inline');
+      checkLocbtn.css('display', 'none');
     });
 
     // check user's inputted address to find miles distance of locations.
@@ -50,6 +67,7 @@ var app = {
       var name = inputAdd.val();
       var isValidZip = /(^\d{5}$)|(^\d{5}-\d{4}$)/.test(name);
       if (isValidZip) {
+        app.animateHeader();
         app.message('');
         app.loading();
         app.table.empty();
@@ -57,11 +75,17 @@ var app = {
         app.checkAddress(locations, name);
         app.modalSet($('.name'));
       } else {
-        app.message('Invalid zipcode, please check again');
+        app.message('Invalid zipcode...');
         setTimeout(function() { app.message(''); }, 5000);
       }
     });
 
+  },
+
+  animateHeader: function() {
+    $('.navbar-fixed-top').animate({
+      height: '90px'
+    }, 200);
   },
 
   modalSet: function(className) {
@@ -90,7 +114,7 @@ var app = {
     // set-up first table with name,info and address by default
     locations.forEach(function(data) {
       $('.list').append('<tr><td class="name">' + data.name + '</td><td class="info">' + data.info +
-        '</td>');
+        '</td><td class="address">' + data.address + '</td><td class="tel"><a href="tel:' + data.tel + '">' + data.tel + '</a></td>');
     });
 
     // list.js parameters set-up
@@ -101,7 +125,7 @@ var app = {
   // adds table to id, and puts sortable val with valDesc as placeholder
   addTableDiv: function(id, val, valDesc) {
     console.log('adding Table');
-    id.append('<input class="search text-center center-block" placeholder="Filter List"><h4 class="text-center">Sort by : ' +
+    id.append('<input class="search text-center center-block" placeholder="search table"><h4 class="text-center">Sort by : ' +
     '<button class="sort btn btn-info" data-sort="name">Name</button> <button id="val" class="sort btn btn-info" ' +
     'data-sort="' + val + '">' + valDesc + '</button></h4><table><thead></thead>' +
     '<tbody class="list"></tbody></table>');
@@ -110,9 +134,9 @@ var app = {
   // populates table
   createTable: function(table) {
     app.results.forEach(function(data, index) {
-      console.log('creating Table ' + index);
       $('.list').append('<tr><td class="name">' + data.name + '</td><td class="distance">' +
-        data.distance + '</td></tr>');
+        data.distance + '</td><td class="info">' +
+          data.info + '</td></tr>');
     });
     options = { valueNames: [ 'name', 'distance'] };
     userList = new List('tableSource', options);
