@@ -25,6 +25,8 @@ var app = {
     var options, userList;
 
     listAllBtn.click(function() {
+      listAllBtn.css('display', 'none');
+      checkGPSbtn.css('display', 'inline');
       app.animateHeader();
       app.table.empty();
       app.listAll();
@@ -32,10 +34,12 @@ var app = {
     });
 
     home.click(function() {
+      listAllBtn.css('display', 'inline');
+      checkGPSbtn.css('display', 'inline');
+      checkLocbtn.css('display', 'inline');
       $('#loading').css('display', 'none');
       app.table.empty();
       $('.formSearch').css('display', 'none');
-      checkLocbtn.css('display', 'inline');
       $('.navbar-fixed-top').animate({
         height: '100%'
       }, 200);
@@ -68,6 +72,8 @@ var app = {
 
     // check user's geographic coordinates to find miles away.
     checkGPSbtn.click(function() {
+      checkGPSbtn.css('display', 'none');
+      listAllBtn.css('display', 'inline');
       $('.formSearch').css('display', 'none');
       checkLocbtn.css('display', 'inline');
       app.animateHeader();
@@ -77,6 +83,7 @@ var app = {
     });
 
     checkLocbtn.click(function() {
+      listAllBtn.css('display', 'inline');
       $('#inputAddress, #checkAddress').css('display', 'inline');
       checkLocbtn.css('display', 'none');
     });
@@ -86,6 +93,9 @@ var app = {
       var name = inputAdd.val();
       var isValidZip = /(^\d{5}$)|(^\d{5}-\d{4}$)/.test(name);
       if (isValidZip) {
+        checkLocbtn.css('display', 'inline');
+        checkGPSbtn.css('display', 'inline');
+        $('#inputAddress, #checkAddress').css('display', 'none');
         app.animateHeader();
         app.message('');
         app.loading();
