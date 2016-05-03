@@ -1,172 +1,49 @@
-var app = {
-  // results array of GPS calculation, used to generate new table with distance
-  results: [],
-  // coordinates
-  latCheck: 0,
-  lngCheck: 0,
-  lengthLoc: locations.length,
-  table: $('#tableSource'),
-  loading: function() {
-      $('#loading').toggle();
-  },
-  startApp: function() {
-    var checkGPSbtn = $('#checkGPS');
-    var checkLocbtn = $('#checkLocation');
-    var checkAddbtn = $('#checkAddress');
-    var inputAdd = $('#inputAddress');
-    var listAllBtn = $('#listAll');
-    var contacts = $('#contacts');
-    var help = $('#help');
-    var home = $('#home');
-    var about = $('#about');
-    var modalTitle = $('.modal-title');
-    var modalBody = $('.modal-body');
-    var openModal = function() { $('#myModal').modal(); };
+var control = {
+  init: function() {
     var options, userList;
-
-    listAllBtn.click(function() {
-      listAllBtn.css('display', 'none');
-      checkGPSbtn.css('display', 'inline');
-      app.animateHeader();
-      app.table.empty();
-      app.listAll();
-      app.modalSet($('.name'));
-    });
-
-    home.click(function() {
-      listAllBtn.css('display', 'inline');
-      checkGPSbtn.css('display', 'inline');
-      checkLocbtn.css('display', 'inline');
-      $('#loading').css('display', 'none');
-      app.table.empty();
-      $('.formSearch').css('display', 'none');
-      $('.navbar-fixed-top').animate({
-        height: '100%'
-      }, 200);
-    });
-
-    contacts.click(function() {
-      modalTitle.html(contactsData[0].name);
-      var content = contactsData[0].info;
-      modalBody.html(content);
-      openModal();
-    });
-
-    help.click(function() {
-      modalTitle.html('Instructions');
-      var content = '<ol><li>To check nearest psych unit locations, click <button class="btn btn-primary">By geolocation</button></li>' +
-        '<li>To check psych unit nearest to a zipcode, click <button class="btn btn-primary">By zipcode</button>, then type zipcode in the input field <input placeholder="zipcode"> and click <button class="btn btn-success"><i class="fa fa-search"></i></button></li>' +
-        '<li>Click <button class="btn btn-success">Show All</button> to display all data without finding out distances</li>' +
-        '<li>To search table put your searchword in the input box <input placeholder="search table" /></li>' +
-        '<li>Click psych unit name to access more info (e.g. telephone numbers)</li></ol>';
-      modalBody.html(content);
-      openModal();
-    });
-
-    about.click(function() {
-      modalTitle.html('About');
-      var content = '<h5><strong>Psych Unit Locator is a tool for calculating distances between L.A. County mental health facilities and a given location. It also provides ease of search information on a tabular display.<br><br>It uses zipcode from the user input or geolocation coordinates from the user device. This web app uses the Google maps Places API for querying geographic coordinates for the zipcode.</strong></h5><br><br><i>This web application software by Potentum Studios is for informational purposes only.<br><br>Upon use of the web application software "L.A. County Psych Unit Locator", user agrees that information presented may change without further notice and will not hold the software developer accountable for any discrepancies.<br>Please update the software developer upon any changes in the information submitted.</i><br><br>Contact us at <a href="tel:3232076632">(323)207-6632.</a> or go to <a href="http://www.potentum.com">www.potentum.com</a>';
-      modalBody.html(content);
-      openModal();
-    });
-
-    // check user's geographic coordinates to find miles away.
-    checkGPSbtn.click(function() {
-      checkGPSbtn.css('display', 'none');
-      listAllBtn.css('display', 'inline');
-      $('.formSearch').css('display', 'none');
-      checkLocbtn.css('display', 'inline');
-      app.animateHeader();
-      app.loading();
-      app.results = [];
-      app.checkGPS();
-    });
-
-    checkLocbtn.click(function() {
-      listAllBtn.css('display', 'inline');
-      $('#inputAddress, #checkAddress').css('display', 'inline');
-      checkLocbtn.css('display', 'none');
-    });
-
-    // check user's inputted address to find miles distance of locations.
-    checkAddbtn.click(function() {
-      var name = inputAdd.val();
-      var isValidZip = /(^\d{5}$)|(^\d{5}-\d{4}$)/.test(name);
-      if (isValidZip) {
-        checkLocbtn.css('display', 'inline');
-        checkGPSbtn.css('display', 'inline');
-        $('#inputAddress, #checkAddress').css('display', 'none');
-        app.animateHeader();
-        app.message('');
-        app.loading();
-        app.table.empty();
-        app.results = [];
-        app.checkAddress(locations, name);
-        app.modalSet($('.name'));
-      } else {
-        app.message('Invalid zipcode...');
-        setTimeout(function() { app.message(''); }, 5000);
-      }
-    });
-
+    view.init();
   },
 
-  animateHeader: function() {
-    $('.navbar-fixed-top').animate({
-      height: '90px'
-    }, 200);
-  },
-
-  modalSet: function(className) {
-    className.click(function(data) {
-      console.log('click');
+  /** Sets up click event listener for the cells with class of name
+  *   searches locations for the same name clicked
+  *   then populates the modal with corresponding info.
+  */
+  modalSet: function() {
+    $('.name').click(function() {
       var text = this.textContent;
-      locations.forEach(function(data, index) {
-        if (data.name == text) {
-          $('.modal-title').html(text);
-          var content = data.info + '<br><br><em>' + data.address + '</em><br><a href="tel:' + data.tel + '">' + data.tel + '</a>';
-          $('.modal-body').html(content);
-          $('#myModal').modal();
+      data.locations.forEach(function(arr, index) {
+        if (arr.name == text) {
+          view.render.addModalTitle(text);
+          var content = arr.info + '<br><br><em>' + arr.address + '</em><br><a href="tel:' + arr.tel + '">' + arr.tel + '</a>';
+          view.render.addModalBody(content);
+          view.render.showModal();
         }
       });
     });
   },
 
-  // delivers error messages
-  message: function(msg) {
-    $('.message').html(msg);
-  },
-
   listAll: function() {
-    app.addTableDiv(app.table, 'info', 'Info');
+    // make new Table
+    view.render.addTableDiv(view.render.table, 'info', 'Info');
 
     // set-up first table with name,info and address by default
-    locations.forEach(function(data) {
-      $('.list').append('<tr><td class="name">' + data.name + '</td><td class="info">' + data.info +
-        '</td><td class="address">' + data.address + '</td><td class="tel"><a href="tel:' + data.tel + '">' + data.tel + '</a></td>');
+    data.locations.forEach(function(arr) {
+      view.render.listComplete(arr.name, arr.info, arr.address, arr.tel);
     });
 
-    // list.js parameters set-up
+    // set up list.js parameters
     options = { valueNames: [ 'name', 'info', 'tel' ] };
     userList = new List('tableSource', options);
   },
 
-  // adds table to id, and puts sortable val with valDesc as placeholder
-  addTableDiv: function(id, val, valDesc) {
-    console.log('adding Table');
-    id.append('<input class="search text-center center-block" placeholder="search table"><h4 class="text-center">Sort by : ' +
-    '<button class="sort btn btn-info" data-sort="name">Name</button> <button id="val" class="sort btn btn-info" ' +
-    'data-sort="' + val + '">' + valDesc + '</button></h4><table><thead></thead>' +
-    '<tbody class="list"></tbody></table>');
-  },
-
   // populates table
-  createTable: function(table) {
-    app.results.forEach(function(data, index) {
-      $('.list').append('<tr><td class="name">' + data.name + '</td><td class="distance">' +
-        data.distance + '</td><td class="info">' +
-          data.info + '</td></tr>');
+  createTable: function() {
+    console.log(data.results);
+    data.results.forEach(function(arr, index) {
+      view.render.listDistance(arr.name, arr.distance, arr.info);
     });
+
+    // set up list.js parameters
     options = { valueNames: [ 'name', 'distance'] };
     userList = new List('tableSource', options);
   },
@@ -193,64 +70,233 @@ var app = {
     if (navigator.geolocation) {
       // ask for gps coordinates
       navigator.geolocation.getCurrentPosition(function(position) {
-        app.lngCheck = position.coords.longitude;
-        app.latCheck = position.coords.latitude;
-        app.table.empty();
-        app.calcResults(locations);
-        app.loading();
-        app.modalSet($('.name'));
-        if (app.lngCheck === 0) {
-          console.log('error');
-        }
+        data.lngCheck = position.coords.longitude;
+        data.latCheck = position.coords.latitude;
+        view.render.emptyTable();
+        control.calcResults();
+        view.render.loading();
+        control.modalSet();
       });
     } else {
-      app.message('Error, no geolocator found in your device');
+      view.render.message('Error, no geolocator found in your device');
     }
   },
 
-  checkAddress: function(data3, name) {
-    console.log('checking Address');
+  checkZip: function(zipcode) {
+    console.log('checking Zipcode');
     var geocoder = new google.maps.Geocoder();
-    geocoder.geocode({'address': name}, function(results, status) {
+    geocoder.geocode({'address': zipcode}, function(results, status) {
       if (status === google.maps.GeocoderStatus.OK) {
-        app.lngCheck = results[0].geometry.location.lng();
-        app.latCheck = results[0].geometry.location.lat();
-        app.calcResults(locations);
-        app.loading();
-        app.modalSet($('.name'));
-        if (app.lngCheck === 0) {
-          console.log('error');
-        }
+        data.lngCheck = results[0].geometry.location.lng();
+        data.latCheck = results[0].geometry.location.lat();
+        console.log(data.lngCheck + ' : ' + data.latCheck);
+        control.calcResults();
+        view.render.loading();
+        control.modalSet();
       } else {
-        app.message('Geocode was not successful for the following reason: ' + status);
+        view.render.message('Geocode was not successful for the following reason: ' + status);
       }
     });
   },
 
-  calcResults: function(data2) {
+  calcResults: function() {
     console.log('calculating results');
-    for (var i = 0; i < app.lengthLoc; i++) {
-      var dist = Math.floor(app.checkDistance(app.latCheck, app.lngCheck, data2[i].lat, data2[i].long)) + ' miles';
-      app.results.push({
+    for (var i = 0; i < data.locations.length; i++) {
+      var dist = Math.floor(control.checkDistance(data.latCheck, data.lngCheck, data.locations[i].lat, data.locations[i].long)) + ' miles';
+      data.results.push({
         distance: dist,
-        name: data2[i].name,
-        address: data2[i].address,
-        tel: data2[i].tel,
-        info: data2[i].info
+        name: data.locations[i].name,
+        address: data.locations[i].address,
+        tel: data.locations[i].tel,
+        info: data.locations[i].info
       });
-      if (i == app.lengthLoc - 1) {
-        app.addTableDiv(app.table, 'distance', 'Distance');
-        app.createTable();
+      if (i == data.locations.length - 1) {
+        view.render.addTableDiv('distance', 'Distance');
+        control.createTable();
+        // manually trigger sort
         $('#val').trigger('click');
       }
     }
+  },
+
+  addContacts: function() {
+    view.render.addModalTitle(data.contacts[0].name);
+    view.render.addModalBody(data.contacts[0].info);
+  },
+
+  addAbout: function() {
+    view.render.addModalTitle('About');
+    view.render.addModalBody(data.about);
+  },
+
+  addHelp: function() {
+    view.render.addModalTitle('Instructions');
+    view.render.addModalBody(data.help);
+  },
+
+  eraseResults: function() {
+    data.results = [];
+  }
+};
+
+var view = {
+  init: function() {
+    /** 'Show All' button displays all info in the table */
+    var listAllBtn = $('#listAll');
+    listAllBtn.click(function() {
+      listAllBtn.css('display', 'none');
+      checkGPSbtn.css('display', 'inline');
+      view.render.animateHeader();
+      view.render.emptyTable();
+      control.listAll();
+      control.modalSet();
+    });
+
+    /** 'Home' button resets view to original screen */
+    var home = $('#home');
+    home.click(function() {
+      listAllBtn.css('display', 'inline');
+      checkGPSbtn.css('display', 'inline');
+      checkLocbtn.css('display', 'inline');
+      $('#loading').css('display', 'none');
+      view.render.emptyTable();
+      $('.formSearch').css('display', 'none');
+      $('.navbar-fixed-top').animate({
+        height: '100%'
+      }, 200);
+      $('.selections').css('margin-top', '150px');
+      view.render.closeMenu();
+    });
+
+    /** Contact button shows MAC info on modal */
+    var contacts = $('#contacts');
+    contacts.click(function() {
+      view.render.closeMenu();
+      control.addContacts();
+      view.render.showModal();
+    });
+
+    var about = $('#about');
+    about.click(function() {
+      view.render.closeMenu();
+      control.addAbout();
+      view.render.showModal();
+    });
+
+    var help = $('#help');
+    help.click(function() {
+      view.render.closeMenu();
+      control.addHelp();
+      view.render.showModal();
+    });
+
+    // check user's geographic coordinates to find miles away.
+    var checkGPSbtn = $('#checkGPS');
+    checkGPSbtn.click(function() {
+      checkGPSbtn.css('display', 'none');
+      listAllBtn.css('display', 'inline');
+      $('.formSearch').css('display', 'none');
+      checkLocbtn.css('display', 'inline');
+      view.render.animateHeader();
+      view.render.loading();
+      control.eraseResults();
+      control.checkGPS();
+    });
+
+    // check user's inputted address to find miles distance of locations.
+    var checkZipbtn = $('#checkAddress');
+    checkZipbtn.click(function() {
+      var name = $('#inputAddress').val();
+      var isValidZip = /(^\d{5}$)|(^\d{5}-\d{4}$)/.test(name);
+      if (isValidZip) {
+        checkLocbtn.css('display', 'inline');
+        checkGPSbtn.css('display', 'inline');
+        $('#inputAddress, #checkAddress').css('display', 'none');
+        view.render.animateHeader();
+        view.render.message('');
+        view.render.loading();
+        view.render.emptyTable();
+        control.eraseResults();
+        control.checkZip(name);
+        control.modalSet();
+      } else {
+        view.render.message('Invalid zipcode...');
+        setTimeout(function() { view.render.message(''); }, 5000);
+      }
+    });
+
+    var checkLocbtn = $('#checkLocation');
+    checkLocbtn.click(function() {
+      listAllBtn.css('display', 'inline');
+      $('#inputAddress, #checkAddress').css('display', 'inline');
+      checkLocbtn.css('display', 'none');
+    });
+
+
+  },
+
+  render: {
+    emptyTable: function() {
+      $('#tableSource').empty();
+    },
+
+    animateHeader: function() {
+      $('.navbar-fixed-top').animate({
+        height: '90px'
+      }, 200);
+    },
+
+    loading: function() {
+        $('#loading').toggle();
+    },
+
+    // delivers error messages
+    message: function(msg) {
+      $('.message').html(msg);
+    },
+
+    // adds table to id, and puts sortable val with valDesc as placeholder
+    addTableDiv: function(val, valDesc) {
+      $('#tableSource').append('<input class="search text-center center-block" placeholder="search table"><h4 class="text-center">' +
+      'Sort by : <button class="sort btn btn-info" data-sort="name">Name</button> <button id="val" class="sort btn btn-info" ' +
+      'data-sort="' + val + '">' + valDesc + '</button></h4><table><thead></thead>' +
+      '<tbody class="list"></tbody></table>');
+    },
+
+    listComplete: function(name, info, add, tel) {
+      $('.list').append('<tr><td class="name">' + name + '</td><td class="info">' + info +
+        '</td><td class="address">' + add + '</td><td class="tel"><a href="tel:' + tel + '">' + tel + '</a></td>');
+    },
+
+    listDistance: function(name, distance, info) {
+      $('.list').append('<tr><td class="name">' + name + '</td><td class="distance">' +
+        distance + '</td><td class="info">' +
+          info + '</td></tr>');
+    },
+
+    addModalTitle: function(text) {
+      $('.modal-title').html(text);
+    },
+
+    addModalBody: function(text) {
+      $('.modal-body').html(text);
+    },
+
+    showModal: function() {
+      $('#myModal').modal();
+    },
+
+    closeMenu: function() {
+      $('.navbar-toggle').trigger('click');
+    }
+
   }
 };
 
 function callSuccess() {
-  app.startApp(); // start App
+  control.init(); // start App
 }
 
 function callError() {
-  app.message('Error loading google Maps Places API'); // call Error
+  view.render.message('Error loading google Maps Places API'); // call Error
 }
