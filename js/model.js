@@ -20,11 +20,11 @@
 		image: "https://cloud.githubusercontent.com/assets/15892944/15271150/481fa4e8-19f0-11e6-818d-e0a87a13d273.jpg",
 		github: "https://github.com/ncabelin/ncabelin.github.io/tree/master/fccweather"
 	}, {
-		title: "Javascript Calculator",
-		id: "javascriptCalculator",
-		description: "jQuery &amp; Javascript based traditional calculator app using grid-based Bootstrap buttons, styled by CSS3.<br><br>I used HTML5,CSS3,Javascript,jQuery,Bootstrap.<br>",
+		title: "Talking Calculator",
+		id: "talkingCalculator",
+		description: "jQuery &amp; Javascript based talking calculator app using grid-based Bootstrap buttons, styled by CSS3.<br><br>I used HTML5,CSS3,Javascript,jQuery,Bootstrap and responsiveVoiceJS for the text-to-speech functionality.<br>",
 		url: "http://ncabelin.github.io/fcccalculator",
-		image: "https://cloud.githubusercontent.com/assets/15892944/14010789/9bf7a7d2-f155-11e5-8cce-83ac90cb22a9.jpg",
+		image: "https://cloud.githubusercontent.com/assets/15892944/15271958/6fbfb82c-1a17-11e6-8070-98242c49036f.jpg",
 		github: "https://github.com/ncabelin/ncabelin.github.io/tree/master/fcccalculator"
 	}, {
 		title: "Pomodoro Timer",
