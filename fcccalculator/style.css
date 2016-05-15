@@ -6,10 +6,21 @@ html {
   margin-left:10px;
 }
 
+a {
+  color: black;
+  text-decoration: underline;
+}
+
 body {
 font-family: 'Lato', sans-serif;
 font-size: 16px;
-background: url(https://cloud.githubusercontent.com/assets/15892944/12701082/b67ac13e-c7b1-11e5-931d-1c21b1b9cdac.jpg);
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#dddfd4+0,71513c+100 */
+background: rgb(221,223,212); /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover,  rgba(221,223,212,1) 0%, rgba(113,81,60,1) 100%); /* FF3.6-15 */
+background: -webkit-radial-gradient(center, ellipse cover,  rgba(221,223,212,1) 0%,rgba(113,81,60,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: radial-gradient(ellipse at center,  rgba(221,223,212,1) 0%,rgba(113,81,60,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dddfd4', endColorstr='#71513c',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
 background-size: cover;
 background-position: center;
 height:100%;

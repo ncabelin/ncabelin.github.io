@@ -1,6 +1,10 @@
 
 $(function() {
 
+  function speakIt(text) {
+    responsiveVoice.speak(text);
+  }
+
   var calcString, calcJoined, numCalc, initialValue, secondValue, calcMethod, pointCounter;
 
   function startScratch () {
@@ -13,7 +17,8 @@ $(function() {
     pointCounter = 0; //to avoid someone trying to put two points
   }
 
-  startScratch()
+  setTimeout(function() { speakIt('Welcome to the TALKING CALCULATOR powered by responsiveVoice'); }, 500);
+  startScratch();
 
   function stringToNumber () {
     calcJoined = calcString.join("");
@@ -39,6 +44,20 @@ $(function() {
     }
   }
 
+  function speakMethod(method) {
+    switch(method) {
+      case '+':
+        responsiveVoice.speak("plus");
+        break;
+      case '-':
+        responsiveVoice.speak("minus");
+        break;
+      case 'x':
+        responsiveVoice.speak("times");
+        break;
+    }
+  }
+
   // convert then display as string with comma separator
   function displayTo() {
     var parts = numCalc.toString().split(".");
@@ -47,15 +66,18 @@ $(function() {
     parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     var stringCalc = parts.join(".");
     $("#answer").html(stringCalc);
+    // responsiveVoice.speak(stringCalc);
+    return stringCalc;
   }
 
   // numbers button clicks
   $(".num").click(function(data) {
-    calcString.push(this.textContent)
-    stringToNumber()
-    displayTo()
-    calculateNumCalc()
-  })
+    calcString.push(this.textContent);
+    stringToNumber();
+    var answer = displayTo();
+    responsiveVoice.speak(answer);
+    calculateNumCalc();
+  });
 
   // calculation method clicked (except for division)
   $(".method").click(function(data) {
@@ -63,20 +85,23 @@ $(function() {
     initialValue = numCalc;
     calcString = [];
     pointCounter = 0;
+    speakMethod(calcMethod);
     displayTo();
-  })
+  });
 
   // division click
   $("#divide").click(function(data) {
+    responsiveVoice.speak("divided by");
     calcMethod = "/";
     initialValue = numCalc;
     calcString = [];
     pointCounter = 0;
     displayTo();
-  })
+  });
 
   // decimal point button, prevents occurence of more than one in the array
   $("#point").click(function(){
+      responsiveVoice.speak("point");
       calcString.push(".");
       pointCounter++;
       if (pointCounter > 1) {
@@ -88,6 +113,7 @@ $(function() {
 
   // just multiplies current number by 0.01
   $("#percent").click(function(){
+    responsiveVoice.speak("percent");
     numCalc = numCalc * 0.01;
     displayTo();
     calcString = [];
@@ -97,11 +123,13 @@ $(function() {
 
   // display answer
   $("#equals").click(function(){
-    displayTo();
+    var answer = displayTo();
+    responsiveVoice.speak("equals " + answer);
   });
 
   // reset calculator
   $("#ac").click(function(){
+    responsiveVoice.speak("reset");
     startScratch();
     stringToNumber();
     displayTo();
@@ -109,11 +137,11 @@ $(function() {
 
   // only resets current string array
   $("#ce").click(function(){
+    responsiveVoice.speak("C E");
     calcString = [];
     secondValue = 0;
     numCalc = 0;
     displayTo();
   });
 
-})
-
+});

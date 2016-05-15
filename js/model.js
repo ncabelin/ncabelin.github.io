@@ -15,9 +15,9 @@
 	}, {
 		title: "Weather Checker",
 		id: "weatherChecker",
-		description: "Your quick and accurate weather app. Gets current weather forecast using gps coordinates geolocation from the device you are using. Open Weather uses data from your location's specific weather station and is the most accurate in predictions due to this.<br><br>Demonstrates use of AJAX calls with OpenWeather API using jQuery. Used HTML5,CSS3,Javascript,Bootstrap.<br>",
+		description: "Gets current weather forecast using geolocation coordinates from the device you are using. The Open Weather API uses data from your location's specific weather station.<br><br>Demonstrates use of AJAX calls with OpenWeather API using jQuery. Used HTML5,CSS3,Javascript,Bootstrap.<br>",
 		url: "http://ncabelin.github.io/fccweather",
-		image: "https://cloud.githubusercontent.com/assets/15892944/14010790/9c019594-f155-11e5-8b49-b131f704d625.jpg",
+		image: "https://cloud.githubusercontent.com/assets/15892944/15271150/481fa4e8-19f0-11e6-818d-e0a87a13d273.jpg",
 		github: "https://github.com/ncabelin/ncabelin.github.io/tree/master/fccweather"
 	}, {
 		title: "Javascript Calculator",
@@ -69,10 +69,3 @@
 		image: "https://cloud.githubusercontent.com/assets/15892944/14395568/4b3312e4-fd87-11e5-8fee-f68b2fc16be0.jpg",
 		github: "https://github.com/ncabelin/ncabelin.github.io/tree/master/udfeed"
 	}];
-
-
-
-
-
-
-
