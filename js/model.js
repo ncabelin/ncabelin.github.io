@@ -1,7 +1,7 @@
 	var projects = [{
 		title: "L.A. County Psych-unit Locator",
 		id: "puL",
-		description: "Mental health services locator used by SFVMHC for locating the nearest facilities for their clients while on the field.<br><br>Uses Google Map Places API for geocoding, Device geolocator, Coordinates for each facilities. ListJS for table sorting and algorithm for calculating distances between two coordinates.",
+		description: "Mental health services locator used by SFVMHC for locating the nearest facilities for their clients while on the field by device GPS or zipcode.<br><br>Uses Google Map Places API for geocoding, Device geolocator, Coordinates for each facilities. ListJS for table sorting and algorithm for calculating distances between two coordinates.",
 		url: "http://plocator.mindwelder.com",
 		image: "https://cloud.githubusercontent.com/assets/15892944/15453057/f0663db8-1fba-11e6-9ed7-155ecc1140bb.jpg",
 		github: "https://github.com/ncabelin/psych-unit-locator-LA"
@@ -29,7 +29,7 @@
 	}, {
 		title: "Talking Calculator",
 		id: "talkingCalculator",
-		description: "jQuery &amp; Javascript based talking calculator app using grid-based Bootstrap buttons, styled by CSS3.<br><br>I used HTML5,CSS3,Javascript,jQuery,Bootstrap and responsiveVoiceJS for the text-to-speech functionality.<br>",
+		description: "Use the Talking Calculator app for breaking down communication/disability barriers. This app uses grid-based Bootstrap buttons and currently only supports the English language.<br><br>I used HTML5,CSS3,Javascript,jQuery,Bootstrap and responsiveVoiceJS for the text-to-speech functionality.<br>",
 		url: "http://ncabelin.github.io/fcccalculator",
 		image: "https://cloud.githubusercontent.com/assets/15892944/15271958/6fbfb82c-1a17-11e6-8070-98242c49036f.jpg",
 		github: "https://github.com/ncabelin/ncabelin.github.io/tree/master/fcccalculator"
@@ -71,7 +71,7 @@
 	}, {
 		title: "Feed Reader Testing",
 		id: "feedReaderTester",
-		description: "RSS Feed reader of Udacity, contains Jasmine.js testing. Demonstrates knowledge of red-green factor, a/b testing.",
+		description: "RSS Feed reader of Udacity, contains Jasmine.js testing. Demonstrates knowledge of red-green factor, test-driven development strategy.",
 		url: "http://ncabelin.github.io/udfeed",
 		image: "https://cloud.githubusercontent.com/assets/15892944/14395568/4b3312e4-fd87-11e5-8fee-f68b2fc16be0.jpg",
 		github: "https://github.com/ncabelin/ncabelin.github.io/tree/master/udfeed"
