@@ -5,10 +5,18 @@
 		url: "http://plocator.mindwelder.com",
 		image: "https://cloud.githubusercontent.com/assets/15892944/15453057/f0663db8-1fba-11e6-9ed7-155ecc1140bb.jpg",
 		github: "https://github.com/ncabelin/psych-unit-locator-LA"
-	}, {
+	},{
+		title: "Progressive Steps, Inc.",
+		id: "progressive",
+		description: "Website designed for Early Childhood Development Provider.<br><br>Used HTML5 / CSS3, Javascript, jQuery",
+		url: "http://progressive.potentum.com",
+		image: "https://cloud.githubusercontent.com/assets/15892944/16222217/df3dd386-374b-11e6-88b2-7a7843e3632d.jpg",
+		github: "https://github.com/ncabelin/progressivesteps"
+
+	},{
 		title: "Potentum Studios",
 		id: "potentumStudios",
-		description: "My web design &amp; development company website. We design logos, set up web hosting and domain name registration. We can also provide custom in-house art and sound assets for your web ventures. We also provide Wordpress management and set-up.<br><br>I used HTML5 / CSS3, Javascript, jQuery and Twitter Bootstrap for this site.<br>",
+		description: "My web design &amp; development company website. We design logos, set up web hosting and domain name registration. We can also provide custom in-house art and sound assets for your web ventures. We also provide Wordpress management and set-up.<br><br>I used HTML5 / CSS3, Javascript, PHP, jQuery and Twitter Bootstrap for this site.<br>",
 		url: "http://www.potentum.com",
 		image: "https://cloud.githubusercontent.com/assets/15892944/14021986/f57073d0-f19a-11e5-9546-d3077c7d5063.jpg",
 		github: "https://github.com/ncabelin/ncabelin.github.io/tree/master/potentum"
@@ -33,34 +41,16 @@
 		url: "http://ncabelin.github.io/fcccalculator",
 		image: "https://cloud.githubusercontent.com/assets/15892944/15271958/6fbfb82c-1a17-11e6-8070-98242c49036f.jpg",
 		github: "https://github.com/ncabelin/ncabelin.github.io/tree/master/fcccalculator"
-	}, {
+	}];
+
+var frontendProjects = [
+{
 		title: "Pomodoro Timer",
 		id: "timer",
 		description: "Productivity timer app with sounds. Determine session time and breaks with the Pomodoro technique of time management. Session minutes are set to 25 and breaks are 5 minutes by default.<br>I used HTML5 / CSS3, Javascript jQuery &amp; jQuery UI with Touch Punch to make the sliders mobile-responsive. Try it on your phone, it feels like a native app because of Touch Punch.",
 		url: "http://ncabelin.github.io/fccpomodoro",
 		image: "https://cloud.githubusercontent.com/assets/15892944/14312600/c7a70958-fba1-11e5-8cf7-321fb743bf70.jpg",
 		github: "https://github.com/ncabelin/ncabelin.github.io/tree/master/fccpomodoro"
-	}, {
-		title: "Key Swiper Arcade Game",
-		id: "keyswiperGame",
-		description: "Arcade game in the vein of Frogger. Get past the bugs and fishes, swipe the key to score.<br><br>I used HTML5 canvas to generate the graphics and Javascript object-oriented programming to design the functionality.<br><br>",
-		url: "http://ncabelin.github.io/udfrog",
-		image: "https://cloud.githubusercontent.com/assets/15892944/14368462/af146c1e-fcd2-11e5-95df-b545e9242f88.jpg",
-		github: "https://github.com/ncabelin/ncabelin.github.io/tree/master/udfrog"
-	}, {
-		title: "Simon Game",
-		id: "simonGame",
-		description: "Simon Game clone, the game popularized in the 80s. Try to imitate a randomly generated pattern by memory, the game increases the pattern length after each correct guess. You win when you get to the 20th pattern.<br><br>I used jQuery, Javascript, HTML5 audio to provide sounds for the game.<br><br>",
-		url: "http://ncabelin.github.io/fccsimon",
-		image: "https://cloud.githubusercontent.com/assets/15892944/14010786/9bf384f4-f155-11e5-941a-d8b87c8c48f3.jpg",
-		github: "https://github.com/ncabelin/ncabelin.github.io/tree/master/fccsimon"
-	}, {
-		title: "Tic Tac Toe",
-		id: "tictactoe",
-		description: "Play Tic Tac Toe against the computer. I designed the AI to be smart enough, but there is one pattern that can make it possible for the human player to win, perfect AI in progress.<br><br>I used jQuery, and vanilla Javascript for the AI, along with Bootstrap styling.",
-		url: "http://ncabelin.github.io/fcctic",
-		image: "https://cloud.githubusercontent.com/assets/15892944/14010785/9bf2c58c-f155-11e5-8993-f55acf4c2eff.jpg",
-		github: "https://github.com/ncabelin/ncabelin.github.io/tree/master/fcctic"
 	}, {
 		title: "Wikipedia Viewer",
 		id: "wikiviewer",
@@ -75,4 +65,36 @@
 		url: "http://ncabelin.github.io/udfeed",
 		image: "https://cloud.githubusercontent.com/assets/15892944/14395568/4b3312e4-fd87-11e5-8fee-f68b2fc16be0.jpg",
 		github: "https://github.com/ncabelin/ncabelin.github.io/tree/master/udfeed"
-	}];
+	}
+
+];
+
+var games = [
+	{
+		title: "Key Swiper Arcade Game",
+		id: "keyswiperGame",
+		description: "Arcade game in the vein of Frogger. Get past the bugs and fishes, swipe the key to score.<br><br>I used HTML5 canvas to generate the graphics and Javascript object-oriented programming to design the functionality.<br><br>",
+		url: "http://ncabelin.github.io/udfrog",
+		image: "https://cloud.githubusercontent.com/assets/15892944/14368462/af146c1e-fcd2-11e5-95df-b545e9242f88.jpg",
+		github: "https://github.com/ncabelin/ncabelin.github.io/tree/master/udfrog"
+	},{
+		title: "Simon Game",
+		id: "simonGame",
+		description: "Simon Game clone, the game popularized in the 80s. Try to imitate a randomly generated pattern by memory, the game increases the pattern length after each correct guess. You win when you get to the 20th pattern.<br><br>I used jQuery, Javascript, HTML5 audio to provide sounds for the game.<br><br>",
+		url: "http://ncabelin.github.io/fccsimon",
+		image: "https://cloud.githubusercontent.com/assets/15892944/14010786/9bf384f4-f155-11e5-941a-d8b87c8c48f3.jpg",
+		github: "https://github.com/ncabelin/ncabelin.github.io/tree/master/fccsimon"
+	},{
+		title: "Tic Tac Toe",
+		id: "tictactoe",
+		description: "Play Tic Tac Toe against the computer. Smart AI but has one weak move and is defeatable.<br><br>I used jQuery, and vanilla Javascript for the AI, along with Bootstrap styling.",
+		url: "http://ncabelin.github.io/fcctic",
+		image: "https://cloud.githubusercontent.com/assets/15892944/14010785/9bf2c58c-f155-11e5-8993-f55acf4c2eff.jpg",
+		github: "https://github.com/ncabelin/ncabelin.github.io/tree/master/fcctic"
+	}
+];
+
+var backendProjects = [{
+}];
+
+var dynamicProjects = [];

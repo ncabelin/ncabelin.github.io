@@ -18,7 +18,7 @@ body {
   padding-left: 0;
 }
 
-#brand, 
+#brand,
 h3 {
   font-family: "Averia Sans Libre", cursive;
 }
@@ -74,6 +74,17 @@ button {
   outline: 0;
 }
 
+
+div span:hover {
+    display: block;
+    height: 100%;
+    width: 100%;
+    opacity: 0.8;
+    background: rgba(0,0,0,.1);
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+
 .sectionHead {
   padding-bottom: 10px;
 }
@@ -85,8 +96,8 @@ button {
   text-align: center;
 }
 
-#contacts ul li { 
-  display: inline; 
+#contacts ul li {
+  display: inline;
   margin: 10px;
   font-weight: 400;
 }
@@ -185,6 +196,10 @@ button {
   font-size: 16px;
 }
 
+.rounded {
+  border-radius: 10px;
+}
+
 .buttonC {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -194,7 +209,7 @@ button {
 }
 
 .buttonC:visited {
- background-color: #1d1c20; 
+ background-color: #1d1c20;
 }
 
 .buttonC:hover {
@@ -231,6 +246,10 @@ button {
   margin-bottom: 20px;
 }
 
+.panel-body {
+  color: black;
+}
+
 @media screen and (max-width:990px) {
 
   .developerName, .imageLogo {
@@ -258,8 +277,8 @@ button {
 
 @media screen and (max-width:540px) {
 
-  #contacts ul li { 
-    display: block; 
+  #contacts ul li {
+    display: block;
     margin: 10px;
   }
 
@@ -288,4 +307,3 @@ button {
     display: none;
   }
 }
-
