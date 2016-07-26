@@ -1,7 +1,7 @@
 	var projects = [{
-		title: "L.A. County Psych-unit Locator",
+		title: "L.A. County Psych-unit Locator<br>(AngularJS / Firebase)",
 		id: "puL",
-		description: "Mental health services locator used by SFVMHC for locating the nearest facilities for their clients while on the field by device GPS or zipcode.<br><br>Uses Google Map Places API for geocoding, Device geolocator, Coordinates for each facilities. ListJS for table sorting and algorithm for calculating distances between two coordinates.",
+		description: "Mental health services locator currently used by the San Fernando Valley Community Mental Health Center Inc. for locating the nearest facilities for their clients while on the field by device GPS or zipcode.<br><br>Uses Google Map Places API for geocoding, Device geolocator, Coordinates for each facilities. Angular JS for front-end, an algorithm for calculating distances between two coordinates and Firebase for the backend.",
 		url: "http://plocator.mindwelder.com",
 		image: "https://cloud.githubusercontent.com/assets/15892944/17158439/36810378-534b-11e6-924f-ec95d860a35b.jpg",
 		github: "https://github.com/ncabelin/psych-unit-locator-LA"
