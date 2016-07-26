@@ -3,7 +3,7 @@
 		id: "puL",
 		description: "Mental health services locator used by SFVMHC for locating the nearest facilities for their clients while on the field by device GPS or zipcode.<br><br>Uses Google Map Places API for geocoding, Device geolocator, Coordinates for each facilities. ListJS for table sorting and algorithm for calculating distances between two coordinates.",
 		url: "http://plocator.mindwelder.com",
-		image: "https://cloud.githubusercontent.com/assets/15892944/15453057/f0663db8-1fba-11e6-9ed7-155ecc1140bb.jpg",
+		image: "https://cloud.githubusercontent.com/assets/15892944/17158439/36810378-534b-11e6-924f-ec95d860a35b.jpg",
 		github: "https://github.com/ncabelin/psych-unit-locator-LA"
 	},{
 		title: "Progressive Steps, Inc.",
