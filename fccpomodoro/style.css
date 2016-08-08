@@ -41,9 +41,15 @@ button:hover {
   color:white;
 }
 
-button:focus { 
+button:focus {
     outline:0 !important;
   }
+
+.break, .sess {
+  border: 0;
+  color: #f6931f;
+  font-weight: bold;
+}
 
 #plusBreak, #plusSession, #minusBreak, #minusSession {
   font-size: 50px;
@@ -99,6 +105,3 @@ button:focus {
 
 
 }
-
-
-

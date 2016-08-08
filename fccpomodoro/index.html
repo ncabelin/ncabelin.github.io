@@ -4,16 +4,15 @@
   <title>Pomodoro Clock</title>
   <meta charset="utf-8">
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-  
+
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <link href='jquery-ui.theme.min.css' rel='stylesheet' type='text/css'>
   <link href='jquery-ui.structure.min.css' rel='stylesheet' type='text/css'>
   <link href='jquery-ui.css' rel='stylesheet' type='text/css'>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src='jquery-ui.js'></script>
   <script src='jpunch.js'></script>
 
@@ -33,15 +32,16 @@
     <button class="btn" id="pauseTime"><i class="fa fa-pause fa-2x"></i></button>
     <button class="btn" id="clearTime"><i class="fa fa-stop fa-2x"></i></button>
   </div>
-  <label for="amount2" class="break">BREAK Min. : </label>
-  <input type="text" id="amount2" readonly style="border:0; color:#f6931f; font-weight:bold;" class="break">
-  <label for="amount2"class="break">Sec. : </label>
-  <input type="text" id="amount3" readonly style="border:0; color:#f6931f; font-weight:bold;" class="break">
+  <label for="breakMin" class="break">BREAK Min. : </label>
+  <input type="text" id="breakMin" readonly class="break">
+  <label for="breakSec"class="break">Sec. : </label>
+  <input type="text" id="breakSec" readonly class="break">
   <div id="sliderBreak" class="sliders center-block"></div>
-  <label for="amount" class="sess">SESSION Min. : </label>
-  <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;" class="sess">
-  <label for="amount" class="sess">Sec. : </label>
-  <input type="text" id="amount4" readonly style="border:0; color:#f6931f; font-weight:bold;" class="sess">
+
+  <label for="sessionMin" class="sess">SESSION Min. : </label>
+  <input type="text" id="sessionMin" readonly class="sess">
+  <label for="sessionSec" class="sess">Sec. : </label>
+  <input type="text" id="sessionSec" readonly class="sess">
   <div id="sliderSession" class="sliders center-block"></div>
 </div>
 <script>
