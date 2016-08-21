@@ -3,8 +3,8 @@ $(document).ready(function() {
   var p = $("#projects");
 
   projects.forEach(function(project) {
-    var content = '<div class="col-md-4 text-center"><span><button type="button" class="buttonC" data-toggle="modal" data-target="#' +
-      project.id + '"><img src="' + project.image + '" alt="' + project.id + '"class="img-responsive center-block rounded">' + project.title +
+    var content = '<div class="col-md-4 col-lg-4 col-sm-4 text-center projects"><span><button type="button" class="buttonC" data-toggle="modal" data-target="#' +
+      project.id + '"><img src="' + project.image + '" alt="' + project.id + '"class="img-responsive center-block rounded"><strong>' + project.title.toUpperCase() + '</strong><br>' + project.sub +
       '</button></span></div><div id="' + project.id +
       '" class="modal fade" role="dialog"><div class="modal-dialog"><div class="modal-content"><div class="modal-header">' +
       '<button type="button" class="close" data-dismiss="modal">&times;</button><h4 class="modal-title">' + project.title +
@@ -28,6 +28,8 @@ $(document).ready(function() {
     var content = '<div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#games" href="#' + game.id + '">' + game.title + '</a></h4></div><div id="' + game.id + '" class="panel-collapse collapse"><div class="panel-body"><img src="' + game.image + '" class="mod-img center-block"><p>' + game.description + '<br><br><a href="' + game.url+ '" target="_blank">VISIT WEBSITE</a><br>' + '<a href="' + game.github+ '" target="_blank">VIEW GITHUB CODE</a></p></div></div></div>';
     gamesAcc.append(content);
   });
+
+  $('.projects').matchHeight();
 
   /* intro fade in of paragraph */
   $(".par").fadeOut(10);
