@@ -4,7 +4,7 @@
 		description: "Mental health services locator currently used by the San Fernando Valley Community Mental Health Center Inc. for locating the nearest facilities for their clients while on the field by device GPS or zipcode.<br><br>Uses Google Maps API served through a NodeJS Backend Service API, Firebase Backend for Authentication &amp; Database and AngularJS front-end.",
 		sub: "(Full Stack Application) using AngularJS 1.x, NodeJS micro-service, Firebase Backend/Database, Google Maps API",
 		url: "http://plocator.mindwelder.com",
-		image: "https://cloud.githubusercontent.com/assets/15892944/17158439/36810378-534b-11e6-924f-ec95d860a35b.jpg",
+		image: "https://cloud.githubusercontent.com/assets/15892944/18023119/f53124da-6ba9-11e6-9a4c-cf9feaf7de4c.png",
 		github: "https://github.com/ncabelin/psych-unit-locator-LA"
 	},{
 		title: "Mindwelder: Flashcard App",
