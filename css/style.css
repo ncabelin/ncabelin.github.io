@@ -29,6 +29,10 @@ h3 {
   padding: 20px 10px;
 }
 
+.knowledge {
+  margin: 3px;
+}
+
 #about { /* center image & about area */
   background: linear-gradient(
   rgba(0, 0, 0, 0.3),
@@ -58,29 +62,32 @@ button {
   transition: all 0.3s ease 0s;
 }
 
-.bT {
+.btn-direct {
   background-color: #9f907b;
   border-color: #333832;
   color: black;
   margin-bottom: 10px;
 }
 
-.bT:hover {
+.btn-direct:hover {
   background-color: #1d1c20;
   color: white;
 }
 
-.bT:focus {
+.btn-direct:focus {
   outline: 0;
 }
-
+div span {
+  display: block;
+  height: 100%;
+  width: 100%;
+  opacity: 0.8;
+  background: rgba(0,0,0,.1);
+}
 
 div span:hover {
-    display: block;
-    height: 100%;
-    width: 100%;
-    opacity: 0.8;
-    background: rgba(0,0,0,.1);
+    opacity: 1;
+    background: rgba(0,0,0,0);
     -moz-transition: all 0.5s;
     -webkit-transition: all 0.5s;
 }
@@ -200,7 +207,7 @@ div span:hover {
   border-radius: 10px;
 }
 
-.buttonC {
+.btn-project {
   margin-top: 20px;
   margin-bottom: 20px;
   background-color: #1d1c20;
@@ -208,20 +215,20 @@ div span:hover {
   font-size: 16px;
 }
 
-.buttonC:visited {
+.btn-project:visited {
  background-color: #1d1c20;
 }
 
-.buttonC:hover {
+.btn-project:hover {
   background-color: #1d1c20;
   color: #c5bf8c;
 }
 
-.buttonC:focus {
+.btn-project:focus {
   outline: 0;
 }
 
-.buttonC:active {
+.btn-project:active {
   background-color: #1d1c20;
 }
 

@@ -3,8 +3,15 @@ $(document).ready(function() {
   var p = $("#projects");
 
   projects.forEach(function(project) {
-    var content = '<div class="col-md-4 col-lg-4 col-sm-4 text-center projects"><span><button type="button" class="buttonC" data-toggle="modal" data-target="#' +
-      project.id + '"><img src="' + project.image + '" alt="' + project.id + '"class="img-responsive center-block rounded"><strong>' + project.title.toUpperCase() + '</strong><br>' + project.sub +
+    function knowledge() {
+      var content = '';
+      for (var i = 1; i < project.sub.length; i++) {
+        content += '<button class="btn btn-default btn-xs knowledge">' + project.sub[i] + '</button>';
+      }
+      return content;
+    }
+    var content = '<div class="col-md-4 col-lg-4 col-sm-4 text-center projects"><span><button type="button" class="btn-project" data-toggle="modal" data-target="#' +
+      project.id + '"><img src="' + project.image + '" alt="' + project.id + '"class="img-responsive center-block rounded"><strong>' + project.title.toUpperCase() + '</strong><br>' + knowledge() +
       '</button></span></div><div id="' + project.id +
       '" class="modal fade" role="dialog"><div class="modal-dialog"><div class="modal-content"><div class="modal-header">' +
       '<button type="button" class="close" data-dismiss="modal">&times;</button><h4 class="modal-title">' + project.title +
