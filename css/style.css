@@ -77,7 +77,8 @@ button {
 .btn-direct:focus {
   outline: 0;
 }
-div span {
+
+.darkened {
   display: block;
   height: 100%;
   width: 100%;
@@ -85,7 +86,7 @@ div span {
   background: rgba(0,0,0,.1);
 }
 
-div span:hover {
+.darkened:hover {
     opacity: 1;
     background: rgba(0,0,0,0);
     -moz-transition: all 0.5s;
@@ -135,8 +136,18 @@ div span:hover {
 }
 
 .work {
-  background-color: #1d1c20;
+  background-color: #17171a;
   color: white;
+}
+
+.skill_list {
+  background-color: #4f4f4f;
+  border: 0;
+}
+
+.skills {
+  background-color: #ebebeb;
+  padding-bottom: 20px;
 }
 
 .projStyle {
@@ -255,6 +266,10 @@ div span:hover {
 
 .panel-body {
   color: black;
+}
+
+.skillset {
+  background-color: #ebebeb;
 }
 
 @media screen and (max-width:990px) {
