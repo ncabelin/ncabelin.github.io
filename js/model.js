@@ -2,7 +2,7 @@
 		title: "L.A. County Psych-unit Locator",
 		id: "puL",
 		description: "Mental health services locator currently used by the San Fernando Valley Community Mental Health Center Inc. for locating the nearest facilities for their clients while on the field by device GPS or zipcode.<br><br>Uses Google Maps API served through a NodeJS Backend Service API, Firebase Backend for Authentication &amp; Database and AngularJS front-end.",
-		sub: ["(Full Stack Application) using", "AngularJS 1.x", "NodeJS micro-service", "Firebase Backend/Database", "Google Maps API"],
+		sub: ["(Full Stack Application) using", "AngularJS 1.x", "NodeJS micro-service in Heroku", "Firebase Backend/Database", "Google Maps API"],
 		url: "http://plocator.mindwelder.com",
 		image: "https://cloud.githubusercontent.com/assets/15892944/18023119/f53124da-6ba9-11e6-9a4c-cf9feaf7de4c.png",
 		github: "https://github.com/ncabelin/psych-unit-locator-LA"
@@ -21,7 +21,7 @@
 		sub: ["(Static Website) using", "Google App Engine", "Python", "Webapp2", "Google Datastore NoSQL"],
 		url: "https://blog.mindwelder.com",
 		image: "https://cloud.githubusercontent.com/assets/15892944/19257141/157089fc-8f22-11e6-8341-de99ded939b9.jpg",
-		github: "https://github.com/ncabelin/progressivesteps"
+		github: "https://github.com/ncabelin/python-blog"
 	},{
 		title: "Progressive Steps, Inc.",
 		id: "progressive",
