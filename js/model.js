@@ -39,13 +39,13 @@
 		image: "https://cloud.githubusercontent.com/assets/15892944/14626721/eeb4e30c-05a2-11e6-9fdf-5c216439bc9f.jpg",
 		github: "https://github.com/ncabelin/ncabelin.github.io/tree/master/udneighbormap"
 	}, {
-		title: "Weather Checker",
-		id: "weatherChecker",
-		description: "Gets current weather forecast using geolocation coordinates from the device you are using. The Open Weather API uses data from your location's specific weather station.<br><br>Demonstrates use of AJAX calls with OpenWeather API using jQuery. Used HTML5,CSS3,Javascript,Bootstrap.<br>",
-		sub: ["(Front-end Web App) using", "Openweather", "API", "jQuery", "Bootstrap"],
-		url: "http://ncabelin.github.io/fccweather",
-		image: "https://cloud.githubusercontent.com/assets/15892944/15271150/481fa4e8-19f0-11e6-818d-e0a87a13d273.jpg",
-		github: "https://github.com/ncabelin/ncabelin.github.io/tree/master/fccweather"
+		title: "Weather Saver",
+		id: "weatherSaver",
+		description: "Gets current weather forecast using geolocation coordinates from the device you are using. The Open Weather API uses data from your location's specific weather station.<br><br>Demonstrates use of AJAX calls with OpenWeather API using AngularJS and saving to a NodeJS &amp; MongoDB backend<br>",
+		sub: ["(Front-end Web App) using", "AngularJS 1.x", "NodeJS", "D3.js", "Openweather", "API", "jQuery", "Bootstrap"],
+		url: "http://weather.potentum.com",
+		image: "https://cloud.githubusercontent.com/assets/15892944/19469361/e5e40cfa-94cf-11e6-9ca4-c788cdcf90b6.jpg",
+		github: "https://github.com/ncabelin/weather-saver"
 	}, {
 		title: "Talking Calculator",
 		id: "talkingCalculator",
