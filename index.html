@@ -1,146 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+	<title>Neptune Michael Cabelin</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
-  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
-
-  <!-- disabled zoom in mobile browser -->
-  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'>
-  <title>NMC Portfolio</title>
-
-  <!-- Google Fonts -->
-  <link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Averia+Sans+Libre' rel='stylesheet' type='text/css'>
-
-  <!-- jQuery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
-  <!-- fontAwesome -->
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
-
-  <!-- bootStrap -->
-  <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-  integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" rel="stylesheet">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-  <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-  <div class="container-fluid">
-    <header class="row">
-      <div class="col-md-6 imageLogo"><img alt="engineer hat" id="hat" src=
-      "https://cloud.githubusercontent.com/assets/15892944/12614095/a46bb482-c4b2-11e5-91ea-d0d37e9db076.png"></div>
-      <div class="col-md-6 developerName">
-        <h1 class="heading" id="brand"><strong>Neptune Michael Cabelin</strong></h1>
-        <h4 class="heading" id="title">Software Developer</h4>
-      </div>
-    </header>
-    <section id="about">
-      <div class="row par">
-        <div class="col-md-12">
-          <p>Hi there, I'm a software developer who is passionate about building
-          creative and efficient solutions for everyday problems.</p>
-          <p>I do web design and development ranging from simple Wordpress websites to complex fullstack-web applications.</p>
-          <p>I can help you create secure web-based solutions with the least cost and the most fun.</p>
-          <br>
-        </div>
-      </div>
-      <div class="row" id="nav">
-        <div class="col-md-12">
-          <button class="btn btn-direct btn-lg" id="view">View Projects</button>
-          <button class="btn btn-direct btn-lg" onclick="window.open('https://www.linkedin.com/in/neptune-michael-cabelin-637600b0')">View Resume</button>
-          <button class="btn btn-direct btn-lg" id="contactB">Contact Me</button>
-        </div>
-      </div>
-    </section>
-    <section class="work">
-      <div class="row">
-        <div class="col-md-12" id="projectHeader">
-          <h3 class="sectionHead" id="projs">Featured Projects</h3>
-        </div>
-        <section class="row" id="projects"></section><!-- this is where the project buttons and modals will be inserted -->
-      </div>
-      <br>
-      <hr>
-      <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6">
-          <h3 class="text-center">Front-end Projects</h3>
-          <div class="bs-example">
-            <div class="panel-group" id="frontend">
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3"></div>
-      </div>
-      <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6">
-          <h3 class="text-center">Games</h3>
-          <div class="bs-example">
-            <div class="panel-group" id="games">
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3"></div>
-      </div>
-      <hr>
-    </section>
-    <section class="skills">
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3 skillset">
-          <h3 class="text-center">Skills At a Glance</h3>
-          <p><strong>Front-end</strong> :<br><span id="frontEnd"></span></p>
-          <p><strong>Back-end</strong> :<br> <span id="backEnd"></span></p>
-          <p><strong>Database</strong> :<br> <span id="dBase"></span></p>
-          <p><strong>Administration / Deployment</strong> :<br> <span id="admin"></span></p>
-        </div>
-      </div>
-    </section>
-    <footer>
-      <div class="row">
-        <div class="col-md-12">
-          <h3 class="sectionHead text-center" id="cont">Contact Me</h3>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12"><img alt="profile picture" class="center-block" id="profilepic" src=
-        "https://cloud.githubusercontent.com/assets/15892944/14011248/532596d6-f15a-11e5-8f43-eb9a013a3fcb.jpg">
-        </div>
-      </div>
-      <div class="row" id="contacts">
-        <div class="col-md-12">
-          <ul>
-            <li>
-              <a class="contact" href="mailto:ncabelin@potentum.com"><i class=
-              "fa fa-envelope fa-3x"></i> Email</a>
-            </li>
-            <li>
-              <a class="contact" href=
-              "https://www.linkedin.com/in/neptune-michael-cabelin-637600b0"><i class=
-              "fa fa-linkedin fa-3x"></i> LinkedIn</a>
-            </li>
-            <li>
-              <a class="contact" href="http://www.github.com/ncabelin"><i class=
-              "fa fa-github fa-3x"></i> Github</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <button class="btn btn-direct" id="scrollToTop">Back to Top</button>
-        </div>
-      </div>
-    </footer>
+<header>
+	<div class="container-fluid">
+		<div class="jumbotron">
+			<img src="images/me.jpg" class="img-circle pull-right profile_pic" />
+			<h1 class="header_name">Neptune Michael Cabelin</h1>
+			<p class="header_title">Fullstack Web Developer</p>
+		</div>
+	</div>
+</header>
+
+<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="250">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		</div>
+	</div>
+	<div class="collapse navbar-collapse" id="navbar-collapse">
+	  <ul class="nav navbar-nav">
+	    <li class="active"><a href="#">N.M.Cabelin</a></li>
+	    <li><a href="#about" class="nav_about">ABOUT</a></li>
+	    <li><a href="#projects" class="nav_projects">PROJECTS</a></li>
+	    <li><a href="https://www.linkedin.com/in/ncabelin" class="nav_resume" target="_blank">RESUME</a></li>
+	    <li><a href="#contact" class="nav_contact">CONTACT ME</a></li>
+	  </ul>
   </div>
-  <script src="js/jquery.matchHeight.js"></script>
-  <script src="js/model.js">
-  </script>
-  <script src="js/controller.js">
-  </script>
+</nav>
+
+<div class="cover">
+	<div class="cover-text">
+		<h1>Let me Code for You</h1>
+		<p class="lead">I'm a freelance software developer specializing
+		in full-stack web technologies</p>
+		<h3 class="skill_one">HTML5 / CSS3</h3>
+		<h3 class="skill_one">Python</h3>
+		<h3 class="skill_one">PHP</h3>
+		<h3 class="skill_one">JavaScript</h3>
+		<h3 class="skill_one">SQL</h3><br><br>
+		<a href="#contact" role="button" class="btn btn-success btn-lg">Hire Me!</a>
+	</div>
+</div>
+
+<section id="about">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+			  <h1 class="text-center">About Me</h1>
+			  <p class="lead">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I graduated with a bachelor degree in Economics and went into the field of Nursing but found myself feeling unfulfilled and longing for an outlet for my technical creativity and problem solving. I then stumbled upon software development, particularly web technology, where the whole gamut of designing, building projects and fixing bugs proved irresistible to me. The rest as they say, is history.</p>
+			  <hr class="special">
+			  <p class="lead text-center">Throughout the years I've learned how to find the right software solutions for a customer's needs. While my specialization is web design and development, I am currently foraying into developing natively for mobile devices. Otherwise, the bulk of my expertise is in web solutions. It's a constant cycle of learning and updating skills, as fast and as exciting as the technology.</p>
+			  <p class="lead text-center">With that said, feel free to check out my projects below and get in touch.</p>
+	  	</div>
+	  </div>
+	</div>
+</section>
+
+<section id="project_feat">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1 class="text-center">Featured Projects</h1><br><br>
+			</div>
+		</div>
+		<div id="projects">
+		</div>
+	</div>
+</section>
+
+<section id="other_projects">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1 class="text-center">Other Projects</h1><br><br>
+			</div>
+		</div>
+		<div class="row others">
+		</div>
+	</div>
+</section>
+
+<!-- Button trigger modal -->
+<button type="button" class="hidden" data-toggle="modal" data-target="#myModal" id="modal_btn">
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"></h4>
+      </div>
+      <div class="modal-body">
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="contact">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<h1>Get in Touch</h1>
+			</div>
+		</div>
+	  <div class="row">
+	    <div class="col-md-12 contact_box">
+	      <ul>
+	        <li>
+	          <a class="contact" href="mailto:ncabelin@potentum.com" target="_blank"><i class="fa fa-envelope fa-3x"></i></a>Email
+	        </li>
+	        <li>
+	          <a class="contact" href="https://www.linkedin.com/in/ncabelin" target="_blank"><i class="fa fa-linkedin fa-3x"></i></a>LinkedIn
+	        </li>
+	        <li>
+	          <a class="contact" href="http://www.github.com/ncabelin" target="_blank"><i class="fa fa-github fa-3x"></i></a><span>Github</span>
+	        </li>
+	      </ul>
+	    </div>
+	  </div>
+  </div>
+</section>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="./js/jquery.matchHeight.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="./js/model.js"></script>
+<script>
+	$(function() {
+		var header_name = $('.header_name, .profile_pic'),
+				skills_one = $('.skill_one'),
+				skillsIndex = -1;
+
+		// fade animation of skillset
+		function skill() {
+			++skillsIndex;
+			skills_one.eq(skillsIndex % skills_one.length)
+				.fadeIn(1000)
+				.delay(1000)
+				.fadeOut(1000, skill);
+		}
+
+		// header animation on load
+		$('.header_name').fadeOut(10).fadeIn(500);
+		$('.header_title').fadeOut(10).fadeIn(2000);
+		$('.profile_pic').fadeOut(10).fadeIn(3000);
+		skill();
+
+		// featured projects
+		var content = '';
+		projects.forEach(function(x, i) {
+			var keywords = '';
+			x.sub.forEach(function(y) {
+				keywords += '<button class="btn btn-primary btn-xs keys">' + y + '</button>';
+			});
+			if ((i+1) % 2 == 0) {
+				content += '<div class="row"><div class="col-md-3 col-md-offset-2"><img src="' + x.image +'" class="project_image center-block img-rounded img-responsive" /></div><div class="col-md-5"><h3>' + x.title + '</h3>' + x.description + '<div><hr class="projects">' + keywords +'<br><br><a href="' + x.url + '" class="btn btn-primary" target="_blank">VIEW</a>&nbsp; <a href="' + x.github + '" class="btn btn-danger" target="_blank">VIEW GITHUB</a></div></div><div class="col-md-2"></div></div><hr>';
+			} else {
+				content += '<div class="row"><div class="col-md-3 visible-xs visible-sm"><img src="' + x.image +'" class="project_image center-block img-rounded img-responsive" /></div><div class="col-md-2"></div><div class="col-md-5"><h3>' + x.title + '</h3>' + x.description + '<div><hr class="projects">' + keywords + '<br><br><a href="' + x.url + '" class="btn btn-primary" target="_blank">VIEW</a>&nbsp; <a href="' + x.github + '" class="btn btn-danger" target="_blank">VIEW GITHUB</a></div></div><div class="col-md-3"><img src="' + x.image +'" class="project_image center-block hidden-sm hidden-xs img-rounded img-responsive" /></div></div><hr>';
+			}
+		});
+		$('#projects').append(content);
+		
+		// other projects
+		var other = '';
+		frontendProjects.forEach(function(x) {
+			var head = '<div class="col-md-3 col-sm-3 col-xs-3 other_proj">';
+			var img = '<a href="' + x.github + '"><img src="' + x.image + '" class="img-responsive"/></a>' 
+			var foot = '</div>'
+			other += (head + img + foot);
+		});
+		// other += '</div>';
+		$('.others').html(other);
+		$('.other_proj').matchHeight();
+
+		// scroll animation
+		$('.nav_about').click(function() {
+			$('html, body').animate({ scrollTop:$('#about').offset().top - 100}, 500);
+		});
+		$('.nav_projects').click(function() {
+			$('html, body').animate({ scrollTop:$('#project_feat').offset().top - 50}, 500);
+		});
+		$('.nav_contact').click(function() {
+			$('html, body').animate({ scrollTop:$('#contact').offset().top - 100}, 500);
+		});
+	});
+</script>
+
 </body>
 </html>

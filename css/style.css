@@ -1,331 +1,181 @@
-div,
-body,
-html,
-section,
-header,
-footer {
-  padding: 0;
-  margin: 0;
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700|Libre+Baskerville:700');
+
+h1 {
+	font-family: 'Libre Baskerville', serif;
 }
 
-body {
-  font-family: "Lato", sans-serif;
-  font-weight: 300;
+html, body, header .container-fluid {
+	padding: 0;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+	font-size: 17px;
+	height: 100%;
 }
 
-.container-fluid {
-  padding-right: 0;
-  padding-left: 0;
+hr.projects {
+	background-color: #a8a3a3;
+	border: 0;
+	height: 1px;
 }
 
-#brand,
-h3 {
-  font-family: "Averia Sans Libre", cursive;
+hr.special { 
+  border: 0; 
+  height: 1px; 
+  background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
 }
 
-h3 {
-  font-size: 28px;
-  margin-top: 0;
-  padding: 20px 10px;
+.header_name {
+	left: 99999px;
 }
 
-.knowledge {
-  margin: 3px;
+#contact ul {
+	text-align: center;
 }
 
-#about { /* center image & about area */
-  background: linear-gradient(
-  rgba(0, 0, 0, 0.3),
-  rgba(0, 0, 0, 0.3)
-  ),
-  url(https://cloud.githubusercontent.com/assets/15892944/13803396/83259278-eb01-11e5-91e1-a3b12cf65b55.jpg) fixed no-repeat center center;
-  background-size: cover;
-  text-align: center;
-  font-size: 18px;
-  letter-spacing: 1px;
-  margin-left: auto;
-  margin-right: auto;
-  height: 100%;
-  padding: 40px;
-  color: white;
+#contact ul li {
+	list-style: none;
+	display: inline;
 }
 
-hr {
-  border: 0;
-  margin: 0;
-  padding: 0;
-  height: 1px;
-  background: black;
-}
-
-button {
-  transition: all 0.3s ease 0s;
-}
-
-.btn-direct {
-  background-color: #9f907b;
-  border-color: #333832;
-  color: black;
-  margin-bottom: 10px;
-}
-
-.btn-direct:hover {
-  background-color: #1d1c20;
-  color: white;
-}
-
-.btn-direct:focus {
-  outline: 0;
-}
-
-.darkened {
-  display: block;
-  height: 100%;
-  width: 100%;
-  opacity: 0.8;
-  background: rgba(0,0,0,.1);
-}
-
-.darkened:hover {
-    opacity: 1;
-    background: rgba(0,0,0,0);
-    -moz-transition: all 0.5s;
-    -webkit-transition: all 0.5s;
-}
-
-.sectionHead {
-  padding-bottom: 10px;
-}
-
-#contacts ul {
-  margin: 20px;
+#project_feat {
+  background-color: #eee;
   padding: 20px;
-  list-style-type: none;
-  text-align: center;
 }
 
-#contacts ul li {
-  display: inline;
-  margin: 10px;
-  font-weight: 400;
+.project_image {
+	padding: 10px;
 }
 
-#contacts ul li a {
-  color: black;
+#other_projects {
+	background: url('../images/mountain.jpg') fixed center center no-repeat;
+	background-size: cover;
+	padding-top: 20px;
+	padding-bottom: 40px;
 }
 
-#contacts ul li a:hover {
-  color: #1f462e;
+.other_proj {
+	padding: 0;
 }
 
-.image {
-  width: 30%;
-  margin: 1.66%;
-  float: left;
+.other_proj:hover {
+  display: block;
+  opacity: 0.7;
+  background: rgba(0,0,0,.5);
 }
 
-#hat {
-  width: 200px;
-  border-radius: 1px;
-  padding: 20px 0px 20px 60px;
+.profile_pic {
+	height: 150px;
 }
 
-.developerName {
-  text-align: right;
-  padding: 25px 40px 0 40px;
+.btn, .nav li a {
+	transition: all 0.4s ease 0s;
 }
 
-.work {
-  background-color: #17171a;
-  color: white;
+.btn-primary, .btn-danger {
+	border-radius: 0;
+	border: none;
+	background-color: #b6bdc4;
 }
 
-.skill_list {
-  background-color: #4f4f4f;
-  border: 0;
+.keys {
+	margin-right: 10px;
+	border-radius: 10px;
+	font-weight: 300;
+	background-color: white;
+	color: black;
 }
 
-.skills {
-  background-color: #ebebeb;
-  padding-bottom: 20px;
+nav {
+	z-index: 9999;
 }
 
-.projStyle {
-  width: 250px;
-  height: 250px;
-  border-radius:5%;
+.navbar {
+	border-radius: 0;
+	margin-bottom: 0;
 }
 
-.projStyle: hover {
-  box-shadow: 40px black;
+.navbar-inverse a {
+	border-right: 1px solid white;
 }
 
-.projTitle {
-  color: white;
-  letter-spacing: 2px;
+.navbar-inverse .navbar-toggle {
+	border: none;
 }
 
-.desc {
-  padding: 10px;
+.cover {
+	background: 
+		linear-gradient(
+			rgba(0,0,0,0.5),
+			rgba(0,0,0,0.5)
+		),url('../images/pc.jpg') top left no-repeat;
+	background-size: cover;
+	display: table;
+	height: 100%;
+	width: 100%;
+	padding: 0 20%;
 }
 
-.white {
-  color: white;
+.cover-text {
+	text-align: center;
+	color: white;
+	display: table-cell;
+	vertical-align: middle;
 }
 
-.tech {
-  font-size: 10px;
-  font-style: italic;
-  color: #EFEFA5;
+.cover-text h1 {
+	font-size: 70px;
 }
 
-.tech:hover {
-  color: white;
+.jumbotron {
+	margin: 0;
 }
 
-.underline {
-  text-decoration: underline;
+.affix {
+	top: 0;
+	width: 100%;
 }
 
-.row {
-  padding-right: 0;
-  margin-right: 0;
-}
-
-#profilepic {
-  border-radius: 100%;
-  width: 100px;
-}
-
-.work {
-  display: none;
+.skill_one {
+	display:none;
 }
 
 #about {
-  height: 600px;
+	padding: 40px;
 }
 
-.row {
-  margin-left: 0;
+.black_box {
+	padding: 10px;
+	background-color: rgba(0,0,0,0.5);
 }
 
-.modal-dialog {
-  color: black;
-  font-size: 16px;
+.contact {
+	color: #b4b3b3;
+	margin: 10px;
 }
 
-.rounded {
-  border-radius: 10px;
+hr {
+	margin-top: 30px;
+	margin-bottom: 30px;
 }
 
-.btn-project {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  background-color: #1d1c20;
-  border: 0;
-  font-size: 16px;
+a:hover {
+	color: black;
 }
 
-.btn-project:visited {
- background-color: #1d1c20;
+.contact_box {
+	height: 250px;
+	padding: 10%;
 }
 
-.btn-project:hover {
-  background-color: #1d1c20;
-  color: #c5bf8c;
-}
+@media (max-width: 586px) {
+	.cover {
+		height: 500px;
+	}
 
-.btn-project:focus {
-  outline: 0;
-}
-
-.btn-project:active {
-  background-color: #1d1c20;
-}
-
-.mod-img {
-  width: 150px;
-  float: left;
-  margin: 0px 10px 10px 10px;
-}
-
-.info {
-  margin-left: 40px;
-  color: #c5bf8c;
-  font-size: 10px;
-}
-
-.yellowed {
-  color: #aa8161;
-  text-align: right;
-}
-
-#scrollToTop {
-  margin-bottom: 20px;
-}
-
-.panel-body {
-  color: black;
-}
-
-.skillset {
-  background-color: #ebebeb;
-}
-
-@media screen and (max-width:990px) {
-
-  .developerName, .imageLogo {
-    text-align: center;
-  }
-
-  .developerName {
-    padding: 0px;
-  }
-
-  #hat {
-    margin: 0 auto;
-    padding: 20px;
-    width: 200px;
-  }
-
-  .sectionHead, .info {
-    text-align: center;
-  }
-
-  #title {
-    padding-bottom: 30px;
-  }
-}
-
-@media screen and (max-width:540px) {
-
-  #contacts ul li {
-    display: block;
-    margin: 10px;
-  }
-
-  h1 {
-    font-size: 24px;
-  }
-
-  #title {
-    font-size: 20px;
-    padding-bottom: 5px;
-  }
-
-  #hat {
-    width: 100px;
-    padding-bottom: 0;
-  }
-
-  #about {
-    padding-top: 20px;
-    background: unset;
-    background-color: #383228;
-    height: 100%;
-  }
-
-  .info {
-    display: none;
-  }
+	.cover-text h1 {
+		font-size: 40px;
+	}
 }
