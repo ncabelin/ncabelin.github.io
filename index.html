@@ -26,8 +26,9 @@
 	</div>
 </header>
 
-<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="250">
-	<div class="container">
+<nav data-spy="affix" data-offset-top="250">
+	<ul class="nav nav-pills">
+<!-- 	<div class="container">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
 				<span class="sr-only">Toggle navigation</span>
@@ -36,16 +37,17 @@
 				<span class="icon-bar"></span>
 			</button>
 		</div>
-	</div>
-	<div class="collapse navbar-collapse" id="navbar-collapse">
-	  <ul class="nav navbar-nav">
-	    <li class="active"><a href="#">N.M.Cabelin</a></li>
+	</div> -->
+<!-- 	<div>
+	  <ul class="nav navbar-nav"> -->
+	    <li class="active hidden-sm hidden-xs"><a href="#">N.M.Cabelin</a></li>
 	    <li><a href="#about" class="nav_about">ABOUT</a></li>
 	    <li><a href="#projects" class="nav_projects">PROJECTS</a></li>
-	    <li><a href="https://www.linkedin.com/in/ncabelin" class="nav_resume" target="_blank">RESUME</a></li>
-	    <li><a href="#contact" class="nav_contact">CONTACT ME</a></li>
-	  </ul>
-  </div>
+	    <li><a href="https://www.linkedin.com/in/ncabelin" class="nav_resume hidden-xs hidden-sm" target="_blank">RESUME</a></li>
+	    <li><a href="#contact" class="nav_contact">CONTACT</a></li>
+	  <!-- </ul>
+  </div> -->
+  </ul>
 </nav>
 
 <div class="cover">
@@ -188,8 +190,8 @@
 		var other = '';
 		frontendProjects.forEach(function(x) {
 			var head = '<div class="col-md-3 col-sm-3 col-xs-3 other_proj">';
-			var img = '<a href="' + x.github + '"><img src="' + x.image + '" class="img-responsive"/></a>' 
-			var foot = '</div>'
+			var img = '<a href="' + x.github + '"><img src="' + x.image + '" class="img-responsive"/></a><div class="caption text-center">' + x.title + '</div>';
+			var foot = '</div>';
 			other += (head + img + foot);
 		});
 		// other += '</div>';

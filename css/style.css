@@ -12,6 +12,17 @@ html, body, header .container-fluid {
 	height: 100%;
 }
 
+.nav li a, nav ul.nav.nav-pills {
+	border-radius: 0;
+	color: #ccc;
+	background-color: black;
+}
+
+.nav li a:hover, .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+	color: white;
+	background-color: #504f4f;
+}
+
 hr.projects {
 	background-color: #a8a3a3;
 	border: 0;
@@ -64,6 +75,14 @@ hr.special {
   display: block;
   opacity: 0.7;
   background: rgba(0,0,0,.5);
+}
+
+.caption {
+	width: 100%;
+	bottom: .3em;
+	position: absolute;
+	font-weight: 700;
+	opacity: 0;
 }
 
 .profile_pic {
@@ -171,11 +190,23 @@ a:hover {
 }
 
 @media (max-width: 586px) {
+	.profile_pic {
+		height: 80px;
+	}
+
 	.cover {
 		height: 500px;
 	}
 
 	.cover-text h1 {
 		font-size: 40px;
+	}
+
+	.contact_box {
+		padding: 10px;
+	}
+
+	.contact {
+		display: block;
 	}
 }
