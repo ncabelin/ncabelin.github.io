@@ -125,7 +125,7 @@ opacity:0;
 filter:alpha(opacity=0);
 -webkit-transition:all .2s ease-in-out;
 transition:all .2s ease-in-out;
-margin:50px 0 0;
+margin:20px 0 0;
 padding:7px 14px;
 }
 
@@ -165,8 +165,15 @@ transition-delay:.2s;
 	transition: all 0.4s ease 0s;
 }
 
-.btn-primary, .btn-danger {
+ .nav li a {
+ 	padding: 20px;
+ }
+
+.btn {
 	border-radius: 0;
+}
+
+.btn-primary, .btn-danger {
 	border: none;
 	background-color: #b6bdc4;
 }
@@ -262,6 +269,9 @@ a:hover {
 }
 
 @media (max-width: 586px) {
+	.nav li a {
+		padding: 14px;
+	}
 	.profile_pic {
 		height: 80px;
 	}
@@ -280,5 +290,10 @@ a:hover {
 
 	.contact {
 		display: block;
+	}
+
+	div .jumbotron {
+		padding-top: 15px;
+		padding-bottom: 15px;
 	}
 }
