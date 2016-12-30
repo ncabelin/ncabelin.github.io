@@ -189,9 +189,9 @@
 		// other projects
 		var other = '';
 		frontendProjects.forEach(function(x) {
-			var head = '<div class="col-md-3 col-sm-3 col-xs-3 other_proj">';
-			var img = '<a href="' + x.github + '"><img src="' + x.image + '" class="img-responsive"/></a><div class="caption text-center">' + x.title + '</div>';
-			var foot = '</div>';
+			var head = '<div class="col-md-3 col-sm-3 col-xs-3 other_proj"><div class="hovereffect">';
+			var img = '<a href="' + x.github + '"><img src="' + x.image + '" class="img-responsive"></a><div class="overlay"><a href="' + x.github + '"><h2>' + x.title + '</h2></a><a class="info" href="' + x.url + '">View Site</a><br><a class="info" href="' + x.github + '">View Github</a></div>';
+			var foot = '</div></div>';
 			other += (head + img + foot);
 		});
 		// other += '</div>';
