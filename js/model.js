@@ -3,7 +3,7 @@
 		id: "puL",
 		description: "Mental health services locator currently used by the San Fernando Valley Community Mental Health Center Inc. for locating the nearest facilities for their clients while on the field by device GPS or zipcode.<br><br>Uses Google Maps API served through a NodeJS Backend Service API, Firebase Backend for Authentication &amp; Database and AngularJS front-end.",
 		sub: ["AngularJS 1.x", "NodeJS via Heroku", "Firebase Backend/Database", "Google Maps API"],
-		url: "http://plocator.mindwelder.com",
+		url: "http://psych-unit-locator.firebaseapp.com",
 		image: "https://cloud.githubusercontent.com/assets/15892944/18023119/f53124da-6ba9-11e6-9a4c-cf9feaf7de4c.png",
 		github: "https://github.com/ncabelin/psych-unit-locator-LA"
 	// },{
@@ -92,7 +92,7 @@ var frontendProjects = [
 		description: "Arcade game in the vein of Frogger. Get past the bugs and fishes, swipe the key to score.<br><br>I used HTML5 canvas to generate the graphics and Javascript object-oriented programming to design the functionality.<br><br>",
 		url: "http://ncabelin.github.io/udfrog",
 		image: "https://cloud.githubusercontent.com/assets/15892944/14368462/af146c1e-fcd2-11e5-95df-b545e9242f88.jpg",
-		github: "https://github.com/ncabelin/ncabelin.github.io/tree/master/udfrog"
+		github: "https://github.com/ncabelin/key_swiper"
 	},{
 		title: "Simon Game",
 		id: "simonGame",
