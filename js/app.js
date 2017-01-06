@@ -41,12 +41,10 @@ $(function() {
 		var foot = '</div></div>';
 		other += (head + img + foot);
 	});
-	// other += '</div>';
 	$('.others').html(other);
 	$('.other_proj').matchHeight();
 
 	// front-end skills list
-
 	var makeSkillsList = function(listTarget, list) {
 		var frontEndUL = $('<ul />');
 		list.forEach(function(x) {
