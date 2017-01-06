@@ -119,7 +119,9 @@ var backendProjects = [{
 
 var dynamicProjects = [];
 
-var skillsFrontend = ["Client-side Application Logic", "Web UI/UX Design", "Logo Design", "AngularJS 1.x", "jQuery", "HTML5/CSS3", "Bootstrap", "SASS"];
-var skillsBackend = ["Linux server Setup", "RESTFul APIs", "Endpoints", "CRUD Applications", "Server-side Application Logic", "Python (Flask, Webapp2, Google App Engine)", "NodeJS (Express,Mongoose)", "PHP (Procedural &amp; OOP, Laravel)"];
-var skillsDbase = ["RDBMS SQL (MySQL, PostgreSQL", "NoSQL (MongoDB, Datastore)"];
-var skillsAdmin = ["Heroku, Google App Engine, Shared Hosting Provider Deployment", "Git Version Control"];
+var skillsFrontend = ["UI/UX Design", "Logo Design", "AngularJS 1", "React", "jQuery", "HTML5/CSS3", "Bootstrap 3", "SASS"];
+var skillsBackend = ["Python (Flask, Webapp2, Google App Engine)", "NodeJS (Express,Mongoose)", "PHP"];
+var skillsDbase = ["SQL (MySQL, PostgreSQL)", "NoSQL (MongoDB, Datastore)"];
+var skillsAdmin = ["Heroku", "Google App Engine", "Shared Hosting Provider Deployment", "Git Version Control"];
+
+var tools = ["Atom / Sublime Text Editor", "Chrome Dev-tools", "ngrok", "Sketch", "Adobe Photoshop", "git / Github", "Macbook Air"]
