@@ -111,17 +111,8 @@ var frontendProjects = [
 
 ];
 
-var games = [
-];
+var skillsFrontend = ["UI/UX Design", "Logo Design", "HTML5/CSS3", "Bootstrap 3", "SASS", "JavaScript", "jQuery", "AngularJS 1", "React"];
+var skillsBackend = ["Python (Flask, Webapp2, Google App Engine)", "NodeJS (Express,Mongoose)", "PHP", "SQL (MySQL, PostgreSQL)", "NoSQL (MongoDB, Datastore)"];
+var skillsAdmin = ["Heroku", "Google App Engine", "Shared Hosting", "Wordpress", "VPS Linux Admin", "Git Version Control"];
 
-var backendProjects = [{
-}];
-
-var dynamicProjects = [];
-
-var skillsFrontend = ["UI/UX Design", "Logo Design", "AngularJS 1", "React", "jQuery", "HTML5/CSS3", "Bootstrap 3", "SASS"];
-var skillsBackend = ["Python (Flask, Webapp2, Google App Engine)", "NodeJS (Express,Mongoose)", "PHP"];
-var skillsDbase = ["SQL (MySQL, PostgreSQL)", "NoSQL (MongoDB, Datastore)"];
-var skillsAdmin = ["Heroku", "Google App Engine", "Shared Hosting Provider Deployment", "Git Version Control"];
-
-var tools = ["Atom / Sublime Text Editor", "Chrome Dev-tools", "ngrok", "Sketch", "Adobe Photoshop", "git / Github", "Macbook Air"]
+var tools = ["Atom / Sublime Text Editor", "Chrome Dev-tools", "ngrok", "Sketch", "Adobe Photoshop", "Git / Github", "Macbook Air"]
