@@ -25,10 +25,11 @@ $(function() {
 		x.sub.forEach(function(y) {
 			keywords += '<button class="btn btn-primary btn-xs keys">' + y + '</button>';
 		});
+		var github = x.github ? '<a href="' + x.github + '" class="btn btn-danger" target="_blank">VIEW GITHUB</a>' : '';
 		if ((i+1) % 2 == 0) {
 			content += '<div class="row"><div class="col-md-3 col-md-offset-2"><img src="' + x.image +'" class="project_image center-block img-rounded img-responsive" /></div><div class="col-md-5"><h3>' + x.title + '</h3>' + x.description + '<div><hr class="projects">' + keywords +'<br><br><a href="' + x.url + '" class="btn btn-primary" target="_blank">VIEW</a>&nbsp; <a href="' + x.github + '" class="btn btn-danger" target="_blank">VIEW GITHUB</a></div></div><div class="col-md-2"></div></div><hr>';
 		} else {
-			content += '<div class="row"><div class="col-md-3 visible-xs visible-sm"><img src="' + x.image +'" class="project_image center-block img-rounded img-responsive" /></div><div class="col-md-2"></div><div class="col-md-5"><h3>' + x.title + '</h3>' + x.description + '<div><hr class="projects">' + keywords + '<br><br><a href="' + x.url + '" class="btn btn-primary" target="_blank">VIEW</a>&nbsp; <a href="' + x.github + '" class="btn btn-danger" target="_blank">VIEW GITHUB</a></div></div><div class="col-md-3"><img src="' + x.image +'" class="project_image center-block hidden-sm hidden-xs img-rounded img-responsive" /></div></div><hr>';
+			content += '<div class="row"><div class="col-md-3 visible-xs visible-sm"><img src="' + x.image +'" class="project_image center-block img-rounded img-responsive" /></div><div class="col-md-2"></div><div class="col-md-5"><h3>' + x.title + '</h3>' + x.description + '<div><hr class="projects">' + keywords + '<br><br><a href="' + x.url + '" class="btn btn-primary" target="_blank">VIEW</a>&nbsp;' + github + '</div></div><div class="col-md-3"><img src="' + x.image +'" class="project_image center-block hidden-sm hidden-xs img-rounded img-responsive" /></div></div><hr>';
 		}
 	});
 	$('#projects').append(content);
