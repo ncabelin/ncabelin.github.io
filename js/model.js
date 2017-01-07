@@ -97,16 +97,16 @@ var frontendProjects = [
 		title: "Simon Game",
 		id: "simonGame",
 		description: "Simon Game clone, the game popularized in the 80s. Try to imitate a randomly generated pattern by memory, the game increases the pattern length after each correct guess. You win when you get to the 20th pattern.<br><br>I used jQuery, Javascript, HTML5 audio to provide sounds for the game.<br><br>",
-		url: "http://ncabelin.github.io/apps/fccsimon",
-		image: "https://cloud.githubusercontent.com/assets/15892944/14010786/9bf384f4-f155-11e5-941a-d8b87c8c48f3.jpg",
-		github: "https://github.com/ncabelin/ncabelin.github.io/tree/master/fccsimon"
+		url: "http://cabelin.com/simon",
+		image: "https://camo.githubusercontent.com/4d0b3e691ddc4c0b9b10fb9a35bef1ac1ce8fa86/687474703a2f2f636162656c696e2e636f6d2f73696d6f6e2f696d616765732f73637265656e73686f742e6a7067",
+		github: "https://github.com/ncabelin/simon"
 	},{
 		title: "Tic Tac Toe",
 		id: "tictactoe",
 		description: "Play Tic Tac Toe against the computer. Smart AI but has one weak move and is defeatable.<br><br>I used jQuery, and vanilla Javascript for the AI, along with Bootstrap styling.",
-		url: "http://ncabelin.github.io/apps/fcctic",
-		image: "https://cloud.githubusercontent.com/assets/15892944/14010785/9bf2c58c-f155-11e5-8993-f55acf4c2eff.jpg",
-		github: "https://github.com/ncabelin/ncabelin.github.io/tree/master/fcctic"
+		url: "http://cabelin.com/tictac",
+		image: "https://camo.githubusercontent.com/470f4a486e360ee8b24d9d76b4b7eb3b55975218/687474703a2f2f636162656c696e2e636f6d2f7469637461632f696d616765732f73637265656e73686f742e6a7067",
+		github: "https://github.com/ncabelin/tictac"
 	}
 
 ];
