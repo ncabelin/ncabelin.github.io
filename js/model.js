@@ -44,7 +44,7 @@
 		description: "Use the Talking Calculator app for breaking down communication/disability barriers. This app uses grid-based Bootstrap buttons and currently only supports the English language.",
 		sub: ["responsiveVoiceJS", "HTML5/CSS3", "JavaScript", "jQuery", "Bootstrap"],
 		url: "http://ncabelin.github.io/apps/fcccalculator",
-		image: "https://cloud.githubusercontent.com/assets/15892944/15271958/6fbfb82c-1a17-11e6-8070-98242c49036f.jpg",
+		image: "https://cloud.githubusercontent.com/assets/15892944/21739294/7c31ad50-d44c-11e6-82d5-2c758fb1be5d.jpg",
 		github: "https://github.com/ncabelin/ncabelin.github.io/tree/master/fcccalculator"
 	}];
 
