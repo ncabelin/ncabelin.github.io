@@ -5,7 +5,7 @@
 		sub: ["AngularJS 1.x", "NodeJS via Heroku", "Firebase Backend/Database", "Google Maps API"],
 		url: "http://psych-unit-locator.firebaseapp.com",
 		image: "https://cloud.githubusercontent.com/assets/15892944/18023119/f53124da-6ba9-11e6-9a4c-cf9feaf7de4c.png",
-		github: "https://github.com/ncabelin/psych-unit-locator-LA"
+		github: "https://github.com/ncabelin/plocator"
 	// },{
 	// 	title: "Mindwelder: Flashcard App",
 	// 	id: "flashcards",
