@@ -35,9 +35,9 @@
 		id: "losAngelesAttractions",
 		description: "Neighborhood map of the Greater Los Angeles area and the top museums, theme parks, and other attractions.",
 		sub: ["KnockoutJS", "jQuery", "Openweather API", "Google Maps API", "Wikipedia API"],
-		url: "http://ncabelin.github.io/udneighbormap",
+		url: "http://cabelin.com/losangelesattractions",
 		image: "https://cloud.githubusercontent.com/assets/15892944/14626721/eeb4e30c-05a2-11e6-9fdf-5c216439bc9f.jpg",
-		github: "https://github.com/ncabelin/ncabelin.github.io/tree/master/udneighbormap"
+		github: "https://github.com/ncabelin/losangelesattractions"
 	}, {
 		title: "Talking Calculator",
 		id: "talkingCalculator",
@@ -69,20 +69,20 @@ var frontendProjects = [
 		title: "Pomodoro Timer",
 		id: "timer",
 		description: "Productivity timer app with sounds. Determine session time and breaks with the Pomodoro technique of time management. Session minutes are set to 25 and breaks are 5 minutes by default.<br>I used HTML5 / CSS3, Javascript jQuery &amp; jQuery UI with Touch Punch to make the sliders mobile-responsive. Try it on your phone, it feels like a native app because of Touch Punch.",
-		url: "http://ncabelin.github.io/apps/fccpomodoro",
+		url: "http://cabelin.com/pom_clock",
 		image: "https://cloud.githubusercontent.com/assets/15892944/14312600/c7a70958-fba1-11e5-8cf7-321fb743bf70.jpg",
-		github: "https://github.com/ncabelin/pomodoro_clock"
+		github: "https://github.com/ncabelin/pom_clock"
 	}, {
 		title: "Wikipedia Viewer",
 		id: "wikiviewer",
 		description: "Search Wikipedia quickly. This app uses Wikimedia API to query topics and shows the top 20 results.<br><br>Demonstrates knowledge of API uses, AJAX calls and is styled with Bootstrap,CSS3.",
-		url: "http://ncabelin.github.io/apps/fccwiki",
-		image: "https://cloud.githubusercontent.com/assets/15892944/14010784/9bf0d27c-f155-11e5-8455-066293c4f734.jpg",
-		github: "https://github.com/ncabelin/ncabelin.github.io/tree/master/fccwiki"
+		url: "http://cabelin.com/wiki_viewer",
+		image: "https://camo.githubusercontent.com/1ce2a5377f4ac6be1d164b3e1dc39138f1ae879a/687474703a2f2f636162656c696e2e636f6d2f77696b695f7669657765722f696d616765732f73637265656e73686f742e6a7067",
+		github: "https://github.com/ncabelin/wiki_viewer"
 	}, {
 		title: "Feed Reader Testing",
 		id: "feedReaderTester",
-		description: "RSS Feed reader of Udacity, contains Jasmine.js testing. Demonstrates knowledge of red-green factor, test-driven development strategy.",
+		description: "RSS Feed reader containing Jasmine.js testing. Demonstrates knowledge of red-green factor, test-driven development strategy.",
 		url: "http://ncabelin.github.io/apps/udfeed",
 		image: "https://cloud.githubusercontent.com/assets/15892944/14395568/4b3312e4-fd87-11e5-8fee-f68b2fc16be0.jpg",
 		github: "https://github.com/ncabelin/ncabelin.github.io/tree/master/udfeed"
@@ -90,7 +90,7 @@ var frontendProjects = [
 		title: "Key Swiper Arcade Game",
 		id: "keyswiperGame",
 		description: "Arcade game in the vein of Frogger. Get past the bugs and fishes, swipe the key to score.<br><br>I used HTML5 canvas to generate the graphics and Javascript object-oriented programming to design the functionality.<br><br>",
-		url: "http://ncabelin.github.io/apps/udfrog",
+		url: "http://cabelin.com/key_swiper",
 		image: "https://cloud.githubusercontent.com/assets/15892944/14368462/af146c1e-fcd2-11e5-95df-b545e9242f88.jpg",
 		github: "https://github.com/ncabelin/key_swiper"
 	},{
