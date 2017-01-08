@@ -36,7 +36,7 @@
 		description: "Neighborhood map of the Greater Los Angeles area and the top museums, theme parks, and other attractions.",
 		sub: ["KnockoutJS", "jQuery", "Openweather API", "Google Maps API", "Wikipedia API"],
 		url: "http://cabelin.com/losangelesattractions",
-		image: "https://cloud.githubusercontent.com/assets/15892944/14626721/eeb4e30c-05a2-11e6-9fdf-5c216439bc9f.jpg",
+		image: "https://camo.githubusercontent.com/502df357b92ab9ddfe03ab77167d3b540dd566af/687474703a2f2f636162656c696e2e636f6d2f6c6f73616e67656c657361747472616374696f6e732f696d616765732f73637265656e73686f742e6a7067",
 		github: "https://github.com/ncabelin/losangelesattractions"
 	}, {
 		title: "Talking Calculator",
