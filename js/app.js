@@ -12,6 +12,9 @@ $(function() {
 			.fadeOut(1000, skill);
 	}
 
+	// scrollspy
+	$('body').scrollspy({ target: '#nav'});
+
 	// header animation on load
 	$('.header_name').fadeOut(0).fadeIn(500);
 	$('.header_title').fadeOut(0).fadeIn(2000);
@@ -69,4 +72,5 @@ $(function() {
 	$('.nav_contact').click(function() {
 		$('html, body').animate({ scrollTop:$('#contact').offset().top - 100}, 500);
 	});
+
 });
