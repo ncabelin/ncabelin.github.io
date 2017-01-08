@@ -60,9 +60,10 @@ hr.special {
   padding: 20px;
 }
 
-/*.hideme {
-	opacity: 0;
-}*/
+.panel-heading:hover {
+	cursor: pointer;
+	cursor: hand;
+}
 
 .project_image {
 	padding: 0;

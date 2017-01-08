@@ -73,4 +73,17 @@ $(function() {
 		$('html, body').animate({ scrollTop:$('#contact').offset().top - 100}, 500);
 	});
 
+	// add click event to accordion heading
+
+	var accordionClick = function(target, id) {
+		$(target).click(function() {
+			document.getElementById(id).click();
+		});
+	};
+
+	accordionClick('#headingOne', 'f-btn');
+	accordionClick('#headingTwo', 'b-btn');
+	accordionClick('#Admin', 'a-btn');
+	accordionClick('#Tools', 't-btn');
+
 });
