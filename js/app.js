@@ -47,7 +47,6 @@ $(function() {
 		other += (head + img + foot);
 	});
 	$('.others').html(other);
-	// $('.other_proj').matchHeight();
 
 	// front-end skills list
 	var makeSkillsList = function(listTarget, list) {
