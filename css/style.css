@@ -16,6 +16,10 @@ html, body, header .container-fluid {
 	height: 100%;
 }
 
+div.jumbotron {
+	background-color: white;
+}
+
 .nav li a, nav ul.nav.nav-pills {
 	border-radius: 0;
 	color: #ccc;
@@ -65,6 +69,12 @@ hr.special {
 	cursor: hand;
 }
 
+.panel-default>.panel-heading {
+  color: #fff;
+  background-color: #504f4f;
+  border-color: #ddd;
+}
+
 .project_image {
 	padding: 0;
 }
@@ -76,8 +86,10 @@ hr.special {
 	padding-bottom: 40px;
 }
 
-div.other_proj {
-	margin:0;
+div.each-project {
+	margin: 0;
+	padding: 0;
+	border: none;
 }
 
 .hovereffect {
@@ -259,7 +271,7 @@ nav {
 }
 
 .contact {
-	color: #b4b3b3;
+	color: #626060;
 	margin: 10px;
 }
 

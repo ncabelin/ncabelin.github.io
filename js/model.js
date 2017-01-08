@@ -83,9 +83,9 @@ var frontendProjects = [
 		title: "Feed Reader Testing",
 		id: "feedReaderTester",
 		description: "RSS Feed reader containing Jasmine.js testing. Demonstrates knowledge of red-green factor, test-driven development strategy.",
-		url: "http://ncabelin.github.io/apps/udfeed",
-		image: "https://cloud.githubusercontent.com/assets/15892944/14395568/4b3312e4-fd87-11e5-8fee-f68b2fc16be0.jpg",
-		github: "https://github.com/ncabelin/ncabelin.github.io/tree/master/udfeed"
+		url: "http://cabelin.com/rssreader",
+		image: "https://camo.githubusercontent.com/671016654b24ceba366e7007f918a49596c500c1/687474703a2f2f636162656c696e2e636f6d2f7273737265616465722f696d616765732f73637265656e73686f742e6a7067",
+		github: "https://github.com/ncabelin/rssreader"
 	},{
 		title: "Key Swiper Arcade Game",
 		id: "keyswiperGame",
