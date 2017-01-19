@@ -33,10 +33,10 @@
 	}, {
 		title: "LA Attractions Map",
 		id: "losAngelesAttractions",
-		description: "Neighborhood map of the Greater Los Angeles area and the top museums, theme parks, and other attractions. Uses Google maps API to view if currently open, Openweather to get current L.A. weather, Wikipedia API to provide info about each attraction",
-		sub: ["KnockoutJS", "jQuery", "Openweather API", "Google Maps API", "Wikipedia API"],
-		url: "http://cabelin.com/losangelesattractions",
-		image: "https://camo.githubusercontent.com/502df357b92ab9ddfe03ab77167d3b540dd566af/687474703a2f2f636162656c696e2e636f6d2f6c6f73616e67656c657361747472616374696f6e732f696d616765732f73637265656e73686f742e6a7067",
+		description: "If you're ever in Los Angeles, California, this app will connect you to the top museums, theme parks, and other attractions. You can find where you are in the map, see how far you are from the attractions and see a lot of info on each. Uses Google maps API for the map, Openweather to get current L.A. weather, Wikipedia & Yelp API to provide info about each attraction",
+		sub: ["KnockoutJS", "jQuery", "Openweather API", "Google Maps API", "Wikipedia API", "Yelp API"],
+		url: "https://la-attractions.herokuapp.com",
+		image: "https://camo.githubusercontent.com/fed8e10d1ac32d9fe5e4050c873c6e3018b4c8a8/687474703a2f2f636162656c696e2e636f6d2f6c6f73616e67656c657361747472616374696f6e732f696d616765732f73637265656e73686f74322e6a7067",
 		github: "https://github.com/ncabelin/losangelesattractions"
 	}, {
 		title: "Talking Calculator",
