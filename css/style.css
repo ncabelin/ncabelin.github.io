@@ -229,7 +229,7 @@ nav {
 		linear-gradient(
 			rgba(0,0,0,0.5),
 			rgba(0,0,0,0.5)
-		),url('../images/pc.jpg') top left no-repeat;
+		),url('../images/mac.jpg') top left no-repeat;
 	background-size: cover;
 	display: table;
 	height: 100%;
@@ -246,6 +246,7 @@ nav {
 
 .cover-text h1 {
 	font-size: 70px;
+	letter-spacing: -4px;
 }
 
 .jumbotron {
@@ -259,10 +260,15 @@ nav {
 
 .skill_one {
 	display:none;
+	letter-spacing: 3px;
 }
 
 #about {
 	padding: 40px;
+}
+
+#about .lead {
+	line-height: 35px;
 }
 
 .black_box {
