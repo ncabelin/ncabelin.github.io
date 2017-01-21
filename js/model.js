@@ -22,14 +22,6 @@
 		url: "https://www.mindwelder.com",
 		image: "https://cloud.githubusercontent.com/assets/15892944/21518633/bef3ef7a-cc9c-11e6-975b-a7fe145d21bb.jpg",
 		github: "https://github.com/ncabelin/mindwelder"
-	},{
-		title: "Progressive Steps, Inc.",
-		id: "progressive",
-		description: "Custom Wordpress website designed for an Early Childhood Development Provider. Based on the client's needs, initially created mockup of site in HTML5/CSS3 and Bootstrap, but the client ultimately wanted ease of editing features and we migrated the site to Wordpress.",
-		sub: ["Wordpress", "PHP", "X-theme", "Photoshop", "HTML5/CSS3", "MySQL"],
-		url: "https://www.progressivestepsca.com",
-		image: "https://cloud.githubusercontent.com/assets/15892944/16222217/df3dd386-374b-11e6-88b2-7a7843e3632d.jpg",
-		github: ""
 	}, {
 		title: "LA Attractions Map",
 		id: "losAngelesAttractions",
@@ -50,6 +42,14 @@
 
 var frontendProjects = [
 {
+	title: "Progressive Steps, Inc.",
+	id: "progressive",
+	description: "Custom Wordpress website designed for an Early Childhood Development Provider. Based on the client's needs, initially created mockup of site in HTML5/CSS3 and Bootstrap, but the client ultimately wanted ease of editing features and we migrated the site to Wordpress.",
+	sub: ["Wordpress", "PHP", "X-theme", "Photoshop", "HTML5/CSS3", "MySQL"],
+	url: "https://www.progressivestepsca.com",
+	image: "https://cloud.githubusercontent.com/assets/15892944/16222217/df3dd386-374b-11e6-88b2-7a7843e3632d.jpg",
+	github: ""
+},{
 	title: "Potentum Studios",
 	id: "potentumStudios",
 	description: "My web design &amp; development company website. We design logos, set up web hosting and domain name registration. We can also provide custom in-house art and sound assets for your web ventures. We also provide Wordpress management and set-up.<br><br>I used HTML5 / CSS3, Javascript, PHP, jQuery and Twitter Bootstrap for this site.<br>",
