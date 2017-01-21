@@ -30,18 +30,18 @@
 		url: "https://la-attractions.herokuapp.com",
 		image: "https://camo.githubusercontent.com/fed8e10d1ac32d9fe5e4050c873c6e3018b4c8a8/687474703a2f2f636162656c696e2e636f6d2f6c6f73616e67656c657361747472616374696f6e732f696d616765732f73637265656e73686f74322e6a7067",
 		github: "https://github.com/ncabelin/losangelesattractions"
-	}, {
-		title: "Talking Calculator",
-		id: "talkingCalculator",
-		description: "Use the Talking Calculator app for breaking down communication/disability barriers. This app uses grid-based Bootstrap buttons and currently only supports the English language.",
-		sub: ["responsiveVoiceJS", "HTML5/CSS3", "JavaScript", "jQuery", "Bootstrap"],
-		url: "http://cabelin.com/calculator",
-		image: "https://camo.githubusercontent.com/0328168a57b3ef01f8772620d4bd2a7c185fc6cc/687474703a2f2f636162656c696e2e636f6d2f63616c63756c61746f722f696d616765732f73637265656e73686f742e6a7067",
-		github: "https://github.com/ncabelin/calculator"
 	}];
 
 var frontendProjects = [
 {
+	title: "Talking Calculator",
+	id: "talkingCalculator",
+	description: "Use the Talking Calculator app for breaking down communication/disability barriers. This app uses grid-based Bootstrap buttons and currently only supports the English language.",
+	sub: ["responsiveVoiceJS", "HTML5/CSS3", "JavaScript", "jQuery", "Bootstrap"],
+	url: "http://cabelin.com/calculator",
+	image: "https://camo.githubusercontent.com/0328168a57b3ef01f8772620d4bd2a7c185fc6cc/687474703a2f2f636162656c696e2e636f6d2f63616c63756c61746f722f696d616765732f73637265656e73686f742e6a7067",
+	github: "https://github.com/ncabelin/calculator"
+},{
 	title: "Progressive Steps, Inc.",
 	id: "progressive",
 	description: "Custom Wordpress website designed for an Early Childhood Development Provider. Based on the client's needs, initially created mockup of site in HTML5/CSS3 and Bootstrap, but the client ultimately wanted ease of editing features and we migrated the site to Wordpress.",
