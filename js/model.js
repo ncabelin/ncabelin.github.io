@@ -17,7 +17,7 @@
 	},{
 		title: "Mindwelder Blogs",
 		id: "blogs",
-		description: "Fullstack Blog Application with user registration and the ability to post blogs with formatting, upload imgur picture links, use html formatting. A unique feature is the Testing mode. Underline style a section and it will be designated as an answer for a fill-in-the-blank type question. Tests can be saved for continuation later on. The web app also uses Oauth2 from Google+ and Facebook.",
+		description: "Fullstack Blog Application complete with user registration and the ability to post blogs with formatting, upload imgur picture links, use html formatting. A unique feature is the TESTING mode. While editing a post, Underline style a section and that section will automatically be designated as an answer. Go on TEST mode and fill in the blanks on the same sections to test/review yourself. Any progress can be saved for continuation later on. The web app also uses secure Oauth2 from Google+ and Facebook for easy user registration.",
 		sub: ["Python", "Flask", "PostgreSQL", "jQuery", "DigitalOcean VPS"],
 		url: "https://www.mindwelder.com",
 		image: "https://github.com/ncabelin/ncabelin.github.io/blob/master/images/mindwelder.jpg?raw=true",
