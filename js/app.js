@@ -40,9 +40,9 @@ $(function() {
 	// other projects
 	var other = '';
 	frontendProjects.forEach(function(x) {
-		var github = x.github ? '<a class="info" href="' + x.github + '">View Github</a>' : '';
+		var github = x.github ? '<a class="info" href="' + x.github + '" target="_blank">View Github</a>' : '';
 		var head = '<div class="col-md-3 col-sm-6 col-xs-6 each-project"><div class="hovereffect">';
-		var img = '<a href="' + x.github + '"><img src="' + x.image + '" class="img-responsive"></a><div class="overlay"><a href="' + x.github + '"><h2>' + x.title + '</h2></a><a class="info" href="' + x.url + '">View Site</a><br>' + github + '</div>';
+		var img = '<a href="' + x.github + '" target="_blank"><img src="' + x.image + '" class="img-responsive"></a><div class="overlay"><a href="' + x.github + '" target="_blank"><h2>' + x.title + '</h2></a><a class="info" href="' + x.url + '" target="_blank">View Site</a><br>' + github + '</div>';
 		var foot = '</div></div>';
 		other += (head + img + foot);
 	});
