@@ -1,8 +1,8 @@
 	var projects = [{
 		title: "L.A. County Psych-unit Locator",
 		id: "puL",
-		description: "Mental health services locator currently used by the San Fernando Valley Community Mental Health Center Inc. for locating the nearest facilities for their clients while on the field by device GPS or zipcode.<br><br>Uses Google Maps API served through a NodeJS Backend Service API, Firebase Backend for Authentication &amp; Database and AngularJS front-end.",
-		sub: ["AngularJS 1.x", "NodeJS via Heroku", "Firebase Backend/Database", "Google Maps API"],
+		description: "Mental health services locator used by the San Fernando Valley Community Mental Health Center Inc. for locating the nearest facilities for their clients while on the field by device GPS or zipcode.<br><br>Uses Google Maps Geocoding API served through a NodeJS, MongoDB Backend Restful API with Token based authentication &amp; and AngularJS 1 front-end.(MEAN stack)",
+		sub: ["AngularJS 1.x", "NodeJS via Heroku", "MongoDB", "Google Maps API"],
 		url: "https://plocator.herokuapp.com",
 		image: "https://github.com/ncabelin/ncabelin.github.io/blob/master/images/pul.jpg?raw=true",
 		github: "https://github.com/ncabelin/psych-u-locator"
