@@ -111,7 +111,7 @@ var frontendProjects = [
 
 ];
 
-var skillsFrontend = ["UI/UX Design", "Logo Design", "HTML5/CSS3", "Bootstrap 3", "SASS", "JavaScript", "jQuery", "AngularJS 1", "React"];
+var skillsFrontend = ["UI/UX Design", "Logo Design", "HTML5/CSS3", "Bootstrap 3", "JavaScript", "jQuery", "AngularJS 1", "KnockoutJS"];
 var skillsBackend = ["Python (Flask, Webapp2, Google App Engine)", "NodeJS (Express,Mongoose)", "PHP", "SQL (MySQL, PostgreSQL)", "NoSQL (MongoDB, Datastore)"];
 var skillsAdmin = ["Heroku", "Google App Engine", "Shared Hosting", "Wordpress", "VPS Linux Admin", "Git Version Control"];
 
