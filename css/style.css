@@ -23,7 +23,7 @@ div.jumbotron {
 .nav li a, nav ul.nav.nav-pills {
 	border-radius: 0;
 	color: #ccc;
-	background-color: #202020;
+	background-color: #21314d;
 }
 
 .nav li a:hover, .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
@@ -67,8 +67,9 @@ hr.special {
 
 .panel-default>.panel-heading {
   color: #fff;
-  background-color: #504f4f;
+  background-color: #4f79ac;
   border-color: #ddd;
+  letter-spacing: 2px;
 }
 
 .project_image {
