@@ -23,7 +23,7 @@ div.jumbotron {
 .nav li a, nav ul.nav.nav-pills {
 	border-radius: 0;
 	color: #ccc;
-	background-color: black;
+	background-color: #202020;
 }
 
 .nav li a:hover, .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
@@ -76,7 +76,7 @@ hr.special {
 }
 
 #other_projects {
-	background: url('../images/mountain.jpg') fixed center center no-repeat;
+	background: url('../images/forest.jpg') fixed center center no-repeat;
 	background-size: cover;
 	padding-top: 20px;
 	padding-bottom: 40px;
@@ -223,9 +223,9 @@ nav {
 .cover {
 	background: 
 		linear-gradient(
-			rgba(0,0,0,0.5),
-			rgba(0,0,0,0.5)
-		),url('../images/mac.jpg') top left no-repeat;
+			rgba(0,0,0,0.3),
+			rgba(0,0,0,0.3)
+		),url('../images/forest.jpg') top left no-repeat;
 	background-size: cover;
 	display: table;
 	height: 100%;
