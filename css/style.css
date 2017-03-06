@@ -2,10 +2,15 @@
 
 h1 {
 	font-family: 'Libre Baskerville', serif;
+	color: #21314d;
 }
 
 h1.header_name {
 	color: #21314d;
+}
+
+.cover-text h1 {
+	color: white;
 }
 
 body {
