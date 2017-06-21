@@ -86,7 +86,7 @@ hr.special {
 }
 
 #other_projects {
-	background: url('../images/forest.jpg') fixed center center no-repeat;
+	background: url('https://res.cloudinary.com/dd6kwd0zn/image/upload/v1498062667/mountain_ezgmsc.jpg') fixed center center no-repeat;
 	background-size: cover;
 	padding-top: 20px;
 	padding-bottom: 40px;
@@ -235,7 +235,7 @@ nav {
 		linear-gradient(
 			rgba(0,0,0,0.3),
 			rgba(0,0,0,0.3)
-		),url('../images/forest.jpg') top left no-repeat;
+		),url('https://res.cloudinary.com/dd6kwd0zn/image/upload/v1498062686/forest_pgruco.jpg') top left no-repeat;
 	background-size: cover;
 	display: table;
 	height: 100%;
