@@ -30,6 +30,7 @@ div.jumbotron {
 }
 
 .nav li a, nav ul.nav.nav-pills {
+  float: none !important;
 	border-radius: 0;
 	color: #ccc;
 	background-color: #21314d;
@@ -38,6 +39,10 @@ div.jumbotron {
 .nav li a:hover, .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
 	color: white;
 	background-color: #476ba5;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
 }
 
 hr.projects {
@@ -86,8 +91,7 @@ hr.special {
 }
 
 #other_projects {
-	background: url('https://res.cloudinary.com/dd6kwd0zn/image/upload/v1498062667/mountain_ezgmsc.jpg') fixed center center no-repeat;
-	background-size: cover;
+	background: url('../images/cheap_diagonal_fabric.png') fixed top left repeat;
 	padding-top: 20px;
 	padding-bottom: 40px;
 }

@@ -6,14 +6,14 @@
 		url: "https://plocator.herokuapp.com",
 		image: "http://res.cloudinary.com/dd6kwd0zn/image/upload/v1498062800/pul_tqfn0u.jpg",
 		github: "https://github.com/ncabelin/psych-u-locator"
-	// },{
-	// 	title: "Mindwelder: Flashcard App",
-	// 	id: "flashcards",
-	// 	description: "Fullstack Flashcard App where users can sign up, log in and add their own flashcards and flashcard sets for self-testing. Ability to use Leitner method of learning incorporated.<br><br>Uses PHP 7.0, MySQL and jQuery, HTML5/CSS3.",
-	// 	sub: ["(Full Stack Application) using", "PHP", "MySQL", "jQuery", "HTML5/CSS3", "Bootstrap", "List.JS"],
-	// 	url: "http://cards.mindwelder.com",
-	// 	image: "https://cloud.githubusercontent.com/assets/15892944/17835927/649610d8-6736-11e6-98b4-c2c1726b6f47.png",
-	// 	github: "https://github.com/ncabelin/flashcards-mindwelder"
+	},{
+		title: "The Speaking Child",
+		id: "schild",
+		description: "Full Stack M.E.A.N. Application that monitors speech development and charts the progress.",
+		sub: ["Node / ExpressJS", "MongoDB", "jQuery", "HTML5/CSS3", "Bootstrap", "D3.js"],
+		url: "http://speakingchild.com",
+		image: "http://res.cloudinary.com/dd6kwd0zn/image/upload/v1499291461/screenshot_xv6bq4.jpg",
+		github: "https://github.com/ncabelin/speaking-child"
 	},{
 		title: "Mindwelder Blogs",
 		id: "blogs",
@@ -38,7 +38,7 @@ var frontendProjects = [
 	id: "talkingCalculator",
 	description: "Use the Talking Calculator app for breaking down communication/disability barriers. This app uses grid-based Bootstrap buttons and currently only supports the English language.",
 	sub: ["responsiveVoiceJS", "HTML5/CSS3", "JavaScript", "jQuery", "Bootstrap"],
-	url: "http://cabelin.com/calculator",
+	url: "http://www.cabelin.com/calculator",
 	image: "http://res.cloudinary.com/dd6kwd0zn/image/upload/v1498064655/screenshot_g0aj5r.jpg",
 	github: "https://github.com/ncabelin/calculator"
 },{
@@ -50,11 +50,11 @@ var frontendProjects = [
 	image: "http://res.cloudinary.com/dd6kwd0zn/image/upload/v1498064422/df3dd386-374b-11e6-88b2-7a7843e3632d_rzp5ju.jpg",
 	github: ""
 },{
-	title: "Potentum Studios",
-	id: "potentumStudios",
+	title: "Cabelin Software Solutions",
+	id: "cabelinsoft",
 	description: "My web design &amp; development company website. We design logos, set up web hosting and domain name registration. We can also provide custom in-house art and sound assets for your web ventures. We also provide Wordpress management and set-up.<br><br>I used HTML5 / CSS3, Javascript, PHP, jQuery and Twitter Bootstrap for this site.<br>",
 	sub: "(Static Website) using HTML5/CSS3,jQuery",
-	url: "http://www.potentum.com",
+	url: "http://www.cabelin.com",
 	image: "http://res.cloudinary.com/dd6kwd0zn/image/upload/v1498064786/f57073d0-f19a-11e5-9546-d3077c7d5063_hfxb7l.jpg",
 	github: ""
 },{
@@ -69,42 +69,42 @@ var frontendProjects = [
 		title: "Pomodoro Timer",
 		id: "timer",
 		description: "Productivity timer app with sounds. Determine session time and breaks with the Pomodoro technique of time management. Session minutes are set to 25 and breaks are 5 minutes by default.<br>I used HTML5 / CSS3, Javascript jQuery &amp; jQuery UI with Touch Punch to make the sliders mobile-responsive. Try it on your phone, it feels like a native app because of Touch Punch.",
-		url: "http://cabelin.com/pom_clock",
+		url: "http://www.cabelin.com/pom_clock",
 		image: "http://res.cloudinary.com/dd6kwd0zn/image/upload/v1498065013/c7a70958-fba1-11e5-8cf7-321fb743bf70-2_rrepqw.jpg",
 		github: "https://github.com/ncabelin/pom_clock"
 	}, {
 		title: "Wikipedia Viewer",
 		id: "wikiviewer",
 		description: "Search Wikipedia quickly. This app uses Wikimedia API to query topics and shows the top 20 results.<br><br>Demonstrates knowledge of API uses, AJAX calls and is styled with Bootstrap,CSS3.",
-		url: "http://cabelin.com/wiki_viewer",
+		url: "http://www.cabelin.com/wiki_viewer",
 		image: "http://res.cloudinary.com/dd6kwd0zn/image/upload/v1498065266/screenshot_nvwpxs.jpg",
 		github: "https://github.com/ncabelin/wiki_viewer"
 	}, {
 		title: "Feed Reader Testing",
 		id: "feedReaderTester",
 		description: "RSS Feed reader containing Jasmine.js testing. Demonstrates knowledge of red-green factor, test-driven development strategy.",
-		url: "http://cabelin.com/rssreader",
+		url: "http://www.cabelin.com/rssreader",
 		image: "http://res.cloudinary.com/dd6kwd0zn/image/upload/v1498065373/screenshot_1_bpmusg.jpg",
 		github: "https://github.com/ncabelin/rssreader"
 	},{
 		title: "Key Swiper Arcade Game",
 		id: "keyswiperGame",
 		description: "Arcade game in the vein of Frogger. Get past the bugs and fishes, swipe the key to score.<br><br>I used HTML5 canvas to generate the graphics and Javascript object-oriented programming to design the functionality.<br><br>",
-		url: "http://cabelin.com/key_swiper",
+		url: "http://www.cabelin.com/key_swiper",
 		image: "http://res.cloudinary.com/dd6kwd0zn/image/upload/v1498065469/af146c1e-fcd2-11e5-95df-b545e9242f88_ndzqha.jpg",
 		github: "https://github.com/ncabelin/key_swiper"
 	},{
 		title: "Simon Game",
 		id: "simonGame",
 		description: "Simon Game clone, the game popularized in the 80s. Try to imitate a randomly generated pattern by memory, the game increases the pattern length after each correct guess. You win when you get to the 20th pattern.<br><br>I used jQuery, Javascript, HTML5 audio to provide sounds for the game.<br><br>",
-		url: "http://cabelin.com/simon",
+		url: "http://www.cabelin.com/simon",
 		image: "http://res.cloudinary.com/dd6kwd0zn/image/upload/v1498065547/screenshot-2_sinroz.jpg",
 		github: "https://github.com/ncabelin/simon"
 	},{
 		title: "Tic Tac Toe",
 		id: "tictactoe",
 		description: "Play Tic Tac Toe against the computer. Smart AI but has one weak move and is defeatable.<br><br>I used jQuery, and vanilla Javascript for the AI, along with Bootstrap styling.",
-		url: "http://cabelin.com/tictac",
+		url: "http://www.cabelin.com/tictac",
 		image: "http://res.cloudinary.com/dd6kwd0zn/image/upload/v1498065640/screenshot-3_j2jx1d.jpg",
 		github: "https://github.com/ncabelin/tictac"
 	}
