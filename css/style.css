@@ -320,6 +320,9 @@ a:hover {
 	.nav li a {
 		padding: 14px;
 	}
+	#nav {
+		height: 52px;
+	}
 	.profile_pic {
 		height: 80px;
 	}
