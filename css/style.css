@@ -41,8 +41,15 @@ div.jumbotron {
 	background-color: #476ba5;
 }
 
-.navbar .navbar-collapse {
+#nav .nav-pills {
+	float: none;
+	display: inline-block;
+}
+
+#nav {
   text-align: center;
+  background-color: #21314d;
+  height: 64px;
 }
 
 hr.projects {
@@ -241,6 +248,7 @@ nav {
 			rgba(0,0,0,0.3)
 		),url('https://res.cloudinary.com/dd6kwd0zn/image/upload/v1498062686/forest_pgruco.jpg') top left no-repeat;
 	background-size: cover;
+	max-height: 500px;
 	display: table;
 	height: 100%;
 	width: 100%;
