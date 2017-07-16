@@ -1,7 +1,7 @@
 	var projects = [{
 		title: "L.A. County Psych-unit Locator",
 		id: "puL",
-		description: "Mental health services locator used by the San Fernando Valley Community Mental Health Center Inc. for locating the nearest facilities for their clients while on the field by device GPS or zipcode.<br><br>Uses Google Maps Geocoding API served through a NodeJS, MongoDB Backend Restful API with Token based authentication &amp; and AngularJS 1 front-end.(MEAN stack)",
+		description: "Mental health services locator used by the San Fernando Valley Community Mental Health Center Inc. for locating the nearest facilities for their clients while on the field by device GPS or zipcode.<br><br>Uses Google Maps Geocoding API served through a NodeJS, MongoDB Backend Restful API with Token based authentication and AngularJS 1 front-end.(MEAN stack)",
 		sub: ["AngularJS 1.x", "NodeJS via Heroku", "MongoDB", "Google Maps API"],
 		url: "https://plocator.herokuapp.com",
 		image: "http://res.cloudinary.com/dd6kwd0zn/image/upload/v1498062800/pul_tqfn0u.jpg",
@@ -9,8 +9,8 @@
 	},{
 		title: "The Speaking Child",
 		id: "schild",
-		description: "Full Stack M.E.A.N. Application that monitors speech development and charts the progress.",
-		sub: ["Node / ExpressJS", "MongoDB", "jQuery", "HTML5/CSS3", "Bootstrap", "D3.js"],
+		description: "A fullstack app for monitoring your child's speech development that also provides word list guidance and charting of progress.",
+		sub: ["Node / ExpressJS", "MongoDB", "AngularJS 1.x", "HTML5/CSS3", "Bootstrap", "D3.js"],
 		url: "http://speakingchild.com",
 		image: "http://res.cloudinary.com/dd6kwd0zn/image/upload/v1499291461/screenshot_xv6bq4.jpg",
 		github: "https://github.com/ncabelin/speaking-child"
