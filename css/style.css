@@ -97,10 +97,13 @@ hr.special {
 	padding: 0;
 }
 
-#other_projects {
-	background: url('../images/cheap_diagonal_fabric.png') fixed top left repeat;
+.panels {
 	padding-top: 20px;
 	padding-bottom: 40px;
+}
+
+#other_projects {
+	background: url('../images/cheap_diagonal_fabric.png') fixed top left repeat;
 }
 
 div.each-project {
@@ -306,11 +309,6 @@ hr {
 
 a:hover {
 	color: black;
-}
-
-.contact_box {
-	height: 250px;
-	padding: 10%;
 }
 
 @media (max-width: 586px) {
