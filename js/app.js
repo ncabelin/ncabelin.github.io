@@ -1,8 +1,11 @@
 $(function() {
+	'use strict';
 	var header_name = $('.header_name, .profile_pic'),
 			skills_one = $('.skill_one'),
 			skillsIndex = -1;
 
+	// ANIMATIONS, TRANSITIONS etc.
+	// ============================
 	// fade animation of skillset
 	function skill() {
 		++skillsIndex;
@@ -21,6 +24,19 @@ $(function() {
 	$('.profile_pic').fadeOut(0).fadeIn(3000);
 	skill();
 
+	// scroll animation
+	$('.nav_about').click(function() {
+		$('html, body').animate({ scrollTop:$('#about').offset().top - 100}, 500);
+	});
+	$('.nav_projects').click(function() {
+		$('html, body').animate({ scrollTop:$('#project_feat').offset().top - 50}, 500);
+	});
+	$('.nav_contact').click(function() {
+		$('html, body').animate({ scrollTop:$('#contact').offset().top - 100}, 500);
+	});
+
+	// CONTENT FILL-UP
+	// ===============
 	// featured projects
 	var content = '';
 	projects.forEach(function(x, i) {
@@ -38,17 +54,36 @@ $(function() {
 	$('#projects').append(content);
 	
 	// other projects
-	var other = '';
+	var games = '', 
+		utilities = '',
+		wordpress = '',
+		others = '';
 	frontendProjects.forEach(function(x) {
+		var subStr = '';
+		var subs = x.sub.forEach(function(y) {
+			subStr += '<button class="btn btn-xs btn-primary">' + y + '</button>';;
+		});
 		var github = x.github ? '<a class="info" href="' + x.github + '" target="_blank">View Github</a>' : '';
 		var head = '<div class="col-md-3 col-sm-6 col-xs-6 each-project"><div class="hovereffect">';
 		var img = '<a href="' + x.github + '" target="_blank"><img src="' + x.image + '" class="img-responsive"></a><div class="overlay"><a href="' + x.github + '" target="_blank"><h2>' + x.title + '</h2></a><a class="info" href="' + x.url + '" target="_blank">View Site</a><br>' + github + '</div>';
-		var foot = '</div></div>';
-		other += (head + img + foot);
+		var foot = "<div class='desc'>" + x.description + '</div><div>' + subStr + '</div></div></div>';
+		var everything = (head + img + foot);
+		if (x.type == 'game') {
+			games += (everything);
+		} else if (x.type == 'utility') {
+			utilities += (everything);
+		} else if (x.type == 'wordpress') {
+			wordpress += (everything);
+		} else {
+			others += (everything);
+		}
 	});
-	$('.others').html(other);
+	$('#game').html(games);
+	$('#utility').html(utilities);
+	$('#wordpress').html(wordpress);
+	$('#other').html(others);
 
-	// front-end skills list
+	// skills list accordion
 	var makeSkillsList = function(listTarget, list) {
 		var frontEndUL = $('<ul />');
 		list.forEach(function(x) {
@@ -60,21 +95,8 @@ $(function() {
 	makeSkillsList('#frontEndList', skillsFrontend);
 	makeSkillsList('#backEndList', skillsBackend);
 	makeSkillsList('#adminList', skillsAdmin);
-	makeSkillsList('#toolList', tools);
 
-	// scroll animation
-	$('.nav_about').click(function() {
-		$('html, body').animate({ scrollTop:$('#about').offset().top - 100}, 500);
-	});
-	$('.nav_projects').click(function() {
-		$('html, body').animate({ scrollTop:$('#project_feat').offset().top - 50}, 500);
-	});
-	$('.nav_contact').click(function() {
-		$('html, body').animate({ scrollTop:$('#contact').offset().top - 100}, 500);
-	});
-
-
-	// add click event to accordion heading
+		// add click event to accordion heading
 	var accordionClick = function(target, id) {
 		$(target).click(function() {
 			document.getElementById(id).click();
@@ -84,6 +106,5 @@ $(function() {
 	accordionClick('#headingOne', 'f-btn');
 	accordionClick('#headingTwo', 'b-btn');
 	accordionClick('#Admin', 'a-btn');
-	accordionClick('#Tools', 't-btn');
 
 });
