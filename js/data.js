@@ -55,10 +55,19 @@ var frontendProjects = [
 	title: "Cabelin Software Solutions",
 	id: "cabelinsoft",
 	type: "wordpress",
-	description: "Single page web-site design &amp; development company (built a custom-theme)",
+	description: "Single page web-site design & development company (built a custom-theme)",
 	sub: ["HTML5/CSS3", "Bootstrap", "jQuery", "Wordpress"],
 	url: "https://www.cabelin.com",
-	image: "http://res.cloudinary.com/dd6kwd0zn/image/upload/v1498064786/f57073d0-f19a-11e5-9546-d3077c7d5063_hfxb7l.jpg",
+	image: "http://res.cloudinary.com/dd6kwd0zn/image/upload/v1500885351/Screenshot_2017-07-24_01.34.53_s6q1ze.png",
+	github: ""
+},{
+	title: "Potentum Studios",
+	id: "potentumsoft",
+	type: "wordpress",
+	description: "Single page web-site design & development company (built a custom-theme)",
+	sub: ["HTML5/CSS3", "Bootstrap", "jQuery", "Wordpress"],
+	url: "https://www.potentumstudios.com",
+	image: "http://res.cloudinary.com/dd6kwd0zn/image/upload/v1500884974/potentum_lpsehx.jpg",
 	github: ""
 },{
 		title: "Weather Saver",
