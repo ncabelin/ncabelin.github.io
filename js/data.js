@@ -46,7 +46,7 @@ var frontendProjects = [
 	title: "Progressive Steps, Inc.",
 	id: "progressive",
 	type: "wordpress",
-	description: "Early Childhood Development Therapy Provider (created with X-theme)",
+	description: "Early Childhood Development Therapy Provider",
 	sub: ["Wordpress", "PHP", "X-theme", "Photoshop", "HTML5/CSS3", "MySQL"],
 	url: "https://www.progressivestepsca.com",
 	image: "http://res.cloudinary.com/dd6kwd0zn/image/upload/v1498064422/df3dd386-374b-11e6-88b2-7a7843e3632d_rzp5ju.jpg",
