@@ -15,6 +15,17 @@ $(function() {
 			.fadeOut(1000, skill);
 	}
 
+	$(window).scroll(function() {
+		$('.hide-me').each(function() {
+				var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+				var bottom_of_window = $(window).scrollTop() + $(window).height();
+				// if object is completely visible, animate opacity to 1;
+				if (bottom_of_object < bottom_of_window) {
+					$(this).animate({ 'opacity': '1'}, 500);
+				}
+		});
+	});
+
 	// scrollspy
 	$('body').scrollspy({ target: '#nav'});
 
