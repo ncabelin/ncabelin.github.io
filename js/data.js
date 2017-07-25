@@ -39,7 +39,7 @@ var frontendProjects = [
 	type: "utility",
 	description: "Text to Speech powered Calculator with Responsive VoiceJS API",
 	sub: ["responsiveVoiceJS", "HTML5/CSS3", "JavaScript", "jQuery", "Bootstrap"],
-	url: "http://www.cabelin.com/calculator",
+	url: "https://mike.cabelin.com/calculator",
 	image: "http://res.cloudinary.com/dd6kwd0zn/image/upload/v1498064655/screenshot_g0aj5r.jpg",
 	github: "https://github.com/ncabelin/calculator"
 },{
@@ -55,20 +55,20 @@ var frontendProjects = [
 	title: "Cabelin Software Solutions",
 	id: "cabelinsoft",
 	type: "wordpress",
-	description: "Single page web-site design & development company (built a custom-theme)",
+	description: "Single page web development co. site (built a custom-theme)",
 	sub: ["HTML5/CSS3", "Bootstrap", "jQuery", "Wordpress"],
 	url: "https://www.cabelin.com",
 	image: "http://res.cloudinary.com/dd6kwd0zn/image/upload/v1500885351/Screenshot_2017-07-24_01.34.53_s6q1ze.png",
-	github: ""
+	github: "https://github.com/ncabelin/cabelin_wp_site"
 },{
 	title: "Potentum Studios",
 	id: "potentumsoft",
 	type: "wordpress",
-	description: "Single page web-site design & development company (built a custom-theme)",
+	description: "Single page web development company (built a custom-theme)",
 	sub: ["HTML5/CSS3", "Bootstrap", "jQuery", "Wordpress"],
-	url: "https://www.potentumstudios.com",
+	url: "https://www.potentum.com",
 	image: "http://res.cloudinary.com/dd6kwd0zn/image/upload/v1500884974/potentum_lpsehx.jpg",
-	github: ""
+	github: "https://github.com/ncabelin/cabelin_wp_site"
 },{
 		title: "Weather Saver",
 		id: "weatherSaver",
@@ -84,16 +84,16 @@ var frontendProjects = [
 		type: "utility",
 		description: "Productivity timer app based on the Pomodoro method.",
 		sub: ["jQuery", "jQuery UI"],
-		url: "http://www.cabelin.com/pom_clock",
+		url: "https://mike.cabelin.com/pom_clock",
 		image: "http://res.cloudinary.com/dd6kwd0zn/image/upload/v1498065013/c7a70958-fba1-11e5-8cf7-321fb743bf70-2_rrepqw.jpg",
 		github: "https://github.com/ncabelin/pom_clock"
 	}, {
 		title: "Wikipedia Viewer",
 		id: "wikiviewer",
-		type: "utility",
+		type: "other",
 		sub: ["Wikipedia API", "Bootstrap"],
 		description: "Search Wikipedia faster",
-		url: "http://www.cabelin.com/wiki_viewer",
+		url: "https://mike.cabelin.com/wiki_viewer",
 		image: "http://res.cloudinary.com/dd6kwd0zn/image/upload/v1498065266/screenshot_nvwpxs.jpg",
 		github: "https://github.com/ncabelin/wiki_viewer"
 	}, {
@@ -101,8 +101,8 @@ var frontendProjects = [
 		id: "feedReaderTester",
 		type: "other",
 		sub: ["JasmineJS"],
-		description: "RSS Feed reader containing Jasmine.js testing. Demonstrates knowledge of red-green factor, test-driven development strategy.",
-		url: "http://www.cabelin.com/rssreader",
+		description: "TDD with JasmineJS",
+		url: "https://mike.cabelin.com/rssreader",
 		image: "http://res.cloudinary.com/dd6kwd0zn/image/upload/v1498065373/screenshot_1_bpmusg.jpg",
 		github: "https://github.com/ncabelin/rssreader"
 	},{
@@ -111,16 +111,25 @@ var frontendProjects = [
 		type: "game",
 		sub: ["HTML5 canvas"],
 		description: "Frogger type Arcade Game in HTML5 canvas",
-		url: "http://www.cabelin.com/key_swiper",
+		url: "https://mike.cabelin.com/key_swiper",
 		image: "http://res.cloudinary.com/dd6kwd0zn/image/upload/v1498065469/af146c1e-fcd2-11e5-95df-b545e9242f88_ndzqha.jpg",
 		github: "https://github.com/ncabelin/key_swiper"
+	},{
+		title: "React Markdown Previewer",
+		id: "mdpreview",
+		type: "other",
+		sub: ["JavaScript","ReactJS", "Bootstrap"],
+		description: "Markdown Previewer",
+		url: "https://mike.cabelin.com/markdown",
+		image: "http://res.cloudinary.com/dd6kwd0zn/image/upload/v1500964905/bneatha_n9efqe.jpg",
+		github: "https://github.com/ncabelin/markdown-previewer"
 	},{
 		title: "Simon Game",
 		id: "simonGame",
 		type: "game",
 		sub: ["JavaScript","HTML5/CSS3"],
 		description: "Simon 80s Game Clone",
-		url: "http://www.cabelin.com/simon",
+		url: "https://mike.cabelin.com/simon",
 		image: "http://res.cloudinary.com/dd6kwd0zn/image/upload/v1498065547/screenshot-2_sinroz.jpg",
 		github: "https://github.com/ncabelin/simon"
 	},{
@@ -129,7 +138,7 @@ var frontendProjects = [
 		type: "game",
 		sub: ["Bootstrap", "JavaScript"],
 		description: "Play Tic Tac Toe against Artificial Intelligence",
-		url: "http://www.cabelin.com/tictac",
+		url: "https://mike.cabelin.com/tictac",
 		image: "http://res.cloudinary.com/dd6kwd0zn/image/upload/v1498065640/screenshot-3_j2jx1d.jpg",
 		github: "https://github.com/ncabelin/tictac"
 	}
