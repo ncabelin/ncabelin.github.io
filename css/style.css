@@ -50,6 +50,9 @@ div.jumbotron {
   text-align: center;
   background-color: #21314d;
   height: 64px;
+  -webkit-box-shadow: -1px 9px 17px -6px rgba(0,0,0,0.75);
+-moz-box-shadow: -1px 9px 17px -6px rgba(0,0,0,0.75);
+box-shadow: -1px 9px 17px -6px rgba(0,0,0,0.75);
 }
 
 hr.projects {
