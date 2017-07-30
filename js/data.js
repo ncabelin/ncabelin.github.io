@@ -1,7 +1,7 @@
 	var projects = [{
 		title: "L.A. County Psych-unit Locator",
 		id: "puL",
-		description: "Mental health services locator used by the San Fernando Valley Community Mental Health Center Inc. for locating the nearest facilities for their clients while on the field by device GPS or zipcode.<br><br>Uses Google Maps Geocoding API served through a NodeJS, MongoDB Backend Restful API with Token based authentication &amp; and AngularJS 1 front-end.(MEAN stack)",
+		description: "Mental health services locator used internally by the San Fernando Valley Community Mental Health Center Inc. for locating the nearest facilities for their clients while on the field by device GPS or zipcode.<br><br>Uses Google Maps Geocoding API served through a NodeJS, MongoDB Backend Restful API with token based authentication and AngularJS 1 front-end.(MEAN stack)",
 		sub: ["AngularJS 1.x", "NodeJS via Heroku", "MongoDB", "Google Maps API"],
 		url: "https://plocator.herokuapp.com",
 		image: "http://res.cloudinary.com/dd6kwd0zn/image/upload/v1498062800/pul_tqfn0u.jpg",
@@ -12,7 +12,7 @@
 		description: "Full Stack M.E.A.N. Application that monitors speech development and charts the progress.",
 		sub: ["Node / ExpressJS", "MongoDB", "jQuery", "HTML5/CSS3", "Bootstrap", "D3.js"],
 		url: "http://speakingchild.com",
-		image: "http://res.cloudinary.com/dd6kwd0zn/image/upload/v1499291461/screenshot_xv6bq4.jpg",
+		image: "http://res.cloudinary.com/dd6kwd0zn/image/upload/v1500969849/speaking_nsokke.jpg",
 		github: "https://github.com/ncabelin/speaking-child"
 	},{
 		title: "Mindwelder Blogs",
@@ -70,7 +70,7 @@ var frontendProjects = [
 	image: "http://res.cloudinary.com/dd6kwd0zn/image/upload/v1500884974/potentum_lpsehx.jpg",
 	github: "https://github.com/ncabelin/cabelin_wp_site"
 },{
-		title: "Weather Saver",
+		title: "Weather Checker",
 		id: "weatherSaver",
 		type: "utility",
 		description: "Weather checker that can save everytime you check the weather",
